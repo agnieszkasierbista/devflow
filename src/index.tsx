@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {WorkspaceLayout} from "./components/workspace/Workspace.layout";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>ABC</div>
+    <WorkspaceLayout />
   </React.StrictMode>,
   document.getElementById('root')
 );
