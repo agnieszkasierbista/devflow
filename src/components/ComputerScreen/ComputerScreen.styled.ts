@@ -5,7 +5,7 @@ export const StyledComputerScreen = styled.div`
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end:3;
-  height: 100%;
+  height: 50%;
   display: flex;
   background-color: lightgrey;
   border: 2px double black;
