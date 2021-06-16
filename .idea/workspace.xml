@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/computerScreen/ComputerScreen.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/computerScreen/ComputerScreen.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/guestSlot/GuestSlot.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/guestSlot/GuestSlot.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/workspace/Workspace.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/workspace/Workspace.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/computerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/computerScreen/ComputerScreen.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/guestSlot/GuestSlot.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/guestSlot/GuestSlot.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workspace/Workspace.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +19,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/Workspace/Workspace.styled.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -76,7 +86,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/typescript/bin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../birthdayz" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -119,7 +129,8 @@
       <workItem from="1623675153547" duration="233000" />
       <workItem from="1623762432782" duration="71000" />
       <workItem from="1623762521767" duration="1853000" />
-      <workItem from="1623837254635" duration="4121000" />
+      <workItem from="1623837254635" duration="4810000" />
+      <workItem from="1623842299930" duration="1233000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -149,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623838283488</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Display a basic player view">
+      <created>1623841538731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623841538731</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -222,7 +240,8 @@
     <MESSAGE value="Clean-up after creating react app" />
     <MESSAGE value="Update reademe file" />
     <MESSAGE value="Clean-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean-up" />
+    <MESSAGE value="Display a basic player view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display a basic player view" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

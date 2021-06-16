@@ -8,4 +8,5 @@ export const StyledGuestSlot = styled.div`
   grid-row-end: 3;
   display: flex;
   background: lightblue;
+  height: 100%;
 `;

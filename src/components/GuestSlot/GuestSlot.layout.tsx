@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyledGuestSlot} from "./GuestSlot.styled";
+import {StyledGuestSlot} from './GuestSlot.styled'
 
 export function GuestSlotLayout() {
     return (

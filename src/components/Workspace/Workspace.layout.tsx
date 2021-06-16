@@ -1,6 +1,6 @@
 import React from 'react';
-import {ComputerScreenLayout} from "../computerScreen/ComputerScreen.layout";
-import {GuestSlotLayout} from "../guestSlot/GuestSlot.layout";
+import {ComputerScreenLayout} from "../ComputerScreen/ComputerScreen.layout";
+import {GuestSlotLayout} from "../GuestSlot/GuestSlot.layout";
 import {StyledWorkspace} from "./Workspace.styled";
 
 
