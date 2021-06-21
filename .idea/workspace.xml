@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Clock/Clock.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/123.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApp.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Taskbar/Taskbar.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Taskbar/Taskbar.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" afterDir="false" />
-    </list>
+    <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +128,7 @@
       <workItem from="1623845113823" duration="788000" />
       <workItem from="1623845920194" duration="2934000" />
       <workItem from="1623935811423" duration="2900000" />
-      <workItem from="1624273378625" duration="4457000" />
+      <workItem from="1624273378625" duration="4776000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -194,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623848359945</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add a maximized CodeEditor to the ComputerScreen">
+      <created>1624277942778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624277942778</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -270,7 +262,8 @@
     <MESSAGE value="Display a basic player view" />
     <MESSAGE value="Add GlobalStyle" />
     <MESSAGE value="Add apps to the ComputerScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add apps to the ComputerScreen" />
+    <MESSAGE value="Add a maximized CodeEditor to the ComputerScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a maximized CodeEditor to the ComputerScreen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />
