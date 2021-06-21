@@ -9,4 +9,9 @@ export const GlobalStyle = createGlobalStyle`
   div#root {
     height: 100%;
   }
+
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+   }
     `;
+

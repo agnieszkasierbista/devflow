@@ -3,6 +3,7 @@ import {Link, Route, Router, Switch} from 'react-router-dom';
 import {StyledComputerScreen} from "./ComputerScreen.styled";
 import {history} from "../../history";
 import {CodeEditor} from "../CodeEditor/CodeEditor.layout";
+import {Taskbar} from "../Taskbar/Taskbar.layout";
 
 export function ComputerScreenLayout() {
     return (
@@ -10,31 +11,26 @@ export function ComputerScreenLayout() {
             <Router history={history}>
                 <Switch>
                     <Route exact path="/">
-                        <Link to="/1">
-                            Code Editor
-                        </Link>
-                        <Link to="/2">
-                            Communicator
-                        </Link>
-                        <Link to="/3">
-                            Web browser
-                        </Link>
+                        <Taskbar />
                     </Route>
 
-                    <Route path="/1">
+                    <Route path="/CodeEditor">
+                        <Taskbar />
                         <CodeEditor />
                         <Link to="/">
                             Go back
                         </Link>
                     </Route>
 
-                    <Route path="/2">
+                    <Route path="/Communicator">
+                        <Taskbar />
                         <Link to="/">
                             Go back
                         </Link>
                     </Route>
 
-                    <Route path="/3">
+                    <Route path="/WebBrowser">
+                        <Taskbar />
                         <Link to="/">
                             Go back
                         </Link>

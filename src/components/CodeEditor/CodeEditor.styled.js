@@ -6,7 +6,6 @@ export const StyledCodeEditor = styled.div`
   border-radius: 5px;
   color: aliceblue;
   display: flex;
-  height: 90%;
-  width: 90%;
-  align-self: center;
-    `;
+  height: 77%;
+  width: 95%;
+  `;

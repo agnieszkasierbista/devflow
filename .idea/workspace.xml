@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/history.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Clock/Clock.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/123.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApp.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Taskbar/Taskbar.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Taskbar/Taskbar.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +109,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\assets\pic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\GuestSlot" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\workspace" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components" />
@@ -131,7 +141,9 @@
       <workItem from="1623837254635" duration="4810000" />
       <workItem from="1623842299930" duration="2409000" />
       <workItem from="1623845113823" duration="788000" />
-      <workItem from="1623845920194" duration="2275000" />
+      <workItem from="1623845920194" duration="2934000" />
+      <workItem from="1623935811423" duration="2900000" />
+      <workItem from="1624273378625" duration="4457000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -175,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623843634077</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add apps to the ComputerScreen">
+      <created>1623848359945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623848359945</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -250,7 +269,8 @@
     <MESSAGE value="Clean-up" />
     <MESSAGE value="Display a basic player view" />
     <MESSAGE value="Add GlobalStyle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GlobalStyle" />
+    <MESSAGE value="Add apps to the ComputerScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add apps to the ComputerScreen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />
