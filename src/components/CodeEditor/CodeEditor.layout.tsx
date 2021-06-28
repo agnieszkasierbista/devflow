@@ -6,6 +6,10 @@ export function CodeEditor() {
     return (
         <StyledCodeEditor>
             {'>'}dfiu98y3hqoijfd..................
+            <br/>
+            {'>'}dfiu98y3hqoijfd..................
+            <br/>
+            {'>'}dfiu98y3hqoijfd..................
         </StyledCodeEditor>
     )
 }

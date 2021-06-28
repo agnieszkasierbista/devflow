@@ -5,10 +5,11 @@ import {history} from "../../history";
 import {CodeEditor} from "../CodeEditor/CodeEditor.layout";
 import {Taskbar} from "../Taskbar/Taskbar.layout";
 
-export function ComputerScreenLayout() {
+export function ComputerScreen() {
     return (
         <StyledComputerScreen>
             <Router history={history}>
+
                 <Switch>
                     <Route exact path="/">
                         <Taskbar />

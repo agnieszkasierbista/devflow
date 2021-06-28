@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="" />
+    <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/epics.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,7 +34,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" root0="FORCE_HIGHLIGHTING" />
@@ -103,6 +126,10 @@
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\workspace" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\PlayerNameInput\PlayerNameInputProps.types.ts" />
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Overlay\Overlay.types.ts" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -128,7 +155,9 @@
       <workItem from="1623845113823" duration="788000" />
       <workItem from="1623845920194" duration="2934000" />
       <workItem from="1623935811423" duration="2900000" />
-      <workItem from="1624273378625" duration="4776000" />
+      <workItem from="1624273378625" duration="9097000" />
+      <workItem from="1624617085479" duration="3930000" />
+      <workItem from="1624905613808" duration="4103000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -186,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624277942778</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update .gitignore file">
+      <created>1624278287469</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624278287469</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -263,7 +299,8 @@
     <MESSAGE value="Add GlobalStyle" />
     <MESSAGE value="Add apps to the ComputerScreen" />
     <MESSAGE value="Add a maximized CodeEditor to the ComputerScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a maximized CodeEditor to the ComputerScreen" />
+    <MESSAGE value="Update .gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

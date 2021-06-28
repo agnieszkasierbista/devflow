@@ -9,8 +9,8 @@ export function MinimizedApps(): any {
         appsList
             .map(app => {
                     return (
-                        <React.Fragment>
-                            <StyledMinimizedApp key={app}>
+                        <React.Fragment key={app}>
+                            <StyledMinimizedApp>
                                 <StyledMinimizedAppLink to={`/${app}`}>
                                     {app}
                                 </StyledMinimizedAppLink>

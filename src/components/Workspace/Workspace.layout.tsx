@@ -1,14 +1,17 @@
 import React from 'react';
-import {ComputerScreenLayout} from "../ComputerScreen/ComputerScreen.layout";
-import {GuestSlotLayout} from "../GuestSlot/GuestSlot.layout";
+import {ComputerScreen} from "../ComputerScreen/ComputerScreen.layout";
+import {GuestSlot} from "../GuestSlot/GuestSlot";
 import {StyledWorkspace} from "./Workspace.styled";
+import Overlay from "../common/Overlay/Overlay";
 
 
-export function WorkspaceLayout() {
+
+export function Workspace() {
     return (
         <StyledWorkspace>
-            <ComputerScreenLayout />
-            <GuestSlotLayout />
+            <ComputerScreen />
+            <GuestSlot />
+            <Overlay/>
         </StyledWorkspace>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyledGuestSlot} from './GuestSlot.styled'
 
-export function GuestSlotLayout() {
+export function GuestSlot() {
     return (
         <StyledGuestSlot>GUEST</StyledGuestSlot>
     )
