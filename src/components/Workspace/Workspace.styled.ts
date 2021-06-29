@@ -6,4 +6,4 @@ export const StyledWorkspace = styled.div`
     grid-template-columns: 65% 35%;
     grid-template-rows: 5% 90% 5%;
     height: 100%;
-    `;
+`;

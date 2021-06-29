@@ -1,42 +1,31 @@
 import React from 'react';
 import {StyledMinimizedApp, StyledMinimizedAppLink} from './MinimizedApp.styled';
+import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 
 
-const appsList = ["CodeEditor", "Communicator", "WebBrowser"];
+const appsList: string[] = [codeEditorPath, communicatorPath, webBrowserPath];
 
-export function MinimizedApps(): any {
-    return (
+export const MinimizedApps: React.FC = () => {
+
+    const mappedAppsList =
         appsList
-            .map(app => {
-                    return (
-                        <React.Fragment key={app}>
-                            <StyledMinimizedApp>
-                                <StyledMinimizedAppLink to={`/${app}`}>
-                                    {app}
-                                </StyledMinimizedAppLink>
-                            </StyledMinimizedApp>
-                        </React.Fragment>
-                    )
-                }
-            )
-    )
-}
+        .map(app => {
+                return (
+                    <React.Fragment key={app}>
+                        <StyledMinimizedApp>
+                            <StyledMinimizedAppLink to={app}>
+                                {app}
+                            </StyledMinimizedAppLink>
+                        </StyledMinimizedApp>
+                    </React.Fragment>
+                )
+            }
+        )
 
-//
-// onloadeddata(
-// return(
-//     <>
-//         <StyledMinimizedApp>
-//             <Link to="/1">
-//                 Code Editor
-//             </Link>
-//             <Link to="/2">
-//                 Communicator
-//             </Link>
-//             <Link to="/3">
-//                 Web browser
-//             </Link>
-//         </StyledMinimizedApp>
-//     </>
-// )
-// )
+
+    return (
+        <>
+            {mappedAppsList}
+        </>
+    );
+};

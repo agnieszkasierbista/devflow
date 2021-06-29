@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac772952-0c1a-4e89-aaa0-1a34174ca3b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/epics.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
+    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Overlay/Overlay.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

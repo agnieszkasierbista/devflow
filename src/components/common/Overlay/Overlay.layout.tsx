@@ -1,15 +1,12 @@
 import React from 'react';
-import { StyledOverlay } from './Overlay.styled';
+import {StyledOverlay} from './Overlay.styled';
+import {OverlayProps} from "./Overlay.types";
 
+export const Overlay: React.FC<OverlayProps> = (props) => {
 
-
-export function Overlay(props: any) {
-
-    return props.isOverlayVisible ?
-        (
-            <StyledOverlay
-            />
-        )
-        :
-        null
-}
+    return (
+        props.isOverlayVisible
+            ? <StyledOverlay/>
+            : null
+    );
+};

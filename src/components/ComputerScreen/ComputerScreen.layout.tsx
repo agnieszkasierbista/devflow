@@ -4,6 +4,7 @@ import {StyledComputerScreen} from "./ComputerScreen.styled";
 import {history} from "../../history";
 import {CodeEditor} from "../CodeEditor/CodeEditor.layout";
 import {Taskbar} from "../Taskbar/Taskbar.layout";
+import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 
 export function ComputerScreen() {
     return (
@@ -12,26 +13,26 @@ export function ComputerScreen() {
 
                 <Switch>
                     <Route exact path="/">
-                        <Taskbar />
+                        <Taskbar/>
                     </Route>
 
-                    <Route path="/CodeEditor">
-                        <Taskbar />
-                        <CodeEditor />
+                    <Route path={codeEditorPath}>
+                        <Taskbar/>
+                        <CodeEditor/>
                         <Link to="/">
                             Go back
                         </Link>
                     </Route>
 
-                    <Route path="/Communicator">
-                        <Taskbar />
+                    <Route path={communicatorPath}>
+                        <Taskbar/>
                         <Link to="/">
                             Go back
                         </Link>
                     </Route>
 
-                    <Route path="/WebBrowser">
-                        <Taskbar />
+                    <Route path={webBrowserPath}>
+                        <Taskbar/>
                         <Link to="/">
                             Go back
                         </Link>
@@ -39,7 +40,6 @@ export function ComputerScreen() {
                 </Switch>
 
             </Router>
-
 
         </StyledComputerScreen>
     )
