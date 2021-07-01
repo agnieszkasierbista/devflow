@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerNameProps.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
@@ -145,7 +147,7 @@
       <workItem from="1624617085479" duration="3930000" />
       <workItem from="1624905613808" duration="4103000" />
       <workItem from="1625080032924" duration="4623000" />
-      <workItem from="1625128079367" duration="3718000" />
+      <workItem from="1625128079367" duration="5945000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -224,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624993322784</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Allow user to choose player's name and close input when done">
+      <created>1625133472773</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1625133472773</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -303,7 +312,8 @@
     <MESSAGE value="Add a maximized CodeEditor to the ComputerScreen" />
     <MESSAGE value="Update .gitignore file" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Allow user to choose player's name and close input when done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow user to choose player's name and close input when done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

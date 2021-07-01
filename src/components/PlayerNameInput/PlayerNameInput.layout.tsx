@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyledPlayerNameInput } from './PlayerNameInput.styled';
 import {PlayerNameInputProps} from "./PlayerNameInputProps.types";
 
 export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
@@ -13,7 +14,10 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
     return (
         props.isPlayerNameInputVisible
             ?
-        (<div>
+        (<StyledPlayerNameInput>
+
+            Choose your name and start the game!
+
             <input
                 placeholder="Type your name here"
                 value={playerName}
@@ -33,7 +37,7 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
             >
                 GO!
             </button>
-        </div>)
+        </StyledPlayerNameInput>)
             : null
     )
 }

@@ -7,7 +7,8 @@ export interface AppState {
 export interface Workspace {
     isOverlayVisible: boolean,
     playerName: string,
-    isPlayerNameInputVisible: boolean
+    isPlayerNameInputVisible: boolean,
+    isPlayerNameVisible: boolean
 }
 
 export interface ComputerScreen {

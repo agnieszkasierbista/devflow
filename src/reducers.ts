@@ -4,9 +4,10 @@ import {CHANGE_PLAYER_NAME, CLOSE_PLAYER_NAME_INPUT} from "./actions";
 
 
 export const preloadedWorkspaceState: Workspace = {
-    isOverlayVisible: false,
+    isOverlayVisible: true,
     playerName: "",
-    isPlayerNameInputVisible: true
+    isPlayerNameInputVisible: true,
+    isPlayerNameVisible: false
 };
 
 export const preloadedComputerScreenState: ComputerScreen = {};
@@ -26,7 +27,9 @@ export const rootReducer = combineReducers({
                 [CLOSE_PLAYER_NAME_INPUT]: function() {
                     return ({
                         ...state,
-                        isPlayerNameInputVisible: false
+                        isPlayerNameInputVisible: false,
+                        isOverlayVisible: false,
+                        isPlayerNameVisible: true
                     })
                 }
             }
