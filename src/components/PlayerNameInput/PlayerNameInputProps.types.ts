@@ -1,4 +1,6 @@
 export interface PlayerNameInputProps {
     playerName: string,
-    dispatchChangePlayerName: Function
+    dispatchChangePlayerName: Function,
+    dispatchClosePlayerNameInput: Function,
+    isPlayerNameInputVisible: boolean
 }

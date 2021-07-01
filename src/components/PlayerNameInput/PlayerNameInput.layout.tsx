@@ -5,17 +5,35 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
 
     const {
         playerName,
-        dispatchChangePlayerName
+        dispatchChangePlayerName,
+        dispatchClosePlayerNameInput,
     } = props;
 
+
     return (
-        <div>
+        props.isPlayerNameInputVisible
+            ?
+        (<div>
             <input
+                placeholder="Type your name here"
                 value={playerName}
-                onChange={(evt) => {
-                    dispatchChangePlayerName(evt.target.value);
+                type="text"
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+
+                    event.preventDefault();
+
+                    dispatchChangePlayerName(event.target.value);
+
                 }}
-                type="text"/>
-        </div>
+            />
+            <button
+                onClick={() => {
+                    dispatchClosePlayerNameInput();
+                }}
+            >
+                GO!
+            </button>
+        </div>)
+            : null
     )
 }

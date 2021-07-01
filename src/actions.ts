@@ -1,8 +1,15 @@
-export const INPUT_NAME = "INPUT_NAME";
+export const CHANGE_PLAYER_NAME= "CHANGE_PLAYER_NAME";
+export const CLOSE_PLAYER_NAME_INPUT = "CLOSE_PLAYER_NAME_INPUT"
 
-export function inputName(name: string) {
+export function changePlayerName(name: string) {
     return {
-        type: INPUT_NAME,
+        type: CHANGE_PLAYER_NAME,
         payload: name
+    }
+}
+
+export function closePlayerNameInput() {
+    return {
+        type: CLOSE_PLAYER_NAME_INPUT,
     }
 }
