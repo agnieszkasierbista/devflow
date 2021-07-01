@@ -5,17 +5,15 @@ import {StyledWorkspace} from "./Workspace.styled";
 import Overlay from "../common/Overlay/Overlay";
 import PlayerNameInput from "../PlayerNameInput/PlayerNameInput";
 import PlayerName from "../PlayerName/PlayerName";
+import {WorkspaceProps} from "./Workspace.types";
 
 
-
-export function Workspace() {
-    return (
-        <StyledWorkspace>
-            <PlayerName/>
-            <ComputerScreen/>
-            <GuestSlot/>
-            <Overlay/>
-            <PlayerNameInput/>
-        </StyledWorkspace>
-    )
-}
+export const Workspace: React.FC<WorkspaceProps> = () => (
+    <StyledWorkspace>
+        <PlayerName/>
+        <ComputerScreen/>
+        <GuestSlot/>
+        <Overlay/>
+        <PlayerNameInput/>
+    </StyledWorkspace>
+);

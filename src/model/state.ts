@@ -18,3 +18,7 @@ export interface ComputerScreen {
 export interface GuestSlot {
 
 }
+
+export interface WorkspaceHandlers {
+    [key: string]: () => Workspace
+}

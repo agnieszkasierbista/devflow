@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerNameProps.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerName/PlayerNameProps.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+    </list>
+    <list id="4c7f55c6-1d72-447a-9704-b18b8eab479d" name="Changes by mateu" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInputProps.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +58,36 @@
         <option value="$PROJECT_DIR$/src/epics.js" />
       </list>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="4" end1="5" start2="4" end2="4" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+        <range start1="11" end1="12" start2="10" end2="10" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+        <range start1="14" end1="18" start2="12" end2="17" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="8" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="9" end1="21" start2="10" end2="19" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.types.ts">
+      <ranges>
+        <range start1="0" end1="5" start2="0" end2="3" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="6" end1="6" start2="4" end2="18" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.ts">
+      <ranges>
+        <range start1="4" end1="4" start2="4" end2="6" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="6" end1="7" start2="8" end2="9" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+        <range start1="13" end1="14" start2="15" end2="16" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+        <range start1="15" end1="16" start2="17" end2="18" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="72" />
@@ -147,7 +188,8 @@
       <workItem from="1624617085479" duration="3930000" />
       <workItem from="1624905613808" duration="4103000" />
       <workItem from="1625080032924" duration="4623000" />
-      <workItem from="1625128079367" duration="5945000" />
+      <workItem from="1625128079367" duration="6251000" />
+      <workItem from="1625158848490" duration="4640000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -233,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625133472773</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Display player's name in the workspace view">
+      <created>1625135705633</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625135705633</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -313,7 +362,8 @@
     <MESSAGE value="Update .gitignore file" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Allow user to choose player's name and close input when done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow user to choose player's name and close input when done" />
+    <MESSAGE value="Display player's name in the workspace view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display player's name in the workspace view" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

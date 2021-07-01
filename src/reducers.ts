@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {ComputerScreen, Workspace, GuestSlot} from "./model/state";
+import {ComputerScreen, Workspace, GuestSlot, WorkspaceHandlers} from "./model/state";
 import {CHANGE_PLAYER_NAME, CLOSE_PLAYER_NAME_INPUT} from "./actions";
 
 
@@ -17,7 +17,7 @@ export const preloadedGuestSlotState: GuestSlot = {};
 export const rootReducer = combineReducers({
         workspace: function (state: Workspace = preloadedWorkspaceState, action) {
 
-            const handlers: {[key: string]: any} = {
+            const workspaceHandlers: WorkspaceHandlers = {
                 [CHANGE_PLAYER_NAME]: function() {
                     return ({
                         ...state,
@@ -34,7 +34,7 @@ export const rootReducer = combineReducers({
                 }
             }
 
-            return handlers[action.type] ? handlers[action.type]() : state
+            return workspaceHandlers[action.type] ? workspaceHandlers[action.type]() : state
         },
         computerScreen: function (state = preloadedComputerScreenState, action) {
 

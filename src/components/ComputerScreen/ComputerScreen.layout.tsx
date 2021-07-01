@@ -9,38 +9,33 @@ import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/path
 export function ComputerScreen() {
     return (
         <StyledComputerScreen>
-            <Router history={history}>
+            <Switch>
+                <Route exact path="/">
+                    <Taskbar/>
+                </Route>
 
-                <Switch>
-                    <Route exact path="/">
-                        <Taskbar/>
-                    </Route>
+                <Route path={codeEditorPath}>
+                    <Taskbar/>
+                    <CodeEditor/>
+                    <Link to="/">
+                        Go back
+                    </Link>
+                </Route>
 
-                    <Route path={codeEditorPath}>
-                        <Taskbar/>
-                        <CodeEditor/>
-                        <Link to="/">
-                            Go back
-                        </Link>
-                    </Route>
+                <Route path={communicatorPath}>
+                    <Taskbar/>
+                    <Link to="/">
+                        Go back
+                    </Link>
+                </Route>
 
-                    <Route path={communicatorPath}>
-                        <Taskbar/>
-                        <Link to="/">
-                            Go back
-                        </Link>
-                    </Route>
-
-                    <Route path={webBrowserPath}>
-                        <Taskbar/>
-                        <Link to="/">
-                            Go back
-                        </Link>
-                    </Route>
-                </Switch>
-
-            </Router>
-
+                <Route path={webBrowserPath}>
+                    <Taskbar/>
+                    <Link to="/">
+                        Go back
+                    </Link>
+                </Route>
+            </Switch>
         </StyledComputerScreen>
     )
 }

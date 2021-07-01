@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledPlayerNameInput } from './PlayerNameInput.styled';
-import {PlayerNameInputProps} from "./PlayerNameInputProps.types";
+import {StyledPlayerNameInput} from './PlayerNameInput.styled';
+import {PlayerNameInputProps} from "./PlayerNameInput.types";
 
 export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
 
@@ -10,34 +10,32 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
         dispatchClosePlayerNameInput,
     } = props;
 
-
     return (
         props.isPlayerNameInputVisible
-            ?
-        (<StyledPlayerNameInput>
+            ? (
+                <StyledPlayerNameInput>
 
-            Choose your name and start the game!
+                    Choose your name and start the game!
+                    <input
+                        placeholder="Type your name here"
+                        value={playerName}
+                        type="text"
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
 
-            <input
-                placeholder="Type your name here"
-                value={playerName}
-                type="text"
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                            event.preventDefault();
 
-                    event.preventDefault();
-
-                    dispatchChangePlayerName(event.target.value);
-
-                }}
-            />
-            <button
-                onClick={() => {
-                    dispatchClosePlayerNameInput();
-                }}
-            >
-                GO!
-            </button>
-        </StyledPlayerNameInput>)
+                            dispatchChangePlayerName(event.target.value);
+                        }}
+                    />
+                    <button
+                        onClick={() => {
+                            dispatchClosePlayerNameInput();
+                        }}
+                    >
+                        GO!
+                    </button>
+                </StyledPlayerNameInput>
+            )
             : null
     )
 }
