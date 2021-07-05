@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
-import {ComputerScreen, Workspace, GuestSlot, WorkspaceHandlers} from "./model/state";
-import {CHANGE_PLAYER_NAME, CLOSE_PLAYER_NAME_INPUT} from "./actions";
+import {ComputerScreen, Workspace, GuestSlot, WorkspaceHandlers, ComputerScreenHandlers} from "./model/state";
+import {CHANGE_PLAYER_NAME, CLOSE_PLAYER_NAME_INPUT, ON_DRAG_START, ON_DROP, SHOW_ORDER_CHECK_RESULT} from "./actions";
 
 
 export const preloadedWorkspaceState: Workspace = {
@@ -10,7 +10,15 @@ export const preloadedWorkspaceState: Workspace = {
     isPlayerNameVisible: false
 };
 
-export const preloadedComputerScreenState: ComputerScreen = {};
+export const preloadedComputerScreenState: ComputerScreen = {
+    randomColors: ["red", "blue", "purple", "green"],
+    puzzle: {
+        items: ["a", "b", "c", "d", "e"],
+        shuffledItems: ["b", "a", "c", "e", "d"],
+        beingDragged: -1,
+        shouldShowOrderCheckResult: false,
+    }
+};
 
 export const preloadedGuestSlotState: GuestSlot = {};
 
@@ -18,13 +26,13 @@ export const rootReducer = combineReducers({
         workspace: function (state: Workspace = preloadedWorkspaceState, action) {
 
             const workspaceHandlers: WorkspaceHandlers = {
-                [CHANGE_PLAYER_NAME]: function() {
+                [CHANGE_PLAYER_NAME]: function () {
                     return ({
                         ...state,
                         playerName: action.payload
                     })
                 },
-                [CLOSE_PLAYER_NAME_INPUT]: function() {
+                [CLOSE_PLAYER_NAME_INPUT]: function () {
                     return ({
                         ...state,
                         isPlayerNameInputVisible: false,
@@ -34,11 +42,47 @@ export const rootReducer = combineReducers({
                 }
             }
 
-            return workspaceHandlers[action.type] ? workspaceHandlers[action.type]() : state
+            return (
+                workspaceHandlers[action.type]
+                    ? workspaceHandlers[action.type]()
+                    : state
+            )
         },
-        computerScreen: function (state = preloadedComputerScreenState, action) {
-
-            return state
+        computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
+            const computerScreenHandlers: ComputerScreenHandlers = {
+                [ON_DRAG_START]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        puzzle: {
+                            ...state.puzzle,
+                            beingDragged: action.payload,
+                            shouldShowOrderCheckResult: false
+                        }
+                    })
+                },
+                [ON_DROP]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        puzzle: {
+                            ...state.puzzle,
+                            shuffledItems: action.payload
+                        }
+                    })
+                },
+                [SHOW_ORDER_CHECK_RESULT]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        puzzle: {
+                            ...state.puzzle,
+                            shouldShowOrderCheckResult: true
+                        }
+                    })
+                },
+            }
+            return (
+                computerScreenHandlers[action.type]
+                    ? computerScreenHandlers[action.type]()
+                    : state)
         },
         guestSlot: function (state = preloadedGuestSlotState, action) {
 
