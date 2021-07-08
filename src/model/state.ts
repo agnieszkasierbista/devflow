@@ -14,6 +14,7 @@ export interface Workspace {
 export interface Puzzle {
     items: string[];
     shuffledItems: string[];
+    colors: {[key: string]: string};
     beingDragged: number;
     shouldShowOrderCheckResult: boolean;
 }

@@ -1,7 +1,14 @@
 import {combineReducers} from "redux";
-import {ComputerScreen, Workspace, GuestSlot, WorkspaceHandlers, ComputerScreenHandlers} from "./model/state";
-import {CHANGE_PLAYER_NAME, CLOSE_PLAYER_NAME_INPUT, ON_DRAG_START, ON_DROP, SHOW_ORDER_CHECK_RESULT} from "./actions";
-
+import {ComputerScreen, ComputerScreenHandlers, GuestSlot, Workspace, WorkspaceHandlers} from "./model/state";
+import {
+    CHANGE_PLAYER_NAME,
+    CLOSE_PLAYER_NAME_INPUT,
+    ON_DRAG_START,
+    ON_DROP,
+    SHOW_ORDER_CHECK_RESULT,
+    SHUFFLE_COLORS
+} from "./actions";
+import {GetArrayOfShuffledColors} from "./components/common/ColorsShuffler/ColorsShuffler.helpers";
 
 export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
@@ -11,10 +18,11 @@ export const preloadedWorkspaceState: Workspace = {
 };
 
 export const preloadedComputerScreenState: ComputerScreen = {
-    randomColors: ["red", "blue", "purple", "green"],
+    randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
     puzzle: {
         items: ["a", "b", "c", "d", "e"],
         shuffledItems: ["b", "a", "c", "e", "d"],
+        colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
     }
@@ -50,6 +58,15 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+                [SHUFFLE_COLORS]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        puzzle: {
+                            ...state.puzzle,
+                            colors: GetArrayOfShuffledColors(state.puzzle.items, state.randomColors)
+                        }
+                    })
+                },
                 [ON_DRAG_START]: function (): ComputerScreen {
                     return ({
                         ...state,

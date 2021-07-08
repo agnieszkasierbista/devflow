@@ -11,10 +11,12 @@ export interface DragAndDropBoardOwnProps {
 
 export interface DragAndDropBoardStateProps {
     puzzle: Puzzle,
+    randomColors: string[],
 }
 
 export interface DragAndDropBoardDispatchProps {
     dispatchOnDragStart: (idx: number) => void,
     dispatchOnDrop: (swappedItems: string[]) => void,
-    dispatchShowOrderCheckResult: () => void
+    dispatchShowOrderCheckResult: () => void,
+    dispatchShuffleColors: () => void,
 }

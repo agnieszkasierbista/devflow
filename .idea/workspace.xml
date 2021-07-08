@@ -2,23 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/ColorsShuffler/ColorsShuffler.helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+    </list>
+    <list id="4c7f55c6-1d72-447a-9704-b18b8eab479d" name="Changes by mateu" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
-    <list id="4c7f55c6-1d72-447a-9704-b18b8eab479d" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +50,23 @@
         <option value="$PROJECT_DIR$/src/epics.js" />
       </list>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.ts">
+      <ranges>
+        <range start1="5" end1="6" start2="5" end2="6" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="11" end1="11" start2="11" end2="12" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="16" end1="16" start2="17" end2="21" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/reducers.ts">
+      <ranges>
+        <range start1="1" end1="4" start2="1" end2="11" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="13" end1="14" start2="20" end2="21" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
+        <range start1="17" end1="17" start2="24" end2="25" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+        <range start1="52" end1="52" start2="60" end2="69" changelist="4c7f55c6-1d72-447a-9704-b18b8eab479d" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="72" />
@@ -93,7 +107,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TogetherNotes" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/ColorsShuffler/ColorsShuffler.helpers.ts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -121,6 +136,7 @@
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\ColorsShuffler\ColorsShuffler.helpers.ts" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\PlayerNameInput\PlayerNameInputProps.types.ts" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Overlay\Overlay.types.ts" />
     </key>
@@ -155,7 +171,13 @@
       <workItem from="1625080032924" duration="4623000" />
       <workItem from="1625128079367" duration="6251000" />
       <workItem from="1625158848490" duration="4858000" />
-      <workItem from="1625483834194" duration="12059000" />
+      <workItem from="1625483834194" duration="12349000" />
+      <workItem from="1625589451147" duration="321000" />
+      <workItem from="1625589883149" duration="487000" />
+      <workItem from="1625590419918" duration="1350000" />
+      <workItem from="1625658676298" duration="4127000" />
+      <workItem from="1625681199278" duration="1698000" />
+      <workItem from="1625748616632" duration="1906000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -255,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625163792023</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add DragAndDrop task in the WebBrowser">
+      <created>1625517798194</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625517798194</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -336,7 +365,8 @@
     <MESSAGE value="Allow user to choose player's name and close input when done" />
     <MESSAGE value="Display player's name in the workspace view" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Add DragAndDrop task in the WebBrowser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DragAndDrop task in the WebBrowser" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

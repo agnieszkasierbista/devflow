@@ -1,7 +1,8 @@
 import React from "react"
 import * as R from 'ramda';
 import {DragAndDropBoardProps} from "./DragAndDrop.types";
-import { Puzzle } from "../../model/state";
+import {Puzzle} from "../../model/state";
+import {StyledDraggable} from "./DragAndDropBoard.styled";
 
 
 const checkOrder = (puzzle: Puzzle) => {
@@ -14,20 +15,21 @@ const checkOrder = (puzzle: Puzzle) => {
 };
 
 export const DragAndDropBoard: React.FC<DragAndDropBoardProps> = (props) => {
+
+    React.useEffect(() => {
+        props.dispatchShuffleColors()
+    }, [])
+
     return (
         <div id="puzzle">
             {props.puzzle.shuffledItems.map((val, idx) => {
                 return (
-                    <div
+                    <StyledDraggable
                         draggable="true"
                         key={idx}
-                        style={{
-                            border: '1px solid blue',
-                            display: 'inline-block',
-                            margin: 4,
-                            minWidth: 20,
-                            textAlign: 'center',
-                        }}
+
+                        style={{backgroundColor: props.puzzle.colors[val]}}
+
                         onDragStart={() => props.dispatchOnDragStart(idx)}
                         onDrop={() => {
                             const draggedItemIdx = props.puzzle.beingDragged;
@@ -35,16 +37,19 @@ export const DragAndDropBoard: React.FC<DragAndDropBoardProps> = (props) => {
 
                             props.dispatchOnDrop(swappedItems);
                         }}
-                        onDragOver={(e) => { e.preventDefault(); }}
+                        onDragOver={(e) => {
+                            e.preventDefault();
+                        }}
                     >
                         {val}
-                    </div>
+                    </StyledDraggable>
                 );
             })}
             <div id="puzzle-evaluation">
                 <button
                     onClick={props.dispatchShowOrderCheckResult}
-                    id="checker" >CHECK</button>
+                    id="checker">CHECK
+                </button>
                 {props.puzzle.shouldShowOrderCheckResult && checkOrder(props.puzzle)}
             </div>
         </div>

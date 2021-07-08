@@ -3,6 +3,13 @@ export const CLOSE_PLAYER_NAME_INPUT = "CLOSE_PLAYER_NAME_INPUT";
 export const ON_DRAG_START = 'ON_DRAG_START';
 export const ON_DROP = 'ON_DROP';
 export const SHOW_ORDER_CHECK_RESULT = 'SHOW_ORDER_CHECK_RESULT';
+export const SHUFFLE_COLORS = "SHUFFLE_COLORS";
+
+export function shuffleColors() {
+    return {
+        type: SHUFFLE_COLORS
+    }
+}
 
 export function onDragStart(idx: number) {
     return {
