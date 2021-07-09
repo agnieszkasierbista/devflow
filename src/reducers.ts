@@ -25,7 +25,8 @@ export const preloadedComputerScreenState: ComputerScreen = {
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-    }
+    },
+    codeEditorTabsList: ["config.file", "index.file", "main.file"],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};

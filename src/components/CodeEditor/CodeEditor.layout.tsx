@@ -1,15 +1,16 @@
 import React from "react";
-import { StyledCodeEditor } from "./CodeEditor.styled";
+import {StyledCodeEditor} from "./CodeEditor.styled";
+import {configFilePath, indexFilePath, mainFilePath} from "../../model/paths";
+import {CodeEditorProps} from "./CodeEditor.types";
+import TabBar from "../../TabBar/TabBar";
+
+export const codeEditorTabsPaths = [configFilePath, indexFilePath, mainFilePath];
 
 
-export function CodeEditor() {
+export const CodeEditor: React.FC<CodeEditorProps> = (props) => {
     return (
         <StyledCodeEditor>
-            {'>'}dfiu98y3hqoijfd..................
-            <br/>
-            {'>'}dfiu98y3hqoijfd..................
-            <br/>
-            {'>'}dfiu98y3hqoijfd..................
+            <TabBar/>
         </StyledCodeEditor>
     )
-}
+};

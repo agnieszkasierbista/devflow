@@ -8,4 +8,20 @@ export const StyledCodeEditor = styled.div`
   display: flex;
   height: 77%;
   width: 95%;
-  `;
+`;
+
+export const StyledCodeEditorTab = styled.div`
+  display: flex;
+  border: 2px dashed darkslateblue;
+  background-color: seashell;
+  height: 95%;
+  width: 20%;
+`;
+
+export const StyledTabBar = styled.div`
+  display: flex;
+  border: 2px dashed darkslateblue;
+  background-color: seashell;
+  height: 15%;
+  width: 100%;
+`;

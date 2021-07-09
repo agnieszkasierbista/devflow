@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link, Route, Router, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import {StyledComputerScreen} from "./ComputerScreen.styled";
-import {history} from "../../history";
-import {CodeEditor} from "../CodeEditor/CodeEditor.layout";
+import CodeEditor from "../CodeEditor/CodeEditor";
 import {Taskbar} from "../Taskbar/Taskbar.layout";
 import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 import {WebBrowser} from "../WebBrowser/WebBrowser.layout";

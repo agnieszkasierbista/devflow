@@ -22,6 +22,7 @@ export interface Puzzle {
 export interface ComputerScreen {
     randomColors: string[],
     puzzle: Puzzle,
+    codeEditorTabsList: string[],
 }
 
 export interface GuestSlot {
