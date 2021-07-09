@@ -1,16 +1,15 @@
 import React from "react";
 import {StyledCodeEditor} from "./CodeEditor.styled";
-import {configFilePath, indexFilePath, mainFilePath} from "../../model/paths";
 import {CodeEditorProps} from "./CodeEditor.types";
 import TabBar from "../../TabBar/TabBar";
-
-export const codeEditorTabsPaths = [configFilePath, indexFilePath, mainFilePath];
+import OpenedFiles from "../OpenedFiles/OpenedFiles";
 
 
 export const CodeEditor: React.FC<CodeEditorProps> = (props) => {
     return (
         <StyledCodeEditor>
             <TabBar/>
+            <OpenedFiles/>
         </StyledCodeEditor>
     )
 };

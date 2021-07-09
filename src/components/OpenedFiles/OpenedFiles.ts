@@ -1,13 +1,11 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import {AppState} from "../../model/state";
-import {CodeEditor} from "./CodeEditor.layout";
-
+import {OpenedFiles} from "./OpenedFiles.layout";
 
 export function mapStateToProps(state: AppState) {
     return {
-        codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        openedFiles: state.computerScreen.openedFiles,
+        openedFiles: state.computerScreen.openedFiles
     }
 }
 
@@ -15,4 +13,4 @@ export function mapDispatchToProps(dispatch: Dispatch) {
     return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CodeEditor);
+export default connect(mapStateToProps, mapDispatchToProps)(OpenedFiles);

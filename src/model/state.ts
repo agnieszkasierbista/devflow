@@ -23,6 +23,7 @@ export interface ComputerScreen {
     randomColors: string[],
     puzzle: Puzzle,
     codeEditorTabsList: string[],
+    openedFiles: string[],
 }
 
 export interface GuestSlot {

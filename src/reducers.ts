@@ -27,6 +27,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
         shouldShowOrderCheckResult: false,
     },
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
+    openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
