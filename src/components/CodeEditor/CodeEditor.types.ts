@@ -8,8 +8,7 @@ export interface CodeEditorOwnProps {
 }
 
 export interface CodeEditorStateProps {
-    codeEditorTabsList: string[];
-    openedFiles: string[];
+
 }
 
 export interface CodeEditorDispatchProps {

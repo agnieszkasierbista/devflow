@@ -1,8 +1,8 @@
-import {StyledCodeEditorTab, StyledTabBar} from "../components/CodeEditor/CodeEditor.styled";
+import {StyledCodeEditorTab, StyledTabBar} from "../CodeEditor.styled";
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {TabBarProps} from "./TabBar.types";
-import {codeEditorTabsPaths} from "../components/OpenedFiles/OpenedFiles.layout";
+import {codeEditorTabsPaths} from "../OpenedFiles/OpenedFiles.layout";
 
 export const TabBar: React.FC<TabBarProps> = (props) => {
     return (

@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OpenedFiles/OpenedFiles.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OpenedFiles/OpenedFiles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TabBar/TabBar.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TabBar/TabBar.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
     </list>
     <list id="4c7f55c6-1d72-447a-9704-b18b8eab479d" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,10 +104,11 @@
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\assets\pic" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\CodeEditor" />
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\Communicator" />
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\helpers" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\GuestSlot" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src" />
-      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\workspace" />
-      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\OpenedFiles\OpenedFiles.layout.tsx" />
@@ -164,7 +156,8 @@
       <workItem from="1625681199278" duration="1698000" />
       <workItem from="1625748616632" duration="5869000" />
       <workItem from="1625831532379" duration="4915000" />
-      <workItem from="1625857247990" duration="604000" />
+      <workItem from="1625857247990" duration="5657000" />
+      <workItem from="1625917459866" duration="1194000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -292,7 +285,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625835464154</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Allow a user to navigate through open files in the code editor using navigation tabs">
+      <created>1625858050715</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625858050715</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Display a list of contacts in the communicator">
+      <created>1625918426617</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625918426617</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -376,7 +383,9 @@
     <MESSAGE value="Add DragAndDrop task in the WebBrowser" />
     <MESSAGE value="Decorate draggable blocks with random colors" />
     <MESSAGE value="Show tabs in the code editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show tabs in the code editor" />
+    <MESSAGE value="Allow a user to navigate through open files in the code editor using navigation tabs" />
+    <MESSAGE value="Display a list of contacts in the communicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display a list of contacts in the communicator" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

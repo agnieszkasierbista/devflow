@@ -8,7 +8,7 @@ import {
     SHOW_ORDER_CHECK_RESULT,
     SHUFFLE_COLORS
 } from "./actions";
-import {GetArrayOfShuffledColors} from "./components/common/ColorsShuffler/ColorsShuffler.helpers";
+import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 
 export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
@@ -28,6 +28,11 @@ export const preloadedComputerScreenState: ComputerScreen = {
     },
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
+    contacts: ["John", "Barbara", "Lingling"],
+    conversations: {
+        John: ["Hi!", "Can you finish your task ASAP!!!"],
+        Reply: ["Yes", "No"]
+    }
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
@@ -65,7 +70,7 @@ export const rootReducer = combineReducers({
                         ...state,
                         puzzle: {
                             ...state.puzzle,
-                            colors: GetArrayOfShuffledColors(state.puzzle.items, state.randomColors)
+                            colors: getArrayOfShuffledColors(state.puzzle.items, state.randomColors)
                         }
                     })
                 },

@@ -1,4 +1,4 @@
-import {Puzzle} from "../../../model/state";
+import {Puzzle} from "../model/state";
 import * as R from 'ramda';
 
 export const getRandomColors = (colors: string[], allColors: string[]): string => {
@@ -10,7 +10,7 @@ export const getRandomColors = (colors: string[], allColors: string[]): string =
     return colorsToChooseFrom[Math.round(df)];
 }
 
-export const GetArrayOfShuffledColors = (items: Puzzle['items'], allColors: string[]) => {
+export const getArrayOfShuffledColors = (items: Puzzle['items'], allColors: string[]) => {
 
     return items.reduce((acc, item) => {
         return {

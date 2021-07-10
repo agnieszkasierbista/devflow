@@ -24,6 +24,8 @@ export interface ComputerScreen {
     puzzle: Puzzle,
     codeEditorTabsList: string[],
     openedFiles: string[],
+    contacts: string[],
+    conversations: {[key: string]: string[]}
 }
 
 export interface GuestSlot {

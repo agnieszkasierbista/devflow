@@ -5,7 +5,7 @@ export const StyledCodeEditor = styled.div`
   border: 2px double gray;
   border-radius: 5px;
   color: aliceblue;
-  display: flex;
+  display: block;
   height: 77%;
   width: 95%;
 `;

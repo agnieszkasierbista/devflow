@@ -5,6 +5,7 @@ import CodeEditor from "../CodeEditor/CodeEditor";
 import {Taskbar} from "../Taskbar/Taskbar.layout";
 import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 import {WebBrowser} from "../WebBrowser/WebBrowser.layout";
+import Communicator from '../Communicator/Communicator';
 
 export function ComputerScreen() {
     return (
@@ -24,6 +25,7 @@ export function ComputerScreen() {
 
                 <Route path={communicatorPath}>
                     <Taskbar/>
+                    <Communicator/>
                     <Link to="/">
                         Go back
                     </Link>
