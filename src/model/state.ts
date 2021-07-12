@@ -14,9 +14,24 @@ export interface Workspace {
 export interface Puzzle {
     items: string[];
     shuffledItems: string[];
-    colors: {[key: string]: string};
+    colors: { [key: string]: string };
     beingDragged: number;
     shouldShowOrderCheckResult: boolean;
+}
+
+export interface DialogueOption {
+    events: string,
+    npcName: string,
+    dialogueOption: string,
+    player: { rpl: string, event: string }[]
+}
+
+export interface Conversation {
+    [key: string]: DialogueOption
+}
+
+export interface Conversations {
+    [key: string]: Conversation
 }
 
 export interface ComputerScreen {
@@ -25,7 +40,7 @@ export interface ComputerScreen {
     codeEditorTabsList: string[],
     openedFiles: string[],
     contacts: string[],
-    conversations: {[key: string]: string[]}
+    conversation: Conversation,
 }
 
 export interface GuestSlot {
@@ -35,6 +50,11 @@ export interface GuestSlot {
 export interface WorkspaceHandlers {
     [key: string]: () => Workspace
 }
+
 export interface ComputerScreenHandlers {
+    [key: string]: () => ComputerScreen
+}
+
+export interface ConversationHandlers {
     [key: string]: () => ComputerScreen
 }

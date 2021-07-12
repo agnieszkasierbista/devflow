@@ -1,6 +1,18 @@
 import {ContactsProps} from "./Contacts.types";
 import React from "react";
 import {StyledContact, StyledContacts} from "./Contacts.styled";
+import {Link} from "react-router-dom";
+import {
+    conversationWithBarbaraPath,
+    conversationWithJohnPath,
+    conversationWithLinglingPath
+} from "../../../model/paths";
+
+export const conversationPaths: {[key: string]: string} = {
+    John: conversationWithJohnPath,
+    Barbara: conversationWithBarbaraPath,
+    Lingling: conversationWithLinglingPath
+};
 
 export const Contacts: React.FC<ContactsProps> = (props) => {
     return (
@@ -8,12 +20,18 @@ export const Contacts: React.FC<ContactsProps> = (props) => {
             {
                 props.contacts.map((contact, idx) => {
                     return (
-                        <StyledContact key={idx}>
-                            {contact}
-                        </StyledContact>
+                        <Link key={idx}
+                              to={conversationPaths[contact]}
+                              onClick={() => props.dispatchInitializeConversation(contact)}
+                        >
+                            <StyledContact>
+                                {contact}
+                            </StyledContact>
+                        </Link>
                     )
                 })
             }
         </StyledContacts>
     )
 }
+

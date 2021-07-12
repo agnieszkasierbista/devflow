@@ -14,5 +14,5 @@ export interface ContactsStateProps {
 }
 
 export interface ContactsDispatchProps {
-
+    dispatchInitializeConversation: (contact: string) => void
 }

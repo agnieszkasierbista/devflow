@@ -3,12 +3,28 @@ import {ComputerScreen, ComputerScreenHandlers, GuestSlot, Workspace, WorkspaceH
 import {
     CHANGE_PLAYER_NAME,
     CLOSE_PLAYER_NAME_INPUT,
+    END_CONVERSATION,
+    INITIALIZE_CONVERSATION,
     ON_DRAG_START,
     ON_DROP,
     SHOW_ORDER_CHECK_RESULT,
-    SHUFFLE_COLORS
+    SHUFFLE_COLORS,
+    START_CONVERSATION
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
+import {conversations} from "./conversations/conversations";
+import {conversationWithJohn} from "./conversations/conversationWithJohn";
+
+export const phase0 =
+    {
+        events: "",
+        npcName: "",
+        dialogueOption: "",
+        player: [
+            {rpl: '', event: ''},
+            {rpl: '', event: ''}
+        ]
+    };
 
 export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
@@ -29,10 +45,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "Lingling"],
-    conversations: {
-        John: ["Hi!", "Can you finish your task ASAP!!!"],
-        Reply: ["Yes", "No"]
-    }
+    conversation: {
+        phase: phase0
+    },
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
@@ -65,6 +80,36 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+                [END_CONVERSATION]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        conversation: {
+                            ...state.conversation,
+                            phase: phase0
+                        }
+
+                    })
+                },
+                [START_CONVERSATION]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        conversation: {
+                            ...state.conversation,
+                            phase: {
+                                ...conversationWithJohn.phase2
+                            }
+                        }
+                    })
+                },
+                [INITIALIZE_CONVERSATION]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        conversation: {
+                            phase: conversationWithJohn.phase1
+
+                        }
+                    })
+                },
                 [SHUFFLE_COLORS]: function (): ComputerScreen {
                     return ({
                         ...state,
@@ -111,6 +156,6 @@ export const rootReducer = combineReducers({
         guestSlot: function (state = preloadedGuestSlotState, action) {
 
             return state;
-        },
+        }
     }
 );

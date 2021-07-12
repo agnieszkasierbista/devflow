@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.styled.ts" afterDir="false" />
+    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="Allow user to">
+      <change afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithJohn.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conversations/conversations.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
-    <list id="4c7f55c6-1d72-447a-9704-b18b8eab479d" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +171,10 @@
       <workItem from="1625748616632" duration="5869000" />
       <workItem from="1625831532379" duration="4915000" />
       <workItem from="1625857247990" duration="5657000" />
-      <workItem from="1625917459866" duration="1194000" />
+      <workItem from="1625917459866" duration="9465000" />
+      <workItem from="1626089967394" duration="8961000" />
+      <workItem from="1626102261431" duration="2262000" />
+      <workItem from="1626106050346" duration="5025000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -299,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625918426617</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Display a list of contacts in the communicator">
+      <created>1625918689670</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1625918689670</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

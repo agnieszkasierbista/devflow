@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledContacts = styled.div`
   border-radius: 2px;
   border: 2px solid black;
-  height: 100%;
+  height: 95%;
   width: 20%;
 `;
 

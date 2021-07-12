@@ -4,6 +4,30 @@ export const ON_DRAG_START = 'ON_DRAG_START';
 export const ON_DROP = 'ON_DROP';
 export const SHOW_ORDER_CHECK_RESULT = 'SHOW_ORDER_CHECK_RESULT';
 export const SHUFFLE_COLORS = "SHUFFLE_COLORS";
+export const START_CONVERSATION = "START_CONVERSATION";
+export const END_CONVERSATION = "END_CONVERSATION";
+export const INITIALIZE_CONVERSATION = "INITIALIZE_CONVERSATION";
+
+export function initializeConversation(contact: string) {
+    return {
+        type: INITIALIZE_CONVERSATION,
+        payload: contact
+    }
+}
+
+export function startConversation(event: string) {
+    return{
+        type: START_CONVERSATION,
+        payload: event
+    }
+}
+
+export function endConversation(event: string) {
+    return{
+        type: END_CONVERSATION,
+        payload: event
+    }
+}
 
 export function shuffleColors() {
     return {

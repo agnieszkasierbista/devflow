@@ -4,3 +4,6 @@ export const webBrowserPath = '/web-browser';
 export const configFilePath = '/code-editor/config-file';
 export const indexFilePath = '/code-editor/index-file';
 export const mainFilePath = '/code-editor/main-file';
+export const conversationWithJohnPath = '/communicator/conversation-with-john';
+export const conversationWithBarbaraPath = '/communicator/conversation-with-barbara';
+export const conversationWithLinglingPath = '/communicator/conversation-with-lingling';
