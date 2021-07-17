@@ -47,7 +47,8 @@ export const preloadedComputerScreenState: ComputerScreen = {
             {rpl: '', event: ''},
             {rpl: '', event: ''}
         ]
-    }
+    },
+    currentConversationHistory: []
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
@@ -83,38 +84,79 @@ export const rootReducer = combineReducers({
                 [DELAY_WORK]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        currentConversationHistory: state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        )
+
                     })
                 },
                 [START_WORK]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        currentConversationHistory: state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        )
                     })
                 },
                 [REJECT]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        currentConversationHistory: state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        )
+
                     })
                 },
                 [READY]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        currentConversationHistory: state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        )
+
                     })
                 },
                 [END_CONVERSATION]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        currentConversationHistory: state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        )
+
+
                     })
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
                     return ({
                         ...state,
                         currentContact: action.payload,
-                        currentConversationPhase: state.conversations[action.payload][0]
+                        currentConversationPhase: state.conversations[action.payload][0],
+                        currentConversationHistory: state.currentConversationHistory.length === 0
+                            ? state.currentConversationHistory
+                            : state.currentConversationHistory.concat(
+                                (action.payload + ": " + state.conversations[action.payload][state.conversations[action.payload].length - 1].npcDialogueOption)
+                            )
+
                     })
                 },
                 [INITIALIZE_CONVERSATIONS]: function (): ComputerScreen {
