@@ -21,7 +21,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                             <div>
                                 {props.currentConversationHistory.map((line) => {
                                     return (
-                                        line || "EMPTY"
+                                        <div>{line}</div> || "EMPTY"
                                     )
                                 })}
 
@@ -33,8 +33,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                 {
                                     props.currentConversationPhase.npcName
                                 }
-                                :
-                                <br/>
+                                {": "}
                                 {
                                     props.currentConversationPhase.npcDialogueOption
                                 }

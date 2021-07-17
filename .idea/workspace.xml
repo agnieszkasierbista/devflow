@@ -18,6 +18,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" root0="FORCE_HIGHLIGHTING" />
@@ -170,7 +171,7 @@
       <workItem from="1626267016491" duration="406000" />
       <workItem from="1626434841389" duration="6483000" />
       <workItem from="1626460934122" duration="3706000" />
-      <workItem from="1626519587054" duration="7138000" />
+      <workItem from="1626519587054" duration="7872000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -347,7 +348,21 @@
       <option name="project" value="LOCAL" />
       <updated>1626521125063</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Show user conversation history">
+      <created>1626526934897</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1626526934897</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Show user conversation history">
+      <created>1626527303248</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1626527303248</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -435,7 +450,8 @@
     <MESSAGE value="Allow user to have a conversation with an npc via communicator" />
     <MESSAGE value="Allow user to finish a conversation with npc" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Show user conversation history" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show user conversation history" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />
