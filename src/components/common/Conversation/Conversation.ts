@@ -9,7 +9,8 @@ import {ConversationDispatchProps, ConversationStateProps} from "./Conversation.
 export function mapStateToProps(state: AppState): ConversationStateProps {
     return {
         conversations: state.computerScreen.conversations,
-        currentConversationPhase: state.computerScreen.currentConversationPhase
+        currentConversationPhase: state.computerScreen.currentConversationPhase,
+        currentConversationHistory: state.computerScreen.currentConversationHistory
     }
 }
 

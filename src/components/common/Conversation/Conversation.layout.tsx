@@ -19,37 +19,55 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                         <Route key={props.currentConversationPhase.npcName}
                                path={conversationPaths[props.currentConversationPhase.npcName]}>
                             <div>
+                                {props.currentConversationHistory.map((line) => {
+                                    return (
+                                        <div>{line}</div> || "EMPTY"
+                                    )
+                                })}
+
+
+                            </div>
+
+
+                            <div>
                                 {
                                     props.currentConversationPhase.npcName
                                 }
-                                :
-                                <br/>
+                                {": "}
                                 {
                                     props.currentConversationPhase.npcDialogueOption
                                 }
                             </div>
-                            <div>Me:</div>
+                            {
+                                props.currentConversationPhase.event !== "END_CONVERSATION"
+                                    ?
+                                    <div>Me:</div>
+
+                                    :
+                                    null
+                            }
+
                             {props.currentConversationPhase.playerDialogueOptions.map((option, idx) => {
 
                                 return (
                                     <>
 
-                                    <button key={option.event} onClick={() => {
-                                        const onClickHandlers: OnClickHandlers = {
-                                            [START_CONVERSATION]: props.dispatchStartConversation,
-                                            [END_CONVERSATION]: props.dispatchEndConversation,
-                                            [READY]: props.dispatchReady,
-                                            [REJECT]: props.dispatchReject,
-                                            [START_WORK]: props.dispatchStartWork,
-                                            [DELAY_WORK]: props.dispatchDelayWork
-                                        }
+                                        <button key={option.event} onClick={() => {
+                                            const onClickHandlers: OnClickHandlers = {
+                                                [START_CONVERSATION]: props.dispatchStartConversation,
+                                                [END_CONVERSATION]: props.dispatchEndConversation,
+                                                [READY]: props.dispatchReady,
+                                                [REJECT]: props.dispatchReject,
+                                                [START_WORK]: props.dispatchStartWork,
+                                                [DELAY_WORK]: props.dispatchDelayWork
+                                            }
 
-                                        return onClickHandlers[option.event]
-                                            ? onClickHandlers[option.event](option.event)
-                                            : console.log(option.event)
-                                    }}>
-                                        {idx + 1}: {option.rpl}
-                                    </button>
+                                            return onClickHandlers[option.event]
+                                                ? onClickHandlers[option.event](option.event)
+                                                : console.log(option.event)
+                                        }}>
+                                            {idx + 1}: {option.rpl}
+                                        </button>
                                     </>
                                 )
                             })}

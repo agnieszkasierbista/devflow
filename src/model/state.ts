@@ -40,7 +40,8 @@ export interface ComputerScreen {
     contacts: string[],
     conversations: Conversations,
     currentConversationPhase: DialogueOption,
-    currentContact: string
+    currentContact: string,
+    currentConversationHistory: string[]
 }
 
 export interface GuestSlot {

@@ -6,5 +6,5 @@ export const StyledCommunicatorConversation = styled.div`
   border-radius: 2px;
   border: 2px solid black;
   height: 95%;
-  
+  overflow-y: scroll;
 `;

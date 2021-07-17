@@ -11,7 +11,8 @@ export interface ConversationOwnProps {
 
 export interface ConversationStateProps {
     conversations: Conversations,
-    currentConversationPhase: DialogueOption
+    currentConversationPhase: DialogueOption,
+    currentConversationHistory: string[]
 }
 
 export interface ConversationDispatchProps {
