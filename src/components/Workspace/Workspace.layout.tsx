@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComputerScreen} from "../ComputerScreen/ComputerScreen.layout";
+import ComputerScreen from "../ComputerScreen/ComputerScreen";
 import {GuestSlot} from "../GuestSlot/GuestSlot";
 import {StyledWorkspace} from "./Workspace.styled";
 import Overlay from "../common/Overlay/Overlay";

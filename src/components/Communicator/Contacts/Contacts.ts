@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import { initializeConversation } from "../../../actions";
+import {startConversation} from "../../../actions";
 import {AppState} from "../../../model/state";
 import {Contacts} from "./Contacts.layout";
 import {ContactsDispatchProps, ContactsStateProps} from "./Contacts.types";
@@ -9,14 +9,16 @@ import {ContactsDispatchProps, ContactsStateProps} from "./Contacts.types";
 function mapStateToProps(state: AppState): ContactsStateProps {
     return {
         contacts: state.computerScreen.contacts,
+        conversations: state.computerScreen.conversations,
+        currentConversationPhase: state.computerScreen.currentConversationPhase
     }
 }
 
 function mapDispatchToProps(dispatch: Dispatch): ContactsDispatchProps {
     return {
 
-        dispatchInitializeConversation: function (contact) {
-            return dispatch(initializeConversation(contact))
+        dispatchStartConversation: function (contact) {
+            return dispatch(startConversation(contact))
     }
 
     }

@@ -20,15 +20,13 @@ export interface Puzzle {
 }
 
 export interface DialogueOption {
-    events: string,
+    event: string,
     npcName: string,
-    dialogueOption: string,
-    player: { rpl: string, event: string }[]
+    npcDialogueOption: string,
+    playerDialogueOptions: { rpl: string, event: string }[]
 }
 
-export interface Conversation {
-    [key: string]: DialogueOption
-}
+export type Conversation = Array<DialogueOption>
 
 export interface Conversations {
     [key: string]: Conversation
@@ -40,7 +38,9 @@ export interface ComputerScreen {
     codeEditorTabsList: string[],
     openedFiles: string[],
     contacts: string[],
-    conversation: Conversation,
+    conversations: Conversations,
+    currentConversationPhase: DialogueOption,
+    currentContact: string
 }
 
 export interface GuestSlot {
@@ -57,4 +57,8 @@ export interface ComputerScreenHandlers {
 
 export interface ConversationHandlers {
     [key: string]: () => ComputerScreen
+}
+
+export interface OnClickHandlers {
+    [key: string]: (event: string) => void
 }

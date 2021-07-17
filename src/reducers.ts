@@ -3,28 +3,20 @@ import {ComputerScreen, ComputerScreenHandlers, GuestSlot, Workspace, WorkspaceH
 import {
     CHANGE_PLAYER_NAME,
     CLOSE_PLAYER_NAME_INPUT,
+    DELAY_WORK,
     END_CONVERSATION,
-    INITIALIZE_CONVERSATION,
+    INITIALIZE_CONVERSATIONS,
     ON_DRAG_START,
     ON_DROP,
+    READY,
+    REJECT,
     SHOW_ORDER_CHECK_RESULT,
     SHUFFLE_COLORS,
-    START_CONVERSATION
+    START_CONVERSATION,
+    START_WORK
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
-import {conversationWithJohn} from "./conversations/conversationWithJohn";
-
-export const phase0 =
-    {
-        events: "",
-        npcName: "",
-        dialogueOption: "",
-        player: [
-            {rpl: '', event: ''},
-            {rpl: '', event: ''}
-        ]
-    };
 
 export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
@@ -45,9 +37,17 @@ export const preloadedComputerScreenState: ComputerScreen = {
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "Lingling"],
-    conversation: {
-        phase: phase0
-    },
+    currentContact: "",
+    conversations: {},
+    currentConversationPhase: {
+        event: "",
+        npcName: "",
+        npcDialogueOption: "",
+        playerDialogueOptions: [
+            {rpl: '', event: ''},
+            {rpl: '', event: ''}
+        ]
+    }
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
@@ -80,34 +80,47 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+                [DELAY_WORK]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                    })
+                },
+                [START_WORK]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                    })
+                },
+                [REJECT]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                    })
+                },
+                [READY]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
+                    })
+                },
                 [END_CONVERSATION]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        conversation: {
-                            ...state.conversation,
-                            phase: phase0
-                        }
-
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase
                     })
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        conversation: {
-                            ...state.conversation,
-                            phase: {
-                                ...conversationWithJohn.phase2
-                            }
-                        }
+                        currentContact: action.payload,
+                        currentConversationPhase: state.conversations[action.payload][0]
                     })
                 },
-                [INITIALIZE_CONVERSATION]: function (): ComputerScreen {
+                [INITIALIZE_CONVERSATIONS]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        conversation: {
-                            phase: conversationWithJohn.phase1
-
-                        }
+                        conversations: conversations,
                     })
                 },
                 [SHUFFLE_COLORS]: function (): ComputerScreen {

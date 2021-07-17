@@ -6,24 +6,56 @@ export const SHOW_ORDER_CHECK_RESULT = 'SHOW_ORDER_CHECK_RESULT';
 export const SHUFFLE_COLORS = "SHUFFLE_COLORS";
 export const START_CONVERSATION = "START_CONVERSATION";
 export const END_CONVERSATION = "END_CONVERSATION";
-export const INITIALIZE_CONVERSATION = "INITIALIZE_CONVERSATION";
+export const INITIALIZE_CONVERSATIONS = "INITIALIZE_CONVERSATIONS";
+export const READY = "READY";
+export const REJECT = "REJECT";
+export const START_WORK = "START_WORK";
+export const DELAY_WORK = "DELAY_WORK";
 
-export function initializeConversation(contact: string) {
+export function ready(event: string) {
     return {
-        type: INITIALIZE_CONVERSATION,
-        payload: contact
-    }
-}
-
-export function startConversation(event: string) {
-    return{
-        type: START_CONVERSATION,
+        type: READY,
         payload: event
     }
 }
 
+export function reject(event: string) {
+    return {
+        type: REJECT,
+        payload: event
+    }
+}
+
+export function delayWork(event: string) {
+    return {
+        type: DELAY_WORK,
+        payload: event
+    }
+}
+
+export function startWork(event: string) {
+    return {
+        type: START_WORK,
+        payload: event
+    }
+}
+
+export function initializeConversations(contacts: string[]) {
+    return {
+        type: INITIALIZE_CONVERSATIONS,
+        payload: contacts
+    }
+}
+
+export function startConversation(contact: string) {
+    return {
+        type: START_CONVERSATION,
+        payload: contact
+    }
+}
+
 export function endConversation(event: string) {
-    return{
+    return {
         type: END_CONVERSATION,
         payload: event
     }

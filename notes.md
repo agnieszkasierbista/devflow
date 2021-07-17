@@ -17,3 +17,4 @@ event: null
     a: 'ok, so do this!!!!',
     b: [{odp: 'ok, immediatelly!', event: 'START_WORK'}, {odp: 'go fuck yourself!', event: 'GO_HOME'}]
 } 
+

@@ -6,6 +6,12 @@ import Contacts from "./Contacts/Contacts";
 
 
 export const Communicator: React.FC<CommunicatorProps> = (props) => {
+
+    React.useEffect(() => {
+        props.dispatchInitializeConversations(props.contacts)
+    }, [])
+
+
     return (
         <StyledCommunicator>
             <Contacts/>

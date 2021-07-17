@@ -8,7 +8,7 @@ import {
     conversationWithLinglingPath
 } from "../../../model/paths";
 
-export const conversationPaths: {[key: string]: string} = {
+export const conversationPaths: { [key: string]: string } = {
     John: conversationWithJohnPath,
     Barbara: conversationWithBarbaraPath,
     Lingling: conversationWithLinglingPath
@@ -22,7 +22,7 @@ export const Contacts: React.FC<ContactsProps> = (props) => {
                     return (
                         <Link key={idx}
                               to={conversationPaths[contact]}
-                              onClick={() => props.dispatchInitializeConversation(contact)}
+                              onClick={() => props.dispatchStartConversation(contact)}
                         >
                             <StyledContact>
                                 {contact}

@@ -6,8 +6,9 @@ import {Taskbar} from "../Taskbar/Taskbar.layout";
 import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 import {WebBrowser} from "../WebBrowser/WebBrowser.layout";
 import Communicator from '../Communicator/Communicator';
+import {ComputerScreenProps} from './ComputerScreen.types';
 
-export function ComputerScreen() {
+export const ComputerScreen: React.FC<ComputerScreenProps> = (props) => {
     return (
         <StyledComputerScreen>
             <Switch>
@@ -41,4 +42,4 @@ export function ComputerScreen() {
             </Switch>
         </StyledComputerScreen>
     )
-}
+};

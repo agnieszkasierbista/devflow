@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {endConversation, startConversation} from "../../../actions";
+import {delayWork, endConversation, ready, reject, startConversation, startWork} from "../../../actions";
 import {AppState} from "../../../model/state";
 import {Conversation} from "./Conversation.layout";
 import {ConversationDispatchProps, ConversationStateProps} from "./Conversation.types";
@@ -8,17 +8,30 @@ import {ConversationDispatchProps, ConversationStateProps} from "./Conversation.
 
 export function mapStateToProps(state: AppState): ConversationStateProps {
     return {
-        conversation: state.computerScreen.conversation,
+        conversations: state.computerScreen.conversations,
+        currentConversationPhase: state.computerScreen.currentConversationPhase
     }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch): ConversationDispatchProps {
     return {
-        dispatchStartConversation: function (event) {
-            dispatch(startConversation(event))
+        dispatchStartConversation: function (contact) {
+            dispatch(startConversation(contact))
         },
         dispatchEndConversation: function (event) {
             dispatch(endConversation(event))
+        },
+        dispatchReady: function (event) {
+            dispatch(ready(event))
+        },
+        dispatchReject: function (event) {
+            dispatch(reject(event))
+        },
+        dispatchStartWork: function (event) {
+            dispatch(startWork(event))
+        },
+        dispatchDelayWork: function (event) {
+            dispatch(delayWork(event))
         }
     }
 }

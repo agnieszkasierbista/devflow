@@ -1,4 +1,4 @@
-import { Conversation } from "../../../model/state";
+import {Conversation, Conversations, DialogueOption} from "../../../model/state";
 
 export interface ConversationProps extends ConversationOwnProps,
     ConversationStateProps,
@@ -10,10 +10,15 @@ export interface ConversationOwnProps {
 }
 
 export interface ConversationStateProps {
-    conversation: Conversation,
+    conversations: Conversations,
+    currentConversationPhase: DialogueOption
 }
 
 export interface ConversationDispatchProps {
     dispatchStartConversation: (event: string) => void,
-    dispatchEndConversation: (event:string) => void,
+    dispatchEndConversation: (event: string) => void,
+    dispatchReady: (event: string) => void,
+    dispatchReject: (event: string) => void,
+    dispatchStartWork: (event: string) => void,
+    dispatchDelayWork: (event: string) => void
 }

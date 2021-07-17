@@ -1,3 +1,5 @@
+import {Conversations, DialogueOption} from "../../../model/state";
+
 export interface ContactsProps extends ContactsOwnProps,
     ContactsStateProps,
     ContactsDispatchProps {
@@ -11,8 +13,10 @@ type Contact = string;
 
 export interface ContactsStateProps {
     contacts: Contact[],
+    conversations: Conversations,
+    currentConversationPhase: DialogueOption
 }
 
 export interface ContactsDispatchProps {
-    dispatchInitializeConversation: (contact: string) => void
+    dispatchStartConversation: (contact: string) => void
 }
