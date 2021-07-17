@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conversations/conversationWithJohn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversations/conversationWithJohn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversations/conversations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
-    <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
-    </list>
+    <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,15 +41,6 @@
         <option value="$PROJECT_DIR$/src/epics.js" />
       </list>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="4c064103-327b-4691-a9b0-72a6b1e7eb66" />
-        <range start1="12" end1="13" start2="12" end2="14" changelist="cd174c8c-5dd2-4a10-8256-5e0f68971e34" />
-        <range start1="17" end1="18" start2="18" end2="23" changelist="4c064103-327b-4691-a9b0-72a6b1e7eb66" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="72" />
@@ -195,7 +166,7 @@
       <workItem from="1626267016491" duration="406000" />
       <workItem from="1626434841389" duration="6483000" />
       <workItem from="1626460934122" duration="3706000" />
-      <workItem from="1626519587054" duration="611000" />
+      <workItem from="1626519587054" duration="1436000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -351,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1626111442058</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Allow user to finish a conversation with npc">
+      <created>1626520522688</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1626520522688</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Refactor">
+      <created>1626520737067</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1626520737067</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -431,14 +416,15 @@
     <MESSAGE value="Update .gitignore file" />
     <MESSAGE value="Allow user to choose player's name and close input when done" />
     <MESSAGE value="Display player's name in the workspace view" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Add DragAndDrop task in the WebBrowser" />
     <MESSAGE value="Decorate draggable blocks with random colors" />
     <MESSAGE value="Show tabs in the code editor" />
     <MESSAGE value="Allow a user to navigate through open files in the code editor using navigation tabs" />
     <MESSAGE value="Display a list of contacts in the communicator" />
     <MESSAGE value="Allow user to have a conversation with an npc via communicator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow user to have a conversation with an npc via communicator" />
+    <MESSAGE value="Allow user to finish a conversation with npc" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

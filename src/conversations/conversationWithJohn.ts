@@ -28,7 +28,7 @@ export const conversationWithJohn: Conversation = [
         npcName: 'John',
         npcDialogueOption: 'ok,ok, but better be careful',
         playerDialogueOptions: [
-            {rpl: 'yes, you too!', event: 'END_CONVERSATION'},
+            {rpl: 'yes, you too! bye!', event: 'END_CONVERSATION'},
         ]
     },
 

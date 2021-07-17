@@ -24,14 +24,16 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                 }
                                 :
                                 <br/>
-                                Me:
                                 {
                                     props.currentConversationPhase.npcDialogueOption
                                 }
                             </div>
+                            <div>Me:</div>
                             {props.currentConversationPhase.playerDialogueOptions.map((option, idx) => {
 
                                 return (
+                                    <>
+
                                     <button key={option.event} onClick={() => {
                                         const onClickHandlers: OnClickHandlers = {
                                             [START_CONVERSATION]: props.dispatchStartConversation,
@@ -48,6 +50,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                     }}>
                                         {idx + 1}: {option.rpl}
                                     </button>
+                                    </>
                                 )
                             })}
 

@@ -1,4 +1,4 @@
-import {Conversation, Conversations, DialogueOption} from "../../../model/state";
+import {Conversations, DialogueOption} from "../../../model/state";
 
 export interface ConversationProps extends ConversationOwnProps,
     ConversationStateProps,
