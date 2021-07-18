@@ -36,7 +36,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     },
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
-    contacts: ["John", "Barbara", "Lingling"],
+    contacts: ["John", "Barbara", "LingLing"],
     currentContact: "",
     conversations: {},
     currentConversationPhase: {
@@ -48,7 +48,8 @@ export const preloadedComputerScreenState: ComputerScreen = {
             {rpl: '', event: ''}
         ]
     },
-    currentConversationHistory: []
+    currentConversationHistory: [],
+    conversationsHistory: {}
 };
 
 export const preloadedGuestSlotState: GuestSlot = {};
@@ -141,9 +142,16 @@ export const rootReducer = combineReducers({
                                 (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
                                 ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
                             ].filter((x) => x)
-                        )
-
-
+                        ),
+                        conversationsHistory:
+                            {...state.conversationsHistory,
+                                [state.currentContact]: state.currentConversationHistory.concat(
+                                [
+                                    (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                    ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                    (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                ].filter((x) => x)
+                            )}
                     })
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
@@ -151,11 +159,9 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentContact: action.payload,
                         currentConversationPhase: state.conversations[action.payload][0],
-                        currentConversationHistory: state.currentConversationHistory.length === 0
-                            ? state.currentConversationHistory
-                            : state.currentConversationHistory.concat(
-                                (action.payload + ": " + state.conversations[action.payload][state.conversations[action.payload].length - 1].npcDialogueOption)
-                            )
+                        currentConversationHistory: state.conversationsHistory[action.payload]
+                            ? state.conversationsHistory[action.payload]
+                            : []
 
                     })
                 },

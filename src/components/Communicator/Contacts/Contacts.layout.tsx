@@ -11,7 +11,7 @@ import {
 export const conversationPaths: { [key: string]: string } = {
     John: conversationWithJohnPath,
     Barbara: conversationWithBarbaraPath,
-    Lingling: conversationWithLinglingPath
+    LingLing: conversationWithLinglingPath
 };
 
 export const Contacts: React.FC<ContactsProps> = (props) => {

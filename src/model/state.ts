@@ -41,7 +41,8 @@ export interface ComputerScreen {
     conversations: Conversations,
     currentConversationPhase: DialogueOption,
     currentContact: string,
-    currentConversationHistory: string[]
+    currentConversationHistory: string[],
+    conversationsHistory: {[key: string]: string[]}
 }
 
 export interface GuestSlot {

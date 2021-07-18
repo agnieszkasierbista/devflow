@@ -28,7 +28,6 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
 
                             </div>
 
-
                             <div>
                                 {
                                     props.currentConversationPhase.npcName
@@ -73,7 +72,6 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                             })}
 
                         </Route>
-
 
                     </Switch>
                 </StyledCommunicatorConversation>
