@@ -8,3 +8,7 @@ export const StyledCommunicatorConversation = styled.div`
   height: 95%;
   overflow-y: scroll;
 `;
+
+export const StyledLine = styled.div`
+    border: 1px solid red;
+`;

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithBarbara.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithLingLing.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversations/conversations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
@@ -25,6 +24,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" root0="FORCE_HIGHLIGHTING" />
@@ -106,7 +113,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -179,7 +186,12 @@
       <workItem from="1626460934122" duration="3706000" />
       <workItem from="1626519587054" duration="7872000" />
       <workItem from="1626548623402" duration="1050000" />
-      <workItem from="1626608415742" duration="5062000" />
+      <workItem from="1626608415742" duration="7946000" />
+      <workItem from="1626686359157" duration="666000" />
+      <workItem from="1626687062214" duration="109000" />
+      <workItem from="1626687204892" duration="5488000" />
+      <workItem from="1626780001590" duration="8233000" />
+      <workItem from="1626874333448" duration="3420000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -370,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626527303248</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Allow a user to check conversation history for every previous conversation">
+      <created>1626614971276</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1626614971276</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -459,7 +478,12 @@
     <MESSAGE value="Allow user to finish a conversation with npc" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Show user conversation history" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show user conversation history" />
+    <MESSAGE value="Allow a user to check conversation history for every previous conversation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to check conversation history for every previous conversation" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/manifest.json" />

@@ -1,13 +1,26 @@
 import {ConversationProps} from "./Conversation.types";
 import React from "react";
 import {Route, Switch} from "react-router-dom";
-import {StyledCommunicatorConversation} from "./Conversation.styled";
+import {StyledCommunicatorConversation, StyledLine} from "./Conversation.styled";
 import {conversationPaths} from "../../Communicator/Contacts/Contacts.layout";
 import {DELAY_WORK, END_CONVERSATION, READY, REJECT, START_CONVERSATION, START_WORK} from "../../../actions";
 import {OnClickHandlers} from "../../../model/state";
 
+function isEmpty(obj: {}) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
+
 
 export const Conversation: React.FC<ConversationProps> = (props) => {
+
+    const currentLine = props.currentConversationPhase.npcName + ": " + props.currentConversationPhase.npcDialogueOption
+    ;
+
 
     return (
         props.currentConversationPhase.event !== ""
@@ -19,9 +32,11 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                         <Route key={props.currentConversationPhase.npcName}
                                path={conversationPaths[props.currentConversationPhase.npcName]}>
                             <div>
-                                {props.currentConversationHistory.map((line) => {
+                                {props.currentConversationHistory.filter(function(x, idx, ary) {
+                                    return x !== ary[idx - 1];
+                                }).map((line) => {
                                     return (
-                                        <div>{line}</div> || "EMPTY"
+                                        <StyledLine>{line}</StyledLine> || "EMPTY"
                                     )
                                 })}
 
@@ -30,12 +45,19 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
 
                             <div>
                                 {
-                                    props.currentConversationPhase.npcName
+                                    currentLine === props.currentConversationHistory[props.currentConversationHistory.length - 1]
+                                    ?
+                                        ""
+                                        :
+                                        currentLine
                                 }
-                                {": "}
-                                {
-                                    props.currentConversationPhase.npcDialogueOption
-                                }
+                                {/*{*/}
+                                {/*    props.currentConversationPhase.npcName*/}
+                                {/*}*/}
+                                {/*{": "}*/}
+                                {/*{*/}
+                                {/*    props.currentConversationPhase.npcDialogueOption*/}
+                                {/*}*/}
                             </div>
                             {
                                 props.currentConversationPhase.event !== "END_CONVERSATION"

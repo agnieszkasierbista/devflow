@@ -91,7 +91,19 @@ export const rootReducer = combineReducers({
                                 (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
                                 ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
                             ].filter((x) => x)
-                        )
+                        ),
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.currentConversationHistory.concat(
+                                    [
+                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                    ].filter((x) => x)
+                                )
+                            }
+
 
                     })
                 },
@@ -99,12 +111,33 @@ export const rootReducer = combineReducers({
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory.concat(
+                        currentConversationHistory: state.currentConversationHistory[state.currentConversationHistory.length - 1] === (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption)
+                            ?
+                            state.currentConversationHistory.concat(
                             [
                                 (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
                                 ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
                             ].filter((x) => x)
                         )
+                            :
+                            state.currentConversationHistory.concat(
+                            [
+                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
+                            ].filter((x) => x)
+                        ),
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.currentConversationHistory.concat(
+                                    [
+                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                    ].filter((x) => x)
+                                )
+                            }
+
                     })
                 },
                 [REJECT]: function (): ComputerScreen {
@@ -116,7 +149,18 @@ export const rootReducer = combineReducers({
                                 (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
                                 ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
                             ].filter((x) => x)
-                        )
+                        ),
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.currentConversationHistory.concat(
+                                    [
+                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                    ].filter((x) => x)
+                                )
+                            }
 
                     })
                 },
@@ -129,7 +173,19 @@ export const rootReducer = combineReducers({
                                 (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
                                 ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
                             ].filter((x) => x)
-                        )
+                        ),
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.currentConversationHistory.concat(
+                                    [
+                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                    ].filter((x) => x)
+                                )
+                            }
+
 
                     })
                 },
@@ -144,21 +200,46 @@ export const rootReducer = combineReducers({
                             ].filter((x) => x)
                         ),
                         conversationsHistory:
-                            {...state.conversationsHistory,
+                            {
+                                ...state.conversationsHistory,
                                 [state.currentContact]: state.currentConversationHistory.concat(
-                                [
-                                    (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                    ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                    (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                ].filter((x) => x)
-                            )}
+                                    [
+                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
+                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
+                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
+                                    ].filter((x) => x)
+                                )
+                            }
                     })
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
+
+                    function isEmpty(obj: {}) {
+                        for (const key in obj) {
+                            if (obj.hasOwnProperty(key))
+                                return false;
+                        }
+                        return true;
+                    }
+
                     return ({
                         ...state,
                         currentContact: action.payload,
-                        currentConversationPhase: state.conversations[action.payload][0],
+                        currentConversationPhase:
+                            !isEmpty(state.conversationsHistory)
+                                ? (state.conversationsHistory[action.payload]
+                                    ? (state.conversations[action.payload]
+                                            .find(
+                                                (phase) => (
+                                                    ([action.payload] + ": " + phase.npcDialogueOption) ===
+                                                    state.conversationsHistory[action.payload][state.conversationsHistory[action.payload].length - 1]
+                                                )
+                                            )
+                                    ) || state.conversations[action.payload][0]
+                                    : state.conversations[action.payload][0]
+                                )
+                                : state.conversations[action.payload][0],
+
                         currentConversationHistory: state.conversationsHistory[action.payload]
                             ? state.conversationsHistory[action.payload]
                             : []

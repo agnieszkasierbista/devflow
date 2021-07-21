@@ -10,7 +10,9 @@ export function mapStateToProps(state: AppState): ConversationStateProps {
     return {
         conversations: state.computerScreen.conversations,
         currentConversationPhase: state.computerScreen.currentConversationPhase,
-        currentConversationHistory: state.computerScreen.currentConversationHistory
+        currentConversationHistory: state.computerScreen.currentConversationHistory,
+        currentContact: state.computerScreen.currentContact,
+        conversationsHistory: state.computerScreen.conversationsHistory
     }
 }
 

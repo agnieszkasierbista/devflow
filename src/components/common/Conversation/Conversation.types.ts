@@ -12,7 +12,9 @@ export interface ConversationOwnProps {
 export interface ConversationStateProps {
     conversations: Conversations,
     currentConversationPhase: DialogueOption,
-    currentConversationHistory: string[]
+    currentConversationHistory: string[],
+    currentContact: string,
+    conversationsHistory: {[key: string]: string[]}
 }
 
 export interface ConversationDispatchProps {

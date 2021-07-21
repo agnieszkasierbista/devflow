@@ -1,20 +1,3 @@
-maszyna stanów - rozwiazanie do rozgrywania konwersacji w grze (riserdż)
+Conversations:
 
-
-step: 1
-event: null
-
-1: 
-{ 
-  events: [],
-  a: 'hi, can you finish?', 
-  b: [{odp: 'yes', event: 'READY'}, {odp: 'no', event: 'REJECT'}] 
-} 
-
-2:
-{
-    events: ['ready', 'sfd', 'sdfsdf'],
-    a: 'ok, so do this!!!!',
-    b: [{odp: 'ok, immediatelly!', event: 'START_WORK'}, {odp: 'go fuck yourself!', event: 'GO_HOME'}]
-} 
-
+1. zrobić tak,  żeby rozmowę można było przerwać i wznowić od dowolnego momentu (np. zeby można było przełaczyć się pomiędzy dwiema rozmowami i kontynuowac je od przerwanego momentu)
