@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/helpers/isEmpty.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
@@ -19,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="originMaster" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,7 +195,9 @@
       <workItem from="1626687062214" duration="109000" />
       <workItem from="1626687204892" duration="5488000" />
       <workItem from="1626780001590" duration="8233000" />
-      <workItem from="1626874333448" duration="3420000" />
+      <workItem from="1626874333448" duration="7120000" />
+      <workItem from="1627037951385" duration="3948000" />
+      <workItem from="1627042429818" duration="15634000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -389,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626614971276</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Allow a user to check conversation history for every previous conversation (duplicates from history handled only in the view)">
+      <created>1626895256921</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1626895256921</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -479,7 +492,8 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="Show user conversation history" />
     <MESSAGE value="Allow a user to check conversation history for every previous conversation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to check conversation history for every previous conversation" />
+    <MESSAGE value="Allow a user to check conversation history for every previous conversation (duplicates from history handled only in the view)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to check conversation history for every previous conversation (duplicates from history handled only in the view)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

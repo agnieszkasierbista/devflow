@@ -14,9 +14,10 @@ type Contact = string;
 export interface ContactsStateProps {
     contacts: Contact[],
     conversations: Conversations,
-    currentConversationPhase: DialogueOption
+    currentConversationPhase: DialogueOption,
+    conversationsHistory: Conversations
 }
 
 export interface ContactsDispatchProps {
-    dispatchStartConversation: (contact: string) => void
+    dispatchStartConversation: (contact: string, event: string) => void
 }

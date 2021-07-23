@@ -10,15 +10,16 @@ function mapStateToProps(state: AppState): ContactsStateProps {
     return {
         contacts: state.computerScreen.contacts,
         conversations: state.computerScreen.conversations,
-        currentConversationPhase: state.computerScreen.currentConversationPhase
+        currentConversationPhase: state.computerScreen.currentConversationPhase,
+        conversationsHistory: state.computerScreen.conversationsHistory,
     }
 }
 
 function mapDispatchToProps(dispatch: Dispatch): ContactsDispatchProps {
     return {
 
-        dispatchStartConversation: function (contact) {
-            return dispatch(startConversation(contact))
+        dispatchStartConversation: function (contact, event) {
+            return dispatch(startConversation(contact, event))
     }
 
     }

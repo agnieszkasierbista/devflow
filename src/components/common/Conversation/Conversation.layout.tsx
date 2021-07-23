@@ -1,26 +1,12 @@
 import {ConversationProps} from "./Conversation.types";
 import React from "react";
 import {Route, Switch} from "react-router-dom";
-import {StyledCommunicatorConversation, StyledLine} from "./Conversation.styled";
+import {StyledCommunicatorConversation} from "./Conversation.styled";
 import {conversationPaths} from "../../Communicator/Contacts/Contacts.layout";
-import {DELAY_WORK, END_CONVERSATION, READY, REJECT, START_CONVERSATION, START_WORK} from "../../../actions";
+import {DELAY_WORK, END_CONVERSATION, READY, REJECT, START_WORK} from "../../../actions";
 import {OnClickHandlers} from "../../../model/state";
 
-function isEmpty(obj: {}) {
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
-
-
-
 export const Conversation: React.FC<ConversationProps> = (props) => {
-
-    const currentLine = props.currentConversationPhase.npcName + ": " + props.currentConversationPhase.npcDialogueOption
-    ;
-
 
     return (
         props.currentConversationPhase.event !== ""
@@ -31,34 +17,36 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
 
                         <Route key={props.currentConversationPhase.npcName}
                                path={conversationPaths[props.currentConversationPhase.npcName]}>
-                            <div>
-                                {props.currentConversationHistory.filter(function(x, idx, ary) {
-                                    return x !== ary[idx - 1];
-                                }).map((line) => {
-                                    return (
-                                        <StyledLine>{line}</StyledLine> || "EMPTY"
-                                    )
-                                })}
-
-
-                            </div>
 
                             <div>
                                 {
-                                    currentLine === props.currentConversationHistory[props.currentConversationHistory.length - 1]
-                                    ?
-                                        ""
-                                        :
-                                        currentLine
+                                    (props.conversationsHistory[props.currentContact]).length
+                                        ? props.conversationsHistory[props.currentContact].map((phase, idx) => {
+
+                                            const pref = idx - 1
+                                            const previousPhase = props.conversationsHistory[props.currentContact]?.[pref]
+
+                                            return (
+                                                <>
+
+                                                    {
+
+                                                        previousPhase &&
+                                                        <div>{"Me: " + (previousPhase?.playerDialogueOptions.find((option) => option.event === phase.event)?.rpl || "")}</div>
+
+                                                    }
+                                                    <div> {phase.npcName + ": " + phase.npcDialogueOption}</div>
+
+
+                                                </>
+                                            )
+
+                                        })
+                                        : props.currentContact + ": " + props.currentConversationPhase.npcDialogueOption
                                 }
-                                {/*{*/}
-                                {/*    props.currentConversationPhase.npcName*/}
-                                {/*}*/}
-                                {/*{": "}*/}
-                                {/*{*/}
-                                {/*    props.currentConversationPhase.npcDialogueOption*/}
-                                {/*}*/}
                             </div>
+
+
                             {
                                 props.currentConversationPhase.event !== "END_CONVERSATION"
                                     ?
@@ -68,14 +56,13 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                     null
                             }
 
-                            {props.currentConversationPhase.playerDialogueOptions.map((option, idx) => {
+                            {props.currentConversationPhase.playerDialogueOptions?.map((option, idx) => {
 
                                 return (
                                     <>
 
                                         <button key={option.event} onClick={() => {
                                             const onClickHandlers: OnClickHandlers = {
-                                                [START_CONVERSATION]: props.dispatchStartConversation,
                                                 [END_CONVERSATION]: props.dispatchEndConversation,
                                                 [READY]: props.dispatchReady,
                                                 [REJECT]: props.dispatchReject,

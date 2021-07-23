@@ -14,11 +14,11 @@ export interface ConversationStateProps {
     currentConversationPhase: DialogueOption,
     currentConversationHistory: string[],
     currentContact: string,
-    conversationsHistory: {[key: string]: string[]}
+    conversationsHistory: Conversations,
+    currentEvent: string
 }
 
 export interface ConversationDispatchProps {
-    dispatchStartConversation: (event: string) => void,
     dispatchEndConversation: (event: string) => void,
     dispatchReady: (event: string) => void,
     dispatchReject: (event: string) => void,

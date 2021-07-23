@@ -38,6 +38,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "LingLing"],
     currentContact: "",
+    currentEvent: "",
     conversations: {},
     currentConversationPhase: {
         event: "",
@@ -86,104 +87,43 @@ export const rootReducer = combineReducers({
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        ),
                         conversationsHistory:
                             {
                                 ...state.conversationsHistory,
-                                [state.currentContact]: state.currentConversationHistory.concat(
-                                    [
-                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                    ].filter((x) => x)
-                                )
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-
-
                     })
                 },
                 [START_WORK]: function (): ComputerScreen {
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory[state.currentConversationHistory.length - 1] === (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption)
-                            ?
-                            state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        )
-                            :
-                            state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        ),
                         conversationsHistory:
                             {
                                 ...state.conversationsHistory,
-                                [state.currentContact]: state.currentConversationHistory.concat(
-                                    [
-                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                    ].filter((x) => x)
-                                )
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-
                     })
                 },
                 [REJECT]: function (): ComputerScreen {
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        ),
                         conversationsHistory:
                             {
                                 ...state.conversationsHistory,
-                                [state.currentContact]: state.currentConversationHistory.concat(
-                                    [
-                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                    ].filter((x) => x)
-                                )
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-
                     })
                 },
                 [READY]: function (): ComputerScreen {
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        ),
                         conversationsHistory:
                             {
                                 ...state.conversationsHistory,
-                                [state.currentContact]: state.currentConversationHistory.concat(
-                                    [
-                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                    ].filter((x) => x)
-                                )
+                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
 
 
@@ -193,57 +133,40 @@ export const rootReducer = combineReducers({
                     return ({
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        currentConversationHistory: state.currentConversationHistory.concat(
-                            [
-                                (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || '')
-                            ].filter((x) => x)
-                        ),
                         conversationsHistory:
                             {
                                 ...state.conversationsHistory,
-                                [state.currentContact]: state.currentConversationHistory.concat(
-                                    [
-                                        (state.currentContact + ": " + state.currentConversationPhase.npcDialogueOption),
-                                        ("Me: " + state.currentConversationPhase.playerDialogueOptions.find((option) => (option.event === action.payload))?.rpl || ''),
-                                        (state.currentContact + ": " + state.conversations[state.currentContact].find((phase) => (phase.event) === action.payload)?.npcDialogueOption || '')
-                                    ].filter((x) => x)
-                                )
+                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
+
                     })
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
 
-                    function isEmpty(obj: {}) {
-                        for (const key in obj) {
-                            if (obj.hasOwnProperty(key))
-                                return false;
-                        }
-                        return true;
-                    }
-
                     return ({
                         ...state,
-                        currentContact: action.payload,
-                        currentConversationPhase:
-                            !isEmpty(state.conversationsHistory)
-                                ? (state.conversationsHistory[action.payload]
-                                    ? (state.conversations[action.payload]
-                                            .find(
-                                                (phase) => (
-                                                    ([action.payload] + ": " + phase.npcDialogueOption) ===
-                                                    state.conversationsHistory[action.payload][state.conversationsHistory[action.payload].length - 1]
-                                                )
-                                            )
-                                    ) || state.conversations[action.payload][0]
-                                    : state.conversations[action.payload][0]
-                                )
-                                : state.conversations[action.payload][0],
+                        currentContact: action.payload.contact,
+                        currentEvent: action.payload.event,
+                        currentConversationPhase: (
+                            (state.conversationsHistory[action.payload.contact])?.length
+                                ?
+                                state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
+                                :
+                                state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
+                        ),
+                        conversationsHistory: (
+                            (state.conversationsHistory[action.payload.contact])?.length
+                                ?
+                                {
+                                    ...state.conversationsHistory,
+                                }
+                                :
+                                {
+                                    ...state.conversationsHistory,
+                                    [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
+                                }
 
-                        currentConversationHistory: state.conversationsHistory[action.payload]
-                            ? state.conversationsHistory[action.payload]
-                            : []
-
+                        )
                     })
                 },
                 [INITIALIZE_CONVERSATIONS]: function (): ComputerScreen {

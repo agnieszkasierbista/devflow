@@ -47,10 +47,10 @@ export function initializeConversations(contacts: string[]) {
     }
 }
 
-export function startConversation(contact: string) {
+export function startConversation(contact: string, event: string) {
     return {
         type: START_CONVERSATION,
-        payload: contact
+        payload: {contact, event}
     }
 }
 
