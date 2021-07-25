@@ -2,7 +2,7 @@ import {ConversationProps} from "./Conversation.types";
 import React from "react";
 import {Route, Switch} from "react-router-dom";
 import {StyledCommunicatorConversation} from "./Conversation.styled";
-import {conversationPaths} from "../../Communicator/Contacts/Contacts.layout";
+import {conversationPaths} from "../Contacts/Contacts.layout";
 import {DELAY_WORK, END_CONVERSATION, READY, REJECT, START_WORK} from "../../../actions";
 import {OnClickHandlers} from "../../../model/state";
 

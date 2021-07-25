@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/helpers/isEmpty.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithElla.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithMike.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conversations/conversationWithRandomDeveloper.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Contacts/Contacts.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversations/conversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversations/conversations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
@@ -38,7 +46,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" root0="FORCE_HIGHLIGHTING" />
@@ -104,7 +112,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/OpenedFiles/OpenedFiles.layout.tsx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -126,11 +134,11 @@
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\assets\pic" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\CodeEditor" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\Communicator" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\helpers" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\GuestSlot" />
-      <recent name="C:\Users\mateu\WebstormProjects\devflow\src" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\OpenedFiles\OpenedFiles.layout.tsx" />
@@ -198,6 +206,8 @@
       <workItem from="1626874333448" duration="7120000" />
       <workItem from="1627037951385" duration="3948000" />
       <workItem from="1627042429818" duration="15634000" />
+      <workItem from="1627133771029" duration="1332000" />
+      <workItem from="1627209716411" duration="2832000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>

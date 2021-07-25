@@ -53,7 +53,21 @@ export const preloadedComputerScreenState: ComputerScreen = {
     conversationsHistory: {}
 };
 
-export const preloadedGuestSlotState: GuestSlot = {};
+export const preloadedGuestSlotState: GuestSlot = {
+    contacts: ["Mike", "Ella", "RandomDev"],
+    currentGuest: "",
+    currentEvent: "",
+    conversations: {},
+    currentConversationPhase: {
+        event: "",
+        npcName: "",
+        npcDialogueOption: "",
+        playerDialogueOptions: [
+            {rpl: '', event: ''},
+            {rpl: '', event: ''}
+        ]
+    },
+};
 
 export const rootReducer = combineReducers({
         workspace: function (state: Workspace = preloadedWorkspaceState, action) {

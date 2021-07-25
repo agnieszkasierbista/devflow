@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
+import {StyledGuestSlot} from './GuestSlot.styled'
 import Conversation from "../common/Conversation/Conversation";
-import { StyledCommunicator } from "./Communicator.styled";
-import {CommunicatorProps} from "./Communicator.types";
 import Contacts from "../common/Contacts/Contacts";
+import {GuestSlotProps} from "./GuestSlot.types";
 
 
-export const Communicator: React.FC<CommunicatorProps> = (props) => {
+export const GuestSlot: React.FC<GuestSlotProps> = (props) => {
 
     React.useEffect(() => {
         props.dispatchInitializeConversations(props.contacts)
@@ -13,9 +13,9 @@ export const Communicator: React.FC<CommunicatorProps> = (props) => {
 
 
     return (
-        <StyledCommunicator>
+        <StyledGuestSlot>
             <Contacts/>
             <Conversation/>
-        </StyledCommunicator>
+        </StyledGuestSlot>
     )
 };

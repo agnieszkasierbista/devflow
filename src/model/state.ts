@@ -26,6 +26,8 @@ export interface DialogueOption {
     playerDialogueOptions: { rpl: string, event: string }[]
 }
 
+export type Contact = string
+
 export type Conversation = Array<DialogueOption>
 
 export interface Conversations {
@@ -47,7 +49,11 @@ export interface ComputerScreen {
 }
 
 export interface GuestSlot {
-
+    contacts: string[],
+    currentGuest: "",
+    currentEvent: "",
+    conversations: Conversations,
+    currentConversationPhase: DialogueOption
 }
 
 export interface WorkspaceHandlers {

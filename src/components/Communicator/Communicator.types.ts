@@ -1,4 +1,4 @@
-import {Conversations} from "../../model/state";
+import {Contact, Conversations} from "../../model/state";
 
 export interface CommunicatorProps extends CommunicatorOwnProps,
     CommunicatorStateProps,
@@ -9,7 +9,7 @@ export interface CommunicatorOwnProps {
 
 }
 
-type Contact = string
+
 
 export interface CommunicatorStateProps {
     contacts: Contact[],
