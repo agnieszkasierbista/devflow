@@ -3,18 +3,18 @@ import {AppState} from "../../model/state";
 import {GuestSlotDispatchProps, GuestSlotStateProps} from "./GuestSlot.types";
 import {GuestSlot} from "./GuestSlot.layout";
 import {Dispatch} from "redux";
-import {initializeConversations} from "../../actions";
+import { initializeVisit } from "../../actions";
 
 export function mapStateToProps(state: AppState): GuestSlotStateProps {
     return {
-        contacts: state.guestSlot.contacts
+        guests: state.guestSlot.guests
     }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch): GuestSlotDispatchProps {
     return {
-        dispatchInitializeConversations: function (contacts) {
-            dispatch(initializeConversations(contacts))
+        dispatchInitializeVisit: function (guests) {
+            dispatch(initializeVisit(guests))
         }
     }
 }

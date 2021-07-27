@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/Contacts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GuestSlot/Conversation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Communicator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/Guests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/Visit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Contacts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Conversation/Conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Communicator/Conversation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
@@ -111,7 +109,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/GuestSlot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/Visits" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -130,6 +128,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Visits" />
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Guests" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\GuestSlot" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\assets\pic" />
     </key>
@@ -208,7 +208,7 @@
       <workItem from="1627042429818" duration="15634000" />
       <workItem from="1627133771029" duration="1332000" />
       <workItem from="1627209716411" duration="15483000" />
-      <workItem from="1627299998108" duration="5479000" />
+      <workItem from="1627299998108" duration="12365000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627212973013</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Refactor">
+      <created>1627381778379</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1627381778379</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -507,12 +514,12 @@
     <MESSAGE value="Display a list of contacts in the communicator" />
     <MESSAGE value="Allow user to have a conversation with an npc via communicator" />
     <MESSAGE value="Allow user to finish a conversation with npc" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Show user conversation history" />
     <MESSAGE value="Allow a user to check conversation history for every previous conversation" />
     <MESSAGE value="Allow a user to check conversation history for every previous conversation (duplicates from history handled only in the view)" />
     <MESSAGE value="Allow a user to have a conversation with NPC in the guest slot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to have a conversation with NPC in the guest slot" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

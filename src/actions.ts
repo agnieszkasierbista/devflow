@@ -11,6 +11,9 @@ export const READY = "READY";
 export const REJECT = "REJECT";
 export const START_WORK = "START_WORK";
 export const DELAY_WORK = "DELAY_WORK";
+export const INITIALIZE_VISIT = "INITIALIZE_VISIT";
+export const START_VISIT = "START_VISIT";
+export const END_VISIT = "END_VISIT"
 
 export function ready(event: string) {
     return {
@@ -47,6 +50,13 @@ export function initializeConversations(contacts: string[]) {
     }
 }
 
+export function initializeVisit(guests: string[]) {
+    return {
+        type: INITIALIZE_VISIT,
+        payload: guests
+    }
+}
+
 export function startConversation(contact: string, event: string) {
     return {
         type: START_CONVERSATION,
@@ -54,9 +64,23 @@ export function startConversation(contact: string, event: string) {
     }
 }
 
+export function startVisit(guest: string, event: string) {
+    return {
+        type: START_VISIT,
+        payload: {guest, event}
+    }
+}
+
 export function endConversation(event: string) {
     return {
         type: END_CONVERSATION,
+        payload: event
+    }
+}
+
+export function endVisit(event: string) {
+    return {
+        type: END_VISIT,
         payload: event
     }
 }

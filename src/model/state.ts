@@ -49,13 +49,13 @@ export interface ComputerScreen {
 }
 
 export interface GuestSlot {
-    contacts: string[],
-    conversations: Conversations,
-    currentConversationPhase: DialogueOption,
-    currentContact: string,
+    guests: string[],
+    visits: Conversations,
+    currentVisitPhase: DialogueOption,
+    currentGuest: string,
     currentEvent: string,
-    currentConversationHistory: string[],
-    conversationsHistory: Conversations
+    currentVisitHistory: string[],
+    visitsHistory: Conversations
 }
 
 export interface WorkspaceHandlers {

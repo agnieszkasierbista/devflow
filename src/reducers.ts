@@ -61,11 +61,11 @@ export const preloadedComputerScreenState: ComputerScreen = {
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
-    contacts: ["Mike", "Ella", "RandomDeveloper"],
-    currentContact: "",
+    guests: ["Mike", "Ella", "RandomDeveloper"],
+    currentGuest: "",
     currentEvent: "",
-    conversations: {},
-    currentConversationPhase: {
+    visits: {},
+    currentVisitPhase: {
         event: "",
         npcName: "",
         npcDialogueOption: "",
@@ -74,8 +74,8 @@ export const preloadedGuestSlotState: GuestSlot = {
             {rpl: '', event: ''}
         ]
     },
-    currentConversationHistory: [],
-    conversationsHistory: {}
+    currentVisitHistory: [],
+    visitsHistory: {}
 };
 
 export const rootReducer = combineReducers({
@@ -285,15 +285,15 @@ export const rootReducer = combineReducers({
             const guestSlotHandlers: GuestSlotHandlers = {
                 [DELAY_WORK]: function (): GuestSlot {
                     return (
-                        state.contacts.includes(state.currentContact)
+                        state.guests.includes(state.currentGuest)
                             ?
                         {
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
+                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                        visitsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state.visitsHistory,
+                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
                             }
                     }
                     :
@@ -301,15 +301,15 @@ export const rootReducer = combineReducers({
                 },
                 [START_WORK]: function (): GuestSlot {
                     return (
-                        state.contacts.includes(state.currentContact)
+                        state.guests.includes(state.currentGuest)
                             ?
                         {
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
+                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                        visitsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state.visitsHistory,
+                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
                             }
                     }
                     :
@@ -317,15 +317,15 @@ export const rootReducer = combineReducers({
                 },
                 [REJECT]: function (): GuestSlot {
                     return (
-                        state.contacts.includes(state.currentContact)
+                        state.guests.includes(state.currentGuest)
                             ?
                         {
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
+                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                        visitsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state.visitsHistory,
+                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
                             }
                     }
                     :
@@ -333,15 +333,15 @@ export const rootReducer = combineReducers({
                 },
                 [READY]: function (): GuestSlot {
                     return (
-                        state.contacts.includes(state.currentContact)
+                        state.guests.includes(state.currentGuest)
                             ?
                         {
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
+                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                        visitsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state.visitsHistory,
+                                [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
                             }
 
 
@@ -351,15 +351,15 @@ export const rootReducer = combineReducers({
                 },
                 [END_CONVERSATION]: function (): GuestSlot {
                     return (
-                        state.contacts.includes(state.currentContact)
+                        state.guests.includes(state.currentGuest)
                             ?
                         {
                         ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
+                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                        visitsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state.visitsHistory,
+                                [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
                             }
 
                     }
@@ -370,38 +370,38 @@ export const rootReducer = combineReducers({
                 [START_CONVERSATION]: function (): GuestSlot {
 
                     return (
-                        state.contacts.includes(action.payload.contact)
+                        state.guests.includes(action.payload.guest)
                             ?
                         {
                         ...state,
-                        currentContact: action.payload.contact,
+                            currentGuest: action.payload.guest,
                         currentEvent: action.payload.event,
-                        currentConversationPhase: (
-                            (state.conversationsHistory[action.payload.contact])?.length
+                        currentVisitPhase: (
+                            (state.visitsHistory[action.payload.guest])?.length
                                 ?
-                                state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
+                                state.visitsHistory[action.payload.guest][state.visitsHistory[action.payload.guest]?.length - 1]
                                 :
-                                state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
+                                state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0]
                         ),
 
-                        conversationsHistory:
-                            state.contacts.includes(action.payload.contact)
+                        visitsHistory:
+                            state.guests.includes(action.payload.contact)
                                 ?
                             (
-                            (state.conversationsHistory[action.payload.contact])?.length
+                            (state.visitsHistory[action.payload.contact])?.length
                                 ?
                                 {
-                                    ...state.conversationsHistory,
+                                    ...state.visitsHistory,
                                 }
                                 :
                                 {
-                                    ...state.conversationsHistory,
-                                    [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
+                                    ...state.visitsHistory,
+                                    [action.payload.contact]: [(state.visits[action.payload.contact].find(phase => phase.event === action.payload.event) || state.visits[action.payload.contact][0])]
                                 }
 
                         )
                                 :
-                                state.conversationsHistory
+                                state.visitsHistory
                     }
                     :
                             {...state})
@@ -410,8 +410,8 @@ export const rootReducer = combineReducers({
 
                     return ({
                         ...state,
-                        conversations: (state.contacts
-                            .map((contact: string) => ({[contact]: conversations[contact]})))
+                        visits: (state.guests
+                            .map((guest: string) => ({[guest]: conversations[guest]})))
                             .reduce(
                                 (acc, x) => {
                                     return {...acc, ...x}

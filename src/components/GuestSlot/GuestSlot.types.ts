@@ -10,9 +10,9 @@ export interface GuestSlotOwnProps {
 }
 
 export interface GuestSlotStateProps {
-    contacts: Contact[],
+    guests: Contact[],
 }
 
 export interface GuestSlotDispatchProps {
-    dispatchInitializeConversations: (contacts: Contact[]) => void
+    dispatchInitializeVisit: (guests: Contact[]) => void
 }

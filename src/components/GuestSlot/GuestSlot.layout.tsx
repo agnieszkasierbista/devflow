@@ -1,21 +1,21 @@
 import React from 'react';
 import {StyledGuestSlot} from './GuestSlot.styled'
-import Conversation from "../GuestSlot/Conversation";
-import Contacts from "../GuestSlot/Contacts";
+import Guests from "./Guests";
 import {GuestSlotProps} from "./GuestSlot.types";
+import Visit from './Visit';
 
 
 export const GuestSlot: React.FC<GuestSlotProps> = (props) => {
 
     React.useEffect(() => {
-        props.dispatchInitializeConversations(props.contacts)
+        props.dispatchInitializeVisit(props.guests)
     }, [])
 
 
     return (
         <StyledGuestSlot>
-            <Contacts/>
-            <Conversation/>
+            <Guests/>
+            <Visit/>
         </StyledGuestSlot>
     )
 };
