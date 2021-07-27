@@ -50,10 +50,12 @@ export interface ComputerScreen {
 
 export interface GuestSlot {
     contacts: string[],
-    currentGuest: "",
-    currentEvent: "",
     conversations: Conversations,
-    currentConversationPhase: DialogueOption
+    currentConversationPhase: DialogueOption,
+    currentContact: string,
+    currentEvent: string,
+    currentConversationHistory: string[],
+    conversationsHistory: Conversations
 }
 
 export interface WorkspaceHandlers {
@@ -64,8 +66,8 @@ export interface ComputerScreenHandlers {
     [key: string]: () => ComputerScreen
 }
 
-export interface ConversationHandlers {
-    [key: string]: () => ComputerScreen
+export interface GuestSlotHandlers {
+    [key: string]: () => GuestSlot
 }
 
 export interface OnClickHandlers {

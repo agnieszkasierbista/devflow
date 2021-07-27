@@ -1,19 +1,19 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {delayWork, endConversation, ready, reject, startWork} from "../../../actions";
-import {AppState} from "../../../model/state";
-import {Conversation} from "./Conversation.layout";
-import {ConversationDispatchProps, ConversationStateProps} from "./Conversation.types";
+import {delayWork, endConversation, ready, reject, startWork} from "../../actions";
+import {AppState} from "../../model/state";
+import {Conversation} from "../common/Conversation/Conversation.layout";
+import {ConversationDispatchProps, ConversationStateProps} from "../common/Conversation/Conversation.types";
 
 
 export function mapStateToProps(state: AppState): ConversationStateProps {
     return {
-        conversations: state.computerScreen.conversations,
-        currentConversationPhase: state.computerScreen.currentConversationPhase,
-        currentConversationHistory: state.computerScreen.currentConversationHistory,
-        currentContact: state.computerScreen.currentContact,
-        conversationsHistory: state.computerScreen.conversationsHistory,
-        currentEvent: state.computerScreen.currentEvent,
+        conversations: state.guestSlot.conversations,
+        currentConversationPhase: state.guestSlot.currentConversationPhase,
+        currentConversationHistory: state.guestSlot.currentConversationHistory,
+        currentContact: state.guestSlot.currentContact,
+        conversationsHistory: state.guestSlot.conversationsHistory,
+        currentEvent: state.guestSlot.currentEvent,
     }
 }
 

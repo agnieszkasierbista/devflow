@@ -18,7 +18,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                         <Route key={props.currentConversationPhase.npcName}
                                path={conversationPaths[props.currentConversationPhase.npcName]}>
 
-                            <div>
+                            <div key={props.currentConversationPhase.npcName}>
                                 {
                                     (props.conversationsHistory[props.currentContact]).length
                                         ? props.conversationsHistory[props.currentContact].map((phase, idx) => {
@@ -27,7 +27,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                             const previousPhase = props.conversationsHistory[props.currentContact]?.[pref]
 
                                             return (
-                                                <>
+                                                <React.Fragment key={idx}>
 
                                                     {
 
@@ -38,7 +38,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                                     <div> {phase.npcName + ": " + phase.npcDialogueOption}</div>
 
 
-                                                </>
+                                                </React.Fragment>
                                             )
 
                                         })
@@ -59,9 +59,9 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                             {props.currentConversationPhase.playerDialogueOptions?.map((option, idx) => {
 
                                 return (
-                                    <>
+                                    <React.Fragment key={idx}>
 
-                                        <button key={option.event} onClick={() => {
+                                        <button onClick={() => {
                                             const onClickHandlers: OnClickHandlers = {
                                                 [END_CONVERSATION]: props.dispatchEndConversation,
                                                 [READY]: props.dispatchReady,
@@ -76,7 +76,7 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                         }}>
                                             {idx + 1}: {option.rpl}
                                         </button>
-                                    </>
+                                    </React.Fragment>
                                 )
                             })}
 

@@ -1,9 +1,9 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {startConversation} from "../../../actions";
-import {AppState} from "../../../model/state";
-import {Contacts} from "./Contacts.layout";
-import {ContactsDispatchProps, ContactsStateProps} from "./Contacts.types";
+import {startConversation} from "../../actions";
+import {AppState} from "../../model/state";
+import {Contacts} from "../common/Contacts/Contacts.layout";
+import {ContactsDispatchProps, ContactsStateProps} from "../common/Contacts/Contacts.types";
 
 
 function mapStateToProps(state: AppState): ContactsStateProps {

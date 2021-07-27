@@ -10,10 +10,10 @@ import GuestSlot from "../GuestSlot/GuestSlot";
 
 export const Workspace: React.FC<WorkspaceProps> = () => (
     <StyledWorkspace>
-            <PlayerName/>
-            <ComputerScreen/>
-            <GuestSlot/>
-            <Overlay/>
-            <PlayerNameInput/>
+        <PlayerName/>
+        <Overlay/>
+        <PlayerNameInput/>
+        <ComputerScreen/>
+        <GuestSlot/>
     </StyledWorkspace>
 );

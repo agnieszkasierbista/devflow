@@ -1,5 +1,4 @@
-import { Contact } from "../../model/state";
-import Contacts from "../common/Contacts/Contacts";
+import {Contact} from "../../model/state";
 
 export interface GuestSlotProps extends GuestSlotOwnProps,
     GuestSlotDispatchProps,

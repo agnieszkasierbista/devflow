@@ -1,16 +1,11 @@
 import React from "react";
-import Conversation from "../common/Conversation/Conversation";
+import Conversation from "./Conversation";
 import { StyledCommunicator } from "./Communicator.styled";
 import {CommunicatorProps} from "./Communicator.types";
-import Contacts from "../common/Contacts/Contacts";
+import Contacts from "./Contacts";
 
 
 export const Communicator: React.FC<CommunicatorProps> = (props) => {
-
-    React.useEffect(() => {
-        props.dispatchInitializeConversations(props.contacts)
-    }, [])
-
 
     return (
         <StyledCommunicator>

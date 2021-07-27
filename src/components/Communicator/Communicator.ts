@@ -7,6 +7,7 @@ import {initializeConversations} from "../../actions";
 
 
 export function mapStateToProps(state: AppState): CommunicatorStateProps {
+
     return {
 
         contacts: state.computerScreen.contacts,

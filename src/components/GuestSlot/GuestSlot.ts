@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {AppState} from "../../model/state";
-import {GuestSlotDispatchProps, GuestSlotProps, GuestSlotStateProps} from "./GuestSlot.types";
+import {GuestSlotDispatchProps, GuestSlotStateProps} from "./GuestSlot.types";
 import {GuestSlot} from "./GuestSlot.layout";
 import {Dispatch} from "redux";
 import {initializeConversations} from "../../actions";

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyledGuestSlot} from './GuestSlot.styled'
-import Conversation from "../common/Conversation/Conversation";
-import Contacts from "../common/Contacts/Contacts";
+import Conversation from "../GuestSlot/Conversation";
+import Contacts from "../GuestSlot/Contacts";
 import {GuestSlotProps} from "./GuestSlot.types";
 
 

@@ -1,5 +1,12 @@
 import {combineReducers} from "redux";
-import {ComputerScreen, ComputerScreenHandlers, GuestSlot, Workspace, WorkspaceHandlers} from "./model/state";
+import {
+    ComputerScreen,
+    ComputerScreenHandlers,
+    GuestSlot,
+    GuestSlotHandlers,
+    Workspace,
+    WorkspaceHandlers
+} from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
     CLOSE_PLAYER_NAME_INPUT,
@@ -54,8 +61,8 @@ export const preloadedComputerScreenState: ComputerScreen = {
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
-    contacts: ["Mike", "Ella", "RandomDev"],
-    currentGuest: "",
+    contacts: ["Mike", "Ella", "RandomDeveloper"],
+    currentContact: "",
     currentEvent: "",
     conversations: {},
     currentConversationPhase: {
@@ -67,6 +74,8 @@ export const preloadedGuestSlotState: GuestSlot = {
             {rpl: '', event: ''}
         ]
     },
+    currentConversationHistory: [],
+    conversationsHistory: {}
 };
 
 export const rootReducer = combineReducers({
@@ -98,7 +107,10 @@ export const rootReducer = combineReducers({
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
                 [DELAY_WORK]: function (): ComputerScreen {
-                    return ({
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
                         conversationsHistory:
@@ -106,10 +118,16 @@ export const rootReducer = combineReducers({
                                 ...state.conversationsHistory,
                                 [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-                    })
+                    }
+                    :
+                            {...state}
+                    )
                 },
                 [START_WORK]: function (): ComputerScreen {
-                    return ({
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                            {
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
                         conversationsHistory:
@@ -117,10 +135,16 @@ export const rootReducer = combineReducers({
                                 ...state.conversationsHistory,
                                 [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-                    })
+                    }
+                    :
+                            {...state}
+                    )
                 },
                 [REJECT]: function (): ComputerScreen {
-                    return ({
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
                         conversationsHistory:
@@ -128,10 +152,15 @@ export const rootReducer = combineReducers({
                                 ...state.conversationsHistory,
                                 [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
-                    })
+                    }
+                    :
+                            {...state})
                 },
                 [READY]: function (): ComputerScreen {
-                    return ({
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
                         conversationsHistory:
@@ -141,10 +170,15 @@ export const rootReducer = combineReducers({
                             }
 
 
-                    })
+                    }
+                    :
+                            {...state})
                 },
                 [END_CONVERSATION]: function (): ComputerScreen {
-                    return ({
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
                         ...state,
                         currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
                         conversationsHistory:
@@ -153,11 +187,17 @@ export const rootReducer = combineReducers({
                                 [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
                             }
 
-                    })
+                    }
+                    :
+                            {...state}
+                    )
                 },
                 [START_CONVERSATION]: function (): ComputerScreen {
 
-                    return ({
+                    return (
+                        state.contacts.includes(action.payload.contact)
+                            ?
+                            {
                         ...state,
                         currentContact: action.payload.contact,
                         currentEvent: action.payload.event,
@@ -181,14 +221,23 @@ export const rootReducer = combineReducers({
                                 }
 
                         )
-                    })
+                    }
+                    :
+                            {...state}
+                    )
                 },
                 [INITIALIZE_CONVERSATIONS]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        conversations: conversations,
-                    })
-                },
+                        conversations: (state.contacts
+                            .map((contact: string) => ({[contact]: conversations[contact]})))
+                            .reduce(
+                                (acc, x) => {
+                                    return {...acc, ...x}
+                                },
+                                {}
+                            )
+                    })                },
                 [SHUFFLE_COLORS]: function (): ComputerScreen {
                     return ({
                         ...state,
@@ -232,9 +281,162 @@ export const rootReducer = combineReducers({
                     ? computerScreenHandlers[action.type]()
                     : state)
         },
-        guestSlot: function (state = preloadedGuestSlotState, action) {
+        guestSlot: function (state: GuestSlot = preloadedGuestSlotState, action) {
+            const guestSlotHandlers: GuestSlotHandlers = {
+                [DELAY_WORK]: function (): GuestSlot {
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                            }
+                    }
+                    :
+                            {...state})
+                },
+                [START_WORK]: function (): GuestSlot {
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                            }
+                    }
+                    :
+                            {...state})
+                },
+                [REJECT]: function (): GuestSlot {
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                            }
+                    }
+                    :
+                            {...state})
+                },
+                [READY]: function (): GuestSlot {
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                            }
 
-            return state;
+
+                    }
+                    :
+                            {...state})
+                },
+                [END_CONVERSATION]: function (): GuestSlot {
+                    return (
+                        state.contacts.includes(state.currentContact)
+                            ?
+                        {
+                        ...state,
+                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                        conversationsHistory:
+                            {
+                                ...state.conversationsHistory,
+                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                            }
+
+                    }
+                    :
+                            {...state}
+                    )
+                },
+                [START_CONVERSATION]: function (): GuestSlot {
+
+                    return (
+                        state.contacts.includes(action.payload.contact)
+                            ?
+                        {
+                        ...state,
+                        currentContact: action.payload.contact,
+                        currentEvent: action.payload.event,
+                        currentConversationPhase: (
+                            (state.conversationsHistory[action.payload.contact])?.length
+                                ?
+                                state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
+                                :
+                                state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
+                        ),
+
+                        conversationsHistory:
+                            state.contacts.includes(action.payload.contact)
+                                ?
+                            (
+                            (state.conversationsHistory[action.payload.contact])?.length
+                                ?
+                                {
+                                    ...state.conversationsHistory,
+                                }
+                                :
+                                {
+                                    ...state.conversationsHistory,
+                                    [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
+                                }
+
+                        )
+                                :
+                                state.conversationsHistory
+                    }
+                    :
+                            {...state})
+                },
+                [INITIALIZE_CONVERSATIONS]: function (): GuestSlot {
+
+                    return ({
+                        ...state,
+                        conversations: (state.contacts
+                            .map((contact: string) => ({[contact]: conversations[contact]})))
+                            .reduce(
+                                (acc, x) => {
+                                    return {...acc, ...x}
+                                },
+                                {}
+                            )
+                    })
+                },
+            }
+            return (
+                guestSlotHandlers[action.type]
+                    ? guestSlotHandlers[action.type]()
+                    : state)
+
         }
     }
 );
+
+// ....reduce((acc, x)  {...acc, ...x } , {}),
+// const arr = [{a: "jajo"}, {a: "dupa"}];
+//
+//
+// arr.reduce((acc, currentValue) => {
+//     return {
+//         ...acc,
+//         ...currentValue
+//     };
+// }, {});
