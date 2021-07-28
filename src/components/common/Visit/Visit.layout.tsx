@@ -1,7 +1,5 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
-import {conversationPaths} from "../Contacts/Contacts.layout";
-import {DELAY_WORK, END_CONVERSATION, END_VISIT, READY, REJECT, START_WORK} from "../../../actions";
+import {DELAY_WORK_VISIT, END_VISIT, READY_VISIT, REJECT_VISIT, START_WORK_VISIT} from "../../../actions";
 import {OnClickHandlers} from "../../../model/state";
 import {VisitProps} from "./Visit.types";
 import {StyledVisit} from "./Visit.styled";
@@ -13,10 +11,7 @@ export const Visit: React.FC<VisitProps> = (props) => {
             ?
             (
                 <StyledVisit>
-                    <Switch>
 
-                        <Route key={props.currentVisitPhase.npcName}
-                               path={conversationPaths[props.currentVisitPhase.npcName]}>
 
                             <div key={props.currentVisitPhase.npcName}>
                                 {
@@ -48,7 +43,7 @@ export const Visit: React.FC<VisitProps> = (props) => {
 
 
                             {
-                                props.currentVisitPhase.event !== "END_CONVERSATION"
+                                props.currentVisitPhase.event !== END_VISIT
                                     ?
                                     <div>Me:</div>
 
@@ -64,10 +59,10 @@ export const Visit: React.FC<VisitProps> = (props) => {
                                         <button onClick={() => {
                                             const onClickHandlers: OnClickHandlers = {
                                                 [END_VISIT]: props.dispatchEndVisit,
-                                                [READY]: props.dispatchReady,
-                                                [REJECT]: props.dispatchReject,
-                                                [START_WORK]: props.dispatchStartWork,
-                                                [DELAY_WORK]: props.dispatchDelayWork
+                                                [READY_VISIT]: props.dispatchReadyVisit,
+                                                [REJECT_VISIT]: props.dispatchRejectVisit,
+                                                [START_WORK_VISIT]: props.dispatchStartWorkVisit,
+                                                [DELAY_WORK_VISIT]: props.dispatchDelayWorkVisit
                                             }
 
                                             return onClickHandlers[option.event]
@@ -80,9 +75,7 @@ export const Visit: React.FC<VisitProps> = (props) => {
                                 )
                             })}
 
-                        </Route>
 
-                    </Switch>
                 </StyledVisit>
             )
             :

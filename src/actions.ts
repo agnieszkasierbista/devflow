@@ -14,10 +14,21 @@ export const DELAY_WORK = "DELAY_WORK";
 export const INITIALIZE_VISIT = "INITIALIZE_VISIT";
 export const START_VISIT = "START_VISIT";
 export const END_VISIT = "END_VISIT"
+export const READY_VISIT = "READY_VISIT";
+export const REJECT_VISIT = "REJECT_VISIT";
+export const START_WORK_VISIT = "START_WORK_VISIT";
+export const DELAY_WORK_VISIT = "DELAY_WORK_VISIT";
 
 export function ready(event: string) {
     return {
         type: READY,
+        payload: event
+    }
+}
+
+export function readyVisit(event: string) {
+    return {
+        type: READY_VISIT,
         payload: event
     }
 }
@@ -29,6 +40,13 @@ export function reject(event: string) {
     }
 }
 
+export function rejectVisit(event: string) {
+    return {
+        type: REJECT_VISIT,
+        payload: event
+    }
+}
+
 export function delayWork(event: string) {
     return {
         type: DELAY_WORK,
@@ -36,9 +54,23 @@ export function delayWork(event: string) {
     }
 }
 
+export function delayWorkVisit(event: string) {
+    return {
+        type: DELAY_WORK_VISIT,
+        payload: event
+    }
+}
+
 export function startWork(event: string) {
     return {
         type: START_WORK,
+        payload: event
+    }
+}
+
+export function startWorkVisit(event: string) {
+    return {
+        type: START_WORK_VISIT,
         payload: event
     }
 }

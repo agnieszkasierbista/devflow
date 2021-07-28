@@ -1,24 +1,8 @@
 import {GuestsProps} from "./Guests.types";
 import React from "react";
 import {StyledGuest, StyledGuests} from "./Guests.styled";
-import {
-    conversationWithBarbaraPath,
-    conversationWithEllaPath,
-    conversationWithJohnPath,
-    conversationWithLinglingPath,
-    conversationWithMikePath,
-    conversationWithRandomDeveloperPath
-} from "../../../model/paths";
 import {isEmpty} from "../../../helpers/isEmpty";
 
-export const conversationPaths: { [key: string]: string } = {
-    John: conversationWithJohnPath,
-    Barbara: conversationWithBarbaraPath,
-    LingLing: conversationWithLinglingPath,
-    Mike: conversationWithMikePath,
-    Ella: conversationWithEllaPath,
-    RandomDeveloper: conversationWithRandomDeveloperPath
-};
 
 export const Guests: React.FC<GuestsProps> = (props) => {
 
@@ -34,9 +18,9 @@ export const Guests: React.FC<GuestsProps> = (props) => {
                                 ?
                                 props.visitsHistory.guest[props.visitsHistory.guest.length - 1].event
                                 :
-                                "START_CONVERSATION"
+                                "START_VISIT"
                             :
-                            "START_CONVERSATION"
+                            "START_VISIT"
                     )
 
                     return event

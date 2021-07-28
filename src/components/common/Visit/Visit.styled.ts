@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 
 export const StyledVisit = styled.div`
-  width: 75%;
+  width: 95%;
   border-radius: 2px;
   border: 2px solid black;
-  height: 95%;
+  height: 75%;
   overflow-y: scroll;
 `;
 

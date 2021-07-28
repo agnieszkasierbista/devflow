@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const StyledGuests = styled.div`
   border-radius: 2px;
   border: 2px solid black;
-  height: 95%;
-  width: 20%;
+  height: 15%;
+  width: 95%;
 `;
 
 export const StyledGuest = styled.div`

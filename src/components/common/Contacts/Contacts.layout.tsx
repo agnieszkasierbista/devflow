@@ -5,10 +5,7 @@ import {Link} from "react-router-dom";
 import {
     conversationWithBarbaraPath,
     conversationWithJohnPath,
-    conversationWithLinglingPath,
-    conversationWithEllaPath,
-    conversationWithMikePath,
-    conversationWithRandomDeveloperPath
+    conversationWithLinglingPath
 } from "../../../model/paths";
 import {isEmpty} from "../../../helpers/isEmpty";
 
@@ -16,9 +13,6 @@ export const conversationPaths: { [key: string]: string } = {
     John: conversationWithJohnPath,
     Barbara: conversationWithBarbaraPath,
     LingLing: conversationWithLinglingPath,
-    Mike: conversationWithMikePath,
-    Ella: conversationWithEllaPath,
-    RandomDeveloper: conversationWithRandomDeveloperPath
 };
 
 export const Contacts: React.FC<ContactsProps> = (props) => {

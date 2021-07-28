@@ -10,20 +10,23 @@ import {
 import {
     CHANGE_PLAYER_NAME,
     CLOSE_PLAYER_NAME_INPUT,
-    DELAY_WORK,
-    END_CONVERSATION,
+    DELAY_WORK, DELAY_WORK_VISIT,
+    END_CONVERSATION, END_VISIT,
     INITIALIZE_CONVERSATIONS,
+    INITIALIZE_VISIT,
     ON_DRAG_START,
     ON_DROP,
-    READY,
-    REJECT,
+    READY, READY_VISIT,
+    REJECT, REJECT_VISIT,
     SHOW_ORDER_CHECK_RESULT,
     SHUFFLE_COLORS,
     START_CONVERSATION,
-    START_WORK
+    START_VISIT,
+    START_WORK, START_WORK_VISIT
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
+import {visits} from "./visits/visits";
 
 export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
@@ -110,16 +113,16 @@ export const rootReducer = combineReducers({
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
-                        {
-                        ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state,
+                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                                conversationsHistory:
+                                    {
+                                        ...state.conversationsHistory,
+                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state}
                     )
                 },
@@ -128,15 +131,15 @@ export const rootReducer = combineReducers({
                         state.contacts.includes(state.currentContact)
                             ?
                             {
-                        ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
-                            {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state,
+                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                                conversationsHistory:
+                                    {
+                                        ...state.conversationsHistory,
+                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state}
                     )
                 },
@@ -144,51 +147,51 @@ export const rootReducer = combineReducers({
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
-                        {
-                        ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state,
+                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                                conversationsHistory:
+                                    {
+                                        ...state.conversationsHistory,
+                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state})
                 },
                 [READY]: function (): ComputerScreen {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
-                        {
-                        ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                ...state,
+                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                                conversationsHistory:
+                                    {
+                                        ...state.conversationsHistory,
+                                        [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                    }
+
+
                             }
-
-
-                    }
-                    :
+                            :
                             {...state})
                 },
                 [END_CONVERSATION]: function (): ComputerScreen {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
-                        {
-                        ...state,
-                        currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                        conversationsHistory:
                             {
-                                ...state.conversationsHistory,
-                                [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                            }
+                                ...state,
+                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
+                                conversationsHistory:
+                                    {
+                                        ...state.conversationsHistory,
+                                        [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
+                                    }
 
-                    }
-                    :
+                            }
+                            :
                             {...state}
                     )
                 },
@@ -198,31 +201,31 @@ export const rootReducer = combineReducers({
                         state.contacts.includes(action.payload.contact)
                             ?
                             {
-                        ...state,
-                        currentContact: action.payload.contact,
-                        currentEvent: action.payload.event,
-                        currentConversationPhase: (
-                            (state.conversationsHistory[action.payload.contact])?.length
-                                ?
-                                state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
-                                :
-                                state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
-                        ),
-                        conversationsHistory: (
-                            (state.conversationsHistory[action.payload.contact])?.length
-                                ?
-                                {
-                                    ...state.conversationsHistory,
-                                }
-                                :
-                                {
-                                    ...state.conversationsHistory,
-                                    [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
-                                }
+                                ...state,
+                                currentContact: action.payload.contact,
+                                currentEvent: action.payload.event,
+                                currentConversationPhase: (
+                                    (state.conversationsHistory[action.payload.contact])?.length
+                                        ?
+                                        state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
+                                        :
+                                        state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
+                                ),
+                                conversationsHistory: (
+                                    (state.conversationsHistory[action.payload.contact])?.length
+                                        ?
+                                        {
+                                            ...state.conversationsHistory,
+                                        }
+                                        :
+                                        {
+                                            ...state.conversationsHistory,
+                                            [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
+                                        }
 
-                        )
-                    }
-                    :
+                                )
+                            }
+                            :
                             {...state}
                     )
                 },
@@ -237,7 +240,8 @@ export const rootReducer = combineReducers({
                                 },
                                 {}
                             )
-                    })                },
+                    })
+                },
                 [SHUFFLE_COLORS]: function (): ComputerScreen {
                     return ({
                         ...state,
@@ -283,135 +287,135 @@ export const rootReducer = combineReducers({
         },
         guestSlot: function (state: GuestSlot = preloadedGuestSlotState, action) {
             const guestSlotHandlers: GuestSlotHandlers = {
-                [DELAY_WORK]: function (): GuestSlot {
+                [DELAY_WORK_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
-                        {
-                        ...state,
-                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                        visitsHistory:
                             {
-                                ...state.visitsHistory,
-                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                ...state,
+                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                visitsHistory:
+                                    {
+                                        ...state.visitsHistory,
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state})
                 },
-                [START_WORK]: function (): GuestSlot {
+                [START_WORK_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
-                        {
-                        ...state,
-                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                        visitsHistory:
                             {
-                                ...state.visitsHistory,
-                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                ...state,
+                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                visitsHistory:
+                                    {
+                                        ...state.visitsHistory,
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state})
                 },
-                [REJECT]: function (): GuestSlot {
+                [REJECT_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
-                        {
-                        ...state,
-                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                        visitsHistory:
                             {
-                                ...state.visitsHistory,
-                                [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                ...state,
+                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                visitsHistory:
+                                    {
+                                        ...state.visitsHistory,
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                    }
                             }
-                    }
-                    :
+                            :
                             {...state})
                 },
-                [READY]: function (): GuestSlot {
+                [READY_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
-                        {
-                        ...state,
-                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                        visitsHistory:
                             {
-                                ...state.visitsHistory,
-                                [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                            }
+                                ...state,
+                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                visitsHistory:
+                                    {
+                                        ...state.visitsHistory,
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                    }
 
 
-                    }
-                    :
+                            }
+                            :
                             {...state})
                 },
-                [END_CONVERSATION]: function (): GuestSlot {
+                [END_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
-                        {
-                        ...state,
-                        currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                        visitsHistory:
                             {
-                                ...state.visitsHistory,
-                                [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                            }
+                                ...state,
+                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                visitsHistory:
+                                    {
+                                        ...state.visitsHistory,
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                    }
 
-                    }
-                    :
+                            }
+                            :
                             {...state}
                     )
                 },
-                [START_CONVERSATION]: function (): GuestSlot {
+                [START_VISIT]: function (): GuestSlot {
 
                     return (
                         state.guests.includes(action.payload.guest)
                             ?
-                        {
-                        ...state,
-                            currentGuest: action.payload.guest,
-                        currentEvent: action.payload.event,
-                        currentVisitPhase: (
-                            (state.visitsHistory[action.payload.guest])?.length
-                                ?
-                                state.visitsHistory[action.payload.guest][state.visitsHistory[action.payload.guest]?.length - 1]
-                                :
-                                state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0]
-                        ),
+                            {
+                                ...state,
+                                currentGuest: action.payload.guest,
+                                currentEvent: action.payload.event,
+                                currentVisitPhase: (
+                                    (state.visitsHistory[action.payload.guest])?.length
+                                        ?
+                                        state.visitsHistory[action.payload.guest][state.visitsHistory[action.payload.guest]?.length - 1]
+                                        :
+                                        state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0]
+                                ),
 
-                        visitsHistory:
-                            state.guests.includes(action.payload.contact)
-                                ?
-                            (
-                            (state.visitsHistory[action.payload.contact])?.length
-                                ?
-                                {
-                                    ...state.visitsHistory,
-                                }
-                                :
-                                {
-                                    ...state.visitsHistory,
-                                    [action.payload.contact]: [(state.visits[action.payload.contact].find(phase => phase.event === action.payload.event) || state.visits[action.payload.contact][0])]
-                                }
+                                visitsHistory:
+                                    state.guests.includes(action.payload.guest)
+                                        ?
+                                        (
+                                            (state.visitsHistory[action.payload.guest])?.length
+                                                ?
+                                                {
+                                                    ...state.visitsHistory,
+                                                }
+                                                :
+                                                {
+                                                    ...state.visitsHistory,
+                                                    [action.payload.guest]: [(state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0])]
+                                                }
 
-                        )
-                                :
-                                state.visitsHistory
-                    }
-                    :
+                                        )
+                                        :
+                                        state.visitsHistory
+                            }
+                            :
                             {...state})
                 },
-                [INITIALIZE_CONVERSATIONS]: function (): GuestSlot {
+                [INITIALIZE_VISIT]: function (): GuestSlot {
 
                     return ({
                         ...state,
                         visits: (state.guests
-                            .map((guest: string) => ({[guest]: conversations[guest]})))
+                            .map((guest: string) => ({[guest]: visits[guest]})))
                             .reduce(
                                 (acc, x) => {
                                     return {...acc, ...x}

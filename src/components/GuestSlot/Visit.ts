@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {delayWork, endVisit, ready, reject, startWork} from "../../actions";
+import {delayWorkVisit, endVisit, readyVisit, rejectVisit, startWorkVisit} from "../../actions";
 import {AppState} from "../../model/state";
 import {VisitDispatchProps, VisitStateProps} from "../common/Visit/Visit.types";
 import {Visit} from "../common/Visit/Visit.layout";
@@ -22,17 +22,17 @@ export function mapDispatchToProps(dispatch: Dispatch): VisitDispatchProps {
         dispatchEndVisit: function (event) {
             dispatch(endVisit(event))
         },
-        dispatchReady: function (event) {
-            dispatch(ready(event))
+        dispatchReadyVisit: function (event) {
+            dispatch(readyVisit(event))
         },
-        dispatchReject: function (event) {
-            dispatch(reject(event))
+        dispatchRejectVisit: function (event) {
+            dispatch(rejectVisit(event))
         },
-        dispatchStartWork: function (event) {
-            dispatch(startWork(event))
+        dispatchStartWorkVisit: function (event) {
+            dispatch(startWorkVisit(event))
         },
-        dispatchDelayWork: function (event) {
-            dispatch(delayWork(event))
+        dispatchDelayWorkVisit: function (event) {
+            dispatch(delayWorkVisit(event))
         }
     }
 }
