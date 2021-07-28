@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="" />
+    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/Guests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/Guests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Visit/Visit.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visits/randomDeveloperVisit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/randomDeveloperVisit.ts" afterDir="false" />
+    </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Rewrite_guest_slot_and_conversation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -194,6 +205,7 @@
       <workItem from="1627299998108" duration="13028000" />
       <workItem from="1627463594701" duration="1254000" />
       <workItem from="1627464942430" duration="4352000" />
+      <workItem from="1627478490953" duration="342000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>

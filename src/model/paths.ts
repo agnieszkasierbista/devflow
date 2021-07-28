@@ -7,7 +7,3 @@ export const mainFilePath = '/code-editor/main-file';
 export const conversationWithJohnPath = '/communicator/conversation-with-john';
 export const conversationWithBarbaraPath = '/communicator/conversation-with-barbara';
 export const conversationWithLinglingPath = '/communicator/conversation-with-lingling';
-export const conversationWithMikePath = '/guest-slot/conversation-with-mike';
-export const conversationWithEllaPath = '/guest-slot/conversation-with-ella';
-export const conversationWithRandomDeveloperPath = '/guest-slot/conversation-with-random-developer';
-export const guestSlotPath = '/guest-slot/';

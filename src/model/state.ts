@@ -49,6 +49,7 @@ export interface ComputerScreen {
 }
 
 export interface GuestSlot {
+    randomColors: string[],
     guests: string[],
     visits: Conversations,
     currentVisitPhase: DialogueOption,

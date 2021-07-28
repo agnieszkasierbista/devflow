@@ -71,6 +71,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
+    randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
     guests: ["Mike", "Ella", "RandomDeveloper"],
     currentGuest: "",
     currentEvent: "",

@@ -12,6 +12,7 @@ function mapStateToProps(state: AppState): GuestsStateProps {
         visits: state.guestSlot.visits,
         currentVisitPhase: state.guestSlot.currentVisitPhase,
         visitsHistory: state.guestSlot.visitsHistory,
+        randomColors: state.guestSlot.randomColors,
     }
 }
 

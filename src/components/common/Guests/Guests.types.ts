@@ -15,7 +15,8 @@ export interface GuestsStateProps {
     guests: Guest[],
     visits: Conversations,
     currentVisitPhase: DialogueOption,
-    visitsHistory: Conversations
+    visitsHistory: Conversations,
+    randomColors: string[]
 }
 
 export interface GuestsDispatchProps {
