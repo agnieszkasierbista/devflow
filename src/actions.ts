@@ -18,6 +18,13 @@ export const READY_VISIT = "READY_VISIT";
 export const REJECT_VISIT = "REJECT_VISIT";
 export const START_WORK_VISIT = "START_WORK_VISIT";
 export const DELAY_WORK_VISIT = "DELAY_WORK_VISIT";
+export const CLOSE_VISIT = "CLOSE_VISIT";
+
+export function closeVisit() {
+    return {
+        type: CLOSE_VISIT,
+    }
+}
 
 export function ready(event: string) {
     return {

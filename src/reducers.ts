@@ -9,7 +9,7 @@ import {
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
-    CLOSE_PLAYER_NAME_INPUT,
+    CLOSE_PLAYER_NAME_INPUT, CLOSE_VISIT,
     DELAY_WORK, DELAY_WORK_VISIT,
     END_CONVERSATION, END_VISIT,
     INITIALIZE_CONVERSATIONS,
@@ -27,12 +27,19 @@ import {
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
 import {visits} from "./visits/visits";
+//
+// export const preloadedWorkspaceState: Workspace = {
+//     isOverlayVisible: true,
+//     playerName: "",
+//     isPlayerNameInputVisible: true,
+//     isPlayerNameVisible: false
+// };
 
 export const preloadedWorkspaceState: Workspace = {
-    isOverlayVisible: true,
-    playerName: "",
-    isPlayerNameInputVisible: true,
-    isPlayerNameVisible: false
+    isOverlayVisible: false,
+    playerName: "d",
+    isPlayerNameInputVisible: false,
+    isPlayerNameVisible: true
 };
 
 export const preloadedComputerScreenState: ComputerScreen = {
@@ -287,12 +294,19 @@ export const rootReducer = combineReducers({
         },
         guestSlot: function (state: GuestSlot = preloadedGuestSlotState, action) {
             const guestSlotHandlers: GuestSlotHandlers = {
+            [CLOSE_VISIT] : function (): GuestSlot {
+                return {
+                    ...state,
+                    currentEvent: ""
+                }
+            },
                 [DELAY_WORK_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
                             ?
                             {
                                 ...state,
+                                currentEvent: action.payload,
                                 currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
                                 visitsHistory:
                                     {
@@ -309,6 +323,7 @@ export const rootReducer = combineReducers({
                             ?
                             {
                                 ...state,
+                                currentEvent: action.payload,
                                 currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
                                 visitsHistory:
                                     {
@@ -325,6 +340,7 @@ export const rootReducer = combineReducers({
                             ?
                             {
                                 ...state,
+                                currentEvent: action.payload,
                                 currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
                                 visitsHistory:
                                     {
@@ -341,6 +357,7 @@ export const rootReducer = combineReducers({
                             ?
                             {
                                 ...state,
+                                currentEvent: action.payload,
                                 currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
                                 visitsHistory:
                                     {
@@ -359,6 +376,7 @@ export const rootReducer = combineReducers({
                             ?
                             {
                                 ...state,
+                                currentEvent: action.payload,
                                 currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
                                 visitsHistory:
                                     {

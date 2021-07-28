@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/visits/visits.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/Guests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/Guests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/Visit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/Visit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Contacts/Contacts.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Visit/Visit.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Visit/Visit.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Visit/Visit.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Visit/Visit.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversationWithElla.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/ellaVisit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversationWithMike.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/mikeVisit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversationWithRandomDeveloper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/randomDeveloperVisit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversations/conversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversations/conversations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-    </list>
+    <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="" />
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +193,7 @@
       <workItem from="1627209716411" duration="15483000" />
       <workItem from="1627299998108" duration="13028000" />
       <workItem from="1627463594701" duration="1254000" />
-      <workItem from="1627464942430" duration="1411000" />
+      <workItem from="1627464942430" duration="4352000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -437,7 +419,21 @@
       <option name="project" value="LOCAL" />
       <updated>1627391204331</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Allow user to have two simultaneous conversations one in the communicator and one in guest slot view">
+      <created>1627466612888</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1627466612888</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Allow a user to close finished visit">
+      <created>1627477041702</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1627477041702</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -530,7 +526,9 @@
     <MESSAGE value="Allow a user to have a conversation with NPC in the guest slot" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Divide Conversation component into 2 independent components: Conversation and Visit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Divide Conversation component into 2 independent components: Conversation and Visit" />
+    <MESSAGE value="Allow user to have two simultaneous conversations one in the communicator and one in guest slot view" />
+    <MESSAGE value="Allow a user to close finished visit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to close finished visit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

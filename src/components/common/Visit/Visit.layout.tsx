@@ -1,5 +1,5 @@
 import React from "react";
-import {DELAY_WORK_VISIT, END_VISIT, READY_VISIT, REJECT_VISIT, START_WORK_VISIT} from "../../../actions";
+import {CLOSE_VISIT, DELAY_WORK_VISIT, END_VISIT, READY_VISIT, REJECT_VISIT, START_WORK_VISIT} from "../../../actions";
 import {OnClickHandlers} from "../../../model/state";
 import {VisitProps} from "./Visit.types";
 import {StyledVisit} from "./Visit.styled";
@@ -7,13 +7,28 @@ import {StyledVisit} from "./Visit.styled";
 export const Visit: React.FC<VisitProps> = (props) => {
 
     return (
-        props.currentVisitPhase.event !== ""
+        props.currentEvent !== ""
             ?
             (
                 <StyledVisit>
 
 
                             <div key={props.currentVisitPhase.npcName}>
+
+                                {
+                                    props.currentVisitPhase.event === END_VISIT
+                                        ?
+                                        <button
+                                            onClick={() => {
+                                                props.dispatchCloseVisit();
+                                            }}
+                                        >
+                                            X
+                                        </button>
+
+                                        :
+                                        null
+                                }
                                 {
                                     (props.visitsHistory[props.currentGuest]).length
                                         ? props.visitsHistory[props.currentGuest].map((phase, idx) => {

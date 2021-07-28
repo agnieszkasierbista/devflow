@@ -23,5 +23,6 @@ export interface VisitDispatchProps {
     dispatchReadyVisit: (event: string) => void,
     dispatchRejectVisit: (event: string) => void,
     dispatchStartWorkVisit: (event: string) => void,
-    dispatchDelayWorkVisit: (event: string) => void
+    dispatchDelayWorkVisit: (event: string) => void,
+    dispatchCloseVisit: () => void,
 }
