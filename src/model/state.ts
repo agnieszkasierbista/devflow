@@ -34,9 +34,17 @@ export interface Conversations {
     [key: string]: Conversation
 }
 
+export type FileName = string
+
+export interface Files extends Puzzle {
+    fileName: FileName,
+}
+
 export interface ComputerScreen {
     randomColors: string[],
     puzzle: Puzzle,
+    currentFile: Files,
+    files: Files[],
     codeEditorTabsList: string[],
     openedFiles: string[],
     contacts: string[],

@@ -13,5 +13,5 @@ export interface TabBarStateProps {
 }
 
 export interface TabBarDispatchProps {
-
+    dispatchSetCurrentFile: (fileName: string) => void,
 }

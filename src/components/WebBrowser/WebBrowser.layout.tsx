@@ -6,8 +6,9 @@ import DragAndDropBoard from "../DragAndDropBoard/DragAndDropBoard";
 export const WebBrowser = () => {
     return (
         <StyledWebBrowser>
-            <div>Presentation:
-            <DragAndDropBoard/>
+            <div>
+                Presentation:
+                <DragAndDropBoard/>
             </div>
         </StyledWebBrowser>
     )

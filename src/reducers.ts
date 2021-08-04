@@ -14,12 +14,14 @@ import {
     END_CONVERSATION, END_VISIT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
-    ON_DRAG_START,
-    ON_DROP,
+    ON_DRAG_START, ON_DRAG_START_FILES,
+    ON_DROP, ON_DROP_FILES,
     READY, READY_VISIT,
-    REJECT, REJECT_VISIT,
+    REJECT, REJECT_VISIT, SET_CURRENT_FILE,
     SHOW_ORDER_CHECK_RESULT,
+    SHOW_ORDER_CHECK_RESULT_FILES,
     SHUFFLE_COLORS,
+    SHUFFLE_COLORS_FILES,
     START_CONVERSATION,
     START_VISIT,
     START_WORK, START_WORK_VISIT
@@ -51,6 +53,38 @@ export const preloadedComputerScreenState: ComputerScreen = {
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
     },
+    currentFile: {
+        fileName: "",
+        items: [],
+        shuffledItems: [],
+        colors: {},
+        beingDragged: -1,
+        shouldShowOrderCheckResult: false,
+    },
+    files: [{
+        fileName: "config.file",
+        items: ["f", "g", "h", "i", "j"],
+        shuffledItems: ["f", "h", "j", "i", "g"],
+        colors: {},
+        beingDragged: -1,
+        shouldShowOrderCheckResult: false,
+    },
+        {
+            fileName: "index.file",
+            items: ["a", "b", "c", "d", "e"],
+            shuffledItems: ["b", "a", "c", "e", "d"],
+            colors: {},
+            beingDragged: -1,
+            shouldShowOrderCheckResult: false,
+        },
+        {
+            fileName: "main.file",
+            items: ["k", "l", "m", "n", "o"],
+            shuffledItems: ["o", "n", "k", "m", "l"],
+            colors: {},
+            beingDragged: -1,
+            shouldShowOrderCheckResult: false,
+        }],
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "LingLing"],
@@ -259,11 +293,36 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
+                [SHUFFLE_COLORS_FILES]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
+                            colors: getArrayOfShuffledColors(state.currentFile.items, state.randomColors)
+                        }
+                    })
+                },
+                [SET_CURRENT_FILE]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: state.files.find((file) => file.fileName === action.payload) || state.files[0]
+                    })
+                },
                 [ON_DRAG_START]: function (): ComputerScreen {
                     return ({
                         ...state,
                         puzzle: {
                             ...state.puzzle,
+                            beingDragged: action.payload,
+                            shouldShowOrderCheckResult: false
+                        }
+                    })
+                },
+                [ON_DRAG_START_FILES]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
                             beingDragged: action.payload,
                             shouldShowOrderCheckResult: false
                         }
@@ -278,11 +337,29 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
+                [ON_DROP_FILES]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
+                            shuffledItems: action.payload
+                        }
+                    })
+                },
                 [SHOW_ORDER_CHECK_RESULT]: function (): ComputerScreen {
                     return ({
                         ...state,
                         puzzle: {
                             ...state.puzzle,
+                            shouldShowOrderCheckResult: true
+                        }
+                    })
+                },
+                [SHOW_ORDER_CHECK_RESULT_FILES]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
                             shouldShowOrderCheckResult: true
                         }
                     })

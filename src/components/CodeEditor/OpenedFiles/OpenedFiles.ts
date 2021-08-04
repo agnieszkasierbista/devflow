@@ -6,7 +6,8 @@ import {OpenedFilesDispatchProps, OpenedFilesStateProps} from "./OpenedFiles.typ
 
 export function mapStateToProps(state: AppState): OpenedFilesStateProps {
     return {
-        openedFiles: state.computerScreen.openedFiles
+        files: state.computerScreen.files,
+        codeEditorTabsList: state.computerScreen.codeEditorTabsList
     }
 }
 

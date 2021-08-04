@@ -4,6 +4,10 @@ export const ON_DRAG_START = 'ON_DRAG_START';
 export const ON_DROP = 'ON_DROP';
 export const SHOW_ORDER_CHECK_RESULT = 'SHOW_ORDER_CHECK_RESULT';
 export const SHUFFLE_COLORS = "SHUFFLE_COLORS";
+export const ON_DRAG_START_FILES = 'ON_DRAG_START_FILES';
+export const ON_DROP_FILES = 'ON_DROP_FILES';
+export const SHOW_ORDER_CHECK_RESULT_FILES = 'SHOW_ORDER_CHECK_RESULT_FILES';
+export const SHUFFLE_COLORS_FILES = "SHUFFLE_COLORS_FILES";
 export const START_CONVERSATION = "START_CONVERSATION";
 export const END_CONVERSATION = "END_CONVERSATION";
 export const INITIALIZE_CONVERSATIONS = "INITIALIZE_CONVERSATIONS";
@@ -19,6 +23,14 @@ export const REJECT_VISIT = "REJECT_VISIT";
 export const START_WORK_VISIT = "START_WORK_VISIT";
 export const DELAY_WORK_VISIT = "DELAY_WORK_VISIT";
 export const CLOSE_VISIT = "CLOSE_VISIT";
+export const SET_CURRENT_FILE = "SET_CURRENT_FILE";
+
+export function setCurrentFile(fileName: string) {
+    return {
+        type: SET_CURRENT_FILE,
+        payload: fileName
+    }
+}
 
 export function closeVisit() {
     return {
@@ -147,6 +159,32 @@ export function onDrop(swappedItems: string[]) {
 export function showOrderCheckResult() {
     return {
         type: SHOW_ORDER_CHECK_RESULT
+    }
+}
+
+export function shuffleColorsFiles() {
+    return {
+        type: SHUFFLE_COLORS_FILES
+    }
+}
+
+export function onDragStartFiles(idx: number) {
+    return {
+        type: ON_DRAG_START_FILES,
+        payload: idx
+    }
+}
+
+export function onDropFiles(swappedItems: string[]) {
+    return {
+        type: ON_DROP_FILES,
+        payload: swappedItems
+    }
+}
+
+export function showOrderCheckResultFiles() {
+    return {
+        type: SHOW_ORDER_CHECK_RESULT_FILES
     }
 }
 
