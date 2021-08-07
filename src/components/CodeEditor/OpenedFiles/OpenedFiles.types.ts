@@ -12,6 +12,7 @@ export interface OpenedFilesOwnProps {
 export interface OpenedFilesStateProps {
     files: Files[],
     codeEditorTabsList: string[],
+    currentFile: Files
 }
 
 export interface OpenedFilesDispatchProps {

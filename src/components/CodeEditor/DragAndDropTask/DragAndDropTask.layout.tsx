@@ -24,7 +24,7 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
         <div id="task">
             {
                 props.currentFile.shuffledItems
-                    .map((val, idx) => {
+                    ?.map((val, idx) => {
                         return (
                             <StyledDraggable
                                 draggable="true"
@@ -35,6 +35,7 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                                 onDragStart={() => props.dispatchOnDragStartFiles(idx)}
                                 onDrop={() => {
                                     const draggedItemIdx = props.currentFile.beingDragged;
+                                    // @ts-ignore
                                     const swappedItems = R.move(draggedItemIdx, idx, props.currentFile.shuffledItems);
 
                                     props.dispatchOnDropFiles(swappedItems);

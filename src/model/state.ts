@@ -35,9 +35,13 @@ export interface Conversations {
 }
 
 export type FileName = string
+export type TaskType = string
 
-export interface Files extends Puzzle {
+export type Files = Omit<Puzzle, "items" | "shuffledItems"> & {
     fileName: FileName,
+    taskType: TaskType,
+    items: string[] | string[][];
+    shuffledItems?: string[];
 }
 
 export interface ComputerScreen {
@@ -53,7 +57,12 @@ export interface ComputerScreen {
     currentContact: string,
     currentEvent: string,
     currentConversationHistory: string[],
-    conversationsHistory: Conversations
+    conversationsHistory: Conversations,
+    isDivClicked: {}[],
+    clickedDivCurrentStateLeft: string,
+    clickedDivCurrentStateRight: string,
+    columnLeft:string[],
+    columnRight:string[],
 }
 
 export interface GuestSlot {
@@ -81,4 +90,12 @@ export interface GuestSlotHandlers {
 
 export interface OnClickHandlers {
     [key: string]: (event: string) => void
+}
+
+export interface OnClickPairMatchingHandlers {
+    [key: string]: (val: string) => void
+}
+
+export interface OpenedFilesHandlers {
+    [key: string]: () => void
 }

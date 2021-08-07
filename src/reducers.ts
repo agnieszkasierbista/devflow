@@ -9,26 +9,42 @@ import {
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
-    CLOSE_PLAYER_NAME_INPUT, CLOSE_VISIT,
-    DELAY_WORK, DELAY_WORK_VISIT,
-    END_CONVERSATION, END_VISIT,
+    CLICK_OFF_LEFT,
+    CLICK_OFF_RIGHT,
+    CLICK_ON_LEFT,
+    CLICK_ON_RIGHT,
+    CLOSE_PLAYER_NAME_INPUT,
+    CLOSE_VISIT,
+    DELAY_WORK,
+    DELAY_WORK_VISIT,
+    END_CONVERSATION,
+    END_VISIT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
-    ON_DRAG_START, ON_DRAG_START_FILES,
-    ON_DROP, ON_DROP_FILES,
-    READY, READY_VISIT,
-    REJECT, REJECT_VISIT, SET_CURRENT_FILE,
+    ON_DRAG_START,
+    ON_DRAG_START_FILES,
+    ON_DROP,
+    ON_DROP_FILES,
+    READY,
+    READY_VISIT,
+    REJECT,
+    REJECT_VISIT,
+    SET_CURRENT_FILE,
     SHOW_ORDER_CHECK_RESULT,
     SHOW_ORDER_CHECK_RESULT_FILES,
+    SHUFFLE_ALL_ITEMS,
     SHUFFLE_COLORS,
     SHUFFLE_COLORS_FILES,
     START_CONVERSATION,
     START_VISIT,
-    START_WORK, START_WORK_VISIT
+    START_WORK,
+    START_WORK_VISIT
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
 import {visits} from "./visits/visits";
+import {files} from "./tasksSourceFiles/files";
+import {shuffleArrayItems} from "./helpers/itemsShuffler.helpers";
 //
 // export const preloadedWorkspaceState: Workspace = {
 //     isOverlayVisible: true,
@@ -60,31 +76,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
+        taskType: ""
     },
-    files: [{
-        fileName: "config.file",
-        items: ["f", "g", "h", "i", "j"],
-        shuffledItems: ["f", "h", "j", "i", "g"],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-    },
-        {
-            fileName: "index.file",
-            items: ["a", "b", "c", "d", "e"],
-            shuffledItems: ["b", "a", "c", "e", "d"],
-            colors: {},
-            beingDragged: -1,
-            shouldShowOrderCheckResult: false,
-        },
-        {
-            fileName: "main.file",
-            items: ["k", "l", "m", "n", "o"],
-            shuffledItems: ["o", "n", "k", "m", "l"],
-            colors: {},
-            beingDragged: -1,
-            shouldShowOrderCheckResult: false,
-        }],
+    files: [],
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
     openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "LingLing"],
@@ -101,7 +95,12 @@ export const preloadedComputerScreenState: ComputerScreen = {
         ]
     },
     currentConversationHistory: [],
-    conversationsHistory: {}
+    conversationsHistory: {},
+    isDivClicked:[],
+    clickedDivCurrentStateLeft: "CLICK_OFF_LEFT",
+    clickedDivCurrentStateRight: "CLICK_OFF_RIGHT",
+    columnLeft: [],
+    columnRight: [],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -151,6 +150,77 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+                [SHUFFLE_ALL_ITEMS]: function (): ComputerScreen {
+                    return (
+                        {
+                            ...state,
+                            columnLeft: shuffleArrayItems(action.payload.map((item: string[]) => item[0])),
+                            columnRight: shuffleArrayItems(action.payload.map((item: string[]) => item[1])),
+                            isDivClicked: state.currentFile.items.flat().map(item => ({[item]: false}))
+
+                        }
+                    )
+                },
+                [CLICK_ON_LEFT]: function (): ComputerScreen {
+                    return (
+                        {
+                            ...state,
+                            isDivClicked: state.isDivClicked.map((div) => {
+                                if (Reflect.has(div, action.payload)) {
+                                    return {[action.payload]: true}
+                                } else {
+                                    return div
+                                }
+                            } ),
+                            clickedDivCurrentStateLeft: CLICK_ON_LEFT
+                        }
+                    )
+                },
+                [CLICK_OFF_LEFT]: function (): ComputerScreen {
+                    return (
+                        {
+                            ...state,
+                            isDivClicked: state.isDivClicked.map((div) => {
+                                if (Reflect.has(div, action.payload)) {
+                                    return {[action.payload]: false}
+                                } else {
+                                    return div
+                                }
+                            } ),
+                            clickedDivCurrentStateLeft: CLICK_OFF_LEFT
+                        }
+                    )
+                },
+                [CLICK_ON_RIGHT]: function (): ComputerScreen {
+                    return (
+                        {
+                            ...state,
+                            isDivClicked: state.isDivClicked.map((div) => {
+                                if (Reflect.has(div, action.payload)) {
+                                    return {[action.payload]: true}
+                                } else {
+                                    return div
+                                }
+                            } ),
+                            clickedDivCurrentStateRight: CLICK_ON_RIGHT
+                        }
+                    )
+                },
+                [CLICK_OFF_RIGHT]: function (): ComputerScreen {
+                    return (
+                        {
+                            ...state,
+                            isDivClicked: state.isDivClicked.map((div) => {
+                                if (Reflect.has(div, action.payload)) {
+                                    return {[action.payload]: false}
+                                } else {
+                                    return div
+                                }
+                            } ),
+                            clickedDivCurrentStateRight: CLICK_OFF_RIGHT
+                        }
+                    )
+                },
                 [DELAY_WORK]: function (): ComputerScreen {
                     return (
                         state.contacts.includes(state.currentContact)
@@ -298,14 +368,14 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFile: {
                             ...state.currentFile,
-                            colors: getArrayOfShuffledColors(state.currentFile.items, state.randomColors)
+                            colors: getArrayOfShuffledColors(state.currentFile.items.flatMap((x => x[0])), state.randomColors)
                         }
                     })
                 },
                 [SET_CURRENT_FILE]: function (): ComputerScreen {
                     return ({
                         ...state,
-                        currentFile: state.files.find((file) => file.fileName === action.payload) || state.files[0]
+                        currentFile: files.find((file) => file.fileName === action.payload) || files[0]
                     })
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {
@@ -372,12 +442,12 @@ export const rootReducer = combineReducers({
         },
         guestSlot: function (state: GuestSlot = preloadedGuestSlotState, action) {
             const guestSlotHandlers: GuestSlotHandlers = {
-            [CLOSE_VISIT] : function (): GuestSlot {
-                return {
-                    ...state,
-                    currentEvent: ""
-                }
-            },
+                [CLOSE_VISIT]: function (): GuestSlot {
+                    return {
+                        ...state,
+                        currentEvent: ""
+                    }
+                },
                 [DELAY_WORK_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)

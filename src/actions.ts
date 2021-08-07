@@ -24,6 +24,46 @@ export const START_WORK_VISIT = "START_WORK_VISIT";
 export const DELAY_WORK_VISIT = "DELAY_WORK_VISIT";
 export const CLOSE_VISIT = "CLOSE_VISIT";
 export const SET_CURRENT_FILE = "SET_CURRENT_FILE";
+export const CLICK_ON_LEFT = "CLICK_ON_LEFT";
+export const CLICK_OFF_LEFT = "CLICK_OFF_LEFT";
+export const CLICK_ON_RIGHT = "CLICK_ON_RIGHT";
+export const CLICK_OFF_RIGHT = "CLICK_OFF_RIGHT";
+export const SHUFFLE_ALL_ITEMS = "SHUFFLE_ALL_ITEMS";
+
+export function shuffleAllItems(items: string[][]) {
+    return {
+        type: SHUFFLE_ALL_ITEMS,
+        payload: items
+    }
+}
+
+export function clickOnLeft(val: string) {
+    return {
+        type: CLICK_ON_LEFT,
+        payload: val
+    }
+}
+
+export function clickOffLeft(val: string) {
+    return {
+        type: CLICK_OFF_LEFT,
+        payload: val
+    }
+}
+
+export function clickOnRight(val: string) {
+    return {
+        type: CLICK_ON_RIGHT,
+        payload: val
+    }
+}
+
+export function clickOffRight(val: string) {
+    return {
+        type: CLICK_OFF_RIGHT,
+        payload: val
+    }
+}
 
 export function setCurrentFile(fileName: string) {
     return {

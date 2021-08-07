@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/itemsShuffler.helpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
@@ -214,7 +216,14 @@
       <workItem from="1627478490953" duration="834000" />
       <workItem from="1627565660520" duration="1787000" />
       <workItem from="1628066578851" duration="4670000" />
-      <workItem from="1628075014897" duration="6582000" />
+      <workItem from="1628075014897" duration="7335000" />
+      <workItem from="1628151600663" duration="7151000" />
+      <workItem from="1628163825125" duration="7673000" />
+      <workItem from="1628183732310" duration="6471000" />
+      <workItem from="1628248772992" duration="5871000" />
+      <workItem from="1628255025403" duration="933000" />
+      <workItem from="1628258196949" duration="2059000" />
+      <workItem from="1628337512722" duration="4911000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -461,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627479035119</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Allow a user to perform a task of drag and drop items in the code editor">
+      <created>1628083184349</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1628083184349</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -531,7 +547,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update reademe file" />
     <MESSAGE value="Clean-up" />
     <MESSAGE value="Display a basic player view" />
     <MESSAGE value="Add GlobalStyle" />
@@ -556,7 +571,8 @@
     <MESSAGE value="Allow user to have two simultaneous conversations one in the communicator and one in guest slot view" />
     <MESSAGE value="Allow a user to close finished visit" />
     <MESSAGE value="Add background color to guests' buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add background color to guests' buttons" />
+    <MESSAGE value="Allow a user to perform a task of drag and drop items in the code editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to perform a task of drag and drop items in the code editor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
