@@ -70,9 +70,10 @@ export const Conversation: React.FC<ConversationProps> = (props) => {
                                                 [DELAY_WORK]: props.dispatchDelayWork
                                             }
 
-                                            return onClickHandlers[option.event]
-                                                ? onClickHandlers[option.event](option.event)
-                                                : console.log(option.event)
+                                            if (onClickHandlers[option.event]) {
+                                                onClickHandlers[option.event](option.event)
+                                            }
+
                                         }}>
                                             {idx + 1}: {option.rpl}
                                         </button>

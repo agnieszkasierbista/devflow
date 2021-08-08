@@ -17,20 +17,28 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
             <StyledColumn>
                 {props.columnLeft.map((val, idx) => {
+
+                        const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+
                         return (
                             <StyledClickable
                                 key={idx}
                                 id={val}
+                                style={
+                                    handlerName
+                                        ? {backgroundColor: props.randomColors[idx]}
+                                        : {backgroundColor: "white"}
+                                }
                                 onClick={() => {
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
-                                        [CLICK_ON_LEFT]: props.dispatchClickOffLeft,
-                                        [CLICK_OFF_LEFT]: props.dispatchClickOnLeft,
-
+                                        true: props.dispatchClickOffLeft,
+                                        false: props.dispatchClickOnLeft,
                                     }
 
-                                    return onClickPairMatchingHandlers[props.clickedDivCurrentStateLeft]
-                                        ? onClickPairMatchingHandlers[props.clickedDivCurrentStateLeft](val)
-                                        : console.log(props.clickedDivCurrentStateLeft)
+
+                                    if (onClickPairMatchingHandlers[`${handlerName}`]) {
+                                        onClickPairMatchingHandlers[`${handlerName}`](val)
+                                    }
                                 }}
                             >
                                 {val}
@@ -45,22 +53,26 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
             <StyledColumn>
                 {
                     props.columnRight.map((val, idx) => {
+
+                        const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+
                         return (
                             <StyledClickable
                                 key={idx}
                                 id={val}
+                                // styled={}
+                                // jak przekazać kolor?
                                 onClick={() => {
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
-                                        [CLICK_ON_RIGHT]: props.dispatchClickOffRight,
-                                        [CLICK_OFF_RIGHT]: props.dispatchClickOnRight,
-
+                                        true: props.dispatchClickOffRight,
+                                        false: props.dispatchClickOnRight,
                                     }
 
-                                    return onClickPairMatchingHandlers[props.clickedDivCurrentStateRight]
-                                        ? onClickPairMatchingHandlers[props.clickedDivCurrentStateRight](val)
-                                        : console.log(props.clickedDivCurrentStateRight)
-                                }}
 
+                                    if (onClickPairMatchingHandlers[`${handlerName}`]) {
+                                        onClickPairMatchingHandlers[`${handlerName}`](val)
+                                    }
+                                }}
                             >
                                 {val}
                             </StyledClickable>

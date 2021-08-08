@@ -171,8 +171,14 @@ export const rootReducer = combineReducers({
                                 } else {
                                     return div
                                 }
-                            } ),
-                            clickedDivCurrentStateLeft: CLICK_ON_LEFT
+                            }),
+                            clickedDivCurrentStateLeft: (
+                                state.isDivClicked.find((div) => div === {[action.payload]: true})
+                                    ?
+                                    CLICK_OFF_LEFT
+                                    :
+                                    CLICK_ON_LEFT
+                            )
                         }
                     )
                 },
@@ -186,8 +192,14 @@ export const rootReducer = combineReducers({
                                 } else {
                                     return div
                                 }
-                            } ),
-                            clickedDivCurrentStateLeft: CLICK_OFF_LEFT
+                            }),
+                            clickedDivCurrentStateLeft: (
+                                state.isDivClicked.find((div) => div === {[action.payload]: false})
+                                    ?
+                                    CLICK_ON_LEFT
+                                    :
+                                    CLICK_OFF_LEFT
+                            )
                         }
                     )
                 },
@@ -201,7 +213,8 @@ export const rootReducer = combineReducers({
                                 } else {
                                     return div
                                 }
-                            } ),
+                            }),
+                            //TO-DO: popraw!!!!
                             clickedDivCurrentStateRight: CLICK_ON_RIGHT
                         }
                     )
@@ -216,7 +229,7 @@ export const rootReducer = combineReducers({
                                 } else {
                                     return div
                                 }
-                            } ),
+                            }),
                             clickedDivCurrentStateRight: CLICK_OFF_RIGHT
                         }
                     )

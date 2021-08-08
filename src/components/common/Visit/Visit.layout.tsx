@@ -80,9 +80,9 @@ export const Visit: React.FC<VisitProps> = (props) => {
                                         [DELAY_WORK_VISIT]: props.dispatchDelayWorkVisit
                                     }
 
-                                    return onClickHandlers[option.event]
-                                        ? onClickHandlers[option.event](option.event)
-                                        : console.log(option.event)
+                                    if (onClickHandlers[option.event]) {
+                                        onClickHandlers[option.event](option.event)
+                                    }
                                 }}>
                                     {idx + 1}: {option.rpl}
                                 </button>

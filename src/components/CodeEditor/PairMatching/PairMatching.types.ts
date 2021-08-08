@@ -8,7 +8,7 @@ export interface PairMatchingProps extends PairMatchingStateProps,
 export interface PairMatchingStateProps {
     currentFile: Files,
     randomColors: string[],
-    isDivClicked: {}[],
+    isDivClicked: {[key: string]: boolean}[],
     clickedDivCurrentStateLeft: string,
     clickedDivCurrentStateRight: string,
     columnLeft: string[],
