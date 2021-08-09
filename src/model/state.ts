@@ -63,6 +63,7 @@ export interface ComputerScreen {
     clickedDivCurrentStateRight: string,
     columnLeft:string[],
     columnRight:string[],
+    currentDivColor: string[],
 }
 
 export interface GuestSlot {
@@ -93,7 +94,7 @@ export interface OnClickHandlers {
 }
 
 export interface OnClickPairMatchingHandlers {
-    [key: string]: (val: string) => void
+    [key: string]: (val: string, color: string, rightColumnIndex?: number | undefined) => void
 }
 
 export interface OpenedFilesHandlers {

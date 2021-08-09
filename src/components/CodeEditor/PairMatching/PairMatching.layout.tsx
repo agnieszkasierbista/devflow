@@ -2,7 +2,6 @@ import {PairMatchingProps} from "./PairMatching.types";
 import React from "react";
 import {StyledButton, StyledClickable, StyledColumn, StyledTask} from "./PairMatching.styled";
 import {OnClickPairMatchingHandlers} from "../../../model/state";
-import {CLICK_OFF_LEFT, CLICK_OFF_RIGHT, CLICK_ON_LEFT, CLICK_ON_RIGHT} from "../../../actions";
 
 export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
@@ -19,6 +18,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                 {props.columnLeft.map((val, idx) => {
 
                         const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+                        const divColor = props.randomColors[idx];
 
                         return (
                             <StyledClickable
@@ -26,7 +26,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                 id={val}
                                 style={
                                     handlerName
-                                        ? {backgroundColor: props.randomColors[idx]}
+                                        ? {backgroundColor: divColor}
                                         : {backgroundColor: "white"}
                                 }
                                 onClick={() => {
@@ -37,7 +37,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
 
                                     if (onClickPairMatchingHandlers[`${handlerName}`]) {
-                                        onClickPairMatchingHandlers[`${handlerName}`](val)
+                                        onClickPairMatchingHandlers[`${handlerName}`](val, divColor)
                                     }
                                 }}
                             >
@@ -55,14 +55,35 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                     props.columnRight.map((val, idx) => {
 
                         const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+                        const divColor = Object.values(props.currentFile.colors)[0];
+
+                        const rightColumnIndex = props.columnRight.findIndex((item) => item === val)
+                        const currentDivColor = (props.currentDivColor[rightColumnIndex] !== ""
+                            ?
+                            props.currentDivColor[rightColumnIndex]
+                            :
+                            divColor)
+                        ;
 
                         return (
                             <StyledClickable
                                 key={idx}
                                 id={val}
-                                // styled={}
-                                // jak przekazać kolor?
+                                style={
+                                    props.currentDivColor
+                                        ?
+                                        handlerName
+                                            ? {backgroundColor: currentDivColor}
+                                            : {backgroundColor: "white"}
+                                        :
+                                        {backgroundColor: divColor}
+                                }
                                 onClick={() => {
+
+                                    console.log("onClick", rightColumnIndex);
+                                    console.log("currdivColor",currentDivColor);
+                                    console.log("props.currentDivColor", props.currentDivColor);
+
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
                                         true: props.dispatchClickOffRight,
                                         false: props.dispatchClickOnRight,
@@ -70,7 +91,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
 
                                     if (onClickPairMatchingHandlers[`${handlerName}`]) {
-                                        onClickPairMatchingHandlers[`${handlerName}`](val)
+                                        onClickPairMatchingHandlers[`${handlerName}`](val, divColor, rightColumnIndex)
                                     }
                                 }}
                             >

@@ -13,15 +13,16 @@ export interface PairMatchingStateProps {
     clickedDivCurrentStateRight: string,
     columnLeft: string[],
     columnRight: string[],
+    currentDivColor: string[],
 
 }
 
 export interface PairMatchingDispatchProps {
     dispatchShuffleColorsFiles: () => void,
-    dispatchClickOnLeft: (val: string) => void,
-    dispatchClickOffLeft: (val: string) => void,
-    dispatchClickOnRight: (val: string) => void,
-    dispatchClickOffRight: (val: string) => void,
+    dispatchClickOnLeft: (val: string, colors: string) => void,
+    dispatchClickOffLeft: (val: string, colors: string) => void,
+    dispatchClickOnRight: (val: string, colors: string, rightColumnIndex: number | undefined) => void,
+    dispatchClickOffRight: (val: string, colors: string, rightColumnIndex: number | undefined) => void,
     dispatchShuffleAllItems: (items: string[][]) => void,
 }
 

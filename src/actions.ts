@@ -37,31 +37,31 @@ export function shuffleAllItems(items: string[][]) {
     }
 }
 
-export function clickOnLeft(val: string) {
+export function clickOnLeft(val: string, color: string) {
     return {
         type: CLICK_ON_LEFT,
-        payload: val
+        payload: {val, color}
     }
 }
 
-export function clickOffLeft(val: string) {
+export function clickOffLeft(val: string, color: string) {
     return {
         type: CLICK_OFF_LEFT,
-        payload: val
+        payload: {val, color}
     }
 }
 
-export function clickOnRight(val: string) {
+export function clickOnRight(val: string, color: string, rightColumnIndex: number | undefined) {
     return {
         type: CLICK_ON_RIGHT,
-        payload: val
+        payload: {val, color, rightColumnIndex}
     }
 }
 
-export function clickOffRight(val: string) {
+export function clickOffRight(val: string, color: string, rightColumnIndex: number | undefined) {
     return {
         type: CLICK_OFF_RIGHT,
-        payload: val
+        payload: {val, color, rightColumnIndex}
     }
 }
 

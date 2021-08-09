@@ -19,8 +19,9 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
         isDivClicked: state.computerScreen.isDivClicked,
         clickedDivCurrentStateLeft: state.computerScreen.clickedDivCurrentStateLeft,
         clickedDivCurrentStateRight: state.computerScreen.clickedDivCurrentStateRight,
-        columnLeft:state.computerScreen.columnLeft,
-        columnRight:state.computerScreen.columnRight,
+        columnLeft: state.computerScreen.columnLeft,
+        columnRight: state.computerScreen.columnRight,
+        currentDivColor: state.computerScreen.currentDivColor,
     }
 }
 
@@ -29,17 +30,17 @@ export function mapDispatchToProps(dispatch: Dispatch): PairMatchingDispatchProp
         dispatchShuffleColorsFiles: function () {
             dispatch(shuffleColorsFiles());
         },
-        dispatchClickOnLeft: function (valIdx) {
-            dispatch(clickOnLeft(valIdx));
+        dispatchClickOnLeft: function (valIdx, divColor) {
+            dispatch(clickOnLeft(valIdx, divColor));
         },
-        dispatchClickOffLeft: function (valIdx) {
-            dispatch(clickOffLeft(valIdx));
+        dispatchClickOffLeft: function (valIdx, divColor) {
+            dispatch(clickOffLeft(valIdx, divColor));
         },
-        dispatchClickOnRight: function (valIdx) {
-            dispatch(clickOnRight(valIdx));
+        dispatchClickOnRight: function (valIdx, divColor, rightColumnIndex) {
+            dispatch(clickOnRight(valIdx, divColor, rightColumnIndex));
         },
-        dispatchClickOffRight: function (valIdx) {
-            dispatch(clickOffRight(valIdx));
+        dispatchClickOffRight: function (valIdx, divColor, rightColumnIndex) {
+            dispatch(clickOffRight(valIdx, divColor, rightColumnIndex));
         },
         dispatchShuffleAllItems: function (items) {
             dispatch(shuffleAllItems(items));
