@@ -29,6 +29,13 @@ export const CLICK_OFF_LEFT = "CLICK_OFF_LEFT";
 export const CLICK_ON_RIGHT = "CLICK_ON_RIGHT";
 export const CLICK_OFF_RIGHT = "CLICK_OFF_RIGHT";
 export const SHUFFLE_ALL_ITEMS = "SHUFFLE_ALL_ITEMS";
+export const CHECK_MATCHED_PAIRS = "CHECK_MATCHED_PAIRS";
+
+export function checkMatchedPairs() {
+    return {
+        type: CHECK_MATCHED_PAIRS
+    }
+}
 
 export function shuffleAllItems(items: string[][]) {
     return {

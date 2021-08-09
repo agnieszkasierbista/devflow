@@ -61,9 +61,12 @@ export interface ComputerScreen {
     isDivClicked: {}[],
     clickedDivCurrentStateLeft: string,
     clickedDivCurrentStateRight: string,
-    columnLeft:string[],
-    columnRight:string[],
+    columnLeft: string[],
+    columnRight: string[],
+    columnLeftClicked: string[],
+    columnRightClicked: string[],
     currentDivColor: string[],
+    pairedItems: string[][]
 }
 
 export interface GuestSlot {

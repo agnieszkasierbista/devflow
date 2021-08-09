@@ -215,7 +215,8 @@
       <workItem from="1628258196949" duration="2059000" />
       <workItem from="1628337512722" duration="6336000" />
       <workItem from="1628417712576" duration="9772000" />
-      <workItem from="1628498742704" duration="14112000" />
+      <workItem from="1628498742704" duration="14266000" />
+      <workItem from="1628536927941" duration="5270000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -483,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628431371981</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Highlight one of the divs in the right column when clicked">
+      <created>1628517434323</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1628517434323</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -553,7 +561,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add GlobalStyle" />
     <MESSAGE value="Add apps to the ComputerScreen" />
     <MESSAGE value="Add a maximized CodeEditor to the ComputerScreen" />
     <MESSAGE value="Update .gitignore file" />
@@ -578,7 +585,8 @@
     <MESSAGE value="Allow a user to perform a task of drag and drop items in the code editor" />
     <MESSAGE value="Allow a user to perform a task of pair matching in the code editor" />
     <MESSAGE value="Highlight one of the divs in the left column when clicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Highlight one of the divs in the left column when clicked" />
+    <MESSAGE value="Highlight one of the divs in the right column when clicked" />
+    <option name="LAST_COMMIT_MESSAGE" value="Highlight one of the divs in the right column when clicked" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

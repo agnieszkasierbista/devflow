@@ -4,6 +4,7 @@ import {AppState} from "../../../model/state";
 import {PairMatching} from "./PairMatching.layout";
 import {PairMatchingDispatchProps, PairMatchingStateProps} from "./PairMatching.types";
 import {
+    checkMatchedPairs,
     clickOffLeft,
     clickOffRight,
     clickOnLeft,
@@ -20,7 +21,9 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
         clickedDivCurrentStateLeft: state.computerScreen.clickedDivCurrentStateLeft,
         clickedDivCurrentStateRight: state.computerScreen.clickedDivCurrentStateRight,
         columnLeft: state.computerScreen.columnLeft,
+        columnLeftClicked: state.computerScreen.columnLeftClicked,
         columnRight: state.computerScreen.columnRight,
+        columnRightClicked: state.computerScreen.columnRightClicked,
         currentDivColor: state.computerScreen.currentDivColor,
     }
 }
@@ -44,6 +47,9 @@ export function mapDispatchToProps(dispatch: Dispatch): PairMatchingDispatchProp
         },
         dispatchShuffleAllItems: function (items) {
             dispatch(shuffleAllItems(items));
+        },
+        dispatchCheckMatchedPairs: function () {
+            dispatch(checkMatchedPairs());
         }
     }
 }

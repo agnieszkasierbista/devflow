@@ -8,7 +8,7 @@ import {
     WorkspaceHandlers
 } from "./model/state";
 import {
-    CHANGE_PLAYER_NAME,
+    CHANGE_PLAYER_NAME, CHECK_MATCHED_PAIRS,
     CLICK_OFF_LEFT,
     CLICK_OFF_RIGHT,
     CLICK_ON_LEFT,
@@ -102,7 +102,10 @@ export const preloadedComputerScreenState: ComputerScreen = {
     clickedDivCurrentStateRight: "CLICK_OFF_RIGHT",
     columnLeft: [],
     columnRight: [],
+    columnLeftClicked: [],
+    columnRightClicked: [],
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
+    pairedItems: []
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -186,7 +189,8 @@ export const rootReducer = combineReducers({
                                     CLICK_OFF_LEFT
                                     :
                                     CLICK_ON_LEFT
-                            )
+                            ),
+                           columnLeftClicked: state.columnLeftClicked.concat(action.payload.val)
                         }
                     )
                 },
@@ -211,7 +215,8 @@ export const rootReducer = combineReducers({
                                     CLICK_ON_LEFT
                                     :
                                     CLICK_OFF_LEFT
-                            )
+                            ),
+                            columnLeftClicked: R.without(action.payload.val, state.columnLeftClicked)
                         }
                     )
                 },
@@ -234,7 +239,9 @@ export const rootReducer = combineReducers({
                                 }
                             }),
                             //TO-DO: popraw!!!!
-                            clickedDivCurrentStateRight: CLICK_ON_RIGHT
+                            clickedDivCurrentStateRight: CLICK_ON_RIGHT,
+                            columnRightClicked: state.columnRightClicked.concat(action.payload.val),
+
                         }
                     )
                 },
@@ -256,7 +263,8 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
-                            clickedDivCurrentStateRight: CLICK_OFF_RIGHT
+                            clickedDivCurrentStateRight: CLICK_OFF_RIGHT,
+                            columnRightClicked: R.without(action.payload.val, state.columnRightClicked)
                         }
                     )
                 },
@@ -465,6 +473,15 @@ export const rootReducer = combineReducers({
                     })
                 },
                 [SHOW_ORDER_CHECK_RESULT_FILES]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
+                            shouldShowOrderCheckResult: true
+                        }
+                    })
+                },
+                [CHECK_MATCHED_PAIRS]: function (): ComputerScreen {
                     return ({
                         ...state,
                         currentFile: {

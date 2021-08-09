@@ -2,6 +2,30 @@ import {PairMatchingProps} from "./PairMatching.types";
 import React from "react";
 import {StyledButton, StyledClickable, StyledColumn, StyledTask} from "./PairMatching.styled";
 import {OnClickPairMatchingHandlers} from "../../../model/state";
+import * as R from "ramda";
+
+const checkOrder = (
+    items: string[] | string[][],
+    leftColumn: string[],
+    rightColumn: string[]) => {
+
+    const pairedItems = R.zip(leftColumn, rightColumn);
+    // @ts-ignore
+    const sortByFirstItem = R.sortBy(R.prop(0));
+    // @ts-ignore
+    const currentOrder = sortByFirstItem(pairedItems);
+    // @ts-ignore
+    const correctOrder = sortByFirstItem(items);
+
+    console.log('currentOrder', currentOrder);
+    console.log('correctOrder', correctOrder);
+
+    console.log('sdf', JSON.stringify(currentOrder) === JSON.stringify(correctOrder))
+
+    return R.equals(correctOrder, currentOrder)
+        ? <div id="evaluation-result">Correct</div>
+        : <div id="evaluation-result">Wrong!</div>;
+};
 
 export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
@@ -81,7 +105,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                 onClick={() => {
 
                                     console.log("onClick", rightColumnIndex);
-                                    console.log("currdivColor",currentDivColor);
+                                    console.log("currdivColor", currentDivColor);
                                     console.log("props.currentDivColor", props.currentDivColor);
 
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
@@ -101,11 +125,23 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                     })
                 }
             </StyledColumn>
+            <div>
+                <StyledButton
+                    key="pair-matching-checker"
+                    onClick={() => props.dispatchCheckMatchedPairs()}
 
-            <StyledButton>
-                Check
-            </StyledButton>
-
+                >
+                    Check
+                </StyledButton>
+                {
+                    props.currentFile.shouldShowOrderCheckResult
+                    && checkOrder(
+                        props.currentFile.items,
+                        props.columnLeftClicked,
+                        props.columnRightClicked
+                    )
+                }
+            </div>
         </StyledTask>
     )
 }
