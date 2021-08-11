@@ -11,13 +11,18 @@ import ScrumBoard from "../ScrumBoard/ScrumBoard";
 export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
 
     return (
-        <>
+
             <Switch>
                 {webBrowserTabsPaths.map((tabPath, idx) => {
                     return (
 
-                        <Route key={idx} path={tabPath}>
-                            <StyledOpenedFiles>
+                        <Route
+                            key={idx}
+                            path={tabPath}
+                        >
+                            <StyledOpenedFiles
+                                key={idx}
+                            >
                                 {
                                     props.currentFile.taskType !== "scrumBoard"
                                         ?
@@ -48,6 +53,6 @@ export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
                     )
                 })}
             </Switch>
-        </>
+
     )
 }

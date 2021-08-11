@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/TabBar.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.styled.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +101,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/WebBrowser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.styled.ts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -148,11 +134,11 @@
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\helpers" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\WebBrowser\ScrumBoard\ScrumBoardItems\ScrumBoardItem.styled.ts" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\OpenedFiles\OpenedFiles.layout.tsx" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\TabBar\TabBar.layout.tsx" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\ColorsShuffler\ColorsShuffler.helpers.ts" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\PlayerNameInput\PlayerNameInputProps.types.ts" />
-      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Overlay\Overlay.types.ts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -233,7 +219,7 @@
       <workItem from="1628498742704" duration="14266000" />
       <workItem from="1628536927941" duration="5779000" />
       <workItem from="1628597218198" duration="7085000" />
-      <workItem from="1628671152089" duration="8281000" />
+      <workItem from="1628671152089" duration="10822000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -515,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628542278903</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Allow a user to open ScrumBoard in the WebBrowser">
+      <created>1628681439811</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1628681439811</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -585,7 +578,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a maximized CodeEditor to the ComputerScreen" />
     <MESSAGE value="Update .gitignore file" />
     <MESSAGE value="Allow user to choose player's name and close input when done" />
     <MESSAGE value="Display player's name in the workspace view" />
@@ -610,7 +602,8 @@
     <MESSAGE value="Highlight one of the divs in the left column when clicked" />
     <MESSAGE value="Highlight one of the divs in the right column when clicked" />
     <MESSAGE value="Allow a user to check results of pair matching task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to check results of pair matching task" />
+    <MESSAGE value="Allow a user to open ScrumBoard in the WebBrowser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to open ScrumBoard in the WebBrowser" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
