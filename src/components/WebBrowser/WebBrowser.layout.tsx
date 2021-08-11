@@ -1,15 +1,20 @@
 import React from "react"
 import {StyledWebBrowser} from "./WebBrowser.styled"
-import DragAndDropBoard from "../DragAndDropBoard/DragAndDropBoard";
+import TabBar from "./TabBar"
+import {webBrowserTabsPaths} from "../CodeEditor/TabBar/TabBar.layout";
+import OpenedTabs from "./OpenedTabs/OpenedTabs";
+import {WebBrowserProps} from "./WebBrowser.types";
 
 
-export const WebBrowser = () => {
+export const WebBrowser: React.FC<WebBrowserProps> = () => {
     return (
         <StyledWebBrowser>
-            <div>
-                Presentation:
-                <DragAndDropBoard/>
-            </div>
+
+            <TabBar
+                app={webBrowserTabsPaths}
+            />
+            <OpenedTabs/>
+
         </StyledWebBrowser>
     )
 

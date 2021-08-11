@@ -66,7 +66,7 @@ export interface ComputerScreen {
     columnLeftClicked: string[],
     columnRightClicked: string[],
     currentDivColor: string[],
-    pairedItems: string[][]
+    webBrowserTabsList: string[],
 }
 
 export interface GuestSlot {
@@ -97,9 +97,9 @@ export interface OnClickHandlers {
 }
 
 export interface OnClickPairMatchingHandlers {
-    [key: string]: (val: string, color: string, rightColumnIndex?: number | undefined) => void
+    [key: string]: (val: string, color: string, rightColumnIndex?: number) => void
 }
 
-export interface OpenedFilesHandlers {
+export interface PickTaskTypeHandlers {
     [key: string]: () => void
 }

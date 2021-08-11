@@ -7,3 +7,6 @@ export const mainFilePath = '/code-editor/main-file';
 export const conversationWithJohnPath = '/communicator/conversation-with-john';
 export const conversationWithBarbaraPath = '/communicator/conversation-with-barbara';
 export const conversationWithLinglingPath = '/communicator/conversation-with-lingling';
+export const taskPath = '/web-browser/task';
+export const scrumBoardPath = '/web-browser/scrum-board-path';
+export const funnyKittensPath = '/web-browser/funny-kittens';

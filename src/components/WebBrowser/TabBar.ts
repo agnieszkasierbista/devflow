@@ -1,15 +1,16 @@
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {AppState} from "../../../model/state";
-import {TabBar} from "./TabBar.layout";
-import {TabBarDispatchProps, TabBarStateProps} from "./TabBar.types";
-import {setCurrentFile} from "../../../actions";
+import { AppState } from "../../model/state";
+import {TabBarDispatchProps, TabBarStateProps } from "../CodeEditor/TabBar/TabBar.types";
+import {setCurrentFile} from "../../actions";
+import { TabBar } from "../CodeEditor/TabBar/TabBar.layout";
+
 
 
 export function mapStateToProps(state: AppState): TabBarStateProps {
     return {
         codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        webBrowserTabsList: state.computerScreen.webBrowserTabsList,
+        webBrowserTabsList: state.computerScreen.webBrowserTabsList
     }
 }
 

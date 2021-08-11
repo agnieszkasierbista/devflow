@@ -105,7 +105,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     columnLeftClicked: [],
     columnRightClicked: [],
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
-    pairedItems: []
+    webBrowserTabsList:["Task", "Scrum_Board", "Funny_Kittens"],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {

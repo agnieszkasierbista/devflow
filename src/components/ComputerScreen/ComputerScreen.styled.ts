@@ -5,7 +5,7 @@ export const StyledComputerScreen = styled.div`
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end:3;
-  height: 50%;
+  height: 80%;
   display: flex;
   flex-flow: column-reverse;
   align-items: flex-end;
