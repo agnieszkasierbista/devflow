@@ -35,3 +35,15 @@ export const StyledScrumBoardCell = styled.div`
   align-items: center;
 `;
 
+export const StyledScrumBoardRow = styled.div`
+  border: 1px solid black;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 100%;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 100%;
+  width: 100%;
+`;
+

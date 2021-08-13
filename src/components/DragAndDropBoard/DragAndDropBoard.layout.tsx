@@ -23,6 +23,7 @@ export const DragAndDropBoard: React.FC<DragAndDropBoardProps> = (props) => {
     return (
         <div id="puzzle">
             {props.puzzle.shuffledItems.map((val, idx) => {
+
                 return (
                     <StyledDraggable
                         draggable="true"

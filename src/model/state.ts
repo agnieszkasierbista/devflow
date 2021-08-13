@@ -41,7 +41,7 @@ export type Files = Omit<Puzzle, "items" | "shuffledItems"> & {
     fileName: FileName,
     taskType: TaskType,
     items: string[] | string[][];
-    shuffledItems?: string[];
+    shuffledItems?: string[] | string[][];
 }
 
 export interface ComputerScreen {
@@ -67,6 +67,8 @@ export interface ComputerScreen {
     columnRightClicked: string[],
     currentDivColor: string[],
     webBrowserTabsList: string[],
+    itemId: string,
+    scrumBoardCurrentShuffledItems?: string[] | string[][],
 }
 
 export interface GuestSlot {

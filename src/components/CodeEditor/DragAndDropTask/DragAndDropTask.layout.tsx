@@ -22,14 +22,15 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
 
     return (
         <div id="task">
-            {
+            {// @ts-ignore
                 props.currentFile.shuffledItems
                     ?.map((val, idx) => {
+                        // @ts-ignore
                         return (
                             <StyledDraggable
                                 draggable="true"
                                 key={idx}
-
+                                // @ts-ignore
                                 style={{backgroundColor: props.currentFile.colors[val]}}
 
                                 onDragStart={() => props.dispatchOnDragStartFiles(idx)}

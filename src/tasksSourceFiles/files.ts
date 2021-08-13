@@ -44,7 +44,18 @@ export const files = [{
     },
     {
         fileName: "Scrum_Board",
-        items: ["Task_1", "Task_2", "Task_3", "Task_4"],
+        items: [
+            ["Task_1", "", "", ""],
+            ["Task_2", "", "", ""],
+            ["Task_3", "", "", ""],
+            ["Task_4", "", "", ""]
+        ],
+        shuffledItems: [
+            ["Task_1", "", "", ""],
+            ["Task_2", "", "", ""],
+            ["Task_3", "", "", ""],
+            ["Task_4", "", "", ""]
+        ],
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,

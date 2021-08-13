@@ -8,7 +8,8 @@ import {
     WorkspaceHandlers
 } from "./model/state";
 import {
-    CHANGE_PLAYER_NAME, CHECK_MATCHED_PAIRS,
+    CHANGE_PLAYER_NAME,
+    CHECK_MATCHED_PAIRS,
     CLICK_OFF_LEFT,
     CLICK_OFF_RIGHT,
     CLICK_ON_LEFT,
@@ -21,6 +22,8 @@ import {
     END_VISIT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
+    ON_CARD_DROP,
+    ON_DRAG_CARD_START,
     ON_DRAG_START,
     ON_DRAG_START_FILES,
     ON_DROP,
@@ -105,7 +108,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
     columnLeftClicked: [],
     columnRightClicked: [],
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
-    webBrowserTabsList:["Task", "Scrum_Board", "Funny_Kittens"],
+    webBrowserTabsList: ["Task", "Scrum_Board", "Funny_Kittens"],
+    itemId: "",
+    scrumBoardCurrentShuffledItems: []
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -155,6 +160,28 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+                [ON_DRAG_CARD_START]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
+                            beingDragged: action.payload,
+                        }
+                    })
+
+                },
+                [ON_CARD_DROP]: function (): ComputerScreen {
+                    return {
+                        ...state,
+                        currentFile: {
+                            ...state.currentFile,
+                            // @ts-ignore
+                            shuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.currentFile.shuffledItems),
+                        },
+                        // @ts-ignore
+                        scrumBoardCurrentShuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.scrumBoardCurrentShuffledItems),
+                    }
+                },
                 [SHUFFLE_ALL_ITEMS]: function (): ComputerScreen {
                     return (
                         {
@@ -190,7 +217,7 @@ export const rootReducer = combineReducers({
                                     :
                                     CLICK_ON_LEFT
                             ),
-                           columnLeftClicked: state.columnLeftClicked.concat(action.payload.val)
+                            columnLeftClicked: state.columnLeftClicked.concat(action.payload.val)
                         }
                     )
                 },
@@ -420,9 +447,32 @@ export const rootReducer = combineReducers({
                     })
                 },
                 [SET_CURRENT_FILE]: function (): ComputerScreen {
+
+                    const currentFileFound = files.find((file) => file.fileName === action.payload)
+
                     return ({
                         ...state,
-                        currentFile: files.find((file) => file.fileName === action.payload) || files[0]
+                        currentFile: {
+                            ...files.find((file) => file.fileName === action.payload) || files[0],
+                            shuffledItems:
+
+                                action.payload === "Scrum_Board"
+                                    ?
+                                    state.scrumBoardCurrentShuffledItems?.length
+                                        ?
+                                        state.scrumBoardCurrentShuffledItems
+                                        :
+                                        currentFileFound?.shuffledItems
+                                    :
+                                    currentFileFound?.shuffledItems
+
+
+                        },
+                        scrumBoardCurrentShuffledItems: state.scrumBoardCurrentShuffledItems?.length
+                            ?
+                            state.scrumBoardCurrentShuffledItems
+                            :
+                            currentFileFound?.shuffledItems
                     })
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {

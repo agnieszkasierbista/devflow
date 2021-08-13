@@ -30,6 +30,23 @@ export const CLICK_ON_RIGHT = "CLICK_ON_RIGHT";
 export const CLICK_OFF_RIGHT = "CLICK_OFF_RIGHT";
 export const SHUFFLE_ALL_ITEMS = "SHUFFLE_ALL_ITEMS";
 export const CHECK_MATCHED_PAIRS = "CHECK_MATCHED_PAIRS";
+export const ON_DRAG_CARD_START = "ON_DRAG_CARD_START";
+export const ON_CARD_DROP = "ON_CARD_DROP";
+
+
+export function onDragCardStart(itemId: number) {
+    return {
+        type: ON_DRAG_CARD_START,
+        payload: itemId
+    }
+}
+
+export function onCardDrop(swappedItems: string[], rowIdx: number) {
+    return {
+        type: ON_CARD_DROP,
+        payload: {swappedItems, rowIdx}
+    }
+}
 
 export function checkMatchedPairs() {
     return {
