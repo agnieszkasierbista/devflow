@@ -107,7 +107,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     columnLeftClicked: [],
     columnRightClicked: [],
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
-    webBrowserTabsList: ["Task", "Scrum_Board", "Funny_Kittens"],
+    webBrowserTabsList: ["Task", "Scrum Board", "Funny Kittens"],
     itemId: "",
     scrumBoardCurrentShuffledItems: []
 };
@@ -248,8 +248,6 @@ export const rootReducer = combineReducers({
                 },
                 [CLICK_ON_RIGHT]: function (): ComputerScreen {
 
-                    console.log("action.p", action.payload.rightColumnIndex, action.payload.color)
-                    console.log("state.currentDivColor", state.currentDivColor)
                     return (
                         {
                             ...state,

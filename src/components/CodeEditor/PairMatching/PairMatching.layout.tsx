@@ -17,11 +17,6 @@ const checkOrder = (
     // @ts-ignore
     const correctOrder = sortByFirstItem(items);
 
-    console.log('currentOrder', currentOrder);
-    console.log('correctOrder', correctOrder);
-
-    console.log('sdf', JSON.stringify(currentOrder) === JSON.stringify(correctOrder))
-
     return R.equals(correctOrder, currentOrder)
         ? <div id="evaluation-result">Correct</div>
         : <div id="evaluation-result">Wrong!</div>;
@@ -103,10 +98,6 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                         {backgroundColor: divColor}
                                 }
                                 onClick={() => {
-
-                                    console.log("onClick", rightColumnIndex);
-                                    console.log("currdivColor", currentDivColor);
-                                    console.log("props.currentDivColor", props.currentDivColor);
 
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
                                         true: props.dispatchClickOffRight,

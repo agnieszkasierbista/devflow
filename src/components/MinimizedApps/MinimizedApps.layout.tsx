@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyledMinimizedApp, StyledMinimizedAppLink} from './MinimizedApp.styled';
+import {StyledMinimizedAppLink} from './MinimizedApp.styled';
 import {codeEditorPath, communicatorPath, webBrowserPath} from "../../model/paths";
 
 
@@ -9,18 +9,16 @@ export const MinimizedApps: React.FC = () => {
 
     const mappedAppsList =
         appsList
-        .map(app => {
-                return (
-                    <React.Fragment key={app}>
-                        <StyledMinimizedApp>
+            .map(app => {
+                    return (
+                        <React.Fragment key={app}>
                             <StyledMinimizedAppLink to={app}>
                                 {app}
                             </StyledMinimizedAppLink>
-                        </StyledMinimizedApp>
-                    </React.Fragment>
-                )
-            }
-        )
+                        </React.Fragment>
+                    )
+                }
+            )
 
 
     return (
