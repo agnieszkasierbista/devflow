@@ -50,7 +50,6 @@ export interface ComputerScreen {
     currentFile: Files,
     files: Files[],
     codeEditorTabsList: string[],
-    openedFiles: string[],
     contacts: string[],
     conversations: Conversations,
     currentConversationPhase: DialogueOption,

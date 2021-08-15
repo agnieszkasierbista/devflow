@@ -84,7 +84,6 @@ export const preloadedComputerScreenState: ComputerScreen = {
     },
     files: [],
     codeEditorTabsList: ["config.file", "index.file", "main.file"],
-    openedFiles: ["aaaaaaaaaaaaaaaaaaa", "bbbbbb", "dddddddddddddddddd"],
     contacts: ["John", "Barbara", "LingLing"],
     currentContact: "",
     currentEvent: "",

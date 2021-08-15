@@ -8,6 +8,7 @@ export const ScrumBoardItem: React.FC<ScrumBoardItemsProps> = (props) => {
         <StyledScrumBoardCard
             draggable="true"
             key={props.idx}
+            item={props.item}
 
             onDragStart={() => props.dispatchOnDragCardStart(props.idx)}
             onDrop={() => {
