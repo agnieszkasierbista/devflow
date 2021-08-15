@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +220,7 @@
       <workItem from="1628843719419" duration="1190000" />
       <workItem from="1628845280564" duration="4197000" />
       <workItem from="1628854396266" duration="6838000" />
-      <workItem from="1629020108771" duration="4337000" />
+      <workItem from="1629020108771" duration="7367000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -539,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629022108661</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Animate guests as if they are walking back and forth">
+      <created>1629024608449</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1629024608449</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -609,7 +614,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Display player's name in the workspace view" />
     <MESSAGE value="Add DragAndDrop task in the WebBrowser" />
     <MESSAGE value="Decorate draggable blocks with random colors" />
     <MESSAGE value="Show tabs in the code editor" />
@@ -634,7 +638,8 @@
     <MESSAGE value="Allow a user to track work progress in the WebBrowser using Scrum Board" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Style" />
+    <MESSAGE value="Animate guests as if they are walking back and forth" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animate guests as if they are walking back and forth" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

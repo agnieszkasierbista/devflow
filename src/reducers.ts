@@ -114,7 +114,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
 
 export const preloadedGuestSlotState: GuestSlot = {
     randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
-    guests: ["Mike", "Ella", "RandomDeveloper"],
+    guests: ["Mike", "Ella", "Random Developer"],
     currentGuest: "",
     currentEvent: "",
     visits: {},
@@ -453,7 +453,7 @@ export const rootReducer = combineReducers({
                             ...files.find((file) => file.fileName === action.payload) || files[0],
                             shuffledItems:
 
-                                action.payload === "Scrum_Board"
+                                action.payload === "Scrum Board"
                                     ?
                                     state.scrumBoardCurrentShuffledItems?.length
                                         ?

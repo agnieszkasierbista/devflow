@@ -25,7 +25,7 @@ export const files = [{
         taskType: "pairMatching"
     },
     {
-        fileName: "Funny_Kittens",
+        fileName: "Funny Kittens",
         items: ["f", "g", "h", "i", "j"],
         shuffledItems: ["f", "h", "j", "i", "g"],
         colors: {},
@@ -43,7 +43,7 @@ export const files = [{
         taskType: "dragAndDrop"
     },
     {
-        fileName: "Scrum_Board",
+        fileName: "Scrum Board",
         items: [
             ["Task_1", "", "", ""],
             ["Task_2", "", "", ""],
