@@ -6,7 +6,7 @@ export interface GuestsProps extends GuestsOwnProps,
 }
 
 export interface GuestsOwnProps {
-
+    // idx: number
 }
 
 type Guest = string;

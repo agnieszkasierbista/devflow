@@ -14,7 +14,7 @@ export const GuestSlot: React.FC<GuestSlotProps> = (props) => {
 
     return (
         <StyledGuestSlot>
-            <Guests/>
+            <Guests />
             <Visit/>
         </StyledGuestSlot>
     )

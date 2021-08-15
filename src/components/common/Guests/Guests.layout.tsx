@@ -27,14 +27,16 @@ export const Guests: React.FC<GuestsProps> = (props) => {
                 }
 
                 return (
-                    <button key={idx}
+                    <StyledGuest
+                        key={idx}
+                        idx={idx}
                          onClick={() => props.dispatchStartVisit(guest, eventFinder(guest))}
                             style={{backgroundColor: props.randomColors[idx]}}
                     >
-                        <StyledGuest>
+
                             {guest}
-                        </StyledGuest>
-                    </button>
+
+                    </StyledGuest>
                 )
             })
             }
