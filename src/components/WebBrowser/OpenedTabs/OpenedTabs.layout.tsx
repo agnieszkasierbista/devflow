@@ -4,55 +4,65 @@ import {webBrowserTabsPaths} from "../../CodeEditor/TabBar/TabBar.layout";
 import {StyledOpenedFiles} from "./OpenedTabs.styled";
 import {OpenedTabsProps} from "./OpenedTabs.types";
 import DragAndDropTask from "../../CodeEditor/DragAndDropTask/DragAndDropTask";
-import PairMatching from "../../CodeEditor/PairMatching/PairMatching";
 import ScrumBoard from "../ScrumBoard/ScrumBoard";
+import MemoryGame from "../../common/MemoryGame/MemoryGame";
 
 
 export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
 
     return (
 
-            <Switch>
-                {webBrowserTabsPaths.map((tabPath, idx) => {
-                    return (
+        <Switch>
+            {webBrowserTabsPaths.map((tabPath, idx) => {
+                return (
 
-                        <Route
+                    <Route
+                        key={idx}
+                        path={tabPath}
+                    >
+                        <StyledOpenedFiles
                             key={idx}
-                            path={tabPath}
                         >
-                            <StyledOpenedFiles
-                                key={idx}
-                            >
-                                {
-                                    props.currentFile.taskType !== "scrumBoard"
+                            {
+                                props.currentFile.taskType === "dragAndDrop"
+                                    ?
+                                    "Task:"
+                                    :
+                                    props.currentFile.taskType === "memoryGame"
                                         ?
-                                        "Task:"
+                                        "Memory Game:"
                                         :
                                         null
-                                }
-                                {
-                                    props.currentFile
-                                        ?
-                                        (
-                                            props.currentFile.taskType === "dragAndDrop"
+                            }
+                            {
+                                props.currentFile
+                                    ?
+                                    (
+                                        props.currentFile.taskType === "dragAndDrop"
+                                            ?
+                                            <DragAndDropTask
+                                                fileName={props.currentFile.fileName}
+                                            />
+                                            :
+                                            props.currentFile.taskType === "memoryGame"
                                                 ?
-                                                <DragAndDropTask
+                                                <MemoryGame
                                                     fileName={props.currentFile.fileName}
                                                 />
                                                 :
                                                 <ScrumBoard
                                                     fileName={props.currentFile.fileName}
                                                 />
-                                        ) :
-                                        <div>Nie ma taska!</div>
+                                    ) :
+                                    <div>Nie ma taska!</div>
 
-                                }
-                            </StyledOpenedFiles>
-                        </Route>
+                            }
+                        </StyledOpenedFiles>
+                    </Route>
 
-                    )
-                })}
-            </Switch>
+                )
+            })}
+        </Switch>
 
     )
 }

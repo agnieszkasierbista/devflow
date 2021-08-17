@@ -32,6 +32,14 @@ export const SHUFFLE_ALL_ITEMS = "SHUFFLE_ALL_ITEMS";
 export const CHECK_MATCHED_PAIRS = "CHECK_MATCHED_PAIRS";
 export const ON_DRAG_CARD_START = "ON_DRAG_CARD_START";
 export const ON_CARD_DROP = "ON_CARD_DROP";
+export const TOGGLE_CARD = "TOGGLE_CARD";
+
+export function toggleCard(idx: number, item: string | string[]) {
+    return {
+        type: TOGGLE_CARD,
+        payload: {idx, item}
+    }
+}
 
 
 export function onDragCardStart(itemId: number) {

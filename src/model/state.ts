@@ -68,6 +68,8 @@ export interface ComputerScreen {
     webBrowserTabsList: string[],
     itemId: string,
     scrumBoardCurrentShuffledItems?: string[] | string[][],
+    memoryGameCardToggleState?: {idx: number, content: string | string[] | undefined, state: boolean}[],
+    isAMatch: boolean,
 }
 
 export interface GuestSlot {

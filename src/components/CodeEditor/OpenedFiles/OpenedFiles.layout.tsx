@@ -5,6 +5,7 @@ import {StyledOpenedFiles} from "./OpenedFiles.styled";
 import DragAndDropTask from "../DragAndDropTask/DragAndDropTask";
 import {codeEditorTabsPaths} from "../TabBar/TabBar.layout";
 import PairMatching from "../PairMatching/PairMatching";
+import MemoryGame from "../../common/MemoryGame/MemoryGame";
 
 
 export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
@@ -23,14 +24,20 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
                                         ?
                                         (
                                             props.currentFile.taskType === "dragAndDrop"
-                                            ?
+                                                ?
                                                 <DragAndDropTask
-                                                fileName={props.currentFile.fileName}
-                                                />
-                                                :
-                                                <PairMatching
                                                     fileName={props.currentFile.fileName}
                                                 />
+                                                :
+                                                props.currentFile.taskType === "memoryGame"
+                                                    ?
+                                                    <MemoryGame
+                                                        fileName={props.currentFile.fileName}
+                                                    />
+                                                    :
+                                                    <PairMatching
+                                                        fileName={props.currentFile.fileName}
+                                                    />
                                         )
                                         : <div>Nie ma taska!</div>
 

@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
     </list>
@@ -110,7 +117,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -220,7 +227,10 @@
       <workItem from="1628843719419" duration="1190000" />
       <workItem from="1628845280564" duration="4197000" />
       <workItem from="1628854396266" duration="6838000" />
-      <workItem from="1629020108771" duration="7367000" />
+      <workItem from="1629020108771" duration="8346000" />
+      <workItem from="1629104951742" duration="1986000" />
+      <workItem from="1629107392525" duration="15484000" />
+      <workItem from="1629187811256" duration="464000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -544,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629024608449</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Refactor">
+      <created>1629031812430</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1629031812430</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -636,10 +653,10 @@
     <MESSAGE value="Allow a user to check results of pair matching task" />
     <MESSAGE value="Allow a user to open ScrumBoard in the WebBrowser" />
     <MESSAGE value="Allow a user to track work progress in the WebBrowser using Scrum Board" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Style" />
     <MESSAGE value="Animate guests as if they are walking back and forth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animate guests as if they are walking back and forth" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -41,7 +41,7 @@ import {
     START_CONVERSATION,
     START_VISIT,
     START_WORK,
-    START_WORK_VISIT
+    START_WORK_VISIT, TOGGLE_CARD
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
@@ -109,7 +109,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
     webBrowserTabsList: ["Task", "Scrum Board", "Funny Kittens"],
     itemId: "",
-    scrumBoardCurrentShuffledItems: []
+    scrumBoardCurrentShuffledItems: [],
+    memoryGameCardToggleState: [],
+    isAMatch: false,
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -159,6 +161,7 @@ export const rootReducer = combineReducers({
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
             const computerScreenHandlers: ComputerScreenHandlers = {
+
                 [ON_DRAG_CARD_START]: function (): ComputerScreen {
                     return ({
                         ...state,
@@ -469,8 +472,48 @@ export const rootReducer = combineReducers({
                             ?
                             state.scrumBoardCurrentShuffledItems
                             :
-                            currentFileFound?.shuffledItems
+                            currentFileFound?.shuffledItems,
+                        memoryGameCardToggleState:
+                            action.payload === "Funny Kittens"
+                                ?
+                                state.memoryGameCardToggleState?.length
+                                    ?
+                                    state.memoryGameCardToggleState
+                                    :
+
+                                    currentFileFound?.items?.map((item, idx) => {
+                                        // @ts-ignore
+                                        return {
+                                            // TODO: naprawic to gówno, zrobić osobne typy na wszystko a nie sie srac z gownianym dobieraniem typów w chuj wie ilu konfiguracjacj
+                                            idx: idx,
+                                            content: item,
+                                            state: false
+                                        }
+                                    })
+
+                                :
+                                state.memoryGameCardToggleState
+
+
                     })
+                },
+                [TOGGLE_CARD]: function (): ComputerScreen {
+
+                    return ({
+                        ...state,
+                        memoryGameCardToggleState: state.memoryGameCardToggleState?.map((card) => {
+                            if (Reflect.has(card, action.payload.idx)) {
+                                // TODO: twierdzi ze action.payload jest of type any
+                                // @ts-ignore
+                                return {...card,
+                                    state: !card.state}
+                            } else {
+                                return card
+                            }
+                        }),
+                        isAMatch: true
+                    })
+
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {
                     return ({

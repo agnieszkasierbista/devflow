@@ -26,12 +26,11 @@ export const files = [{
     },
     {
         fileName: "Funny Kittens",
-        items: ["f", "g", "h", "i", "j"],
-        shuffledItems: ["f", "h", "j", "i", "g"],
+        items: ["1", "1", "2", "3", "4", "5", "6", "7", "8", "2", "3", "4", "5", "6", "7", "8"],
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
+        taskType: "memoryGame"
     },
     {
         fileName: "Task",
