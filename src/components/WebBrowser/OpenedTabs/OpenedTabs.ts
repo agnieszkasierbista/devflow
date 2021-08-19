@@ -8,7 +8,9 @@ export function mapStateToProps(state: AppState): OpenedTabsStateProps {
     return {
         files: state.computerScreen.files,
         codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        currentFile: state.computerScreen.currentFile,
+        currentFileScrumBoard: state.computerScreen.currentFileScrumBoard,
+        currentFileMemoryGame: state.computerScreen.currentFileMemoryGame,
+        currentFilePuzzle: state.computerScreen.currentFilePuzzle,
     }
 }
 

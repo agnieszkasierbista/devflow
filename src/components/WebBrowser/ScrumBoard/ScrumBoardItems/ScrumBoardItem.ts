@@ -7,7 +7,7 @@ import {onCardDrop, onDragCardStart} from "../../../../actions";
 
 export function mapStateToProps(state: AppState): ScrumBoardItemsStateProps {
     return {
-        currentFile: state.computerScreen.currentFile
+        currentFileScrumBoard: state.computerScreen.currentFileScrumBoard
     }
 }
 

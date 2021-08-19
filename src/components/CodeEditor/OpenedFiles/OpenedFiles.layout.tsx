@@ -5,7 +5,7 @@ import {StyledOpenedFiles} from "./OpenedFiles.styled";
 import DragAndDropTask from "../DragAndDropTask/DragAndDropTask";
 import {codeEditorTabsPaths} from "../TabBar/TabBar.layout";
 import PairMatching from "../PairMatching/PairMatching";
-import MemoryGame from "../../common/MemoryGame/MemoryGame";
+import {configFilePath, indexFilePath, mainFilePath} from "../../../model/paths";
 
 
 export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
@@ -14,35 +14,40 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
         <StyledOpenedFiles>
             <Switch>
                 {codeEditorTabsPaths.map((tabPath, idx) => {
+
+                    const codeEditorComponentsHandler: any = {
+                        [configFilePath]: function () {
+                            return (
+                                <DragAndDropTask
+                                    fileName={"props.currentFile.fileName"}
+                                    // fileName={props.currentFile.fileName}
+                                />
+                            )
+                        },
+                        [indexFilePath]: function () {
+                            return (
+                                <DragAndDropTask
+                                    fileName={"props.currentFile.fileName"}
+                                    // fileName={props.currentFile.fileName}
+                                />
+                            )
+                        },
+                        [mainFilePath]: function () {
+                            return (
+                                <PairMatching
+                                    fileName={"props.currentFile.fileName"}
+                                />
+                            )
+                        },
+                    }
+
                     return (
 
                         <Route key={idx} path={tabPath}>
-                            <div>
-                                Task:
-                                {
-                                    props.currentFile
-                                        ?
-                                        (
-                                            props.currentFile.taskType === "dragAndDrop"
-                                                ?
-                                                <DragAndDropTask
-                                                    fileName={props.currentFile.fileName}
-                                                />
-                                                :
-                                                props.currentFile.taskType === "memoryGame"
-                                                    ?
-                                                    <MemoryGame
-                                                        fileName={props.currentFile.fileName}
-                                                    />
-                                                    :
-                                                    <PairMatching
-                                                        fileName={props.currentFile.fileName}
-                                                    />
-                                        )
-                                        : <div>Nie ma taska!</div>
+                            {
+                                codeEditorComponentsHandler[tabPath]()
 
-                                }
-                            </div>
+                            }
                         </Route>
 
                     )

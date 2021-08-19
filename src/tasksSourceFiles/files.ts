@@ -1,62 +1,28 @@
-export const files = [{
-    fileName: "config.file",
-    items: ["f", "g", "h", "i", "j"],
-    shuffledItems: ["f", "h", "j", "i", "g"],
-    colors: {},
-    beingDragged: -1,
-    shouldShowOrderCheckResult: false,
-    taskType: "dragAndDrop"
-},
-    {
-        fileName: "index.file",
-        items: ["a", "b", "c", "d", "e"],
-        shuffledItems: ["b", "a", "c", "e", "d"],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
-    },
-    {
-        fileName: "main.file",
-        items: [["k", "K"], ["l", "L"], ["m", "M"], ["n", "N"], ["o", "O"]],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-        taskType: "pairMatching"
-    },
-    {
-        fileName: "Funny Kittens",
-        items: ["1", "1", "2", "3", "4", "5", "6", "7", "8", "2", "3", "4", "5", "6", "7", "8"],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-        taskType: "memoryGame"
-    },
-    {
-        fileName: "Task",
-        items: ["a", "b", "c", "d", "e"],
-        shuffledItems: ["b", "a", "c", "e", "d"],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
-    },
-    {
-        fileName: "Scrum Board",
-        items: [
-            ["Task_1", "", "", ""],
-            ["Task_2", "", "", ""],
-            ["Task_3", "", "", ""],
-            ["Task_4", "", "", ""]
-        ],
-        shuffledItems: [
-            ["Task_1", "", "", ""],
-            ["Task_2", "", "", ""],
-            ["Task_3", "", "", ""],
-            ["Task_4", "", "", ""]
-        ],
-        colors: {},
-        beingDragged: -1,
-        shouldShowOrderCheckResult: false,
-        taskType: "scrumBoard"
-    }];
+import {filesMemoryGame} from "./filesMemoryGame";
+import {filesScrumBoard} from "./filesScrumBoard";
+import {filesPairMatching} from "./filesPairMatching";
+import {Files, FilesDragAndDrop, FilesMemoryGame, FilesPairMatching, FilesScrumBoard} from "../model/state";
+import {filesDragAndDrop} from "./filesDragAndDrop";
+
+
+// const filez: Array<FilesMemoryGame | FilesScrumBoard> = [];
+//
+// // export const files: Files = [filesMemoryGame, filesScrumBoard, filesPairMatching, filesDragAndDrop];
+//
+
+//
+// const abc: Array<FilesMemoryGame | FilesScrumBoard> = filez.concat(filesMemoryGame).concat(filesScrumBoard);
+
+
+const getFiles = (): Files => {
+    const emptyArray: Files = [];
+    const aber: FilesScrumBoard[] = filesScrumBoard;
+    const abee: FilesPairMatching[] = filesPairMatching;
+    const abewe: FilesDragAndDrop[] = filesDragAndDrop;
+    const ewer: FilesMemoryGame[] = filesMemoryGame;
+    const allFiles: Files = emptyArray.concat(aber).concat(abee).concat(abewe).concat(ewer);
+    return allFiles
+}
+
+
+export const files = getFiles();

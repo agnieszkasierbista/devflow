@@ -5,7 +5,7 @@ import {OnClickPairMatchingHandlers} from "../../../model/state";
 import * as R from "ramda";
 
 const checkOrder = (
-    items: string[] | string[][],
+    items: string[][],
     leftColumn: string[],
     rightColumn: string[]) => {
 
@@ -26,7 +26,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
     React.useEffect(() => {
         // @ts-ignore
-        props.dispatchShuffleAllItems(props.currentFile.items)
+        props.dispatchShuffleAllItems(props.currentFilePairMatching.items)
     }, [])
 
     return (
@@ -74,7 +74,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                     props.columnRight.map((val, idx) => {
 
                         const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
-                        const divColor = Object.values(props.currentFile.colors)[0];
+                        const divColor = Object.values(props.currentFilePairMatching.colors)[0];
 
                         const rightColumnIndex = props.columnRight.findIndex((item) => item === val)
                         const currentDivColor = (props.currentDivColor[rightColumnIndex] !== ""
@@ -125,9 +125,9 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                     Check
                 </StyledButton>
                 {
-                    props.currentFile.shouldShowOrderCheckResult
+                    props.currentFilePairMatching.shouldShowOrderCheckResult
                     && checkOrder(
-                        props.currentFile.items,
+                        props.currentFilePairMatching.items,
                         props.columnLeftClicked,
                         props.columnRightClicked
                     )

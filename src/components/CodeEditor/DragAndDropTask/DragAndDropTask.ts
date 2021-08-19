@@ -3,7 +3,7 @@ import {Dispatch} from "redux";
 
 import {DragAndDropTaskDispatchProps, DragAndDropTaskStateProps} from "./DragAndDropTask.types";
 import {DragAndDropTask} from "./DragAndDropTask.layout";
-import {onDragStartFiles, onDropFiles, showOrderCheckResultFiles, shuffleColorsFiles} from "../../../actions";
+import {onDragStartFiles, onDropFiles, showOrderCheckResultFiles, shuffleColorsDragAndDrop} from "../../../actions";
 import {AppState} from "../../../model/state";
 
 
@@ -11,14 +11,14 @@ export function mapStateToProps(state: AppState): DragAndDropTaskStateProps {
     return {
         files: state.computerScreen.files,
         randomColors: state.computerScreen.randomColors,
-        currentFile: state.computerScreen.currentFile
+        currentFilePuzzle: state.computerScreen.currentFilePuzzle
     }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch): DragAndDropTaskDispatchProps {
     return {
-        dispatchShuffleColorsFiles: function () {
-            dispatch(shuffleColorsFiles());
+        dispatchShuffleColorsDragAndDrop: function () {
+            dispatch(shuffleColorsDragAndDrop());
         },
         dispatchOnDragStartFiles: function (idx) {
             dispatch(onDragStartFiles(idx))

@@ -7,7 +7,7 @@ import {ScrumBoardDispatchProps, ScrumBoardStateProps} from "./ScrumBoard.types"
 
 export function mapStateToProps(state: AppState): ScrumBoardStateProps {
     return {
-        currentFile: state.computerScreen.currentFile
+        currentFileScrumBoard: state.computerScreen.currentFileScrumBoard
     }
 }
 

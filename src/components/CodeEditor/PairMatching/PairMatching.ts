@@ -10,12 +10,12 @@ import {
     clickOnLeft,
     clickOnRight,
     shuffleAllItems,
-    shuffleColorsFiles
+    shuffleColorsPairMatching
 } from "../../../actions";
 
 export function mapStateToProps(state: AppState): PairMatchingStateProps {
     return {
-        currentFile: state.computerScreen.currentFile,
+        currentFilePairMatching: state.computerScreen.currentFilePairMatching,
         randomColors: state.computerScreen.randomColors,
         isDivClicked: state.computerScreen.isDivClicked,
         clickedDivCurrentStateLeft: state.computerScreen.clickedDivCurrentStateLeft,
@@ -30,8 +30,8 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
 
 export function mapDispatchToProps(dispatch: Dispatch): PairMatchingDispatchProps {
     return {
-        dispatchShuffleColorsFiles: function () {
-            dispatch(shuffleColorsFiles());
+        dispatchShuffleColorsPairMatching: function () {
+            dispatch(shuffleColorsPairMatching());
         },
         dispatchClickOnLeft: function (valIdx, divColor) {
             dispatch(clickOnLeft(valIdx, divColor));

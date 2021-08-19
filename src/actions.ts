@@ -7,7 +7,8 @@ export const SHUFFLE_COLORS = "SHUFFLE_COLORS";
 export const ON_DRAG_START_FILES = 'ON_DRAG_START_FILES';
 export const ON_DROP_FILES = 'ON_DROP_FILES';
 export const SHOW_ORDER_CHECK_RESULT_FILES = 'SHOW_ORDER_CHECK_RESULT_FILES';
-export const SHUFFLE_COLORS_FILES = "SHUFFLE_COLORS_FILES";
+export const SHUFFLE_COLORS_DRAG_AND_DROP = "SHUFFLE_COLORS_DRAG_AND_DROP";
+export const SHUFFLE_COLORS_PAIR_MATCHING = "SHUFFLE_COLORS_PAIR_MATCHING";
 export const START_CONVERSATION = "START_CONVERSATION";
 export const END_CONVERSATION = "END_CONVERSATION";
 export const INITIALIZE_CONVERSATIONS = "INITIALIZE_CONVERSATIONS";
@@ -234,9 +235,15 @@ export function showOrderCheckResult() {
     }
 }
 
-export function shuffleColorsFiles() {
+export function shuffleColorsDragAndDrop() {
     return {
-        type: SHUFFLE_COLORS_FILES
+        type: SHUFFLE_COLORS_DRAG_AND_DROP
+    }
+}
+
+export function shuffleColorsPairMatching() {
+    return {
+        type: SHUFFLE_COLORS_PAIR_MATCHING
     }
 }
 

@@ -1,11 +1,11 @@
 import React from "react"
 import * as R from 'ramda';
 import {DragAndDropBoardProps} from "./DragAndDrop.types";
-import {Puzzle} from "../../model/state";
+import {FilesDragAndDrop} from "../../model/state";
 import {StyledDraggable} from "./DragAndDropBoard.styled";
 
 
-const checkOrder = (puzzle: Puzzle) => {
+const checkOrder = (puzzle: FilesDragAndDrop) => {
     const correctOrder = puzzle.items;
     const currentOrder = puzzle.shuffledItems;
 

@@ -2,10 +2,10 @@ import React from "react"
 import * as R from 'ramda';
 import {DragAndDropTaskProps} from "./DragAndDropTask.types";
 import {StyledDraggable} from "./DragAndDropTask.styled";
-import {Files} from "../../../model/state";
+import {FilesDragAndDrop} from "../../../model/state";
 
 
-const checkOrder = (files: Files) => {
+const checkOrder = (files: FilesDragAndDrop) => {
     const correctOrder = files.items;
     const currentOrder = files.shuffledItems;
 
@@ -17,13 +17,13 @@ const checkOrder = (files: Files) => {
 export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
 
     React.useEffect(() => {
-        props.dispatchShuffleColorsFiles()
+        props.dispatchShuffleColorsDragAndDrop()
     }, [])
 
     return (
         <div id="task">
             {// @ts-ignore
-                props.currentFile.shuffledItems
+                props.currentFilePuzzle.shuffledItems
                     ?.map((val, idx) => {
                         // @ts-ignore
                         return (
@@ -31,13 +31,13 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                                 draggable="true"
                                 key={idx}
                                 // @ts-ignore
-                                style={{backgroundColor: props.currentFile.colors[val]}}
+                                style={{backgroundColor: props.currentFilePuzzle.colors[val]}}
 
                                 onDragStart={() => props.dispatchOnDragStartFiles(idx)}
                                 onDrop={() => {
-                                    const draggedItemIdx = props.currentFile.beingDragged;
+                                    const draggedItemIdx = props.currentFilePuzzle.beingDragged;
                                     // @ts-ignore
-                                    const swappedItems = R.move(draggedItemIdx, idx, props.currentFile.shuffledItems);
+                                    const swappedItems = R.move(draggedItemIdx, idx, props.currentFilePuzzle.shuffledItems);
 
                                     props.dispatchOnDropFiles(swappedItems);
                                 }}
@@ -56,7 +56,7 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                     onClick={props.dispatchShowOrderCheckResultFiles}
                     id="checker">CHECK
                 </button>
-                {props.currentFile.shouldShowOrderCheckResult && checkOrder(props.currentFile)}
+                {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(props.currentFilePuzzle)}
             </div>
         </div>
     );

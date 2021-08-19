@@ -1,4 +1,4 @@
-import {FileName, Files} from "../../../model/state";
+import {FileName, FilesMemoryGame} from "../../../model/state";
 
 
 export interface MemoryGameProps extends MemoryGameOwnProps,
@@ -15,6 +15,6 @@ export interface MemoryGameDispatchProps {
 }
 
 export interface MemoryGameStateProps {
-    currentFile: Files,
+    currentFileMemoryGame: FilesMemoryGame,
     memoryGameCardToggleState?: {}[]
 }

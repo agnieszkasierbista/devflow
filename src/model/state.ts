@@ -11,14 +11,6 @@ export interface Workspace {
     isPlayerNameVisible: boolean
 }
 
-export interface Puzzle {
-    items: string[];
-    shuffledItems: string[];
-    colors: { [key: string]: string };
-    beingDragged: number;
-    shouldShowOrderCheckResult: boolean;
-}
-
 export interface DialogueOption {
     event: string,
     npcName: string,
@@ -37,18 +29,52 @@ export interface Conversations {
 export type FileName = string
 export type TaskType = string
 
-export type Files = Omit<Puzzle, "items" | "shuffledItems"> & {
+export interface FilesMemoryGame {
     fileName: FileName,
     taskType: TaskType,
-    items: string[] | string[][];
-    shuffledItems?: string[] | string[][];
+    items: string[],
 }
+
+export interface FilesDragAndDrop {
+    fileName: FileName,
+    items: string[],
+    shuffledItems: string[],
+    colors: { [key: string]: string },
+    beingDragged: number,
+    shouldShowOrderCheckResult: boolean,
+    taskType: TaskType,
+}
+
+export interface FilesPairMatching {
+    fileName: FileName,
+    items: string[][],
+    colors: { [key: string]: string },
+    beingDragged: number,
+    shouldShowOrderCheckResult: boolean,
+    taskType: TaskType,
+}
+
+export interface FilesScrumBoard {
+    fileName: FileName,
+    items: string[][],
+    shuffledItems: string[][],
+    beingDragged: number,
+    taskType: TaskType,
+}
+// TODO: moze jakis tu typ trzebaby dac zamiast any
+export type Files = any[]
 
 export interface ComputerScreen {
     randomColors: string[],
-    puzzle: Puzzle,
-    currentFile: Files,
-    files: Files[],
+    puzzle: FilesDragAndDrop,
+    currentFilePuzzle: FilesDragAndDrop,
+    currentFileScrumBoard: FilesScrumBoard,
+    currentFilePairMatching: FilesPairMatching,
+    currentFileMemoryGame: FilesMemoryGame,
+    files: Files,
+    filesMemoryGame: FilesMemoryGame,
+    filesPairMatching: FilesPairMatching,
+    filesScrumBoard: FilesScrumBoard,
     codeEditorTabsList: string[],
     contacts: string[],
     conversations: Conversations,
@@ -67,8 +93,8 @@ export interface ComputerScreen {
     currentDivColor: string[],
     webBrowserTabsList: string[],
     itemId: string,
-    scrumBoardCurrentShuffledItems?: string[] | string[][],
-    memoryGameCardToggleState?: {idx: number, content: string | string[] | undefined, state: boolean}[],
+    scrumBoardCurrentShuffledItems: string[][],
+    memoryGameCardToggleState?: { idx: number, content: string | string[] | undefined, state: boolean }[],
     isAMatch: boolean,
 }
 
@@ -103,6 +129,6 @@ export interface OnClickPairMatchingHandlers {
     [key: string]: (val: string, color: string, rightColumnIndex?: number) => void
 }
 
-export interface PickTaskTypeHandlers {
-    [key: string]: () => void
+export interface CurrentFileHandlers {
+    [key: string]: () => { [key: string]: {} }
 }

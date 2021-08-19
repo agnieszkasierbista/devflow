@@ -6,6 +6,7 @@ import {OpenedTabsProps} from "./OpenedTabs.types";
 import DragAndDropTask from "../../CodeEditor/DragAndDropTask/DragAndDropTask";
 import ScrumBoard from "../ScrumBoard/ScrumBoard";
 import MemoryGame from "../../common/MemoryGame/MemoryGame";
+import {funnyKittensPath, scrumBoardPath, taskPath} from "../../../model/paths";
 
 
 export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
@@ -14,6 +15,32 @@ export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
 
         <Switch>
             {webBrowserTabsPaths.map((tabPath, idx) => {
+
+                const webBrowserComponentsHandler: any = {
+                    [taskPath]: function () {
+                        return (
+                            <DragAndDropTask
+                                fileName={"props.currentFile.fileName"}
+                                // fileName={props.currentFile.fileName}
+                            />
+                        )
+                    },
+                    [scrumBoardPath]: function () {
+                        return (
+                            <ScrumBoard
+                                fileName={"props.currentFile.fileName"}
+                            />
+                        )
+                    },
+                    [funnyKittensPath]: function () {
+                        return (
+                            <MemoryGame
+                                fileName={"props.currentFile.fileName"}
+                            />
+                        )
+                    },
+                }
+
                 return (
 
                     <Route
@@ -24,38 +51,7 @@ export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
                             key={idx}
                         >
                             {
-                                props.currentFile.taskType === "dragAndDrop"
-                                    ?
-                                    "Task:"
-                                    :
-                                    props.currentFile.taskType === "memoryGame"
-                                        ?
-                                        "Memory Game:"
-                                        :
-                                        null
-                            }
-                            {
-                                props.currentFile
-                                    ?
-                                    (
-                                        props.currentFile.taskType === "dragAndDrop"
-                                            ?
-                                            <DragAndDropTask
-                                                fileName={props.currentFile.fileName}
-                                            />
-                                            :
-                                            props.currentFile.taskType === "memoryGame"
-                                                ?
-                                                <MemoryGame
-                                                    fileName={props.currentFile.fileName}
-                                                />
-                                                :
-                                                <ScrumBoard
-                                                    fileName={props.currentFile.fileName}
-                                                />
-                                    ) :
-                                    <div>Nie ma taska!</div>
-
+                                webBrowserComponentsHandler[tabPath]()
                             }
                         </StyledOpenedFiles>
                     </Route>

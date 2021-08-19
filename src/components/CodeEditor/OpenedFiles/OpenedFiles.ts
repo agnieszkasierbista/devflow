@@ -8,7 +8,8 @@ export function mapStateToProps(state: AppState): OpenedFilesStateProps {
     return {
         files: state.computerScreen.files,
         codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        currentFile: state.computerScreen.currentFile,
+        currentFilePuzzle: state.computerScreen.currentFilePuzzle,
+        currentFilePairMatching: state.computerScreen.currentFilePairMatching,
     }
 }
 

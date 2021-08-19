@@ -1,4 +1,4 @@
-import {FileName, Files} from "../../../model/state";
+import {FileName, FilesScrumBoard} from "../../../model/state";
 
 export interface ScrumBoardProps extends ScrumBoardStateProps,
     ScrumBoardDispatchProps, ScrumBoardOwnProps {
@@ -6,7 +6,7 @@ export interface ScrumBoardProps extends ScrumBoardStateProps,
 }
 
 export interface ScrumBoardStateProps {
-    currentFile: Files
+    currentFileScrumBoard: FilesScrumBoard,
 }
 
 export interface ScrumBoardDispatchProps {

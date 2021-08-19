@@ -6,7 +6,7 @@ import * as R from "ramda";
 export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
     return (
         <StyledMemoryGameBoard>
-            {props.currentFile.items.map((item, idx) => {
+            {props.currentFileMemoryGame.items.map((item, idx) => {
 
                 return (
                     props.memoryGameCardToggleState

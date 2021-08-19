@@ -1,4 +1,4 @@
-import {FileName, Files} from "../../../model/state";
+import {FileName, FilesPairMatching} from "../../../model/state";
 
 export interface PairMatchingProps extends PairMatchingStateProps,
     PairMatchingDispatchProps, PairMatchingOwnProps {
@@ -6,7 +6,7 @@ export interface PairMatchingProps extends PairMatchingStateProps,
 }
 
 export interface PairMatchingStateProps {
-    currentFile: Files,
+    currentFilePairMatching: FilesPairMatching,
     randomColors: string[],
     isDivClicked: {[key: string]: boolean}[],
     clickedDivCurrentStateLeft: string,
@@ -20,7 +20,7 @@ export interface PairMatchingStateProps {
 }
 
 export interface PairMatchingDispatchProps {
-    dispatchShuffleColorsFiles: () => void,
+    dispatchShuffleColorsPairMatching: () => void,
     dispatchClickOnLeft: (val: string, colors: string) => void,
     dispatchClickOffLeft: (val: string, colors: string) => void,
     dispatchClickOnRight: (val: string, colors: string, rightColumnIndex: number | undefined) => void,

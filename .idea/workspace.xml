@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
@@ -23,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Rewrite_guest_slot_and_conversation" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +127,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.styled.ts" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TypeScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tasksSourceFiles" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -123,11 +147,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\tasksSourceFiles" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\WebBrowser" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\CodeEditor" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Visits" />
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\common\Guests" />
-      <recent name="C:\Users\mateu\WebstormProjects\devflow\src\components\GuestSlot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mateu\WebstormProjects\devflow\src\visits" />
@@ -230,7 +254,9 @@
       <workItem from="1629020108771" duration="8346000" />
       <workItem from="1629104951742" duration="1986000" />
       <workItem from="1629107392525" duration="15484000" />
-      <workItem from="1629187811256" duration="464000" />
+      <workItem from="1629187811256" duration="19336000" />
+      <workItem from="1629293420818" duration="2141000" />
+      <workItem from="1629372830504" duration="945000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>
@@ -561,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629031812430</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Add a placeholder for simple Memory Game">
+      <created>1629188371673</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1629188371673</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -631,7 +664,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add DragAndDrop task in the WebBrowser" />
     <MESSAGE value="Decorate draggable blocks with random colors" />
     <MESSAGE value="Show tabs in the code editor" />
     <MESSAGE value="Allow a user to navigate through open files in the code editor using navigation tabs" />
@@ -656,7 +688,8 @@
     <MESSAGE value="Style" />
     <MESSAGE value="Animate guests as if they are walking back and forth" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Add a placeholder for simple Memory Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a placeholder for simple Memory Game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

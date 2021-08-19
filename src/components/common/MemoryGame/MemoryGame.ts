@@ -8,7 +8,7 @@ import {toggleCard} from "../../../actions";
 
 export function mapStateToProps(state: AppState): MemoryGameStateProps {
     return {
-        currentFile: state.computerScreen.currentFile,
+        currentFileMemoryGame: state.computerScreen.currentFileMemoryGame,
         memoryGameCardToggleState: state.computerScreen.memoryGameCardToggleState
     }
 }

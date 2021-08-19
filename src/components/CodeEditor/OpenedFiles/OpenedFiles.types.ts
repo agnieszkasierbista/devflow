@@ -1,4 +1,4 @@
-import { Files } from "../../../model/state";
+import {Files, FilesDragAndDrop, FilesPairMatching} from "../../../model/state";
 
 export interface OpenedFilesProps extends OpenedFilesOwnProps,
     OpenedFilesStateProps,
@@ -12,7 +12,8 @@ export interface OpenedFilesOwnProps {
 export interface OpenedFilesStateProps {
     files: Files[],
     codeEditorTabsList: string[],
-    currentFile: Files
+    currentFilePuzzle: FilesDragAndDrop,
+    currentFilePairMatching: FilesPairMatching,
 }
 
 export interface OpenedFilesDispatchProps {
