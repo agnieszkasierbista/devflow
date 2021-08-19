@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visits/randomDeveloperVisit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/randomDeveloperVisit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visits/visits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visits/visits.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,6 +226,7 @@
       <workItem from="1629187811256" duration="19336000" />
       <workItem from="1629293420818" duration="2141000" />
       <workItem from="1629372830504" duration="945000" />
+      <workItem from="1629374602786" duration="837000" />
     </task>
     <task id="LOCAL-00001" summary="Clean-up after creating react app">
       <created>1623354491756</created>

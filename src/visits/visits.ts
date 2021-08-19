@@ -6,6 +6,6 @@ import {randomDeveloperVisit} from "./randomDeveloperVisit";
 export const visits: Conversations = {
     Ella: ellaVisit,
     Mike: mikeVisit,
-    RandomDeveloper: randomDeveloperVisit,
+    "Random Developer": randomDeveloperVisit,
 
 }

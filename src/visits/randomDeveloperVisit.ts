@@ -3,7 +3,7 @@ import {Conversation} from "../model/state";
 export const randomDeveloperVisit : Conversation = [
     {
         event: "START_VISIT",
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: 'hi, are you busy?',
         playerDialogueOptions: [
             {rpl: 'hi, i am not busy', event: 'READY_VISIT'},
@@ -14,7 +14,7 @@ export const randomDeveloperVisit : Conversation = [
 
     {
         event: 'READY_VISIT',
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: 'Can you take care of this task asap?',
         playerDialogueOptions: [
             {rpl: 'ok, immediately!', event: 'START_WORK_VISIT'},
@@ -25,7 +25,7 @@ export const randomDeveloperVisit : Conversation = [
 
     {
         event: 'REJECT_VISIT',
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: 'ok,ok, but better be careful',
         playerDialogueOptions: [
             {rpl: 'yes, you too! bye!', event: 'END_VISIT'},
@@ -34,7 +34,7 @@ export const randomDeveloperVisit : Conversation = [
 
     {
         event: 'START_WORK_VISIT',
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: 'You are a rock star!',
         playerDialogueOptions: [
             {rpl: 'yes, you too! bye!', event: 'END_VISIT'}
@@ -43,7 +43,7 @@ export const randomDeveloperVisit : Conversation = [
 
     {
         event: 'DELAY_WORK_VISIT',
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: "Don/'t wait too long",
         playerDialogueOptions: [
             {rpl: 'yes, you too! bye!', event: 'END_VISIT'}
@@ -52,7 +52,7 @@ export const randomDeveloperVisit : Conversation = [
 
     {
         event: 'END_VISIT',
-        npcName: 'RandomDeveloper',
+        npcName: 'Random Developer',
         npcDialogueOption: "bye!",
         playerDialogueOptions: []
     },
