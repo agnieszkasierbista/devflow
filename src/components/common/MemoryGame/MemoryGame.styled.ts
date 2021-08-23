@@ -18,9 +18,9 @@ export const StyledMemoryGameCardFront = styled.div`
   background-color: hotpink;
 `;
 
-export const StyledMemoryGameCardBack = styled.div`
+export const StyledMemoryGameCardBack = styled.div<{isLocked: boolean}>`
   height: 85%;
   width: 95%;
   border: 2px solid darkmagenta;
-  background-color: palevioletred;
+  background-color: ${props => props.isLocked === true ? "red" : "palevioletred"};
 `;

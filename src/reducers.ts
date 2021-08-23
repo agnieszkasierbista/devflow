@@ -33,6 +33,7 @@ import {
     REJECT,
     REJECT_VISIT,
     SET_CURRENT_FILE,
+    SET_TOGGLE_STATE_TO_FALSE,
     SHOW_ORDER_CHECK_RESULT,
     SHOW_ORDER_CHECK_RESULT_FILES,
     SHUFFLE_ALL_ITEMS,
@@ -155,7 +156,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     itemId: "",
     scrumBoardCurrentShuffledItems: [],
     memoryGameCardToggleState: [],
-    isAMatch: false,
+    clicksCounter: 0,
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -204,6 +205,8 @@ export const rootReducer = combineReducers({
             )
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
+            // @ts-ignore
+            // @ts-ignore
             const computerScreenHandlers: ComputerScreenHandlers = {
 
                 [ON_DRAG_CARD_START]: function (): ComputerScreen {
@@ -503,7 +506,6 @@ export const rootReducer = combineReducers({
 
                     const currentFileFound = files.find((file) => file.fileName === action.payload)
 
-                    //TODO: sprawdzić czy sa sytuacje, kiedy nowy file nie powinien sie ładować, tylko wczesniejszy wywołać
                     const currentFileHandlers: CurrentFileHandlers = {
 
                         ["config.file" || "Task" || "index.file"]: function (): { [key: string]: FilesDragAndDrop } {
@@ -552,7 +554,6 @@ export const rootReducer = combineReducers({
                                 currentFileFound?.shuffledItems
                                 :
                                 state.scrumBoardCurrentShuffledItems,
-                        // TODO: wywalic i jeszcze raz napisac porzadnie
                         memoryGameCardToggleState:
                             action.payload === "Funny Kittens"
                                 ?
@@ -560,8 +561,14 @@ export const rootReducer = combineReducers({
                                     ?
                                     state.memoryGameCardToggleState
                                     :
-
-                                    state.memoryGameCardToggleState
+                                    currentFileFound.items.map((item: string, idx: number) => {
+                                        return {
+                                            idx: idx,
+                                            content: item,
+                                            toggleState: false,
+                                            isLocked: false
+                                        }
+                                    })
                                 :
                                 state.memoryGameCardToggleState
 
@@ -571,21 +578,60 @@ export const rootReducer = combineReducers({
 
                     return ({
                         ...state,
+                        clicksCounter: state.clicksCounter + 1,
                         memoryGameCardToggleState: state.memoryGameCardToggleState?.map((card) => {
-                            if (Reflect.has(card, action.payload.idx)) {
-                                // TODO: twierdzi ze action.payload jest of type any
-                                // @ts-ignore
+
+                            if (
+                                (card.idx === action.payload.idx && card.isLocked === false)
+                            ) {
                                 return {
                                     ...card,
-                                    state: !card.state
+                                    toggleState: !card.toggleState,
+                                    isLocked: action.payload.isLocked
+                                }
+                            } else if (card.idx !== action.payload.idx
+                                && card.isLocked === false
+                                && card.content === action.payload.item
+                                && card.toggleState === true) {
+                                return {
+                                    ...card,
+                                    isLocked: action.payload.isLocked
                                 }
                             } else {
                                 return card
                             }
+
                         }),
-                        isAMatch: true
                     })
 
+                },
+                [SET_TOGGLE_STATE_TO_FALSE]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        memoryGameCardToggleState:
+                            state.memoryGameCardToggleState
+                                ?
+                                state.memoryGameCardToggleState.filter((card) => {
+                                    if (card.toggleState === true && card.isLocked === false) {
+                                        return card
+                                    }
+                                }).length === 2
+                                    ?
+                                    state.memoryGameCardToggleState.map((card) => {
+                                        if (card.toggleState === true && card.isLocked === false) {
+                                            return {
+                                                ...card,
+                                                toggleState: false
+                                            }
+                                        } else {
+                                            return card
+                                        }
+                                    })
+                                    :
+                                    state.memoryGameCardToggleState
+                                :
+                                state.memoryGameCardToggleState
+                    })
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {
                     return ({

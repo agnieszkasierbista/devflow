@@ -11,10 +11,12 @@ export interface MemoryGameOwnProps {
 }
 
 export interface MemoryGameDispatchProps {
- dispatchToggleCard: (idx: number, item: string | string[]) => void,
+    dispatchToggleCard: (idx: number, item: string, isLocked: boolean) => void,
+    dispatchSetToggleStateToFalse: () => void,
 }
 
 export interface MemoryGameStateProps {
     currentFileMemoryGame: FilesMemoryGame,
-    memoryGameCardToggleState?: {}[]
+    memoryGameCardToggleState: { idx: number, content: string, toggleState: boolean, isLocked: boolean }[],
+    clicksCounter: number
 }

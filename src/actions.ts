@@ -34,11 +34,18 @@ export const CHECK_MATCHED_PAIRS = "CHECK_MATCHED_PAIRS";
 export const ON_DRAG_CARD_START = "ON_DRAG_CARD_START";
 export const ON_CARD_DROP = "ON_CARD_DROP";
 export const TOGGLE_CARD = "TOGGLE_CARD";
+export const SET_TOGGLE_STATE_TO_FALSE = "SET_TOGGLE_STATE_TO_FALSE";
 
-export function toggleCard(idx: number, item: string | string[]) {
+export function setToggleStateToFalse() {
+    return {
+        type: SET_TOGGLE_STATE_TO_FALSE,
+    }
+}
+
+export function toggleCard(idx: number, item: string, isLocked: boolean) {
     return {
         type: TOGGLE_CARD,
-        payload: {idx, item}
+        payload: {idx, item, isLocked}
     }
 }
 
