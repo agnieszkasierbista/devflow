@@ -28,12 +28,24 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                             ?
                             props.memoryGameCardToggleState[idx].toggleState === false
                                 ?
-                                <StyledMemoryGameCardFront
-                                    key={idx}
-                                    onClick={() => props.dispatchToggleCard(idx, item, isLocked)}
-                                >
-                                    O
-                                </StyledMemoryGameCardFront>
+                                props.memoryGameCardToggleState.filter((card) => {
+                                    if (card.toggleState === true && card.isLocked === false) {
+                                        return card
+                                    }
+                                }).length === 2
+                                    ?
+                                    <StyledMemoryGameCardFront
+                                        key={idx}
+                                    >
+                                        O
+                                    </StyledMemoryGameCardFront>
+                                    :
+                                    <StyledMemoryGameCardFront
+                                        key={idx}
+                                        onClick={() => props.dispatchToggleCard(idx, item, isLocked)}
+                                    >
+                                        O
+                                    </StyledMemoryGameCardFront>
                                 :
                                 props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx)
                                     ?
