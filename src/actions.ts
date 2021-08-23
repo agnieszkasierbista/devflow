@@ -35,6 +35,13 @@ export const ON_DRAG_CARD_START = "ON_DRAG_CARD_START";
 export const ON_CARD_DROP = "ON_CARD_DROP";
 export const TOGGLE_CARD = "TOGGLE_CARD";
 export const SET_TOGGLE_STATE_TO_FALSE = "SET_TOGGLE_STATE_TO_FALSE";
+export const RESTART_GAME = "RESTART_GAME";
+
+export function restartGame() {
+    return {
+        type: RESTART_GAME
+    }
+}
 
 export function setToggleStateToFalse() {
     return {

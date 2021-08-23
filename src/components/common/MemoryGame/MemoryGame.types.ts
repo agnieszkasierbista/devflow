@@ -13,6 +13,7 @@ export interface MemoryGameOwnProps {
 export interface MemoryGameDispatchProps {
     dispatchToggleCard: (idx: number, item: string, isLocked: boolean) => void,
     dispatchSetToggleStateToFalse: () => void,
+    dispatchRestartGame: () => void,
 }
 
 export interface MemoryGameStateProps {

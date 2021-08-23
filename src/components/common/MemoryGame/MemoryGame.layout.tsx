@@ -1,6 +1,12 @@
 import {MemoryGameProps} from "./MemoryGame.types";
 import React from "react";
-import {StyledMemoryGameBoard, StyledMemoryGameCardBack, StyledMemoryGameCardFront} from "./MemoryGame.styled";
+import {
+    StyledGameControls,
+    StyledMemoryGameBoard,
+    StyledMemoryGameCardBack,
+    StyledMemoryGameCardFront, StyledMovesCounter,
+    StyledResetButton
+} from "./MemoryGame.styled";
 
 export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
 
@@ -11,50 +17,57 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
     })
 
     return (
-        <StyledMemoryGameBoard
+        <>
+            <StyledMemoryGameBoard>
+                {props.currentFileMemoryGame.items.map((item, idx) => {
 
-        >
-            {props.currentFileMemoryGame.items.map((item, idx) => {
+                    const isLocked: boolean = !!props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx);
 
-                const isLocked: boolean = !!props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx);
-
-                return (
-                    props.memoryGameCardToggleState?.length
-                        ?
-                        props.memoryGameCardToggleState[idx].toggleState === false
+                    return (
+                        props.memoryGameCardToggleState?.length
                             ?
-                            <StyledMemoryGameCardFront
-                                key={idx}
-                                onClick={() => props.dispatchToggleCard(idx, item, isLocked)}
-                            >
-                                O
-                            </StyledMemoryGameCardFront>
-                            :
-                            props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx)
+                            props.memoryGameCardToggleState[idx].toggleState === false
                                 ?
-                                <StyledMemoryGameCardBack
-                                    key={idx}
-                                    isLocked={isLocked}
-                                >
-                                    {item}
-                                </StyledMemoryGameCardBack>
-                                :
-
-                                <StyledMemoryGameCardBack
+                                <StyledMemoryGameCardFront
                                     key={idx}
                                     onClick={() => props.dispatchToggleCard(idx, item, isLocked)}
-                                    isLocked={false}
                                 >
-                                    {item}
-                                </StyledMemoryGameCardBack>
-                        :
-                        null
-                )
+                                    O
+                                </StyledMemoryGameCardFront>
+                                :
+                                props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx)
+                                    ?
+                                    <StyledMemoryGameCardBack
+                                        key={idx}
+                                        isLocked={isLocked}
+                                    >
+                                        {item}
+                                    </StyledMemoryGameCardBack>
+                                    :
 
-            })}
-            <div>
-                Moves: {props.clicksCounter}
-            </div>
-        </StyledMemoryGameBoard>
+                                    <StyledMemoryGameCardBack
+                                        key={idx}
+                                        onClick={() => props.dispatchToggleCard(idx, item, isLocked)}
+                                        isLocked={false}
+                                    >
+                                        {item}
+                                    </StyledMemoryGameCardBack>
+                            :
+                            null
+                    )
+
+                })}
+
+            </StyledMemoryGameBoard>
+            <StyledGameControls>
+                <StyledMovesCounter>
+                    Moves: {props.clicksCounter}
+                </StyledMovesCounter>
+                <StyledResetButton
+                    onClick={() => props.dispatchRestartGame()}
+                >Reset
+                </StyledResetButton>
+            </StyledGameControls>
+        </>
     )
 }

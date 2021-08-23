@@ -32,6 +32,7 @@ import {
     READY_VISIT,
     REJECT,
     REJECT_VISIT,
+    RESTART_GAME,
     SET_CURRENT_FILE,
     SET_TOGGLE_STATE_TO_FALSE,
     SHOW_ORDER_CHECK_RESULT,
@@ -631,6 +632,21 @@ export const rootReducer = combineReducers({
                                     state.memoryGameCardToggleState
                                 :
                                 state.memoryGameCardToggleState
+                    })
+                },
+                [RESTART_GAME]: function (): ComputerScreen {
+                    const currentFileFound = files.find((file) => file.fileName === "Funny Kittens")
+                    return  ({
+                        ...state,
+                        clicksCounter: 0,
+                        memoryGameCardToggleState: currentFileFound.items.map((item: string, idx: number) => {
+                            return {
+                                idx: idx,
+                                content: item,
+                                toggleState: false,
+                                isLocked: false
+                            }
+                        })
                     })
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {
