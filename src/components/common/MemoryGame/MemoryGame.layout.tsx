@@ -19,7 +19,7 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
     return (
         <>
             <StyledMemoryGameBoard>
-                {props.currentFileMemoryGame.items.map((item, idx) => {
+                {props.currentFileMemoryGame.shuffledItems.map((item, idx) => {
 
                     const isLocked: boolean = !!props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx);
 
@@ -71,6 +71,7 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                 })}
 
             </StyledMemoryGameBoard>
+
             <StyledGameControls>
                 <StyledMovesCounter>
                     Moves: {props.clicksCounter}

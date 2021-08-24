@@ -106,11 +106,13 @@ export const preloadedComputerScreenState: ComputerScreen = {
         fileName: "",
         taskType: "",
         items: [],
+        shuffledItems: [],
     },
     currentFileMemoryGame: {
         fileName: "",
         taskType: "",
         items: [],
+        shuffledItems: [],
     },
     filesPairMatching: {
         fileName: "",
@@ -507,6 +509,8 @@ export const rootReducer = combineReducers({
 
                     const currentFileFound = files.find((file) => file.fileName === action.payload)
 
+                    const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
+
                     const currentFileHandlers: CurrentFileHandlers = {
 
                         ["config.file" || "Task" || "index.file"]: function (): { [key: string]: FilesDragAndDrop } {
@@ -537,7 +541,10 @@ export const rootReducer = combineReducers({
                         },
                         ["Funny Kittens"]: function (): { [key: string]: FilesMemoryGame } {
                             return ({
-                                currentFileMemoryGame: {...currentFileFound}
+                                currentFileMemoryGame: {
+                                    ...currentFileFound,
+                                    shuffledItems: currentFileShuffledItems
+                                }
                             })
                         },
 
@@ -562,7 +569,7 @@ export const rootReducer = combineReducers({
                                     ?
                                     state.memoryGameCardToggleState
                                     :
-                                    currentFileFound.items.map((item: string, idx: number) => {
+                                    currentFileShuffledItems.map((item: string, idx: number) => {
                                         return {
                                             idx: idx,
                                             content: item,
@@ -636,10 +643,15 @@ export const rootReducer = combineReducers({
                 },
                 [RESTART_GAME]: function (): ComputerScreen {
                     const currentFileFound = files.find((file) => file.fileName === "Funny Kittens")
+                    const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
                     return  ({
                         ...state,
+                        currentFileMemoryGame: {
+                            ...currentFileFound,
+                            shuffledItems: currentFileShuffledItems
+                        },
                         clicksCounter: 0,
-                        memoryGameCardToggleState: currentFileFound.items.map((item: string, idx: number) => {
+                        memoryGameCardToggleState: currentFileShuffledItems.map((item: string, idx: number) => {
                             return {
                                 idx: idx,
                                 content: item,

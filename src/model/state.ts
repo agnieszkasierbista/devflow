@@ -33,6 +33,7 @@ export interface FilesMemoryGame {
     fileName: FileName,
     taskType: TaskType,
     items: string[],
+    shuffledItems: string[],
 }
 
 export interface FilesDragAndDrop {

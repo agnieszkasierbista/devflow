@@ -4,6 +4,9 @@
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,14 +232,8 @@
       <workItem from="1629392327430" duration="7108000" />
       <workItem from="1629449980859" duration="905000" />
       <workItem from="1629451109794" duration="6540000" />
-      <workItem from="1629707395229" duration="11156000" />
-    </task>
-    <task id="LOCAL-00003" summary="Update reademe file">
-      <created>1623354984204</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1623354984204</updated>
+      <workItem from="1629707395229" duration="13102000" />
+      <workItem from="1629793093876" duration="1788000" />
     </task>
     <task id="LOCAL-00004" summary="Clean-up">
       <created>1623838283488</created>
@@ -574,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629720686544</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Refactor">
+      <created>1629722694082</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1629722694082</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -664,12 +668,12 @@
     <MESSAGE value="Allow a user to track work progress in the WebBrowser using Scrum Board" />
     <MESSAGE value="Style" />
     <MESSAGE value="Animate guests as if they are walking back and forth" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Add a placeholder for simple Memory Game" />
     <MESSAGE value="Fix the bug" />
     <MESSAGE value="Allow a user to play fully functional Memory Game with moves counter" />
     <MESSAGE value="Allow a user to restart Memory Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow a user to restart Memory Game" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
