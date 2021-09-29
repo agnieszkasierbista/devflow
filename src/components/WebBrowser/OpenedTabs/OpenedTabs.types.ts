@@ -10,7 +10,7 @@ export interface OpenedTabsOwnProps {
 }
 
 export interface OpenedTabsStateProps {
-    files: Files[],
+    files: Files,
     codeEditorTabsList: string[],
     currentFilePuzzle: FilesDragAndDrop,
     currentFileMemoryGame: FilesMemoryGame,

@@ -9,6 +9,11 @@ import Communicator from '../Communicator/Communicator';
 import {ComputerScreenProps} from './ComputerScreen.types';
 
 export const ComputerScreen: React.FC<ComputerScreenProps> = (props) => {
+
+    React.useEffect(() => {props.dispatchSetComputerScreenInitialInfo()
+    })
+
+
     return (
         <StyledComputerScreen>
             <Taskbar/>

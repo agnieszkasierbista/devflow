@@ -2,11 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/helpers/arrayDiff.helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/TabBar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/WebBrowser.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/paths.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,16 +56,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.layout.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GlobalStyle/GlobalStyle.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.styled.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/state.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/Workspace/Workspace.styled.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/GuestSlot/GuestSlot.styled.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/Workspace/Workspace.layout.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/reducers.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -99,7 +129,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TypeScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tasksSourceFiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../my-app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -233,14 +263,20 @@
       <workItem from="1629449980859" duration="905000" />
       <workItem from="1629451109794" duration="6540000" />
       <workItem from="1629707395229" duration="13102000" />
-      <workItem from="1629793093876" duration="1788000" />
-    </task>
-    <task id="LOCAL-00004" summary="Clean-up">
-      <created>1623838283488</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1623838283488</updated>
+      <workItem from="1629793093876" duration="4327000" />
+      <workItem from="1631086020448" duration="1218000" />
+      <workItem from="1631095100133" duration="480000" />
+      <workItem from="1631174873784" duration="200000" />
+      <workItem from="1631176190581" duration="3478000" />
+      <workItem from="1631259682745" duration="3224000" />
+      <workItem from="1631263694642" duration="1348000" />
+      <workItem from="1631865245473" duration="8345000" />
+      <workItem from="1632133772226" duration="6072000" />
+      <workItem from="1632300382541" duration="6761000" />
+      <workItem from="1632313765475" duration="5766000" />
+      <workItem from="1632729773461" duration="5841000" />
+      <workItem from="1632859375330" duration="1246000" />
+      <workItem from="1632902577024" duration="8117000" />
     </task>
     <task id="LOCAL-00005" summary="Display a basic player view">
       <created>1623841538731</created>
@@ -578,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629722694082</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Shuffle Memory Game items before each game">
+      <created>1629799508054</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1629799508054</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -648,7 +691,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Display a list of contacts in the communicator" />
     <MESSAGE value="Allow user to have a conversation with an npc via communicator" />
     <MESSAGE value="Allow user to finish a conversation with npc" />
     <MESSAGE value="Show user conversation history" />
@@ -673,7 +715,8 @@
     <MESSAGE value="Allow a user to play fully functional Memory Game with moves counter" />
     <MESSAGE value="Allow a user to restart Memory Game" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Shuffle Memory Game items before each game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shuffle Memory Game items before each game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

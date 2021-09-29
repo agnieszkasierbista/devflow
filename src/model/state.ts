@@ -28,12 +28,15 @@ export interface Conversations {
 
 export type FileName = string
 export type TaskType = string
+export type Path = string
 
 export interface FilesMemoryGame {
     fileName: FileName,
     taskType: TaskType,
     items: string[],
     shuffledItems: string[],
+    path: Path,
+    component: string,
 }
 
 export interface FilesDragAndDrop {
@@ -44,26 +47,38 @@ export interface FilesDragAndDrop {
     beingDragged: number,
     shouldShowOrderCheckResult: boolean,
     taskType: TaskType,
+    path: Path,
+    component: string,
 }
 
 export interface FilesPairMatching {
     fileName: FileName,
-    items: string[][],
+    itemsArray: string[][],
     colors: { [key: string]: string },
     beingDragged: number,
     shouldShowOrderCheckResult: boolean,
     taskType: TaskType,
+    path: Path,
+    component: string,
 }
 
 export interface FilesScrumBoard {
     fileName: FileName,
-    items: string[][],
-    shuffledItems: string[][],
+    itemsArray: string[][],
+    shuffledItemsArray: string[][],
     beingDragged: number,
     taskType: TaskType,
+    path: Path,
+    component: string,
 }
-// TODO: moze jakis tu typ trzebaby dac zamiast any
-export type Files = any[]
+
+export type Files = AllFiles[]
+
+export interface AllFiles extends FilesDragAndDrop,
+    FilesMemoryGame,
+    FilesPairMatching,
+    FilesScrumBoard {
+}
 
 export interface ComputerScreen {
     randomColors: string[],
@@ -97,6 +112,7 @@ export interface ComputerScreen {
     scrumBoardCurrentShuffledItems: string[][],
     memoryGameCardToggleState: { idx: number, content: string, toggleState: boolean, isLocked: boolean }[],
     clicksCounter: number,
+    finishedGameNames: string[],
 }
 
 export interface GuestSlot {

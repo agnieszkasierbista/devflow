@@ -1,7 +1,12 @@
 import {combineReducers} from "redux";
 import {
     ComputerScreen,
-    ComputerScreenHandlers, CurrentFileHandlers, FilesDragAndDrop, FilesMemoryGame, FilesPairMatching, FilesScrumBoard,
+    ComputerScreenHandlers,
+    CurrentFileHandlers,
+    FilesDragAndDrop,
+    FilesMemoryGame,
+    FilesPairMatching,
+    FilesScrumBoard,
     GuestSlot,
     GuestSlotHandlers,
     Workspace,
@@ -33,6 +38,7 @@ import {
     REJECT,
     REJECT_VISIT,
     RESTART_GAME,
+    SET_COMPUTER_SCREEN_INITIAL_INFO,
     SET_CURRENT_FILE,
     SET_TOGGLE_STATE_TO_FALSE,
     SHOW_ORDER_CHECK_RESULT,
@@ -77,7 +83,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: ""
+        taskType: "",
+        path: "",
+        component: ""
     },
     currentFilePuzzle: {
         fileName: "",
@@ -86,52 +94,73 @@ export const preloadedComputerScreenState: ComputerScreen = {
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: ""
+        taskType: "",
+        path: "",
+        component: ""
+
     },
     filesScrumBoard: {
         fileName: "",
-        items: [],
-        shuffledItems: [],
+        itemsArray: [],
+        shuffledItemsArray: [],
         beingDragged: -1,
         taskType: "",
+        path: "",
+        component: ""
+
     },
     currentFileScrumBoard: {
         fileName: "",
-        items: [],
-        shuffledItems: [],
+        itemsArray: [],
+        shuffledItemsArray: [],
         beingDragged: -1,
         taskType: "",
+        path: "",
+        component: ""
+
     },
     filesMemoryGame: {
         fileName: "",
         taskType: "",
         items: [],
         shuffledItems: [],
+        path: "",
+        component: ""
+
     },
     currentFileMemoryGame: {
         fileName: "",
         taskType: "",
         items: [],
         shuffledItems: [],
+        path: "",
+        component: ""
+
     },
     filesPairMatching: {
         fileName: "",
         taskType: "",
-        items: [],
+        itemsArray: [],
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
+        path: "",
+        component: ""
+
     },
     currentFilePairMatching: {
         fileName: "",
         taskType: "",
-        items: [],
+        itemsArray: [],
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
+        path: "",
+        component: ""
+
     },
     files: [],
-    codeEditorTabsList: ["config.file", "index.file", "main.file"],
+    codeEditorTabsList: [],
     contacts: ["John", "Barbara", "LingLing"],
     currentContact: "",
     currentEvent: "",
@@ -155,11 +184,12 @@ export const preloadedComputerScreenState: ComputerScreen = {
     columnLeftClicked: [],
     columnRightClicked: [],
     currentDivColor: ["", "", "", "", "", "", "", "", "g"],
-    webBrowserTabsList: ["Task", "Scrum Board", "Funny Kittens"],
+    webBrowserTabsList: [],
     itemId: "",
     scrumBoardCurrentShuffledItems: [],
     memoryGameCardToggleState: [],
     clicksCounter: 0,
+    finishedGameNames: ["Funny Dogs"],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -208,10 +238,18 @@ export const rootReducer = combineReducers({
             )
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
-            // @ts-ignore
-            // @ts-ignore
+
             const computerScreenHandlers: ComputerScreenHandlers = {
 
+                [SET_COMPUTER_SCREEN_INITIAL_INFO]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        files: files,
+                        codeEditorTabsList: files.filter((file) => file.fileName.includes(".file")).map((file) => file.fileName),
+                        webBrowserTabsList: files.filter((file) => file.component.includes("web-browser")).map((file) => file.fileName),
+                    })
+
+                },
                 [ON_DRAG_CARD_START]: function (): ComputerScreen {
                     return ({
                         ...state,
@@ -228,7 +266,7 @@ export const rootReducer = combineReducers({
                         currentFileScrumBoard: {
                             ...state.currentFileScrumBoard,
                             // @ts-ignore
-                            shuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.currentFileScrumBoard.shuffledItems),
+                            shuffledItemsArray: R.update(action.payload.rowIdx, action.payload.swappedItems, state.currentFileScrumBoard.shuffledItemsArray),
                         },
                         // @ts-ignore
                         scrumBoardCurrentShuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.scrumBoardCurrentShuffledItems),
@@ -240,7 +278,7 @@ export const rootReducer = combineReducers({
                             ...state,
                             columnLeft: shuffleArrayItems(action.payload.map((item: string[]) => item[0])),
                             columnRight: shuffleArrayItems(action.payload.map((item: string[]) => item[1])),
-                            isDivClicked: state.currentFilePairMatching.items.flat().map(item => ({[item]: false}))
+                            isDivClicked: state.currentFilePairMatching.itemsArray.flat().map(item => ({[item]: false}))
 
                         }
                     )
@@ -315,7 +353,7 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
-                            //TO-DO: popraw!!!!
+                            //TODO: popraw!!!!
                             clickedDivCurrentStateRight: CLICK_ON_RIGHT,
                             columnRightClicked: state.columnRightClicked.concat(action.payload.val),
 
@@ -501,23 +539,57 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFilePairMatching: {
                             ...state.currentFilePairMatching,
-                            colors: getArrayOfShuffledColors(state.currentFilePairMatching.items.flatMap((x => x[0])), state.randomColors)
+                            colors: getArrayOfShuffledColors(state.currentFilePairMatching.itemsArray.flatMap((x => x[0])), state.randomColors)
                         }
                     })
                 },
                 [SET_CURRENT_FILE]: function (): ComputerScreen {
 
-                    const currentFileFound = files.find((file) => file.fileName === action.payload)
+                    const currentFileFound = files.filter((file) => file.fileName === action.payload)[0]
 
-                    const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
+                    const currentFileMemoryGameShuffledItems = currentFileMemoryGameShuffledItemsHelper();
 
+                    function currentFileMemoryGameShuffledItemsHelper() {
+                        if (currentFileFound.taskType === "memoryGame") {
+                            return shuffleArrayItems(currentFileFound.items)
+                        }
+                        return []
+                    }
+
+                    const currentFilePuzzleF = function (): { [key: string]: FilesDragAndDrop } {
+                        return ({
+                            currentFilePuzzle: {...currentFileFound}
+                        })
+                    }
+
+                    const currentFileMemoryGameF = function (): { [key: string]: FilesMemoryGame } {
+                        return (
+                            {
+                                currentFileMemoryGame:
+                                    state.memoryGameCardToggleState?.length
+                                        ?
+
+                                        {
+                                            ...currentFileFound,
+                                            shuffledItems: state.memoryGameCardToggleState.map((item) => {
+                                                return item.content
+                                            })
+                                        }
+                                        :
+                                        {
+                                            ...currentFileFound,
+                                            shuffledItems: currentFileMemoryGameShuffledItems
+
+                                        }
+
+                            }
+                        )
+                    }
                     const currentFileHandlers: CurrentFileHandlers = {
 
-                        ["config.file" || "Task" || "index.file"]: function (): { [key: string]: FilesDragAndDrop } {
-                            return ({
-                                currentFilePuzzle: {...currentFileFound}
-                            })
-                        },
+                        "config.file": currentFilePuzzleF,
+                        Task: currentFilePuzzleF,
+                        "index.file": currentFilePuzzleF,
                         ["main.file"]: function (): { [key: string]: FilesPairMatching } {
                             return ({
                                 currentFilePairMatching: {...currentFileFound}
@@ -527,49 +599,43 @@ export const rootReducer = combineReducers({
                             return ({
                                 currentFileScrumBoard: {
                                     ...currentFileFound,
-                                    shuffledItems: state.scrumBoardCurrentShuffledItems?.length
+                                    shuffledItemsArray: state.scrumBoardCurrentShuffledItems?.length
                                         ?
                                         state.scrumBoardCurrentShuffledItems
                                         :
                                         currentFileFound.fileName === "Scrum Board"
                                             ?
-                                            currentFileFound?.shuffledItems
+                                            currentFileFound?.shuffledItemsArray
                                             :
                                             state.scrumBoardCurrentShuffledItems,
                                 }
                             })
                         },
-                        ["Funny Kittens"]: function (): { [key: string]: FilesMemoryGame } {
-                            return ({
-                                currentFileMemoryGame: {
-                                    ...currentFileFound,
-                                    shuffledItems: currentFileShuffledItems
-                                }
-                            })
-                        },
+                        "Funny Kittens": currentFileMemoryGameF,
+                        "Funny Dogs": currentFileMemoryGameF,
+                        "Funny Lizards": currentFileMemoryGameF,
 
                     };
 
                     return ({
                         ...state,
-                        ...currentFileHandlers[action.payload]?.(),
-                        scrumBoardCurrentShuffledItems: state.scrumBoardCurrentShuffledItems?.length
-                            ?
-                            state.scrumBoardCurrentShuffledItems
-                            :
-                            currentFileFound.fileName === "Scrum Board"
+
+                        scrumBoardCurrentShuffledItems:
+                            state.scrumBoardCurrentShuffledItems?.length
                                 ?
-                                currentFileFound?.shuffledItems
+                                state.scrumBoardCurrentShuffledItems
                                 :
-                                state.scrumBoardCurrentShuffledItems,
-                        memoryGameCardToggleState:
-                            action.payload === "Funny Kittens"
-                                ?
-                                state.memoryGameCardToggleState?.length
+                                currentFileFound.fileName === "Scrum Board"
                                     ?
-                                    state.memoryGameCardToggleState
+                                    currentFileFound?.shuffledItemsArray
                                     :
-                                    currentFileShuffledItems.map((item: string, idx: number) => {
+                                    state.scrumBoardCurrentShuffledItems,
+                        memoryGameCardToggleState:
+                            (["Funny Kittens", "Funny Dogs", "Funny Lizards"].includes(action.payload))
+                                ? state.memoryGameCardToggleState?.length
+                                    ? state.memoryGameCardToggleState
+                                    // : shuffleArrayItems(currentFileFound.items).map((item: string, idx: number) => {
+                                    : currentFileMemoryGameShuffledItems.map((item: string, idx: number) => {
                                         return {
                                             idx: idx,
                                             content: item,
@@ -577,8 +643,8 @@ export const rootReducer = combineReducers({
                                             isLocked: false
                                         }
                                     })
-                                :
-                                state.memoryGameCardToggleState
+                                : state.memoryGameCardToggleState,
+                        ...currentFileHandlers[action.payload]?.(),
 
                     })
                 },
@@ -642,9 +708,10 @@ export const rootReducer = combineReducers({
                     })
                 },
                 [RESTART_GAME]: function (): ComputerScreen {
-                    const currentFileFound = files.find((file) => file.fileName === "Funny Kittens")
+                    const currentFileFound = files.filter((file) => file.fileName === "Funny Kittens")[0]
                     const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
-                    return  ({
+
+                    return ({
                         ...state,
                         currentFileMemoryGame: {
                             ...currentFileFound,
@@ -891,14 +958,3 @@ export const rootReducer = combineReducers({
         }
     }
 );
-
-// ....reduce((acc, x)  {...acc, ...x } , {}),
-// const arr = [{a: "jajo"}, {a: "dupa"}];
-//
-//
-// arr.reduce((acc, currentValue) => {
-//     return {
-//         ...acc,
-//         ...currentValue
-//     };
-// }, {});

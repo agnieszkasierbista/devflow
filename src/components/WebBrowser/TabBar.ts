@@ -9,8 +9,10 @@ import { TabBar } from "../CodeEditor/TabBar/TabBar.layout";
 
 export function mapStateToProps(state: AppState): TabBarStateProps {
     return {
+        files: state.computerScreen.files,
         codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        webBrowserTabsList: state.computerScreen.webBrowserTabsList
+        webBrowserTabsList: state.computerScreen.webBrowserTabsList,
+        finishedGameNames: state.computerScreen.finishedGameNames,
     }
 }
 

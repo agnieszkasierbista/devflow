@@ -12,5 +12,5 @@ export interface ComputerScreenStateProps {
 }
 
 export interface ComputerScreenDispatchProps {
-
+    dispatchSetComputerScreenInitialInfo: () => void,
 }

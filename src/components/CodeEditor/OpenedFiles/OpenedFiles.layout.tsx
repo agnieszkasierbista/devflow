@@ -3,9 +3,8 @@ import React from "react";
 import {Route, Switch} from "react-router-dom";
 import {StyledOpenedFiles} from "./OpenedFiles.styled";
 import DragAndDropTask from "../DragAndDropTask/DragAndDropTask";
-import {codeEditorTabsPaths} from "../TabBar/TabBar.layout";
 import PairMatching from "../PairMatching/PairMatching";
-import {configFilePath, indexFilePath, mainFilePath} from "../../../model/paths";
+import {codeEditorTabsPaths, configFilePath, indexFilePath, mainFilePath} from "../../../model/paths";
 
 
 export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
@@ -13,7 +12,9 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
     return (
         <StyledOpenedFiles>
             <Switch>
-                {codeEditorTabsPaths.map((tabPath, idx) => {
+                {props.files
+                    .filter((file) => file.component === "code_editor")
+                    .map((file, idx) => {
 
                     const codeEditorComponentsHandler: any = {
                         [configFilePath]: function () {
@@ -43,10 +44,13 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
 
                     return (
 
-                        <Route key={idx} path={tabPath}>
-                            {
-                                codeEditorComponentsHandler[tabPath]()
+                        <Route
+                            key={idx}
+                            path={file.path}
+                        >
 
+                            {
+                                codeEditorComponentsHandler[file.path]()
                             }
                         </Route>
 

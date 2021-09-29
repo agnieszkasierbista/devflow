@@ -1,51 +1,68 @@
 import {StyledCodeEditorTabLink, StyledTabBar} from "../CodeEditor.styled";
 import React from "react";
 import {TabBarProps} from "./TabBar.types";
-import {
-    configFilePath,
-    funnyKittensPath,
-    indexFilePath,
-    mainFilePath,
-    scrumBoardPath,
-    taskPath
-} from "../../../model/paths";
+import {arrayDiff} from "../../../helpers/arrayDiff.helpers";
 
-export const codeEditorTabsPaths = [configFilePath, indexFilePath, mainFilePath];
-export const webBrowserTabsPaths = [taskPath, scrumBoardPath, funnyKittensPath];
 
 export const TabBar: React.FC<TabBarProps> = (props) => {
+
+    const filteredOutFinishedGamesNames = arrayDiff(props.files.map((file) => file.fileName), props.finishedGameNames);
+    const currentFiles = props.files.filter((file) => filteredOutFinishedGamesNames.includes(file.fileName)) || []
+    // TODO: tutaj musze jakos wyciagnac zawartosc obiektow i porownac do tabelki
+
+    const availableCodeEditorTabsList = currentFiles
+        .filter((file) => file.component === "code_editor")
+        .slice(0, 3)
+        .map((file) => file.fileName);
+    const availableWebBrowserTabsList = currentFiles
+        .filter((file) => file.component === "web_browser")
+        .slice(0, 3)
+        .map((file) => file.fileName);
+
     return (
         <StyledTabBar>
-            {props.app.map((tabPath, idx) => {
+            {props.app === "codeEditor"
+
+                ?
+
+                availableCodeEditorTabsList.map((tabName, idx) => {
                     return (
                         <StyledCodeEditorTabLink
                             key={idx}
-                            to={tabPath}
+                            to={props.files.find((file) => file.fileName === tabName)?.path || ""}
                             onClick={() => {
-                                props.app === codeEditorTabsPaths
-                                    ?
-                                    props.dispatchSetCurrentFile(props.codeEditorTabsList[idx])
-                                    :
-                                    props.dispatchSetCurrentFile(props.webBrowserTabsList[idx]);
+                                    props.dispatchSetCurrentFile(tabName)
                             }}
                         >
 
                             {
-
-                                props.app === codeEditorTabsPaths
-                                    ?
-                                    props.codeEditorTabsList[idx]
-                                    :
-                                    props.webBrowserTabsList[idx]
-
+                               tabName
                             }
 
                         </StyledCodeEditorTabLink>
-
-
                     )
-                }
-            )
+                })
+
+                :
+
+                availableWebBrowserTabsList.map((tabName, idx) => {
+                    return (
+                        <StyledCodeEditorTabLink
+                            key={idx}
+                            to={props.files.find((file) => file.fileName === tabName)?.path || ""}
+                            onClick={() => {
+                                props.dispatchSetCurrentFile(tabName)
+                            }}
+                        >
+
+                            {
+                                tabName
+                            }
+
+                        </StyledCodeEditorTabLink>
+                    )
+                })
+
             }
 
         </StyledTabBar>

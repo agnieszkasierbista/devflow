@@ -10,7 +10,7 @@ export interface OpenedFilesOwnProps {
 }
 
 export interface OpenedFilesStateProps {
-    files: Files[],
+    files: Files,
     codeEditorTabsList: string[],
     currentFilePuzzle: FilesDragAndDrop,
     currentFilePairMatching: FilesPairMatching,

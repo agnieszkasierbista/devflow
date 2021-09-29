@@ -10,7 +10,7 @@ export interface DragAndDropTaskOwnProps {
 }
 
 export interface DragAndDropTaskStateProps {
-    files: Files[],
+    files: Files,
     randomColors: string[],
     currentFilePuzzle: FilesDragAndDrop
 }

@@ -1,16 +1,21 @@
+import { Files } from "../../../model/state";
+
 export interface TabBarProps extends TabBarOwnProps,
-    Pick<TabBarStateProps, "codeEditorTabsList" | "webBrowserTabsList">,
+    Pick<TabBarStateProps, "codeEditorTabsList" | "webBrowserTabsList" | "finishedGameNames" | "files">,
     TabBarDispatchProps {
 
 }
 
 export interface TabBarOwnProps {
-    app: string[],
+    app: string,
 }
 
 export interface TabBarStateProps {
-    codeEditorTabsList: string[];
-    webBrowserTabsList: string[];
+    files: Files,
+    //TODO: to ponizej chyba juz nie jest nigdzie uzywane
+    codeEditorTabsList: string[],
+    webBrowserTabsList: string[],
+    finishedGameNames: string[],
 }
 
 export interface TabBarDispatchProps {

@@ -1,13 +1,15 @@
+import {scrumBoardPath} from "../model/paths";
+
 export const filesScrumBoard = [
     {
         fileName: "Scrum Board",
-        items: [
+        itemsArray: [
             ["Task_1", "", "", ""],
             ["Task_2", "", "", ""],
             ["Task_3", "", "", ""],
             ["Task_4", "", "", ""]
         ],
-        shuffledItems: [
+        shuffledItemsArray: [
             ["Task_1", "", "", ""],
             ["Task_2", "", "", ""],
             ["Task_3", "", "", ""],
@@ -15,4 +17,6 @@ export const filesScrumBoard = [
         ],
         beingDragged: -1,
         taskType: "scrumBoard",
+        path: scrumBoardPath,
+        component: "web_browser",
     }];

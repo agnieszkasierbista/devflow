@@ -15,7 +15,7 @@ export interface ScrumBoardItemsDispatchProps {
 }
 
 export interface ScrumBoardItemsOwnProps {
-    item: string | string[],
+    item: string,
     idx: number,
     rowIdx: number,
 

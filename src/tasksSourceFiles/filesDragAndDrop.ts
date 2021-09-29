@@ -1,3 +1,5 @@
+import {configFilePath, indexFilePath, taskPath} from "../model/paths";
+
 export const filesDragAndDrop = [
     {
         fileName: "config.file",
@@ -6,7 +8,9 @@ export const filesDragAndDrop = [
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
+        taskType: "dragAndDrop",
+        path: configFilePath,
+        component: "code_editor",
     },
     {
         fileName: "index.file",
@@ -15,7 +19,9 @@ export const filesDragAndDrop = [
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
+        taskType: "dragAndDrop",
+        path: indexFilePath,
+        component: "code_editor"
     },
     {
         fileName: "Task",
@@ -24,6 +30,8 @@ export const filesDragAndDrop = [
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
-        taskType: "dragAndDrop"
+        taskType: "dragAndDrop",
+        path: taskPath,
+        component: "web_browser",
     },
 ];

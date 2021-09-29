@@ -14,7 +14,7 @@ export const ScrumBoardItem: React.FC<ScrumBoardItemsProps> = (props) => {
             onDrop={() => {
                 const draggedItemIdx = props.currentFileScrumBoard.beingDragged;
                 // @ts-ignore
-                const swappedItems = R.move(draggedItemIdx, props.idx, props.currentFileScrumBoard.shuffledItems[props.rowIdx]);
+                const swappedItems = R.move(draggedItemIdx, props.idx, props.currentFileScrumBoard.shuffledItemsArray[props.rowIdx]);
 
                 props.dispatchOnCardDrop(swappedItems, props.rowIdx);
             }}

@@ -26,7 +26,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
     React.useEffect(() => {
         // @ts-ignore
-        props.dispatchShuffleAllItems(props.currentFilePairMatching.items)
+        props.dispatchShuffleAllItems(props.currentFilePairMatching.itemsArray)
     }, [])
 
     return (
@@ -127,7 +127,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                 {
                     props.currentFilePairMatching.shouldShowOrderCheckResult
                     && checkOrder(
-                        props.currentFilePairMatching.items,
+                        props.currentFilePairMatching.itemsArray,
                         props.columnLeftClicked,
                         props.columnRightClicked
                     )
