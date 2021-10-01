@@ -2,9 +2,11 @@ import {MemoryGameProps} from "./MemoryGame.types";
 import React from "react";
 import {
     StyledGameControls,
+    StyledInfoBox,
     StyledMemoryGameBoard,
     StyledMemoryGameCardBack,
-    StyledMemoryGameCardFront, StyledMovesCounter,
+    StyledMemoryGameCardFront,
+    StyledMovesCounter,
     StyledResetButton
 } from "./MemoryGame.styled";
 
@@ -18,6 +20,31 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
 
     return (
         <>
+
+            {props.memoryGameCardToggleState?.length
+                ?
+                props.memoryGameCardToggleState.map((card) => {
+                    return card.isLocked
+                }).includes(false)
+                    ?
+                    null
+                    :
+                    <StyledInfoBox>
+                        <br/>
+                        Congrats!
+                        <br/>
+                        You won!
+                        <br/>
+                        <StyledResetButton
+                            onClick={() => props.dispatchClearMemoryGameBoardAndAddGameNameToFinished(props.currentFileMemoryGame.fileName)}
+                        >
+                            OK
+                        </StyledResetButton>
+                    </StyledInfoBox>
+                :
+                null
+            }
+
             <StyledMemoryGameBoard>
                 {props.currentFileMemoryGame.shuffledItems.map((item, idx) => {
 

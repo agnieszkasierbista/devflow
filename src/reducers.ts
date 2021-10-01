@@ -14,7 +14,7 @@ import {
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
-    CHECK_MATCHED_PAIRS,
+    CHECK_MATCHED_PAIRS, CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
     CLICK_OFF_LEFT,
     CLICK_OFF_RIGHT,
     CLICK_ON_LEFT,
@@ -59,6 +59,7 @@ import {visits} from "./visits/visits";
 import {shuffleArrayItems} from "./helpers/itemsShuffler.helpers";
 import * as R from "ramda";
 import {files} from "./tasksSourceFiles/files";
+import {arrayDiff} from "./helpers/arrayDiff.helpers";
 //
 // export const preloadedWorkspaceState: Workspace = {
 //     isOverlayVisible: true,
@@ -708,7 +709,12 @@ export const rootReducer = combineReducers({
                     })
                 },
                 [RESTART_GAME]: function (): ComputerScreen {
-                    const currentFileFound = files.filter((file) => file.fileName === "Funny Kittens")[0]
+
+                    const currentlyAvailableMemoryGamesNamesArray = files.filter((file) => file.fileName.includes("Funny")).map((file) => {
+                        return file.fileName
+                    })
+                    const currentFileNameFound =  arrayDiff(currentlyAvailableMemoryGamesNamesArray, state.finishedGameNames)[0]
+                    const currentFileFound = files.filter((file) => file.fileName === currentFileNameFound)[0]
                     const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
 
                     return ({
@@ -726,6 +732,23 @@ export const rootReducer = combineReducers({
                                 isLocked: false
                             }
                         })
+                    })
+                },
+                [CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED]: function (): ComputerScreen {
+                    return ({
+                        ...state,
+                        memoryGameCardToggleState: [],
+                        finishedGameNames: state.finishedGameNames.concat(action.payload),
+                        currentFileMemoryGame: {
+                            fileName: "",
+                            taskType: "",
+                            items: [],
+                            shuffledItems: [],
+                            path: "",
+                            component: ""
+
+                        },
+                        clicksCounter: 0
                     })
                 },
                 [ON_DRAG_START]: function (): ComputerScreen {

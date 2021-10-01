@@ -37,7 +37,15 @@ export const TOGGLE_CARD = "TOGGLE_CARD";
 export const SET_TOGGLE_STATE_TO_FALSE = "SET_TOGGLE_STATE_TO_FALSE";
 export const RESTART_GAME = "RESTART_GAME";
 export const SET_COMPUTER_SCREEN_INITIAL_INFO = "SET_COMPUTER_SCREEN_INITIAL_INFO";
+export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED"
 
+
+export function clearMemoryGameBoardAndAddGameNameToFinished(name: string) {
+    return {
+        type: CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
+        payload: name
+    }
+}
 export function setComputerScreenInitialInfo() {
     return {
         type: SET_COMPUTER_SCREEN_INITIAL_INFO

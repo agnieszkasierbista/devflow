@@ -7,6 +7,7 @@ export const StyledMemoryGameBoard = styled.div`
   height: 85%;
   width: 95%;
   grid-template-rows: 25% 25% 25% 25%;
+  //TODO: Trzeba uzależnić ilość rowów od ilosci itemów w danej grze, bo memory moze mieć wiecej kart niż 16!
   grid-template-columns: 25% 25% 25% 25%;
   border: 2px solid darkmagenta;
   background-color: deeppink;
@@ -65,5 +66,15 @@ export const StyledMovesCounter = styled.div`
   justify-content: center;
   width: 95%;
   color: hotpink;
+`;
+
+export const StyledInfoBox = styled.div`
+  height: 100px;
+  width: 250px;
+  background-color: magenta;
+  border: 2px solid darkmagenta;
+  position: absolute;
+  top: 200px;
+  left: 25%;
 `;
 
