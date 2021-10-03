@@ -8,7 +8,7 @@ export interface MemoryGameProps extends MemoryGameOwnProps,
 }
 
 export interface MemoryGameOwnProps {
-    fileName: FileName,
+
 }
 
 export interface MemoryGameDispatchProps {

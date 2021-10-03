@@ -14,5 +14,5 @@ export interface ScrumBoardDispatchProps {
 }
 
 export interface ScrumBoardOwnProps {
-    fileName: FileName
+
 }

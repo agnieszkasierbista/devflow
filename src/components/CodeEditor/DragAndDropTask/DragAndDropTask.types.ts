@@ -6,7 +6,7 @@ export interface DragAndDropTaskProps extends DragAndDropTaskOwnProps,
 }
 
 export interface DragAndDropTaskOwnProps {
-    fileName: FileName
+    // fileName: FileName
 }
 
 export interface DragAndDropTaskStateProps {

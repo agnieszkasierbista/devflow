@@ -29,37 +29,28 @@ export const OpenedTabs: React.FC<OpenedTabsProps> = (props) => {
                         [taskPath]: function () {
                             return (
                                 <DragAndDropTask
-                                    fileName={"props.currentFile.fileName"}
-                                    // fileName={props.currentFile.fileName}
+
                                 />
                             )
                         },
                         [scrumBoardPath]: function () {
                             return (
-                                <ScrumBoard
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <ScrumBoard/>
                             )
                         },
                         [funnyKittensPath]: function () {
                             return (
-                                <MemoryGame
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <MemoryGame/>
                             )
                         },
                         [funnyDogsPath]: function () {
                             return (
-                                <MemoryGame
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <MemoryGame/>
                             )
                         },
                         [funnyLizardsPath]: function () {
                             return (
-                                <MemoryGame
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <MemoryGame/>
                             )
                         },
                     }

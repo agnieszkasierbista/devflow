@@ -30,6 +30,6 @@ export interface PairMatchingDispatchProps {
 }
 
 export interface PairMatchingOwnProps {
-    fileName: FileName
+
 }
 

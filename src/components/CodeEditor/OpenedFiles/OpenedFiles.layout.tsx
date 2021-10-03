@@ -20,23 +20,17 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
                     const codeEditorComponentsHandler: CodeEditorComponentsHandlers = {
                         [configFilePath]: function () {
                             return (
-                                <DragAndDropTask
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <DragAndDropTask/>
                             )
                         },
                         [indexFilePath]: function () {
                             return (
-                                <DragAndDropTask
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <DragAndDropTask/>
                             )
                         },
                         [mainFilePath]: function () {
                             return (
-                                <PairMatching
-                                    fileName={"props.currentFile.fileName"}
-                                />
+                                <PairMatching/>
                             )
                         },
                     }

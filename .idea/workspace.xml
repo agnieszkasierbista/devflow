@@ -3,20 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/CodeEditor.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApp.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApp.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MinimizedApps/MinimizedApps.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerName/PlayerName.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerNameInput/PlayerNameInput.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,14 +257,7 @@
       <workItem from="1632859375330" duration="1246000" />
       <workItem from="1632902577024" duration="8332000" />
       <workItem from="1633075925415" duration="6743000" />
-      <workItem from="1633265332441" duration="7422000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add a maximized CodeEditor to the ComputerScreen">
-      <created>1624277942778</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1624277942778</updated>
+      <workItem from="1633265332441" duration="8164000" />
     </task>
     <task id="LOCAL-00009" summary="Update .gitignore file">
       <created>1624278287469</created>
@@ -610,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633269301362</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Refactor">
+      <created>1633273027806</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1633273027806</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
