@@ -1,6 +1,8 @@
+import {configFilePath, indexFilePath, mainFilePath} from "./paths";
+
 export interface AppState {
     workspace: Workspace,
-    computerScreen: ComputerScreen,
+    computerScreen: ComputerScreen<CodeEditorPaths>,
     guestSlot: GuestSlot
 }
 
@@ -28,9 +30,8 @@ export interface Conversations {
 
 export type FileName = string
 export type TaskType = string
-export type Path = string
 
-export interface FilesMemoryGame {
+export interface FilesMemoryGame<Path = string>{
     fileName: FileName,
     taskType: TaskType,
     items: string[],
@@ -39,7 +40,7 @@ export interface FilesMemoryGame {
     component: string,
 }
 
-export interface FilesDragAndDrop {
+export interface FilesDragAndDrop<Path = string> {
     fileName: FileName,
     items: string[],
     shuffledItems: string[],
@@ -51,7 +52,7 @@ export interface FilesDragAndDrop {
     component: string,
 }
 
-export interface FilesPairMatching {
+export interface FilesPairMatching<Path = string> {
     fileName: FileName,
     itemsArray: string[][],
     colors: { [key: string]: string },
@@ -62,7 +63,7 @@ export interface FilesPairMatching {
     component: string,
 }
 
-export interface FilesScrumBoard {
+export interface FilesScrumBoard<Path = string> {
     fileName: FileName,
     itemsArray: string[][],
     shuffledItemsArray: string[][],
@@ -72,22 +73,22 @@ export interface FilesScrumBoard {
     component: string,
 }
 
-export type Files = AllFiles[]
+export type Files<Path = string> = AllFiles<Path>[]
 
-export interface AllFiles extends FilesDragAndDrop,
-    FilesMemoryGame,
-    FilesPairMatching,
-    FilesScrumBoard {
+export interface AllFiles<Path = string> extends FilesDragAndDrop<Path>,
+    FilesMemoryGame<Path>,
+    FilesPairMatching<Path>,
+    FilesScrumBoard<Path> {
 }
 
-export interface ComputerScreen {
+export interface ComputerScreen<Path = string> {
     randomColors: string[],
     puzzle: FilesDragAndDrop,
     currentFilePuzzle: FilesDragAndDrop,
     currentFileScrumBoard: FilesScrumBoard,
     currentFilePairMatching: FilesPairMatching,
     currentFileMemoryGame: FilesMemoryGame,
-    files: Files,
+    files: Files<Path>,
     filesMemoryGame: FilesMemoryGame,
     filesPairMatching: FilesPairMatching,
     filesScrumBoard: FilesScrumBoard,
@@ -131,7 +132,7 @@ export interface WorkspaceHandlers {
 }
 
 export interface ComputerScreenHandlers {
-    [key: string]: () => ComputerScreen
+    [key: string]: () => ComputerScreen<CodeEditorPaths>
 }
 
 export interface GuestSlotHandlers {
@@ -149,3 +150,7 @@ export interface OnClickPairMatchingHandlers {
 export interface CurrentFileHandlers {
     [key: string]: () => { [key: string]: {} }
 }
+
+export type CodeEditorPaths = typeof configFilePath | typeof indexFilePath | typeof mainFilePath
+
+export type CodeEditorComponentsHandlers = Record<CodeEditorPaths, () => JSX.Element>

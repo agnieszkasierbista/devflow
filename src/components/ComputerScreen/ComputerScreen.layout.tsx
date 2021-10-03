@@ -10,14 +10,14 @@ import {ComputerScreenProps} from './ComputerScreen.types';
 
 export const ComputerScreen: React.FC<ComputerScreenProps> = (props) => {
 
-    React.useEffect(() => {props.dispatchSetComputerScreenInitialInfo()
+    React.useEffect(() => {
+        props.dispatchSetComputerScreenInitialInfo()
     })
-
 
     return (
         <StyledComputerScreen>
-            <Taskbar/>
 
+            <Taskbar/>
 
             <Route path={codeEditorPath}>
                 <CodeEditor/>

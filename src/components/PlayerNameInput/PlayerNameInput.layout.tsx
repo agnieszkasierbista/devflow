@@ -14,8 +14,7 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = (props) => {
         props.isPlayerNameInputVisible
             ? (
                 <StyledPlayerNameInput>
-
-                    Choose your name and start the game!
+                    <span>Choose your name and start the game!</span>
                     <input
                         placeholder="Type your name here"
                         value={playerName}

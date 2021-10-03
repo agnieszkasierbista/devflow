@@ -4,7 +4,8 @@ import {Route, Switch} from "react-router-dom";
 import {StyledOpenedFiles} from "./OpenedFiles.styled";
 import DragAndDropTask from "../DragAndDropTask/DragAndDropTask";
 import PairMatching from "../PairMatching/PairMatching";
-import {codeEditorTabsPaths, configFilePath, indexFilePath, mainFilePath} from "../../../model/paths";
+import {configFilePath, indexFilePath, mainFilePath} from "../../../model/paths";
+import {CodeEditorComponentsHandlers} from "../../../model/state";
 
 
 export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
@@ -16,12 +17,11 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
                     .filter((file) => file.component === "code_editor")
                     .map((file, idx) => {
 
-                    const codeEditorComponentsHandler: any = {
+                    const codeEditorComponentsHandler: CodeEditorComponentsHandlers = {
                         [configFilePath]: function () {
                             return (
                                 <DragAndDropTask
                                     fileName={"props.currentFile.fileName"}
-                                    // fileName={props.currentFile.fileName}
                                 />
                             )
                         },
@@ -29,7 +29,6 @@ export const OpenedFiles: React.FC<OpenedFilesProps> = (props) => {
                             return (
                                 <DragAndDropTask
                                     fileName={"props.currentFile.fileName"}
-                                    // fileName={props.currentFile.fileName}
                                 />
                             )
                         },

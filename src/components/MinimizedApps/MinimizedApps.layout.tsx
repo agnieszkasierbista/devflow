@@ -11,15 +11,15 @@ export const MinimizedApps: React.FC = () => {
         appsList
             .map(app => {
                     return (
-                        <React.Fragment key={app}>
-                            <StyledMinimizedAppLink to={app}>
-                                {app}
-                            </StyledMinimizedAppLink>
-                        </React.Fragment>
+                        <StyledMinimizedAppLink
+                            key={app}
+                            to={app}
+                        >
+                            {app}
+                        </StyledMinimizedAppLink>
                     )
                 }
             )
-
 
     return (
         <>

@@ -1,5 +1,6 @@
 import {combineReducers} from "redux";
 import {
+    CodeEditorPaths,
     ComputerScreen,
     ComputerScreenHandlers,
     CurrentFileHandlers,
@@ -75,7 +76,7 @@ export const preloadedWorkspaceState: Workspace = {
     isPlayerNameVisible: true
 };
 
-export const preloadedComputerScreenState: ComputerScreen = {
+export const preloadedComputerScreenState: ComputerScreen<CodeEditorPaths> = {
     randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
     puzzle: {
         fileName: "",
@@ -238,11 +239,11 @@ export const rootReducer = combineReducers({
                     : state
             )
         },
-        computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
+        computerScreen: function (state: ComputerScreen<CodeEditorPaths> = preloadedComputerScreenState, action) {
 
             const computerScreenHandlers: ComputerScreenHandlers = {
 
-                [SET_COMPUTER_SCREEN_INITIAL_INFO]: function (): ComputerScreen {
+                [SET_COMPUTER_SCREEN_INITIAL_INFO]: function () {
                     return ({
                         ...state,
                         files: files,
@@ -251,7 +252,7 @@ export const rootReducer = combineReducers({
                     })
 
                 },
-                [ON_DRAG_CARD_START]: function (): ComputerScreen {
+                [ON_DRAG_CARD_START]: function () {
                     return ({
                         ...state,
                         currentFileScrumBoard: {
@@ -261,7 +262,7 @@ export const rootReducer = combineReducers({
                     })
 
                 },
-                [ON_CARD_DROP]: function (): ComputerScreen {
+                [ON_CARD_DROP]: function () {
                     return {
                         ...state,
                         currentFileScrumBoard: {
@@ -273,7 +274,7 @@ export const rootReducer = combineReducers({
                         scrumBoardCurrentShuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.scrumBoardCurrentShuffledItems),
                     }
                 },
-                [SHUFFLE_ALL_ITEMS]: function (): ComputerScreen {
+                [SHUFFLE_ALL_ITEMS]: function () {
                     return (
                         {
                             ...state,
@@ -284,7 +285,7 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [CLICK_ON_LEFT]: function (): ComputerScreen {
+                [CLICK_ON_LEFT]: function () {
                     return (
                         {
                             ...state,
@@ -312,7 +313,7 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [CLICK_OFF_LEFT]: function (): ComputerScreen {
+                [CLICK_OFF_LEFT]: function () {
                     return (
                         {
                             ...state,
@@ -338,7 +339,7 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [CLICK_ON_RIGHT]: function (): ComputerScreen {
+                [CLICK_ON_RIGHT]: function () {
 
                     return (
                         {
@@ -361,7 +362,7 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [CLICK_OFF_RIGHT]: function (): ComputerScreen {
+                [CLICK_OFF_RIGHT]: function () {
                     return (
                         {
                             ...state,
@@ -384,7 +385,7 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [DELAY_WORK]: function (): ComputerScreen {
+                [DELAY_WORK]: function () {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
@@ -401,7 +402,7 @@ export const rootReducer = combineReducers({
                             {...state}
                     )
                 },
-                [START_WORK]: function (): ComputerScreen {
+                [START_WORK]: function () {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
@@ -418,7 +419,7 @@ export const rootReducer = combineReducers({
                             {...state}
                     )
                 },
-                [REJECT]: function (): ComputerScreen {
+                [REJECT]: function () {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
@@ -434,7 +435,7 @@ export const rootReducer = combineReducers({
                             :
                             {...state})
                 },
-                [READY]: function (): ComputerScreen {
+                [READY]: function () {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
@@ -452,7 +453,7 @@ export const rootReducer = combineReducers({
                             :
                             {...state})
                 },
-                [END_CONVERSATION]: function (): ComputerScreen {
+                [END_CONVERSATION]: function () {
                     return (
                         state.contacts.includes(state.currentContact)
                             ?
@@ -470,7 +471,7 @@ export const rootReducer = combineReducers({
                             {...state}
                     )
                 },
-                [START_CONVERSATION]: function (): ComputerScreen {
+                [START_CONVERSATION]: function () {
 
                     return (
                         state.contacts.includes(action.payload.contact)
@@ -504,7 +505,7 @@ export const rootReducer = combineReducers({
                             {...state}
                     )
                 },
-                [INITIALIZE_CONVERSATIONS]: function (): ComputerScreen {
+                [INITIALIZE_CONVERSATIONS]: function () {
                     return ({
                         ...state,
                         conversations: (state.contacts
@@ -517,7 +518,7 @@ export const rootReducer = combineReducers({
                             )
                     })
                 },
-                [SHUFFLE_COLORS]: function (): ComputerScreen {
+                [SHUFFLE_COLORS]: function () {
                     return ({
                         ...state,
                         puzzle: {
@@ -526,7 +527,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [SHUFFLE_COLORS_DRAG_AND_DROP]: function (): ComputerScreen {
+                [SHUFFLE_COLORS_DRAG_AND_DROP]: function () {
                     return ({
                         ...state,
                         currentFilePuzzle: {
@@ -535,7 +536,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [SHUFFLE_COLORS_PAIR_MATCHING]: function (): ComputerScreen {
+                [SHUFFLE_COLORS_PAIR_MATCHING]: function () {
                     return ({
                         ...state,
                         currentFilePairMatching: {
@@ -544,7 +545,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [SET_CURRENT_FILE]: function (): ComputerScreen {
+                [SET_CURRENT_FILE]: function () {
 
                     const currentFileFound = files.filter((file) => file.fileName === action.payload)[0]
 
@@ -649,7 +650,7 @@ export const rootReducer = combineReducers({
 
                     })
                 },
-                [TOGGLE_CARD]: function (): ComputerScreen {
+                [TOGGLE_CARD]: function ()  {
 
                     return ({
                         ...state,
@@ -680,7 +681,7 @@ export const rootReducer = combineReducers({
                     })
 
                 },
-                [SET_TOGGLE_STATE_TO_FALSE]: function (): ComputerScreen {
+                [SET_TOGGLE_STATE_TO_FALSE]: function () {
                     return ({
                         ...state,
                         memoryGameCardToggleState:
@@ -708,7 +709,7 @@ export const rootReducer = combineReducers({
                                 state.memoryGameCardToggleState
                     })
                 },
-                [RESTART_GAME]: function (): ComputerScreen {
+                [RESTART_GAME]: function () {
 
                     const currentlyAvailableMemoryGamesNamesArray = files.filter((file) => file.fileName.includes("Funny")).map((file) => {
                         return file.fileName
@@ -734,7 +735,7 @@ export const rootReducer = combineReducers({
                         })
                     })
                 },
-                [CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED]: function (): ComputerScreen {
+                [CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED]: function () {
                     return ({
                         ...state,
                         memoryGameCardToggleState: [],
@@ -751,7 +752,7 @@ export const rootReducer = combineReducers({
                         clicksCounter: 0
                     })
                 },
-                [ON_DRAG_START]: function (): ComputerScreen {
+                [ON_DRAG_START]: function () {
                     return ({
                         ...state,
                         puzzle: {
@@ -761,7 +762,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [ON_DRAG_START_FILES]: function (): ComputerScreen {
+                [ON_DRAG_START_FILES]: function () {
                     return ({
                         ...state,
                         currentFilePuzzle: {
@@ -771,7 +772,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [ON_DROP]: function (): ComputerScreen {
+                [ON_DROP]: function () {
                     return ({
                         ...state,
                         puzzle: {
@@ -780,7 +781,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [ON_DROP_FILES]: function (): ComputerScreen {
+                [ON_DROP_FILES]: function () {
                     return ({
                         ...state,
                         currentFilePuzzle: {
@@ -789,7 +790,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [SHOW_ORDER_CHECK_RESULT]: function (): ComputerScreen {
+                [SHOW_ORDER_CHECK_RESULT]: function () {
                     return ({
                         ...state,
                         puzzle: {
@@ -798,7 +799,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [SHOW_ORDER_CHECK_RESULT_FILES]: function (): ComputerScreen {
+                [SHOW_ORDER_CHECK_RESULT_FILES]: function () {
                     return ({
                         ...state,
                         currentFilePuzzle: {
@@ -807,7 +808,7 @@ export const rootReducer = combineReducers({
                         }
                     })
                 },
-                [CHECK_MATCHED_PAIRS]: function (): ComputerScreen {
+                [CHECK_MATCHED_PAIRS]: function () {
                     return ({
                         ...state,
                         currentFilePairMatching: {

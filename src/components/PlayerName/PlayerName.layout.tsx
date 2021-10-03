@@ -4,15 +4,11 @@ import {StyledPlayerName} from "./PlayerName.styled";
 
 export const PlayerName: React.FC<PlayerNameProps> = (props) => {
 
-    const {
-        playerName
-    } = props;
-
     return (
         props.isPlayerNameVisible
             ? (
                 <StyledPlayerName>
-                    {playerName}
+                    {props.playerName}
                 </StyledPlayerName>
             )
             : null

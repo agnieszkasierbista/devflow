@@ -5,7 +5,7 @@ import TabBar from "./TabBar/TabBar";
 import OpenedFiles from "./OpenedFiles/OpenedFiles";
 
 
-export const CodeEditor: React.FC<CodeEditorProps> = (props) => {
+export const CodeEditor: React.FC<CodeEditorProps> = () => {
     return (
         <StyledCodeEditor>
             <TabBar

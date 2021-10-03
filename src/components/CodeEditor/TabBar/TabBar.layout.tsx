@@ -6,14 +6,14 @@ import {arrayDiff} from "../../../helpers/arrayDiff.helpers";
 
 export const TabBar: React.FC<TabBarProps> = (props) => {
 
-    const filteredOutFinishedGamesNames = arrayDiff(props.files.map((file) => file.fileName), props.finishedGameNames);
-    const currentFiles = props.files.filter((file) => filteredOutFinishedGamesNames.includes(file.fileName)) || []
-    // TODO: tutaj musze jakos wyciagnac zawartosc obiektow i porownac do tabelki
+    const unfinishedGamesNames = arrayDiff(props.files.map((file) => file.fileName), props.finishedGameNames);
+    const currentFiles = props.files.filter((file) => unfinishedGamesNames.includes(file.fileName)) || []
 
     const availableCodeEditorTabsList = currentFiles
         .filter((file) => file.component === "code_editor")
         .slice(0, 3)
         .map((file) => file.fileName);
+
     const availableWebBrowserTabsList = currentFiles
         .filter((file) => file.component === "web_browser")
         .slice(0, 3)
@@ -22,10 +22,7 @@ export const TabBar: React.FC<TabBarProps> = (props) => {
     return (
         <StyledTabBar>
             {props.app === "codeEditor"
-
-                ?
-
-                availableCodeEditorTabsList.map((tabName, idx) => {
+                ? availableCodeEditorTabsList.map((tabName, idx) => {
                     return (
                         <StyledCodeEditorTabLink
                             key={idx}
@@ -34,11 +31,7 @@ export const TabBar: React.FC<TabBarProps> = (props) => {
                                     props.dispatchSetCurrentFile(tabName)
                             }}
                         >
-
-                            {
-                               tabName
-                            }
-
+                            { tabName }
                         </StyledCodeEditorTabLink>
                     )
                 })
@@ -54,11 +47,7 @@ export const TabBar: React.FC<TabBarProps> = (props) => {
                                 props.dispatchSetCurrentFile(tabName)
                             }}
                         >
-
-                            {
-                                tabName
-                            }
-
+                            { tabName }
                         </StyledCodeEditorTabLink>
                     )
                 })

@@ -109,10 +109,9 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                     onClick={() => props.dispatchRestartGame()}
                 >
                     {props.memoryGameCardToggleState?.length
-                        ?
-                        "Reset"
-                        :
-                        "Start Game"}
+                        ? "Reset"
+                        : "Start Game"
+                    }
                 </StyledResetButton>
             </StyledGameControls>
         </>
