@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 
-export const StyledMemoryGameBoard = styled.div`
+export const StyledMemoryGameBoard = styled.div<{ currentFileMemoryGameItems: string[] }>`
   font-size: 30px;
   display: grid;
   height: 85%;
   width: 95%;
-  grid-template-rows: 25% 25% 25% 25%;
-  //TODO: Trzeba uzależnić ilość rowów od ilosci itemów w danej grze, bo memory moze mieć wiecej kart niż 16!
+  grid-template-rows: ${props => {
+    const rowNumber = Math.round((props.currentFileMemoryGameItems.length + 1) / 4);
+    const rowPercentage = 100 / rowNumber;
+    const row = Math.round(rowPercentage) + "%"
+    return new Array(rowNumber).fill(row).join(' ');
+   }};
   grid-template-columns: 25% 25% 25% 25%;
   border: 2px solid darkmagenta;
   background-color: deeppink;

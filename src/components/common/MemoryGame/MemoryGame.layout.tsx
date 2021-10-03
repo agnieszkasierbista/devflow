@@ -45,7 +45,9 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                 null
             }
 
-            <StyledMemoryGameBoard>
+            <StyledMemoryGameBoard
+                currentFileMemoryGameItems={props.currentFileMemoryGame.items}
+            >
                 {props.currentFileMemoryGame.shuffledItems.map((item, idx) => {
 
                     const isLocked: boolean = !!props.memoryGameCardToggleState?.find((card) => card.content === item && card.toggleState === true && card.idx !== idx);
@@ -105,7 +107,12 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                 </StyledMovesCounter>
                 <StyledResetButton
                     onClick={() => props.dispatchRestartGame()}
-                >Reset
+                >
+                    {props.memoryGameCardToggleState?.length
+                        ?
+                        "Reset"
+                        :
+                        "Start Game"}
                 </StyledResetButton>
             </StyledGameControls>
         </>

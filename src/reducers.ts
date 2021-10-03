@@ -190,7 +190,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     scrumBoardCurrentShuffledItems: [],
     memoryGameCardToggleState: [],
     clicksCounter: 0,
-    finishedGameNames: ["Funny Dogs"],
+    finishedGameNames: [],
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
