@@ -1,6 +1,5 @@
 import {combineReducers} from "redux";
 import {
-    CodeEditorPaths,
     ComputerScreen,
     ComputerScreenHandlers,
     CurrentFileHandlers,
@@ -15,7 +14,8 @@ import {
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
-    CHECK_MATCHED_PAIRS, CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
+    CHECK_MATCHED_PAIRS,
+    CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
     CLICK_OFF_LEFT,
     CLICK_OFF_RIGHT,
     CLICK_ON_LEFT,
@@ -76,7 +76,7 @@ export const preloadedWorkspaceState: Workspace = {
     isPlayerNameVisible: true
 };
 
-export const preloadedComputerScreenState: ComputerScreen<CodeEditorPaths> = {
+export const preloadedComputerScreenState: ComputerScreen = {
     randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
     puzzle: {
         fileName: "",
@@ -239,7 +239,7 @@ export const rootReducer = combineReducers({
                     : state
             )
         },
-        computerScreen: function (state: ComputerScreen<CodeEditorPaths> = preloadedComputerScreenState, action) {
+        computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
 
             const computerScreenHandlers: ComputerScreenHandlers = {
 

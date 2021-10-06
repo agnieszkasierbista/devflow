@@ -1,8 +1,8 @@
-import {configFilePath, indexFilePath, mainFilePath} from "./paths";
+import {codeEditorTabsPaths, webBrowserTabsPaths} from "./paths";
 
-export interface AppState {
+export interface AppState<Path = AllPaths> {
     workspace: Workspace,
-    computerScreen: ComputerScreen<CodeEditorPaths>,
+    computerScreen: ComputerScreen<Path>,
     guestSlot: GuestSlot
 }
 
@@ -31,7 +31,7 @@ export interface Conversations {
 export type FileName = string
 export type TaskType = string
 
-export interface FilesMemoryGame<Path = string>{
+export interface FilesMemoryGame<Path = AllPaths>{
     fileName: FileName,
     taskType: TaskType,
     items: string[],
@@ -40,7 +40,7 @@ export interface FilesMemoryGame<Path = string>{
     component: string,
 }
 
-export interface FilesDragAndDrop<Path = string> {
+export interface FilesDragAndDrop<Path = AllPaths> {
     fileName: FileName,
     items: string[],
     shuffledItems: string[],
@@ -52,7 +52,7 @@ export interface FilesDragAndDrop<Path = string> {
     component: string,
 }
 
-export interface FilesPairMatching<Path = string> {
+export interface FilesPairMatching<Path = AllPaths> {
     fileName: FileName,
     itemsArray: string[][],
     colors: { [key: string]: string },
@@ -63,7 +63,7 @@ export interface FilesPairMatching<Path = string> {
     component: string,
 }
 
-export interface FilesScrumBoard<Path = string> {
+export interface FilesScrumBoard<Path = AllPaths> {
     fileName: FileName,
     itemsArray: string[][],
     shuffledItemsArray: string[][],
@@ -73,15 +73,15 @@ export interface FilesScrumBoard<Path = string> {
     component: string,
 }
 
-export type Files<Path = string> = AllFiles<Path>[]
+export type Files<Path = AllPaths> = AllFiles<Path>[]
 
-export interface AllFiles<Path = string> extends FilesDragAndDrop<Path>,
+export interface AllFiles<Path = AllPaths> extends FilesDragAndDrop<Path>,
     FilesMemoryGame<Path>,
     FilesPairMatching<Path>,
     FilesScrumBoard<Path> {
 }
 
-export interface ComputerScreen<Path = string> {
+export interface ComputerScreen<Path = AllPaths> {
     randomColors: string[],
     puzzle: FilesDragAndDrop,
     currentFilePuzzle: FilesDragAndDrop,
@@ -132,7 +132,7 @@ export interface WorkspaceHandlers {
 }
 
 export interface ComputerScreenHandlers {
-    [key: string]: () => ComputerScreen<CodeEditorPaths>
+    [key: string]: () => ComputerScreen
 }
 
 export interface GuestSlotHandlers {
@@ -151,6 +151,11 @@ export interface CurrentFileHandlers {
     [key: string]: () => { [key: string]: {} }
 }
 
-export type CodeEditorPaths = typeof configFilePath | typeof indexFilePath | typeof mainFilePath
+export type AllPaths = WebBrowserPaths | CodeEditorPaths | ""
+
+export type CodeEditorPaths = typeof codeEditorTabsPaths[number]
 
 export type CodeEditorComponentsHandlers = Record<CodeEditorPaths, () => JSX.Element>
+
+export type WebBrowserPaths = typeof webBrowserTabsPaths[number];
+export type WebBrowserComponentsHandlers = Record<WebBrowserPaths, () => JSX.Element>

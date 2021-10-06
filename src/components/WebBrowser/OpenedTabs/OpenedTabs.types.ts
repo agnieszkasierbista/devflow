@@ -1,4 +1,4 @@
-import {Files, FilesDragAndDrop, FilesMemoryGame, FilesScrumBoard} from "../../../model/state";
+import {Files, FilesDragAndDrop, FilesMemoryGame, FilesScrumBoard, WebBrowserPaths} from "../../../model/state";
 
 export interface OpenedTabsProps extends OpenedTabsOwnProps,
     OpenedTabsStateProps,
@@ -10,7 +10,7 @@ export interface OpenedTabsOwnProps {
 }
 
 export interface OpenedTabsStateProps {
-    files: Files,
+    files: Files<WebBrowserPaths>,
     codeEditorTabsList: string[],
     currentFilePuzzle: FilesDragAndDrop,
     currentFileMemoryGame: FilesMemoryGame,
