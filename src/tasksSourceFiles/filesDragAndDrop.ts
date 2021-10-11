@@ -1,6 +1,7 @@
 import {configFilePath, indexFilePath, taskPath} from "../model/paths";
+import {FileDragAndDrop} from "../model/state";
 
-export const filesDragAndDrop = [
+export const filesDragAndDrop : FileDragAndDrop[] = [
     {
         fileName: "config.file",
         items: ["f", "g", "h", "i", "j"],

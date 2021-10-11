@@ -31,7 +31,7 @@ export interface Conversations {
 export type FileName = string
 export type TaskType = string
 
-export interface FilesMemoryGame<Path = AllPaths>{
+export interface FileMemoryGame<Path = AllPaths>{
     fileName: FileName,
     taskType: TaskType,
     items: string[],
@@ -40,7 +40,7 @@ export interface FilesMemoryGame<Path = AllPaths>{
     component: string,
 }
 
-export interface FilesDragAndDrop<Path = AllPaths> {
+export interface FileDragAndDrop<Path = AllPaths> {
     fileName: FileName,
     items: string[],
     shuffledItems: string[],
@@ -52,7 +52,7 @@ export interface FilesDragAndDrop<Path = AllPaths> {
     component: string,
 }
 
-export interface FilesPairMatching<Path = AllPaths> {
+export interface FilePairMatching<Path = AllPaths> {
     fileName: FileName,
     itemsArray: string[][],
     colors: { [key: string]: string },
@@ -63,7 +63,7 @@ export interface FilesPairMatching<Path = AllPaths> {
     component: string,
 }
 
-export interface FilesScrumBoard<Path = AllPaths> {
+export interface FileScrumBoard<Path = AllPaths> {
     fileName: FileName,
     itemsArray: string[][],
     shuffledItemsArray: string[][],
@@ -73,25 +73,22 @@ export interface FilesScrumBoard<Path = AllPaths> {
     component: string,
 }
 
-export type Files<Path = AllPaths> = AllFiles<Path>[]
+export type Files<Path = AllPaths> = File<Path>[]
 
-export interface AllFiles<Path = AllPaths> extends FilesDragAndDrop<Path>,
-    FilesMemoryGame<Path>,
-    FilesPairMatching<Path>,
-    FilesScrumBoard<Path> {
-}
+export type File<Path = AllPaths> = FileDragAndDrop<Path> | FileMemoryGame<Path> | FilePairMatching<Path> | FileScrumBoard<Path>;
+
 
 export interface ComputerScreen<Path = AllPaths> {
     randomColors: string[],
-    puzzle: FilesDragAndDrop,
-    currentFilePuzzle: FilesDragAndDrop,
-    currentFileScrumBoard: FilesScrumBoard,
-    currentFilePairMatching: FilesPairMatching,
-    currentFileMemoryGame: FilesMemoryGame,
+    puzzle: FileDragAndDrop,
+    currentFilePuzzle: FileDragAndDrop,
+    currentFileScrumBoard: FileScrumBoard,
+    currentFilePairMatching: FilePairMatching,
+    currentFileMemoryGame: FileMemoryGame,
     files: Files<Path>,
-    filesMemoryGame: FilesMemoryGame,
-    filesPairMatching: FilesPairMatching,
-    filesScrumBoard: FilesScrumBoard,
+    filesMemoryGame: FileMemoryGame,
+    filesPairMatching: FilePairMatching,
+    filesScrumBoard: FileScrumBoard,
     codeEditorTabsList: string[],
     contacts: string[],
     conversations: Conversations,
@@ -101,8 +98,6 @@ export interface ComputerScreen<Path = AllPaths> {
     currentConversationHistory: string[],
     conversationsHistory: Conversations,
     isDivClicked: {}[],
-    clickedDivCurrentStateLeft: string,
-    clickedDivCurrentStateRight: string,
     columnLeft: string[],
     columnRight: string[],
     columnLeftClicked: string[],

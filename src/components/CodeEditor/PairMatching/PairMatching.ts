@@ -18,8 +18,6 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
         currentFilePairMatching: state.computerScreen.currentFilePairMatching,
         randomColors: state.computerScreen.randomColors,
         isDivClicked: state.computerScreen.isDivClicked,
-        clickedDivCurrentStateLeft: state.computerScreen.clickedDivCurrentStateLeft,
-        clickedDivCurrentStateRight: state.computerScreen.clickedDivCurrentStateRight,
         columnLeft: state.computerScreen.columnLeft,
         columnLeftClicked: state.computerScreen.columnLeftClicked,
         columnRight: state.computerScreen.columnRight,

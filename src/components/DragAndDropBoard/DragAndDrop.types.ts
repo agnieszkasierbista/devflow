@@ -1,4 +1,4 @@
-import {FilesDragAndDrop} from "../../model/state";
+import {FileDragAndDrop} from "../../model/state";
 
 export interface DragAndDropBoardProps extends DragAndDropBoardOwnProps,
     DragAndDropBoardStateProps,
@@ -10,7 +10,7 @@ export interface DragAndDropBoardOwnProps {
 }
 
 export interface DragAndDropBoardStateProps {
-    puzzle: FilesDragAndDrop,
+    puzzle: FileDragAndDrop,
     randomColors: string[],
 }
 

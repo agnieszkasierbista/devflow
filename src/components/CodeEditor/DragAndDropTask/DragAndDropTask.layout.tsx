@@ -2,10 +2,10 @@ import React from "react"
 import * as R from 'ramda';
 import {DragAndDropTaskProps} from "./DragAndDropTask.types";
 import {StyledDraggable} from "./DragAndDropTask.styled";
-import {FilesDragAndDrop} from "../../../model/state";
+import {FileDragAndDrop} from "../../../model/state";
 
 
-const checkOrder = (files: FilesDragAndDrop) => {
+const checkOrder = (files: FileDragAndDrop) => {
     const correctOrder = files.items;
     const currentOrder = files.shuffledItems;
 

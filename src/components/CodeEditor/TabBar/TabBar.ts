@@ -9,8 +9,6 @@ import {setCurrentFile} from "../../../actions";
 export function mapStateToProps(state: AppState): TabBarStateProps {
     return {
         files: state.computerScreen.files,
-        codeEditorTabsList: state.computerScreen.codeEditorTabsList,
-        webBrowserTabsList: state.computerScreen.webBrowserTabsList,
         finishedGameNames: state.computerScreen.finishedGameNames,
     }
 }

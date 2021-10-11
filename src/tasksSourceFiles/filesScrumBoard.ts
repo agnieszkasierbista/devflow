@@ -1,6 +1,7 @@
 import {scrumBoardPath} from "../model/paths";
+import {FileScrumBoard} from "../model/state";
 
-export const filesScrumBoard = [
+export const filesScrumBoard : FileScrumBoard[] = [
     {
         fileName: "Scrum Board",
         itemsArray: [

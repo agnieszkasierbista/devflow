@@ -1,6 +1,7 @@
 import {funnyDogsPath, funnyKittensPath, funnyLizardsPath} from "../model/paths";
+import {FileMemoryGame} from "../model/state";
 
-export const filesMemoryGame = [
+export const filesMemoryGame : FileMemoryGame[] = [
     {
         fileName: "Funny Kittens",
         items: ["1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8"],

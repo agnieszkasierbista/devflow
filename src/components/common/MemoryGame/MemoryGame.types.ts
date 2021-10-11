@@ -1,5 +1,4 @@
-import {FileName, FilesMemoryGame} from "../../../model/state";
-import {clearMemoryGameBoardAndAddGameNameToFinished} from "../../../actions";
+import {FileMemoryGame} from "../../../model/state";
 
 
 export interface MemoryGameProps extends MemoryGameOwnProps,
@@ -19,7 +18,7 @@ export interface MemoryGameDispatchProps {
 }
 
 export interface MemoryGameStateProps {
-    currentFileMemoryGame: FilesMemoryGame,
+    currentFileMemoryGame: FileMemoryGame,
     memoryGameCardToggleState: { idx: number, content: string, toggleState: boolean, isLocked: boolean }[],
     clicksCounter: number
 }
