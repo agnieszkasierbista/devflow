@@ -3,7 +3,13 @@ import {Dispatch} from "redux";
 
 import {DragAndDropTaskDispatchProps, DragAndDropTaskStateProps} from "./DragAndDropTask.types";
 import {DragAndDropTask} from "./DragAndDropTask.layout";
-import {onDragStartFiles, onDropFiles, showOrderCheckResultFiles, shuffleColorsDragAndDrop} from "../../../actions";
+import {
+    hideOrderCheckResult,
+    onDragStartFiles,
+    onDropFiles,
+    showOrderCheckResultFiles,
+    shuffleColorsDragAndDrop
+} from "../../../actions";
 import {AppState} from "../../../model/state";
 
 
@@ -28,6 +34,9 @@ export function mapDispatchToProps(dispatch: Dispatch): DragAndDropTaskDispatchP
         },
         dispatchShowOrderCheckResultFiles: function () {
             dispatch(showOrderCheckResultFiles())
+        },
+        dispatchHideOrderCheckResult: function () {
+            dispatch(hideOrderCheckResult())
         },
     }
 }

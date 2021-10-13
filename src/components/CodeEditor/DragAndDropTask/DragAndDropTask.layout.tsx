@@ -1,18 +1,36 @@
 import React from "react"
 import * as R from 'ramda';
 import {DragAndDropTaskProps} from "./DragAndDropTask.types";
-import {StyledDraggable} from "./DragAndDropTask.styled";
+import {StyledDraggable, StyledInfoBox} from "./DragAndDropTask.styled";
 import {FileDragAndDrop} from "../../../model/state";
 
 
-const checkOrder = (files: FileDragAndDrop) => {
+const checkOrder = (files: FileDragAndDrop, a: () => void) => {
     const correctOrder = files.items;
     const currentOrder = files.shuffledItems;
 
+    const ButtonDragAndDrop = () => {
+        return (
+            <button
+                onClick={a}
+            >
+                OK
+            </button>
+        )
+    }
+
+
     return R.equals(correctOrder, currentOrder)
-        ? <div id="evaluation-result">Correct</div>
-        : <div id="evaluation-result">Wrong!</div>;
+        ? <StyledInfoBox id="evaluation-result">
+            <span>Correct! You won!</span>
+            <ButtonDragAndDrop/>
+        </StyledInfoBox>
+        : <StyledInfoBox id="evaluation-result">
+            <span>Wrong! Keep going!</span>
+            <ButtonDragAndDrop/>
+        </StyledInfoBox>;
 };
+
 
 export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
 
@@ -20,12 +38,13 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
         props.dispatchShuffleColorsDragAndDrop()
     }, [])
 
+
     return (
         <div id="task">
-            {// @ts-ignore
+            {
                 props.currentFilePuzzle.shuffledItems
                     ?.map((val, idx) => {
-                        // @ts-ignore
+
                         return (
                             <StyledDraggable
                                 draggable="true"
@@ -49,14 +68,13 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                             </StyledDraggable>
                         );
                     })
-
             }
             <div id="puzzle-evaluation">
                 <button
                     onClick={props.dispatchShowOrderCheckResultFiles}
                     id="checker">CHECK
                 </button>
-                {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(props.currentFilePuzzle)}
+                {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(props.currentFilePuzzle, props.dispatchHideOrderCheckResult)}
             </div>
         </div>
     );

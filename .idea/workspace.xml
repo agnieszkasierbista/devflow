@@ -3,28 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/OpenedFiles/OpenedFiles.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/TabBar/TabBar.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDrop.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DragAndDropBoard/DragAndDropBoard.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/OpenedTabs/OpenedTabs.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/TabBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/TabBar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/colorsShuffler.helpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/files.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesDragAndDrop.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesMemoryGame.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesPairMatching.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasksSourceFiles/filesScrumBoard.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -276,14 +261,9 @@
       <workItem from="1633265332441" duration="8339000" />
       <workItem from="1633355464114" duration="1480000" />
       <workItem from="1633530374988" duration="7265000" />
-      <workItem from="1633943255932" duration="1705000" />
-    </task>
-    <task id="LOCAL-00011" summary="Refactor">
-      <created>1624993322784</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1624993322784</updated>
+      <workItem from="1633943255932" duration="2576000" />
+      <workItem from="1633960177916" duration="3797000" />
+      <workItem from="1634106506384" duration="2091000" />
     </task>
     <task id="LOCAL-00012" summary="Allow user to choose player's name and close input when done">
       <created>1625133472773</created>
@@ -621,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633534215052</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Refactor">
+      <created>1633947038137</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1633947038137</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

@@ -37,7 +37,8 @@ export const TOGGLE_CARD = "TOGGLE_CARD";
 export const SET_TOGGLE_STATE_TO_FALSE = "SET_TOGGLE_STATE_TO_FALSE";
 export const RESTART_GAME = "RESTART_GAME";
 export const SET_COMPUTER_SCREEN_INITIAL_INFO = "SET_COMPUTER_SCREEN_INITIAL_INFO";
-export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED"
+export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED";
+export const HIDE_ORDER_CHECK_RESULT = "HIDE_ORDER_CHECK_RESULT";
 
 
 export function clearMemoryGameBoardAndAddGameNameToFinished(name: string) {
@@ -261,6 +262,12 @@ export function onDrop(swappedItems: string[]) {
 export function showOrderCheckResult() {
     return {
         type: SHOW_ORDER_CHECK_RESULT
+    }
+}
+
+export function hideOrderCheckResult() {
+    return {
+        type: HIDE_ORDER_CHECK_RESULT
     }
 }
 

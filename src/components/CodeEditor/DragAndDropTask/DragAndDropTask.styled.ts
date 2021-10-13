@@ -8,3 +8,13 @@ export const StyledDraggable = styled.div`
   text-align: center;
   color: black;
 `;
+
+export const StyledInfoBox = styled.div`
+  height: 100px;
+  width: 250px;
+  background-color:deepskyblue;
+  border: 2px solid midnightblue;
+  position: absolute;
+  top: 200px;
+  left: 25%;
+`;

@@ -25,7 +25,7 @@ import {
     DELAY_WORK,
     DELAY_WORK_VISIT,
     END_CONVERSATION,
-    END_VISIT,
+    END_VISIT, HIDE_ORDER_CHECK_RESULT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
     ON_CARD_DROP,
@@ -547,10 +547,10 @@ export const rootReducer = combineReducers({
                 [SET_CURRENT_FILE]: function () {
 
                     const currentFileFound = files.filter((file) => file.fileName === action.payload)[0]
-                    const currentFileFoundMEMORY = filesMemoryGame.filter((file) => file.fileName === action.payload)[0]
-                    const currentFileFoundPUZZLE = filesDragAndDrop.filter((file) => file.fileName === action.payload)[0]
-                    const currentFileFoundPAIR = filesPairMatching.filter((file) => file.fileName === action.payload)[0]
-                    const currentFileFoundSCRUM = filesScrumBoard.filter((file) => file.fileName === action.payload)[0]
+                    const currentFileFoundMemoryGame = filesMemoryGame.filter((file) => file.fileName === action.payload)[0]
+                    const currentFileFoundPuzzle = filesDragAndDrop.filter((file) => file.fileName === action.payload)[0]
+                    const currentFileFoundPairMatching = filesPairMatching.filter((file) => file.fileName === action.payload)[0]
+                    const currentFileFoundScrumBoard = filesScrumBoard.filter((file) => file.fileName === action.payload)[0]
 
                     const currentFileMemoryGameShuffledItems = currentFileMemoryGameShuffledItemsHelper();
 
@@ -561,13 +561,16 @@ export const rootReducer = combineReducers({
                         return []
                     }
 
-                    const currentFilePuzzleF = function (): { [key: string]: FileDragAndDrop } {
+                    const currentFilePuzzleFunction = function (): { [key: string]: FileDragAndDrop } {
                         return ({
-                            currentFilePuzzle: {...currentFileFoundPUZZLE}
+                            currentFilePuzzle: {
+                                ...currentFileFoundPuzzle,
+                                colors: getArrayOfShuffledColors(state.currentFilePuzzle.items.flatMap((x => x[0])), state.randomColors)
+                            }
                         })
                     }
 
-                    const currentFileMemoryGameF = function (): { [key: string]: FileMemoryGame } {
+                    const currentFileMemoryGameFunction = function (): { [key: string]: FileMemoryGame } {
                         return (
                             {
                                 currentFileMemoryGame:
@@ -575,14 +578,14 @@ export const rootReducer = combineReducers({
                                         ?
 
                                         {
-                                            ...currentFileFoundMEMORY,
+                                            ...currentFileFoundMemoryGame,
                                             shuffledItems: state.memoryGameCardToggleState.map((item) => {
                                                 return item.content
                                             })
                                         }
                                         :
                                         {
-                                            ...currentFileFoundMEMORY,
+                                            ...currentFileFoundMemoryGame,
                                             shuffledItems: currentFileMemoryGameShuffledItems
 
                                         }
@@ -593,31 +596,31 @@ export const rootReducer = combineReducers({
 
                     const currentFileHandlers: CurrentFileHandlers = {
 
-                        "config.file": currentFilePuzzleF,
-                        Task: currentFilePuzzleF,
-                        "index.file": currentFilePuzzleF,
+                        "config.file": currentFilePuzzleFunction,
+                        Task: currentFilePuzzleFunction,
+                        "index.file": currentFilePuzzleFunction,
                         ["main.file"]: function (): { [key: string]: FilePairMatching } {
                             return ({
-                                currentFilePairMatching: {...currentFileFoundPAIR}
+                                currentFilePairMatching: {...currentFileFoundPairMatching}
                             })
                         },
                         ["Scrum Board"]: function (): { [key: string]: FileScrumBoard } {
                             return ({
                                 currentFileScrumBoard: {
-                                    ...currentFileFoundSCRUM,
+                                    ...currentFileFoundScrumBoard,
                                     shuffledItemsArray: state.scrumBoardCurrentShuffledItems?.length
                                         ?
                                         state.scrumBoardCurrentShuffledItems
                                         :
-                                        currentFileFoundSCRUM.fileName === "Scrum Board"
-                                            ? currentFileFoundSCRUM?.shuffledItemsArray
+                                        currentFileFoundScrumBoard.fileName === "Scrum Board"
+                                            ? currentFileFoundScrumBoard?.shuffledItemsArray
                                             : state.scrumBoardCurrentShuffledItems,
                                 }
                             })
                         },
-                        "Funny Kittens": currentFileMemoryGameF,
-                        "Funny Dogs": currentFileMemoryGameF,
-                        "Funny Lizards": currentFileMemoryGameF,
+                        "Funny Kittens": currentFileMemoryGameFunction,
+                        "Funny Dogs": currentFileMemoryGameFunction,
+                        "Funny Lizards": currentFileMemoryGameFunction,
 
                     };
 
@@ -628,7 +631,7 @@ export const rootReducer = combineReducers({
                             state.scrumBoardCurrentShuffledItems?.length
                                 ? state.scrumBoardCurrentShuffledItems
                                 : currentFileFound.fileName === "Scrum Board"
-                                    ? currentFileFoundSCRUM?.shuffledItemsArray
+                                    ? currentFileFoundScrumBoard?.shuffledItemsArray
                                     : state.scrumBoardCurrentShuffledItems,
                         memoryGameCardToggleState:
                             (["Funny Kittens", "Funny Dogs", "Funny Lizards"].includes(action.payload))
@@ -711,10 +714,10 @@ export const rootReducer = combineReducers({
 
                     const files = filesMemoryGame;
 
-                    const currentlyAvailableMemoryGamesNamesArray = files.filter((file) => file.fileName.includes("Funny")).map((file) => {
+                    const allMemoryGamesNamesArray = files.filter((file) => file.fileName.includes("Funny")).map((file) => {
                         return file.fileName
                     })
-                    const currentFileNameFound =  arrayDiff(currentlyAvailableMemoryGamesNamesArray, state.finishedGameNames)[0]
+                    const currentFileNameFound =  arrayDiff(allMemoryGamesNamesArray, state.finishedGameNames)[0]
                     const currentFileFound = files.filter((file) => file.fileName === currentFileNameFound)[0]
                     const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
 
@@ -805,6 +808,14 @@ export const rootReducer = combineReducers({
                         currentFilePuzzle: {
                             ...state.currentFilePuzzle,
                             shouldShowOrderCheckResult: true
+                        }
+                    })
+                },[HIDE_ORDER_CHECK_RESULT]: function () {
+                    return ({
+                        ...state,
+                        currentFilePuzzle: {
+                            ...state.currentFilePuzzle,
+                            shouldShowOrderCheckResult: false
                         }
                     })
                 },

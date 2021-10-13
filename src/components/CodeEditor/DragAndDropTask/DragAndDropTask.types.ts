@@ -6,7 +6,6 @@ export interface DragAndDropTaskProps extends DragAndDropTaskOwnProps,
 }
 
 export interface DragAndDropTaskOwnProps {
-    // fileName: FileName
 }
 
 export interface DragAndDropTaskStateProps {
@@ -20,4 +19,5 @@ export interface DragAndDropTaskDispatchProps {
     dispatchOnDropFiles: (swappedItems: string[]) => void,
     dispatchShowOrderCheckResultFiles: () => void,
     dispatchShuffleColorsDragAndDrop: () => void,
+    dispatchHideOrderCheckResult: () => void,
 }

@@ -30,11 +30,13 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                     null
                     :
                     <StyledInfoBox>
-                        <br/>
-                        Congrats!
-                        <br/>
-                        You won!
-                        <br/>
+                            <span>
+                                <br/>
+                                Congrats!
+                                <br/>
+                                You won!
+                                <br/>
+                            </span>
                         <StyledResetButton
                             onClick={() => props.dispatchClearMemoryGameBoardAndAddGameNameToFinished(props.currentFileMemoryGame.fileName)}
                         >
