@@ -17,7 +17,8 @@ export function mapStateToProps(state: AppState): DragAndDropTaskStateProps {
     return {
         files: state.computerScreen.files,
         randomColors: state.computerScreen.randomColors,
-        currentFilePuzzle: state.computerScreen.currentFilePuzzle
+        currentFilePuzzle: state.computerScreen.currentFilePuzzle,
+        clicksCounterDragAndDrop: state.computerScreen.clicksCounterDragAndDrop
     }
 }
 

@@ -1,4 +1,4 @@
-import {FileName, Files, FileDragAndDrop} from "../../../model/state";
+import {FileDragAndDrop, Files} from "../../../model/state";
 
 export interface DragAndDropTaskProps extends DragAndDropTaskOwnProps,
     DragAndDropTaskStateProps,
@@ -11,7 +11,8 @@ export interface DragAndDropTaskOwnProps {
 export interface DragAndDropTaskStateProps {
     files: Files,
     randomColors: string[],
-    currentFilePuzzle: FileDragAndDrop
+    currentFilePuzzle: FileDragAndDrop,
+    clicksCounterDragAndDrop: number,
 }
 
 export interface DragAndDropTaskDispatchProps {

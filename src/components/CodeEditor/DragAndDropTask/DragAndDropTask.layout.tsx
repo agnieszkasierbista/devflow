@@ -75,6 +75,10 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                     id="checker">CHECK
                 </button>
                 {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(props.currentFilePuzzle, props.dispatchHideOrderCheckResult)}
+           <div>
+               Moves: {props.clicksCounterDragAndDrop}
+           </div>
+
             </div>
         </div>
     );

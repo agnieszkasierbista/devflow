@@ -108,6 +108,7 @@ export interface ComputerScreen<Path = AllPaths> {
     scrumBoardCurrentShuffledItems: string[][],
     memoryGameCardToggleState: { idx: number, content: string, toggleState: boolean, isLocked: boolean }[],
     clicksCounter: number,
+    clicksCounterDragAndDrop: number,
     finishedGameNames: string[],
 }
 

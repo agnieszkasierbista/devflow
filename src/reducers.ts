@@ -84,7 +84,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     randomColors: ["red", "blue", "purple", "green", "yellow",
         "orange", "pink", "magenta", "skyblue", "lightgrey",
         "darkmagenta", "peachpuff", "violet", "purple", "white", "lightcoral", "coral",
-    "turquoise", "darkgreen"],
+        "turquoise", "darkgreen"],
     puzzle: {
         fileName: "",
         items: [],
@@ -196,6 +196,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     scrumBoardCurrentShuffledItems: [],
     memoryGameCardToggleState: [],
     clicksCounter: 0,
+    clicksCounterDragAndDrop: 0,
     finishedGameNames: [],
 };
 
@@ -651,10 +652,10 @@ export const rootReducer = combineReducers({
                                     })
                                 : state.memoryGameCardToggleState,
                         ...currentFileHandlers[action.payload]?.(),
-
+                        clicksCounterDragAndDrop: 0,
                     })
                 },
-                [TOGGLE_CARD]: function ()  {
+                [TOGGLE_CARD]: function () {
 
                     return ({
                         ...state,
@@ -720,7 +721,7 @@ export const rootReducer = combineReducers({
                     const allMemoryGamesNamesArray = files.filter((file) => file.fileName.includes("Funny")).map((file) => {
                         return file.fileName
                     })
-                    const currentFileNameFound =  arrayDiff(allMemoryGamesNamesArray, state.finishedGameNames)[0]
+                    const currentFileNameFound = arrayDiff(allMemoryGamesNamesArray, state.finishedGameNames)[0]
                     const currentFileFound = files.filter((file) => file.fileName === currentFileNameFound)[0]
                     const currentFileShuffledItems = shuffleArrayItems(currentFileFound.items)
 
@@ -731,6 +732,7 @@ export const rootReducer = combineReducers({
                             shuffledItems: currentFileShuffledItems
                         },
                         clicksCounter: 0,
+                        clicksCounterDragAndDrop: 0,
                         memoryGameCardToggleState: currentFileShuffledItems.map((item: string, idx: number) => {
                             return {
                                 idx: idx,
@@ -771,6 +773,7 @@ export const rootReducer = combineReducers({
                 [ON_DRAG_START_FILES]: function () {
                     return ({
                         ...state,
+
                         currentFilePuzzle: {
                             ...state.currentFilePuzzle,
                             beingDragged: action.payload,
@@ -790,6 +793,7 @@ export const rootReducer = combineReducers({
                 [ON_DROP_FILES]: function () {
                     return ({
                         ...state,
+                        clicksCounterDragAndDrop: state.clicksCounterDragAndDrop + 1,
                         currentFilePuzzle: {
                             ...state.currentFilePuzzle,
                             shuffledItems: action.payload
@@ -813,7 +817,7 @@ export const rootReducer = combineReducers({
                             shouldShowOrderCheckResult: true
                         }
                     })
-                },[HIDE_ORDER_CHECK_RESULT]: function () {
+                }, [HIDE_ORDER_CHECK_RESULT]: function () {
                     return ({
                         ...state,
                         currentFilePuzzle: {
