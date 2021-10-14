@@ -81,11 +81,14 @@ export const preloadedWorkspaceState: Workspace = {
 };
 
 export const preloadedComputerScreenState: ComputerScreen = {
-    randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
+    randomColors: ["red", "blue", "purple", "green", "yellow",
+        "orange", "pink", "magenta", "skyblue", "lightgrey",
+        "darkmagenta", "peachpuff", "violet", "purple", "white", "lightcoral", "coral",
+    "turquoise", "darkgreen"],
     puzzle: {
         fileName: "",
-        items: ["a", "b", "c", "d", "e"],
-        shuffledItems: ["b", "a", "c", "e", "d"],
+        items: [],
+        shuffledItems: [],
         colors: {},
         beingDragged: -1,
         shouldShowOrderCheckResult: false,
@@ -531,7 +534,7 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFilePuzzle: {
                             ...state.currentFilePuzzle,
-                            colors: getArrayOfShuffledColors(state.currentFilePuzzle.items.flatMap((x => x[0])), state.randomColors)
+                            colors: getArrayOfShuffledColors(state.currentFilePuzzle.items, state.randomColors)
                         }
                     })
                 },
@@ -565,7 +568,7 @@ export const rootReducer = combineReducers({
                         return ({
                             currentFilePuzzle: {
                                 ...currentFileFoundPuzzle,
-                                colors: getArrayOfShuffledColors(state.currentFilePuzzle.items.flatMap((x => x[0])), state.randomColors)
+                                colors: getArrayOfShuffledColors(state.currentFilePuzzle.items, state.randomColors)
                             }
                         })
                     }
