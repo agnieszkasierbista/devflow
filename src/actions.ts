@@ -204,10 +204,10 @@ export function initializeConversations(contacts: string[]) {
     }
 }
 
-export function initializeVisit(guests: string[]) {
+export function initializeVisit(playerName: string, guests: string[]) {
     return {
         type: INITIALIZE_VISIT,
-        payload: guests
+        payload: {playerName, guests}
     }
 }
 

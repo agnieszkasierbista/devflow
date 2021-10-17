@@ -1,13 +1,13 @@
 import {Conversation} from "../model/state";
 
-export const ellaVisit: Conversation = [
+export const getEllaVisit: (playerName: string) => Conversation = (playerName) => [
     {
         event: "START_VISIT",
         npcName: 'Ella',
-        npcDialogueOption: 'hi, are you busy?',
+        npcDialogueOption: `Hi ${playerName}, are you ready to start work?`,
         playerDialogueOptions: [
-            {rpl: 'hi, i am not busy', event: 'READY_VISIT'},
-            {rpl: 'bery busy', event: 'REJECT_VISIT'}
+            {rpl: "Yes, I'm ready", event: 'READY_VISIT'},
+            {rpl: "No, I'm not ready yet", event: 'REJECT_VISIT'}
         ]
     },
 
@@ -15,10 +15,10 @@ export const ellaVisit: Conversation = [
     {
         event: 'READY_VISIT',
         npcName: 'Ella',
-        npcDialogueOption: 'Can you take care of this task asap?',
+        npcDialogueOption: 'Can you take care of the Task asap? Remember to change status on the Scrum board before you start working on the Task.',
         playerDialogueOptions: [
             {rpl: 'ok, immediately!', event: 'START_WORK_VISIT'},
-            {rpl: 'go fuck yourself!', event: 'REJECT_VISIT'},
+            {rpl: "Sorry, I can't do that", event: 'REJECT_VISIT'},
             {rpl: 'ok, but in a jiffy', event: 'DELAY_WORK_VISIT'}
         ]
     },
@@ -26,9 +26,9 @@ export const ellaVisit: Conversation = [
     {
         event: 'REJECT_VISIT',
         npcName: 'Ella',
-        npcDialogueOption: 'ok,ok, but better be careful',
+        npcDialogueOption: "Let me know when you're ready for the Task",
         playerDialogueOptions: [
-            {rpl: 'yes, you too! bye!', event: 'END_VISIT'},
+            {rpl: 'Sure I will!', event: 'END_VISIT'},
         ]
     },
 
@@ -44,9 +44,9 @@ export const ellaVisit: Conversation = [
     {
         event: 'DELAY_WORK_VISIT',
         npcName: 'Ella',
-        npcDialogueOption: "Don/'t wait too long",
+        npcDialogueOption: "Don't wait too long",
         playerDialogueOptions: [
-            {rpl: 'yes, you too! bye!', event: 'END_VISIT'}
+            {rpl: "I'mma be quick about it", event: 'END_VISIT'}
         ]
     },
 

@@ -1,8 +1,8 @@
 import {Contact} from "../../model/state";
 
 export interface GuestSlotProps extends GuestSlotOwnProps,
-    GuestSlotDispatchProps,
-    GuestSlotStateProps {
+    Pick<GuestSlotStateProps, "playerName"> {
+    dispatchInitializeVisit: () => void
 }
 
 export interface GuestSlotOwnProps {
@@ -11,8 +11,9 @@ export interface GuestSlotOwnProps {
 
 export interface GuestSlotStateProps {
     guests: Contact[],
+    playerName: string
 }
 
 export interface GuestSlotDispatchProps {
-    dispatchInitializeVisit: (guests: Contact[]) => void
+    dispatchInitializeVisit: (playerName: string, guests: Contact[]) => void
 }

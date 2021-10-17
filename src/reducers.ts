@@ -56,7 +56,7 @@ import {
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
-import {visits} from "./visits/visits";
+import {getVisits} from "./visits/getVisits";
 import {shuffleArrayItems} from "./helpers/itemsShuffler.helpers";
 import * as R from "ramda";
 import {files} from "./tasksSourceFiles/files";
@@ -67,10 +67,10 @@ import {filesPairMatching} from "./tasksSourceFiles/filesPairMatching";
 import {filesScrumBoard} from "./tasksSourceFiles/filesScrumBoard";
 //
 // export const preloadedWorkspaceState: Workspace = {
-//     isOverlayVisible: true,
-//     playerName: "",
-//     isPlayerNameInputVisible: true,
-//     isPlayerNameVisible: false
+//     isOverlayVisible: false,
+//     playerName: "d",
+//     isPlayerNameInputVisible: false,
+//     isPlayerNameVisible: true
 // };
 
 export const preloadedWorkspaceState: Workspace = {
@@ -223,6 +223,8 @@ export const rootReducer = combineReducers({
         workspace: function (state: Workspace = preloadedWorkspaceState, action) {
 
             const workspaceHandlers: WorkspaceHandlers = {
+
+                //TODO: inicjalizowac wizyty w komponencie playerName, gdy playerNameIsVisible === true
                 [CHANGE_PLAYER_NAME]: function () {
                     return ({
                         ...state,
@@ -641,7 +643,6 @@ export const rootReducer = combineReducers({
                             (["Funny Kittens", "Funny Dogs", "Funny Lizards"].includes(action.payload))
                                 ? state.memoryGameCardToggleState?.length
                                     ? state.memoryGameCardToggleState
-                                    // : shuffleArrayItems(currentFileFound.items).map((item: string, idx: number) => {
                                     : currentFileMemoryGameShuffledItems.map((item: string, idx: number) => {
                                         return {
                                             idx: idx,
@@ -732,7 +733,6 @@ export const rootReducer = combineReducers({
                             shuffledItems: currentFileShuffledItems
                         },
                         clicksCounter: 0,
-                        clicksCounterDragAndDrop: 0,
                         memoryGameCardToggleState: currentFileShuffledItems.map((item: string, idx: number) => {
                             return {
                                 idx: idx,
@@ -979,10 +979,12 @@ export const rootReducer = combineReducers({
                 },
                 [INITIALIZE_VISIT]: function (): GuestSlot {
 
+                    //TODO: zrobić, zeby lista guest sie generowała na akcji, bo teraz sie pobiera z preloaded state
+
                     return ({
                         ...state,
                         visits: (state.guests
-                            .map((guest: string) => ({[guest]: visits[guest]})))
+                            .map((guest: string) => ({[guest]: getVisits(action.payload.playerName)[guest]})))
                             .reduce(
                                 (acc, x) => {
                                     return {...acc, ...x}

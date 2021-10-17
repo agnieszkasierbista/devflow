@@ -40,10 +40,9 @@ export const Visit: React.FC<VisitProps> = (props) => {
                                         <React.Fragment key={idx}>
 
                                             {
-
                                                 previousPhase &&
-                                                <div>{"Me: " + (previousPhase?.playerDialogueOptions.find((option) => option.event === phase.event)?.rpl || "")}</div>
-
+                                                <div>{"Me: " + (previousPhase?.playerDialogueOptions
+                                                    .find((option) => option.event === phase.event)?.rpl || "")}</div>
                                             }
                                             <div> {phase.npcName + ": " + phase.npcDialogueOption}</div>
 

@@ -1,11 +1,11 @@
 import {Conversations} from "../model/state";
-import {ellaVisit} from "./ellaVisit";
+import {getEllaVisit} from "./getEllaVisit";
 import {mikeVisit} from "./mikeVisit";
 import {randomDeveloperVisit} from "./randomDeveloperVisit";
 
-export const visits: Conversations = {
-    Ella: ellaVisit,
+export const getVisits: (playerName: string) => Conversations = (playerName) => ({
+    Ella: getEllaVisit(playerName),
     Mike: mikeVisit,
     "Random Developer": randomDeveloperVisit,
 
-}
+})

@@ -8,13 +8,14 @@ import Visit from './Visit';
 export const GuestSlot: React.FC<GuestSlotProps> = (props) => {
 
     React.useEffect(() => {
-        props.dispatchInitializeVisit(props.guests)
-    }, [])
-
+        if (props.playerName) {
+            props.dispatchInitializeVisit()
+        }
+    }, [props.playerName])
 
     return (
         <StyledGuestSlot>
-            <Guests />
+            <Guests/>
             <Visit/>
         </StyledGuestSlot>
     )
