@@ -5,13 +5,7 @@ import {GuestSlotProps} from "./GuestSlot.types";
 import Visit from './Visit';
 
 
-export const GuestSlot: React.FC<GuestSlotProps> = (props) => {
-
-    React.useEffect(() => {
-        if (props.playerName) {
-            props.dispatchInitializeVisit()
-        }
-    }, [props.playerName])
+export const GuestSlot: React.FC<GuestSlotProps> = () => {
 
     return (
         <StyledGuestSlot>

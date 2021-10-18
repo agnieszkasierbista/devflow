@@ -65,6 +65,13 @@ import {filesMemoryGame} from "./tasksSourceFiles/filesMemoryGame";
 import {filesDragAndDrop} from "./tasksSourceFiles/filesDragAndDrop";
 import {filesPairMatching} from "./tasksSourceFiles/filesPairMatching";
 import {filesScrumBoard} from "./tasksSourceFiles/filesScrumBoard";
+
+export const preloadedWorkspaceState: Workspace = {
+    isOverlayVisible: true,
+    playerName: "",
+    isPlayerNameInputVisible: true,
+    isPlayerNameVisible: false
+};
 //
 // export const preloadedWorkspaceState: Workspace = {
 //     isOverlayVisible: false,
@@ -72,13 +79,6 @@ import {filesScrumBoard} from "./tasksSourceFiles/filesScrumBoard";
 //     isPlayerNameInputVisible: false,
 //     isPlayerNameVisible: true
 // };
-
-export const preloadedWorkspaceState: Workspace = {
-    isOverlayVisible: false,
-    playerName: "d",
-    isPlayerNameInputVisible: false,
-    isPlayerNameVisible: true
-};
 
 export const preloadedComputerScreenState: ComputerScreen = {
     randomColors: ["red", "blue", "purple", "green", "yellow",
