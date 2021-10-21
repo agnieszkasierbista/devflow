@@ -13,7 +13,7 @@ export const StyledGuest = styled.button<{idx: number}>`
   border: 1px solid black;
   border-radius: 2px;
   margin: 2px;
-  position: relative;
+  //position: relative; needed for animations
 `;
 //   animation-name: ${(props) => {
 //       if (props.idx === 0) {

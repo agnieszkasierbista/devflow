@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyledClock } from './Clock.styled';
+import { StyledClock, StyledClockFace } from './Clock.styled';
 
 export function Clock() {
     return (
         <StyledClock>
-            CLOCK
+            <StyledClockFace
+
+            ></StyledClockFace>
         </StyledClock>
     )
 }
