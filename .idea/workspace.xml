@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Clock/Clock.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Clock/Clock.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Clock/Clock.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Guests/Guests.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,14 +264,8 @@
       <workItem from="1634476979006" duration="22000" />
       <workItem from="1634551464229" duration="4599000" />
       <workItem from="1634668914629" duration="3412000" />
-      <workItem from="1634828453489" duration="397000" />
-    </task>
-    <task id="LOCAL-00021" summary="Display a list of contacts in the communicator">
-      <created>1625918689670</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1625918689670</updated>
+      <workItem from="1634828453489" duration="2459000" />
+      <workItem from="1634884647867" duration="439000" />
     </task>
     <task id="LOCAL-00022" summary="Allow user to have a conversation with an npc via communicator">
       <created>1626111442058</created>
@@ -611,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634670702559</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Animate Clock">
+      <created>1634828976068</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1634828976068</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -681,7 +680,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Allow a user to perform a task of drag and drop items in the code editor" />
     <MESSAGE value="Allow a user to perform a task of pair matching in the code editor" />
     <MESSAGE value="Highlight one of the divs in the left column when clicked" />
     <MESSAGE value="Highlight one of the divs in the right column when clicked" />
@@ -706,7 +704,8 @@
     <MESSAGE value="Move the initialization of visits into PlayerName component" />
     <MESSAGE value="Apply RWD" />
     <MESSAGE value="Move the Clock to the right" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move the Clock to the right" />
+    <MESSAGE value="Animate Clock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animate Clock" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

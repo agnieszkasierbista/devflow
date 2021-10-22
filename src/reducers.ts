@@ -219,13 +219,16 @@ export const preloadedGuestSlotState: GuestSlot = {
     visitsHistory: {}
 };
 
+type Abc = {type: typeof CHANGE_PLAYER_NAME, payload: string}
+type Xyz = {type: typeof CLOSE_PLAYER_NAME_INPUT}
+
+type Czoko = Abc | Xyz
+
 export const rootReducer = combineReducers({
-        workspace: function (state: Workspace = preloadedWorkspaceState, action) {
+        workspace: function (state: Workspace = preloadedWorkspaceState, action: Czoko) {
 
-            const workspaceHandlers: WorkspaceHandlers = {
-
-                //TODO: inicjalizowac wizyty w komponencie playerName, gdy playerNameIsVisible === true
-                [CHANGE_PLAYER_NAME]: function () {
+            const workspaceHandlers = {
+                [CHANGE_PLAYER_NAME]: function (action: Abc) {
                     return ({
                         ...state,
                         playerName: action.payload
@@ -241,11 +244,14 @@ export const rootReducer = combineReducers({
                 }
             }
 
-            return (
-                workspaceHandlers[action.type]
-                    ? workspaceHandlers[action.type]()
-                    : state
-            )
+            switch (action.type) {
+                case CHANGE_PLAYER_NAME:
+                    return workspaceHandlers[action.type](action);
+                case CLOSE_PLAYER_NAME_INPUT:
+                    return workspaceHandlers[action.type]();
+                default:
+                    return state;
+            }
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
 
