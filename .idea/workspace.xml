@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timer.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timer.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timert.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
@@ -265,14 +272,8 @@
       <workItem from="1634551464229" duration="4599000" />
       <workItem from="1634668914629" duration="3412000" />
       <workItem from="1634828453489" duration="2459000" />
-      <workItem from="1634884647867" duration="439000" />
-    </task>
-    <task id="LOCAL-00022" summary="Allow user to have a conversation with an npc via communicator">
-      <created>1626111442058</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1626111442058</updated>
+      <workItem from="1634884647867" duration="10394000" />
+      <workItem from="1635149380102" duration="1637000" />
     </task>
     <task id="LOCAL-00023" summary="Allow user to finish a conversation with npc">
       <created>1626520522688</created>
@@ -610,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634828976068</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Refactor">
+      <created>1634885254827</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1634885254827</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -695,7 +703,6 @@
     <MESSAGE value="Shuffle Memory Game items before each game" />
     <MESSAGE value="Extend game file contents, that now store all game information (path and component included) and refactor app code accordingly." />
     <MESSAGE value="Display an info-box when the memory game is finished" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Display an info box when the user wins/loses Drag and Drop game" />
     <MESSAGE value="Fix a bug with shuffling colors for Drag and Drop game" />
     <MESSAGE value="Add moves counter to drag and drop game" />
@@ -705,7 +712,8 @@
     <MESSAGE value="Apply RWD" />
     <MESSAGE value="Move the Clock to the right" />
     <MESSAGE value="Animate Clock" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animate Clock" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

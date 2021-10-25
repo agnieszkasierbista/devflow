@@ -10,7 +10,9 @@ export interface Workspace {
     isOverlayVisible: boolean,
     playerName: string,
     isPlayerNameInputVisible: boolean,
-    isPlayerNameVisible: boolean
+    isPlayerNameVisible: boolean,
+    timer: number,
+    timerStartingPoint: number,
 }
 
 export interface DialogueOption {

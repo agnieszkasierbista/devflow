@@ -9,8 +9,7 @@ import {
     FileScrumBoard,
     GuestSlot,
     GuestSlotHandlers,
-    Workspace,
-    WorkspaceHandlers
+    Workspace
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
@@ -25,7 +24,8 @@ import {
     DELAY_WORK,
     DELAY_WORK_VISIT,
     END_CONVERSATION,
-    END_VISIT, HIDE_ORDER_CHECK_RESULT,
+    END_VISIT,
+    HIDE_ORDER_CHECK_RESULT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
     ON_CARD_DROP,
@@ -52,7 +52,8 @@ import {
     START_VISIT,
     START_WORK,
     START_WORK_VISIT,
-    TOGGLE_CARD
+    TOGGLE_CARD,
+    UPDATE_TIMER
 } from "./actions";
 import {getArrayOfShuffledColors} from "./helpers/colorsShuffler.helpers";
 import {conversations} from "./conversations/conversations";
@@ -70,7 +71,9 @@ export const preloadedWorkspaceState: Workspace = {
     isOverlayVisible: true,
     playerName: "",
     isPlayerNameInputVisible: true,
-    isPlayerNameVisible: false
+    isPlayerNameVisible: false,
+    timer: 0,
+    timerStartingPoint: 0,
 };
 //
 // export const preloadedWorkspaceState: Workspace = {
@@ -221,8 +224,9 @@ export const preloadedGuestSlotState: GuestSlot = {
 
 type Abc = {type: typeof CHANGE_PLAYER_NAME, payload: string}
 type Xyz = {type: typeof CLOSE_PLAYER_NAME_INPUT}
+type Ops = {type: typeof UPDATE_TIMER}
 
-type Czoko = Abc | Xyz
+type Czoko = Abc | Xyz | Ops
 
 export const rootReducer = combineReducers({
         workspace: function (state: Workspace = preloadedWorkspaceState, action: Czoko) {
@@ -239,7 +243,14 @@ export const rootReducer = combineReducers({
                         ...state,
                         isPlayerNameInputVisible: false,
                         isOverlayVisible: false,
-                        isPlayerNameVisible: true
+                        isPlayerNameVisible: true,
+                        timerStartingPoint: Date.now()
+                    })
+                },
+                [UPDATE_TIMER]: function (action: Ops) {
+                    return ({
+                        ...state,
+                        timer: Date.now() - state.timerStartingPoint
                     })
                 }
             }
@@ -249,6 +260,8 @@ export const rootReducer = combineReducers({
                     return workspaceHandlers[action.type](action);
                 case CLOSE_PLAYER_NAME_INPUT:
                     return workspaceHandlers[action.type]();
+                case UPDATE_TIMER:
+                    return workspaceHandlers[action.type](action);
                 default:
                     return state;
             }

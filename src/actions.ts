@@ -39,7 +39,13 @@ export const RESTART_GAME = "RESTART_GAME";
 export const SET_COMPUTER_SCREEN_INITIAL_INFO = "SET_COMPUTER_SCREEN_INITIAL_INFO";
 export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED";
 export const HIDE_ORDER_CHECK_RESULT = "HIDE_ORDER_CHECK_RESULT";
+export const UPDATE_TIMER = "UPDATE_TIMER";
 
+export function updateTimer() {
+    return {
+        type: UPDATE_TIMER
+    }
+}
 
 export function clearMemoryGameBoardAndAddGameNameToFinished(name: string) {
     return {
