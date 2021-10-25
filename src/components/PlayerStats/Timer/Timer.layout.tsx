@@ -7,7 +7,7 @@ export const Timer: React.FC<TimerProps> = function (props) {
     React.useEffect(() => {
         setInterval(() => {
             props.dispatchUpdateTimer()
-        }, 1000)
+        }, 500)
     })
 
 
@@ -17,7 +17,10 @@ export const Timer: React.FC<TimerProps> = function (props) {
 
     return (
         <StyledTimer>
-            {hours + "h:" + minutes + "m:" + seconds + "s"}
+            <span>Time Played: </span>
+            {hours <= 9 ? "0" + hours + "h:" : hours + "h:"}
+            {minutes <= 9 ? "0" + minutes + "m:" : minutes + "m:"}
+            {seconds <= 9 ? "0" + seconds + "s:" : seconds + "s"}
         </StyledTimer>
     )
 
