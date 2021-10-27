@@ -1,4 +1,4 @@
-export function arrayDiff(a: any[], b: any[]): any[] {
+export function arrayDiff<T>(a: T[], b: T[]): T[] {
     const diff = a.filter(x => !b.includes(x))
     return diff
 }

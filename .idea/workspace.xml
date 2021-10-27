@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoard.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebBrowser/ScrumBoard/ScrumBoardItems/ScrumBoardItem.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/arrayDiff.helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/arrayDiff.helpers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -274,14 +269,7 @@
       <workItem from="1635169876023" duration="5715000" />
       <workItem from="1635258371309" duration="757000" />
       <workItem from="1635259420499" duration="1883000" />
-      <workItem from="1635348846398" duration="1053000" />
-    </task>
-    <task id="LOCAL-00026" summary="Show user conversation history">
-      <created>1626526934897</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1626526934897</updated>
+      <workItem from="1635348846398" duration="1310000" />
     </task>
     <task id="LOCAL-00027" summary="Show user conversation history">
       <created>1626527303248</created>
@@ -619,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635349506098</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Refactor">
+      <created>1635350068257</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1635350068257</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -710,11 +705,11 @@
     <MESSAGE value="Apply RWD" />
     <MESSAGE value="Move the Clock to the right" />
     <MESSAGE value="Animate Clock" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Measure game playing time with the Timer" />
     <MESSAGE value="Style time display in the Timer" />
     <MESSAGE value="Add one point when the pair matching game is won" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add one point when the pair matching game is won" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
