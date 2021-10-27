@@ -327,10 +327,8 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFileScrumBoard: {
                             ...state.currentFileScrumBoard,
-                            // @ts-ignore
                             shuffledItemsArray: R.update(action.payload.rowIdx, action.payload.swappedItems, state.currentFileScrumBoard.shuffledItemsArray),
                         },
-                        // @ts-ignore
                         scrumBoardCurrentShuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.scrumBoardCurrentShuffledItems),
                     }
                 },

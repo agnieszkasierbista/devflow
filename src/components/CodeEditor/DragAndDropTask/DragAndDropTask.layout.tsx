@@ -49,13 +49,11 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                             <StyledDraggable
                                 draggable="true"
                                 key={idx}
-                                // @ts-ignore
                                 style={{backgroundColor: props.currentFilePuzzle.colors[val]}}
 
                                 onDragStart={() => props.dispatchOnDragStartFiles(idx)}
                                 onDrop={() => {
                                     const draggedItemIdx = props.currentFilePuzzle.beingDragged;
-                                    // @ts-ignore
                                     const swappedItems = R.move(draggedItemIdx, idx, props.currentFilePuzzle.shuffledItems);
 
                                     props.dispatchOnDropFiles(swappedItems);

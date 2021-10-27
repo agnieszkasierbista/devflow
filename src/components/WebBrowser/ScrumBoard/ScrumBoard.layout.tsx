@@ -24,7 +24,6 @@ export const ScrumBoard: React.FC<ScrumBoardProps> = (props) => {
             </StyledScrumBoardRow>
 
             {
-                // @ts-ignore
                 props.currentFileScrumBoard.shuffledItemsArray.map((taskRow, idx2) => {
 
                     return (
@@ -32,7 +31,6 @@ export const ScrumBoard: React.FC<ScrumBoardProps> = (props) => {
                             key={idx2}
                         >
                             {
-                                // @ts-ignore
                                 taskRow.map((cell, idx3) => {
                                     return (
                                         <StyledScrumBoardCell

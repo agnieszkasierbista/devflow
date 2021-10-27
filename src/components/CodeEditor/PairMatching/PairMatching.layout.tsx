@@ -10,12 +10,11 @@ const checkOrder = (
     rightColumn: string[],
     givePoints: () => void) => {
 
+
+    const getValueOf0 = R.prop("0");
     const pairedItems = R.zip(leftColumn, rightColumn);
-    // @ts-ignore
-    const sortByFirstItem = R.sortBy(R.prop(0));
-    // @ts-ignore
+    const sortByFirstItem = R.sortBy(getValueOf0);
     const currentOrder = sortByFirstItem(pairedItems);
-    // @ts-ignore
     const correctOrder = sortByFirstItem(items);
 
     return R.equals(correctOrder, currentOrder)
