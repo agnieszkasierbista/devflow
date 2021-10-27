@@ -24,7 +24,7 @@ import {
     DELAY_WORK,
     DELAY_WORK_VISIT,
     END_CONVERSATION,
-    END_VISIT,
+    END_VISIT, GIVE_POINTS,
     HIDE_ORDER_CHECK_RESULT,
     INITIALIZE_CONVERSATIONS,
     INITIALIZE_VISIT,
@@ -48,7 +48,7 @@ import {
     SHUFFLE_COLORS,
     SHUFFLE_COLORS_DRAG_AND_DROP,
     SHUFFLE_COLORS_PAIR_MATCHING,
-    START_CONVERSATION,
+    START_CONVERSATION, START_COUNTING_GAME_TIME,
     START_VISIT,
     START_WORK,
     START_WORK_VISIT,
@@ -201,6 +201,9 @@ export const preloadedComputerScreenState: ComputerScreen = {
     clicksCounter: 0,
     clicksCounterDragAndDrop: 0,
     finishedGameNames: [],
+    pairMatchingStartTime: 0,
+    pairMatchingEndTime: 0,
+    points: 0
 };
 
 export const preloadedGuestSlotState: GuestSlot = {
@@ -278,6 +281,36 @@ export const rootReducer = combineReducers({
                         webBrowserTabsList: files.filter((file) => file.component.includes("web-browser")).map((file) => file.fileName),
                     })
 
+                },
+                [START_COUNTING_GAME_TIME]: function () {
+                    return({
+                        ...state,
+                        pairMatchingStartTime: Date.now(),
+                        currentFilePairMatching: {
+                            ...state.currentFilePairMatching,
+                            shouldShowOrderCheckResult: false
+                        },
+                        //TODO: rename
+                        isDivClicked: state.isDivClicked?.map((item) => {
+                            const itemKey = Object.keys(item)[0]
+                            return (
+                                {[itemKey]: false}
+                            )
+                        }),
+                        columnRightClicked: [],
+                        columnLeftClicked: [],
+                    })
+                },
+                [GIVE_POINTS]: function () {
+                    return ({
+                        ...state,
+                        points:  state.points + 1,
+                        currentFilePairMatching: {
+                            ...state.currentFilePairMatching,
+                            shouldShowOrderCheckResult: false
+                        },
+                        pairMatchingStartTime: 0,
+                    })
                 },
                 [ON_DRAG_CARD_START]: function () {
                     return ({
@@ -851,7 +884,8 @@ export const rootReducer = combineReducers({
                         currentFilePairMatching: {
                             ...state.currentFilePairMatching,
                             shouldShowOrderCheckResult: true
-                        }
+                        },
+                        pairMatchingEndTime: Date.now()
                     })
                 },
             }

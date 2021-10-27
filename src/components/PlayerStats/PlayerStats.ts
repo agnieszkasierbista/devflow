@@ -9,6 +9,7 @@ function mapStateToProps(state: AppState): PlayerStatsStateProps {
         playerName: state.workspace.playerName,
         isPlayerNameInputVisible: state.workspace.isPlayerNameInputVisible,
         isPlayerNameVisible: state.workspace.isPlayerNameVisible,
+        points: state.computerScreen.points,
     }
 }
 

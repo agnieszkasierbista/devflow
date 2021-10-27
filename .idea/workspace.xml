@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerStats/PlayerStats.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timer.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerStats/Timer/Timer.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,14 +276,10 @@
       <workItem from="1634828453489" duration="2459000" />
       <workItem from="1634884647867" duration="10394000" />
       <workItem from="1635149380102" duration="2368000" />
-      <workItem from="1635169876023" duration="935000" />
-    </task>
-    <task id="LOCAL-00024" summary="Refactor">
-      <created>1626520737067</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1626520737067</updated>
+      <workItem from="1635169876023" duration="5715000" />
+      <workItem from="1635258371309" duration="757000" />
+      <workItem from="1635259420499" duration="1883000" />
+      <workItem from="1635348846398" duration="587000" />
     </task>
     <task id="LOCAL-00025" summary="Refactor">
       <created>1626521125063</created>
@@ -613,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635158755839</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Style time display in the Timer">
+      <created>1635171004072</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1635171004072</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -683,7 +694,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Highlight one of the divs in the left column when clicked" />
     <MESSAGE value="Highlight one of the divs in the right column when clicked" />
     <MESSAGE value="Allow a user to check results of pair matching task" />
     <MESSAGE value="Allow a user to open ScrumBoard in the WebBrowser" />
@@ -708,7 +718,8 @@
     <MESSAGE value="Animate Clock" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Measure game playing time with the Timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Measure game playing time with the Timer" />
+    <MESSAGE value="Style time display in the Timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Style time display in the Timer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

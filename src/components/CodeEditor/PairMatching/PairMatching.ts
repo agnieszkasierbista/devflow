@@ -9,8 +9,9 @@ import {
     clickOffRight,
     clickOnLeft,
     clickOnRight,
+    givePoints,
     shuffleAllItems,
-    shuffleColorsPairMatching
+    shuffleColorsPairMatching, startCountingGameTime
 } from "../../../actions";
 
 export function mapStateToProps(state: AppState): PairMatchingStateProps {
@@ -23,6 +24,7 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
         columnRight: state.computerScreen.columnRight,
         columnRightClicked: state.computerScreen.columnRightClicked,
         currentDivColor: state.computerScreen.currentDivColor,
+        pairMatchingStartTime: state.computerScreen.pairMatchingStartTime,
     }
 }
 
@@ -48,6 +50,12 @@ export function mapDispatchToProps(dispatch: Dispatch): PairMatchingDispatchProp
         },
         dispatchCheckMatchedPairs: function () {
             dispatch(checkMatchedPairs());
+        },
+        dispatchStartCountingGameTime: function () {
+            dispatch(startCountingGameTime());
+        },
+        dispatchGivePoints: function () {
+            dispatch(givePoints());
         }
     }
 }

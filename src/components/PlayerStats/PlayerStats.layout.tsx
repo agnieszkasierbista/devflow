@@ -11,7 +11,7 @@ export const PlayerStats: React.FC<PlayerStatsProps> = (props) => {
                 <StyledPlayerStats>
                     <PlayerName/>
                     <span>
-                        Points: 0
+                        Points: {props.points}
                     </span>
                     <Timer/>
                 </StyledPlayerStats>

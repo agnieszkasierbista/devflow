@@ -10,7 +10,8 @@ export interface PlayerStatsOwnProps {
 export interface PlayerStatsStateProps {
     playerName: string,
     isPlayerNameVisible: boolean,
-    isPlayerNameInputVisible: boolean
+    isPlayerNameInputVisible: boolean,
+    points: number,
 }
 
 export interface PlayerStatsDispatchProps {

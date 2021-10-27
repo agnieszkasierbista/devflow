@@ -7,7 +7,8 @@ import * as R from "ramda";
 const checkOrder = (
     items: string[][],
     leftColumn: string[],
-    rightColumn: string[]) => {
+    rightColumn: string[],
+    givePoints: () => void) => {
 
     const pairedItems = R.zip(leftColumn, rightColumn);
     // @ts-ignore
@@ -18,14 +19,19 @@ const checkOrder = (
     const correctOrder = sortByFirstItem(items);
 
     return R.equals(correctOrder, currentOrder)
-        ? <div id="evaluation-result">Correct</div>
-        : <div id="evaluation-result">Wrong!</div>;
+        ? <div id="evaluation-result">Correct! You won!
+            <button
+                onClick={givePoints}
+            >
+                OK!
+            </button>
+        </div>
+        : <div id="evaluation-result">Wrong! Try again!</div>;
 };
 
 export const PairMatching: React.FC<PairMatchingProps> = (props) => {
 
     React.useEffect(() => {
-        // @ts-ignore
         props.dispatchShuffleAllItems(props.currentFilePairMatching.itemsArray)
     }, [])
 
@@ -118,6 +124,14 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
             </StyledColumn>
             <div>
                 <StyledButton
+                    onClick={() => props.dispatchStartCountingGameTime()}
+                >
+                    {props.pairMatchingStartTime >= 1
+                        ? props.currentFilePairMatching.shouldShowOrderCheckResult ? "Restart" : "Reset"
+                        : "Start Game"
+                    }
+                </StyledButton>
+                <StyledButton
                     key="pair-matching-checker"
                     onClick={() => props.dispatchCheckMatchedPairs()}
 
@@ -129,7 +143,8 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                     && checkOrder(
                         props.currentFilePairMatching.itemsArray,
                         props.columnLeftClicked,
-                        props.columnRightClicked
+                        props.columnRightClicked,
+                        props.dispatchGivePoints
                     )
                 }
             </div>

@@ -112,6 +112,9 @@ export interface ComputerScreen<Path = AllPaths> {
     clicksCounter: number,
     clicksCounterDragAndDrop: number,
     finishedGameNames: string[],
+    pairMatchingStartTime: number,
+    pairMatchingEndTime: number,
+    points: number
 }
 
 export interface GuestSlot {

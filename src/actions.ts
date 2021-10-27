@@ -40,6 +40,20 @@ export const SET_COMPUTER_SCREEN_INITIAL_INFO = "SET_COMPUTER_SCREEN_INITIAL_INF
 export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED";
 export const HIDE_ORDER_CHECK_RESULT = "HIDE_ORDER_CHECK_RESULT";
 export const UPDATE_TIMER = "UPDATE_TIMER";
+export const START_COUNTING_GAME_TIME = "START_COUNTING_GAME_TIME";
+export const GIVE_POINTS = "GIVE_POINTS";
+
+export function givePoints() {
+    return {
+        type: GIVE_POINTS
+    }
+}
+
+export function startCountingGameTime() {
+    return {
+        type: START_COUNTING_GAME_TIME
+    }
+}
 
 export function updateTimer() {
     return {

@@ -14,6 +14,7 @@ export interface PairMatchingStateProps {
     columnRight: string[],
     columnRightClicked: string[],
     currentDivColor: string[],
+    pairMatchingStartTime: number,
 
 }
 
@@ -25,6 +26,8 @@ export interface PairMatchingDispatchProps {
     dispatchClickOffRight: (val: string, colors: string, rightColumnIndex: number | undefined) => void,
     dispatchShuffleAllItems: (items: string[][]) => void,
     dispatchCheckMatchedPairs: () => void,
+    dispatchStartCountingGameTime: () => void,
+    dispatchGivePoints: () => void,
 }
 
 export interface PairMatchingOwnProps {
