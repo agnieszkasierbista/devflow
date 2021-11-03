@@ -15,6 +15,7 @@ export interface MemoryGameDispatchProps {
     dispatchSetToggleStateToFalse: () => void,
     dispatchRestartGame: () => void,
     dispatchClearMemoryGameBoardAndAddGameNameToFinished: (name: string) => void,
+    dispatchGivePoints: () => void,
 }
 
 export interface MemoryGameStateProps {

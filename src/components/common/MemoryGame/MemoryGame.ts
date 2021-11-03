@@ -4,7 +4,7 @@ import {MemoryGameDispatchProps, MemoryGameStateProps} from "./MemoryGame.types"
 import {MemoryGame} from "./MemoryGame.layout";
 import {connect} from "react-redux";
 import {
-    clearMemoryGameBoardAndAddGameNameToFinished,
+    clearMemoryGameBoardAndAddGameNameToFinished, givePoints,
     restartGame,
     setToggleStateToFalse,
     toggleCard
@@ -30,8 +30,11 @@ export function mapDispatchToProps(dispatch: Dispatch): MemoryGameDispatchProps 
         dispatchRestartGame: function () {
             dispatch(restartGame())
         },
-        dispatchClearMemoryGameBoardAndAddGameNameToFinished(name) {
+        dispatchClearMemoryGameBoardAndAddGameNameToFinished: function (name) {
             dispatch(clearMemoryGameBoardAndAddGameNameToFinished(name))
+        },
+        dispatchGivePoints: function () {
+            dispatch(givePoints())
         }
     }
 }

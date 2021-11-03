@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 import {
     ComputerScreen,
-    ComputerScreenHandlers,
+    ComputerScreenHandlers, Conversations,
     CurrentFileHandlers,
     FileDragAndDrop,
     FileMemoryGame,
@@ -225,17 +225,53 @@ export const preloadedGuestSlotState: GuestSlot = {
     visitsHistory: {}
 };
 
-type Abc = {type: typeof CHANGE_PLAYER_NAME, payload: string}
-type Xyz = {type: typeof CLOSE_PLAYER_NAME_INPUT}
-type Ops = {type: typeof UPDATE_TIMER}
 
-type Czoko = Abc | Xyz | Ops
+const getDialoguePhase = (dialogueHistory: Conversations, personsName: string, dialogues: Conversations, event: string) =>
+    (
+        (dialogueHistory[personsName])?.length
+            ?
+            dialogueHistory[personsName][dialogueHistory[personsName]?.length - 1]
+            :
+            dialogues[personsName]
+                .find((phase) => phase.event === event)
+            || dialogues[personsName][0]
+    );
+
+// const qwe = getDialoguePhase("visitsHistory", "guest", "visits")
+//
+// const erer = getDialoguePhase("conversationsHistory", "contact", "conversations")
+
+const updateDialogueHistory = (dialogueHistory: Conversations, personsName: string, dialogues: Conversations, event: string) =>
+    (
+        (dialogueHistory[personsName])?.length
+            ?
+            {...dialogueHistory}
+            :
+            {
+                ...dialogueHistory,
+                [personsName]: [(dialogues[personsName]
+                        .find((phase) => phase.event === event)
+                    || dialogues[personsName][0])]
+            }
+    );
+
+// const poi = updateDialogueHistory("visitsHistory", "guest", "visits")
+// const ty = updateDialogueHistory("conversationsHistory", "contact", "conversations")
+
+type WorkspaceChangePlayerNameActionType = { type: typeof CHANGE_PLAYER_NAME, payload: string }
+type WorkspaceClosePlayerNameInputActionType = { type: typeof CLOSE_PLAYER_NAME_INPUT }
+type WorkspaceUpdateTimerActionType = { type: typeof UPDATE_TIMER }
+
+type WorkspaceActionsTypes =
+    WorkspaceChangePlayerNameActionType
+    | WorkspaceClosePlayerNameInputActionType
+    | WorkspaceUpdateTimerActionType
 
 export const rootReducer = combineReducers({
-        workspace: function (state: Workspace = preloadedWorkspaceState, action: Czoko) {
+        workspace: function (state: Workspace = preloadedWorkspaceState, action: WorkspaceActionsTypes) {
 
             const workspaceHandlers = {
-                [CHANGE_PLAYER_NAME]: function (action: Abc) {
+                [CHANGE_PLAYER_NAME]: function (action: WorkspaceChangePlayerNameActionType) {
                     return ({
                         ...state,
                         playerName: action.payload
@@ -250,7 +286,7 @@ export const rootReducer = combineReducers({
                         timerStartingPoint: Date.now()
                     })
                 },
-                [UPDATE_TIMER]: function (action: Ops) {
+                [UPDATE_TIMER]: function () {
                     return ({
                         ...state,
                         timer: Date.now() - state.timerStartingPoint
@@ -264,12 +300,35 @@ export const rootReducer = combineReducers({
                 case CLOSE_PLAYER_NAME_INPUT:
                     return workspaceHandlers[action.type]();
                 case UPDATE_TIMER:
-                    return workspaceHandlers[action.type](action);
+                    return workspaceHandlers[action.type]();
                 default:
                     return state;
             }
         },
         computerScreen: function (state: ComputerScreen = preloadedComputerScreenState, action) {
+
+            function possiblyGetNextConversationPhase() {
+                return (
+                    state.contacts.includes(state.currentContact)
+                        ?
+                        {
+                            ...state,
+                            currentConversationPhase: state.conversations[state.currentContact]
+                                    .find(phase => phase.event === action.payload)
+                                || state.currentConversationPhase,
+                            conversationsHistory:
+                                {
+                                    ...state.conversationsHistory,
+                                    [state.currentContact]: state.conversationsHistory[state.currentContact]
+                                        .concat(state.conversations[state.currentContact]
+                                                .find(phase => phase.event === action.payload)
+                                            || state.currentConversationPhase)
+                                }
+                        }
+                        :
+                        {...state}
+                )
+            }
 
             const computerScreenHandlers: ComputerScreenHandlers = {
 
@@ -277,13 +336,19 @@ export const rootReducer = combineReducers({
                     return ({
                         ...state,
                         files: files,
-                        codeEditorTabsList: files.filter((file) => file.fileName.includes(".file")).map((file) => file.fileName),
-                        webBrowserTabsList: files.filter((file) => file.component.includes("web-browser")).map((file) => file.fileName),
+                        codeEditorTabsList: files
+                            .filter((file) => file.fileName
+                                .includes(".file"))
+                            .map((file) => file.fileName),
+                        webBrowserTabsList: files
+                            .filter((file) => file.component
+                                .includes("web-browser"))
+                            .map((file) => file.fileName),
                     })
 
                 },
                 [START_COUNTING_GAME_TIME]: function () {
-                    return({
+                    return ({
                         ...state,
                         pairMatchingStartTime: Date.now(),
                         currentFilePairMatching: {
@@ -304,7 +369,7 @@ export const rootReducer = combineReducers({
                 [GIVE_POINTS]: function () {
                     return ({
                         ...state,
-                        points:  state.points + 1,
+                        points: state.points + 1,
                         currentFilePairMatching: {
                             ...state.currentFilePairMatching,
                             shouldShowOrderCheckResult: false
@@ -327,9 +392,15 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFileScrumBoard: {
                             ...state.currentFileScrumBoard,
-                            shuffledItemsArray: R.update(action.payload.rowIdx, action.payload.swappedItems, state.currentFileScrumBoard.shuffledItemsArray),
+                            shuffledItemsArray: R.update(
+                                action.payload.rowIdx,
+                                action.payload.swappedItems,
+                                state.currentFileScrumBoard.shuffledItemsArray),
                         },
-                        scrumBoardCurrentShuffledItems: R.update(action.payload.rowIdx, action.payload.swappedItems, state.scrumBoardCurrentShuffledItems),
+                        scrumBoardCurrentShuffledItems: R.update(
+                            action.payload.rowIdx,
+                            action.payload.swappedItems,
+                            state.scrumBoardCurrentShuffledItems),
                     }
                 },
                 [SHUFFLE_ALL_ITEMS]: function () {
@@ -402,7 +473,10 @@ export const rootReducer = combineReducers({
                     return (
                         {
                             ...state,
-                            currentDivColor: R.update(action.payload.rightColumnIndex, action.payload.color, state.currentDivColor),
+                            currentDivColor: R.update(
+                                action.payload.rightColumnIndex,
+                                action.payload.color,
+                                state.currentDivColor),
                             currentFilePairMatching: ({
                                 ...state.currentFilePairMatching,
                             }),
@@ -422,7 +496,10 @@ export const rootReducer = combineReducers({
                     return (
                         {
                             ...state,
-                            currentDivColor: R.update(action.payload.rightColumnIndex, "", state.currentDivColor),
+                            currentDivColor: R.update(
+                                action.payload.rightColumnIndex,
+                                "",
+                                state.currentDivColor),
                             currentFilePairMatching: ({
                                 ...state.currentFilePairMatching,
                                 colors: {
@@ -440,92 +517,11 @@ export const rootReducer = combineReducers({
                         }
                     )
                 },
-                [DELAY_WORK]: function () {
-                    return (
-                        state.contacts.includes(state.currentContact)
-                            ?
-                            {
-                                ...state,
-                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                                conversationsHistory:
-                                    {
-                                        ...state.conversationsHistory,
-                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                                    }
-                            }
-                            :
-                            {...state}
-                    )
-                },
-                [START_WORK]: function () {
-                    return (
-                        state.contacts.includes(state.currentContact)
-                            ?
-                            {
-                                ...state,
-                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                                conversationsHistory:
-                                    {
-                                        ...state.conversationsHistory,
-                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                                    }
-                            }
-                            :
-                            {...state}
-                    )
-                },
-                [REJECT]: function () {
-                    return (
-                        state.contacts.includes(state.currentContact)
-                            ?
-                            {
-                                ...state,
-                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                                conversationsHistory:
-                                    {
-                                        ...state.conversationsHistory,
-                                        [state.currentContact]: state.conversationsHistory[state.currentContact].concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                                    }
-                            }
-                            :
-                            {...state})
-                },
-                [READY]: function () {
-                    return (
-                        state.contacts.includes(state.currentContact)
-                            ?
-                            {
-                                ...state,
-                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                                conversationsHistory:
-                                    {
-                                        ...state.conversationsHistory,
-                                        [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                                    }
-
-
-                            }
-                            :
-                            {...state})
-                },
-                [END_CONVERSATION]: function () {
-                    return (
-                        state.contacts.includes(state.currentContact)
-                            ?
-                            {
-                                ...state,
-                                currentConversationPhase: state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase,
-                                conversationsHistory:
-                                    {
-                                        ...state.conversationsHistory,
-                                        [state.currentContact]: state.conversationsHistory[state.currentContact]?.concat(state.conversations[state.currentContact].find(phase => phase.event === action.payload) || state.currentConversationPhase)
-                                    }
-
-                            }
-                            :
-                            {...state}
-                    )
-                },
+                [DELAY_WORK]: possiblyGetNextConversationPhase,
+                [START_WORK]: possiblyGetNextConversationPhase,
+                [REJECT]: possiblyGetNextConversationPhase,
+                [READY]: possiblyGetNextConversationPhase,
+                [END_CONVERSATION]: possiblyGetNextConversationPhase,
                 [START_CONVERSATION]: function () {
 
                     return (
@@ -535,25 +531,17 @@ export const rootReducer = combineReducers({
                                 ...state,
                                 currentContact: action.payload.contact,
                                 currentEvent: action.payload.event,
-                                currentConversationPhase: (
-                                    (state.conversationsHistory[action.payload.contact])?.length
-                                        ?
-                                        state.conversationsHistory[action.payload.contact][state.conversationsHistory[action.payload.contact]?.length - 1]
-                                        :
-                                        state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0]
-                                ),
+                                currentConversationPhase: getDialoguePhase(
+                                    state.conversationsHistory,
+                                    action.payload.contact,
+                                    state.conversations,
+                                    action.payload.event),
                                 conversationsHistory: (
-                                    (state.conversationsHistory[action.payload.contact])?.length
-                                        ?
-                                        {
-                                            ...state.conversationsHistory,
-                                        }
-                                        :
-                                        {
-                                            ...state.conversationsHistory,
-                                            [action.payload.contact]: [(state.conversations[action.payload.contact].find(phase => phase.event === action.payload.event) || state.conversations[action.payload.contact][0])]
-                                        }
-
+                                    updateDialogueHistory(
+                                        state.conversationsHistory,
+                                        action.payload.contact,
+                                        state.conversations,
+                                        action.payload.event)
                                 )
                             }
                             :
@@ -596,7 +584,10 @@ export const rootReducer = combineReducers({
                         ...state,
                         currentFilePairMatching: {
                             ...state.currentFilePairMatching,
-                            colors: getArrayOfShuffledColors(state.currentFilePairMatching.itemsArray.flatMap((x => x[0])), state.randomColors)
+                            colors: getArrayOfShuffledColors(
+                                state.currentFilePairMatching.itemsArray
+                                    .flatMap((x => x[0])),
+                                state.randomColors)
                         }
                     })
                 },
@@ -655,12 +646,12 @@ export const rootReducer = combineReducers({
                         "config.file": currentFilePuzzleFunction,
                         Task: currentFilePuzzleFunction,
                         "index.file": currentFilePuzzleFunction,
-                        ["main.file"]: function (): { [key: string]: FilePairMatching } {
+                        "main.file": function (): { [key: string]: FilePairMatching } {
                             return ({
                                 currentFilePairMatching: {...currentFileFoundPairMatching}
                             })
                         },
-                        ["Scrum Board"]: function (): { [key: string]: FileScrumBoard } {
+                        "Scrum Board": function (): { [key: string]: FileScrumBoard } {
                             return ({
                                 currentFileScrumBoard: {
                                     ...currentFileFoundScrumBoard,
@@ -682,7 +673,6 @@ export const rootReducer = combineReducers({
 
                     return ({
                         ...state,
-
                         scrumBoardCurrentShuffledItems:
                             state.scrumBoardCurrentShuffledItems?.length
                                 ? state.scrumBoardCurrentShuffledItems
@@ -712,9 +702,8 @@ export const rootReducer = combineReducers({
                         ...state,
                         clicksCounter: state.clicksCounter + 1,
                         memoryGameCardToggleState: state.memoryGameCardToggleState?.map((card) => {
-
                             if (
-                                (card.idx === action.payload.idx && card.isLocked === false)
+                                (card.idx === action.payload.idx && !card.isLocked)
                             ) {
                                 return {
                                     ...card,
@@ -722,9 +711,9 @@ export const rootReducer = combineReducers({
                                     isLocked: action.payload.isLocked
                                 }
                             } else if (card.idx !== action.payload.idx
-                                && card.isLocked === false
+                                && !card.isLocked
                                 && card.content === action.payload.item
-                                && card.toggleState === true) {
+                                && card.toggleState) {
                                 return {
                                     ...card,
                                     isLocked: action.payload.isLocked
@@ -732,7 +721,6 @@ export const rootReducer = combineReducers({
                             } else {
                                 return card
                             }
-
                         }),
                     })
 
@@ -744,13 +732,11 @@ export const rootReducer = combineReducers({
                             state.memoryGameCardToggleState
                                 ?
                                 state.memoryGameCardToggleState.filter((card) => {
-                                    if (card.toggleState === true && card.isLocked === false) {
-                                        return card
-                                    }
+                                    return card.toggleState && !card.isLocked
                                 }).length === 2
                                     ?
                                     state.memoryGameCardToggleState.map((card) => {
-                                        if (card.toggleState === true && card.isLocked === false) {
+                                        if (card.toggleState && !card.isLocked) {
                                             return {
                                                 ...card,
                                                 toggleState: false
@@ -893,6 +879,30 @@ export const rootReducer = combineReducers({
                     : state)
         },
         guestSlot: function (state: GuestSlot = preloadedGuestSlotState, action) {
+
+            function possiblyGetNextVisitPhase(): GuestSlot {
+                return (
+                    state.guests.includes(state.currentGuest)
+                        ?
+                        {
+                            ...state,
+                            currentEvent: action.payload,
+                            currentVisitPhase: state.visits[state.currentGuest]
+                                    .find(phase => phase.event === action.payload)
+                                || state.currentVisitPhase,
+                            visitsHistory:
+                                {
+                                    ...state.visitsHistory,
+                                    [state.currentGuest]: state.visitsHistory[state.currentGuest]
+                                        .concat(state.visits[state.currentGuest]
+                                                .find(phase => phase.event === action.payload)
+                                            || state.currentVisitPhase)
+                                }
+                        }
+                        :
+                        {...state})
+            }
+
             const guestSlotHandlers: GuestSlotHandlers = {
                 [CLOSE_VISIT]: function (): GuestSlot {
                     return {
@@ -900,76 +910,10 @@ export const rootReducer = combineReducers({
                         currentEvent: ""
                     }
                 },
-                [DELAY_WORK_VISIT]: function (): GuestSlot {
-                    return (
-                        state.guests.includes(state.currentGuest)
-                            ?
-                            {
-                                ...state,
-                                currentEvent: action.payload,
-                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                                visitsHistory:
-                                    {
-                                        ...state.visitsHistory,
-                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                                    }
-                            }
-                            :
-                            {...state})
-                },
-                [START_WORK_VISIT]: function (): GuestSlot {
-                    return (
-                        state.guests.includes(state.currentGuest)
-                            ?
-                            {
-                                ...state,
-                                currentEvent: action.payload,
-                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                                visitsHistory:
-                                    {
-                                        ...state.visitsHistory,
-                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                                    }
-                            }
-                            :
-                            {...state})
-                },
-                [REJECT_VISIT]: function (): GuestSlot {
-                    return (
-                        state.guests.includes(state.currentGuest)
-                            ?
-                            {
-                                ...state,
-                                currentEvent: action.payload,
-                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                                visitsHistory:
-                                    {
-                                        ...state.visitsHistory,
-                                        [state.currentGuest]: state.visitsHistory[state.currentGuest].concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                                    }
-                            }
-                            :
-                            {...state})
-                },
-                [READY_VISIT]: function (): GuestSlot {
-                    return (
-                        state.guests.includes(state.currentGuest)
-                            ?
-                            {
-                                ...state,
-                                currentEvent: action.payload,
-                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
-                                visitsHistory:
-                                    {
-                                        ...state.visitsHistory,
-                                        [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
-                                    }
-
-
-                            }
-                            :
-                            {...state})
-                },
+                [DELAY_WORK_VISIT]: possiblyGetNextVisitPhase,
+                [START_WORK_VISIT]: possiblyGetNextVisitPhase,
+                [REJECT_VISIT]: possiblyGetNextVisitPhase,
+                [READY_VISIT]: possiblyGetNextVisitPhase,
                 [END_VISIT]: function (): GuestSlot {
                     return (
                         state.guests.includes(state.currentGuest)
@@ -977,11 +921,16 @@ export const rootReducer = combineReducers({
                             {
                                 ...state,
                                 currentEvent: action.payload,
-                                currentVisitPhase: state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase,
+                                currentVisitPhase: state.visits[state.currentGuest]
+                                        .find(phase => phase.event === action.payload)
+                                    || state.currentVisitPhase,
                                 visitsHistory:
                                     {
                                         ...state.visitsHistory,
-                                        [state.currentGuest]: state.visitsHistory[state.currentGuest]?.concat(state.visits[state.currentGuest].find(phase => phase.event === action.payload) || state.currentVisitPhase)
+                                        [state.currentGuest]: state.visitsHistory[state.currentGuest]
+                                            ?.concat(state.visits[state.currentGuest]
+                                                    .find(phase => phase.event === action.payload)
+                                                || state.currentVisitPhase)
                                     }
 
                             }
@@ -998,30 +947,20 @@ export const rootReducer = combineReducers({
                                 ...state,
                                 currentGuest: action.payload.guest,
                                 currentEvent: action.payload.event,
-                                currentVisitPhase: (
-                                    (state.visitsHistory[action.payload.guest])?.length
-                                        ?
-                                        state.visitsHistory[action.payload.guest][state.visitsHistory[action.payload.guest]?.length - 1]
-                                        :
-                                        state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0]
-                                ),
+                                currentVisitPhase: getDialoguePhase(
+                                    state.visitsHistory,
+                                    action.payload.guest,
+                                    state.visits,
+                                    action.payload.event),
 
                                 visitsHistory:
                                     state.guests.includes(action.payload.guest)
                                         ?
-                                        (
-                                            (state.visitsHistory[action.payload.guest])?.length
-                                                ?
-                                                {
-                                                    ...state.visitsHistory,
-                                                }
-                                                :
-                                                {
-                                                    ...state.visitsHistory,
-                                                    [action.payload.guest]: [(state.visits[action.payload.guest].find(phase => phase.event === action.payload.event) || state.visits[action.payload.guest][0])]
-                                                }
-
-                                        )
+                                        updateDialogueHistory(
+                                            state.visitsHistory,
+                                            action.payload.guest,
+                                            state.visits,
+                                            action.payload.event)
                                         :
                                         state.visitsHistory
                             }

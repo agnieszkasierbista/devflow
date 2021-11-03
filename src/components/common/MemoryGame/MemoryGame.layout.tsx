@@ -9,6 +9,7 @@ import {
     StyledMovesCounter,
     StyledResetButton
 } from "./MemoryGame.styled";
+import { batch } from 'react-redux'
 
 export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
 
@@ -17,6 +18,14 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
             props.dispatchSetToggleStateToFalse()
         }, 500)
     })
+
+    function finishTheGame() {
+        return batch(() => {
+                props.dispatchClearMemoryGameBoardAndAddGameNameToFinished(props.currentFileMemoryGame.fileName)
+                props.dispatchGivePoints()
+            })
+        }
+    
 
     return (
         <>
@@ -38,7 +47,7 @@ export const MemoryGame: React.FC<MemoryGameProps> = (props) => {
                                 <br/>
                             </span>
                         <StyledResetButton
-                            onClick={() => props.dispatchClearMemoryGameBoardAndAddGameNameToFinished(props.currentFileMemoryGame.fileName)}
+                            onClick={() => finishTheGame()}
                         >
                             OK
                         </StyledResetButton>
