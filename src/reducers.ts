@@ -13,7 +13,7 @@ import {
 } from "./model/state";
 import {
     CHANGE_PLAYER_NAME,
-    CHECK_MATCHED_PAIRS,
+    CHECK_MATCHED_PAIRS, CLEAR_DRAG_AND_DROP_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
     CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
     CLICK_OFF_LEFT,
     CLICK_OFF_RIGHT,
@@ -794,6 +794,24 @@ export const rootReducer = combineReducers({
 
                         },
                         clicksCounter: 0
+                    })
+                },
+                [CLEAR_DRAG_AND_DROP_BOARD_AND_ADD_GAME_NAME_TO_FINISHED]: function () {
+                    return ({
+                        ...state,
+                        finishedGameNames: state.finishedGameNames.concat(action.payload),
+                        currentFilePuzzle: {
+                            fileName: "",
+                            items: [],
+                            shuffledItems: [],
+                            colors: {},
+                            beingDragged: -1,
+                            shouldShowOrderCheckResult: false,
+                            taskType: "",
+                            path: "",
+                            component: ""
+                        },
+                        clicksCounterDragAndDrop: 0
                     })
                 },
                 [ON_DRAG_START]: function () {

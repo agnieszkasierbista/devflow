@@ -1,4 +1,5 @@
 import {FileDragAndDrop, Files} from "../../../model/state";
+import {clearDragAndDropBoardAndAddGameNameToFinished} from "../../../actions";
 
 export interface DragAndDropTaskProps extends DragAndDropTaskOwnProps,
     DragAndDropTaskStateProps,
@@ -21,4 +22,6 @@ export interface DragAndDropTaskDispatchProps {
     dispatchShowOrderCheckResultFiles: () => void,
     dispatchShuffleColorsDragAndDrop: () => void,
     dispatchHideOrderCheckResult: () => void,
+    dispatchGivePoints: () => void,
+    dispatchClearDragAndDropBoardAndAddGameNameToFinished: (name: string) => void,
 }

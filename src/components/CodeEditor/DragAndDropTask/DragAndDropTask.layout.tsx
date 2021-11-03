@@ -3,31 +3,42 @@ import * as R from 'ramda';
 import {DragAndDropTaskProps} from "./DragAndDropTask.types";
 import {StyledDraggable, StyledInfoBox} from "./DragAndDropTask.styled";
 import {FileDragAndDrop} from "../../../model/state";
+import {batch} from "react-redux";
 
 
-const checkOrder = (files: FileDragAndDrop, a: () => void) => {
+const checkOrder = (files: FileDragAndDrop,
+                    hideCheckResults: () => void,
+                    givePoints: () => void,
+                    clearBoardAndAddToFinished: (gameName: string) => void,
+                    gameName: string,) => {
+
     const correctOrder = files.items;
     const currentOrder = files.shuffledItems;
 
-    const ButtonDragAndDrop = () => {
-        return (
-            <button
-                onClick={a}
-            >
-                OK
-            </button>
-        )
+    function finishTheGame() {
+        return batch(() => {
+            hideCheckResults()
+            //TODO: trzeba dodac gre do skonczonych i zakonczyc
+            givePoints()
+            clearBoardAndAddToFinished(gameName)
+        })
     }
 
 
     return R.equals(correctOrder, currentOrder)
         ? <StyledInfoBox id="evaluation-result">
             <span>Correct! You won!</span>
-            <ButtonDragAndDrop/>
+            <button
+                onClick={() => finishTheGame()}
+            >
+                OK
+            </button>
         </StyledInfoBox>
         : <StyledInfoBox id="evaluation-result">
             <span>Wrong! Keep going!</span>
-            <ButtonDragAndDrop/>
+            <button>
+                Try again!
+            </button>
         </StyledInfoBox>;
 };
 
@@ -72,10 +83,15 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
                     onClick={props.dispatchShowOrderCheckResultFiles}
                     id="checker">CHECK
                 </button>
-                {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(props.currentFilePuzzle, props.dispatchHideOrderCheckResult)}
-           <div>
-               Moves: {props.clicksCounterDragAndDrop}
-           </div>
+                {props.currentFilePuzzle.shouldShowOrderCheckResult && checkOrder(
+                    props.currentFilePuzzle,
+                    props.dispatchHideOrderCheckResult,
+                    props.dispatchGivePoints,
+                    props.dispatchClearDragAndDropBoardAndAddGameNameToFinished,
+                    props.currentFilePuzzle.fileName)}
+                <div>
+                    Moves: {props.clicksCounterDragAndDrop}
+                </div>
 
             </div>
         </div>

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MemoryGame/MemoryGame.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
@@ -276,14 +277,7 @@
       <workItem from="1635348846398" duration="1792000" />
       <workItem from="1635431193228" duration="4880000" />
       <workItem from="1635514292751" duration="4624000" />
-      <workItem from="1635945179237" duration="3251000" />
-    </task>
-    <task id="LOCAL-00028" summary="Allow a user to check conversation history for every previous conversation">
-      <created>1626614971276</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1626614971276</updated>
+      <workItem from="1635945179237" duration="8524000" />
     </task>
     <task id="LOCAL-00029" summary="Allow a user to check conversation history for every previous conversation (duplicates from history handled only in the view)">
       <created>1626895256921</created>
@@ -621,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635350340604</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Refactor and allow the user to receive a point when Memory Game is finished">
+      <created>1635949084346</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1635949084346</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -691,7 +692,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Allow a user to open ScrumBoard in the WebBrowser" />
     <MESSAGE value="Allow a user to track work progress in the WebBrowser using Scrum Board" />
     <MESSAGE value="Style" />
     <MESSAGE value="Animate guests as if they are walking back and forth" />
@@ -716,7 +716,8 @@
     <MESSAGE value="Add one point when the pair matching game is won" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Refactor arrayDiff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor arrayDiff" />
+    <MESSAGE value="Refactor and allow the user to receive a point when Memory Game is finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor and allow the user to receive a point when Memory Game is finished" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

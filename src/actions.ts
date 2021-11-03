@@ -38,6 +38,7 @@ export const SET_TOGGLE_STATE_TO_FALSE = "SET_TOGGLE_STATE_TO_FALSE";
 export const RESTART_GAME = "RESTART_GAME";
 export const SET_COMPUTER_SCREEN_INITIAL_INFO = "SET_COMPUTER_SCREEN_INITIAL_INFO";
 export const CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED";
+export const CLEAR_DRAG_AND_DROP_BOARD_AND_ADD_GAME_NAME_TO_FINISHED = "CLEAR_DRAG_AND_DROP_BOARD_AND_ADD_GAME_NAME_TO_FINISHED";
 export const HIDE_ORDER_CHECK_RESULT = "HIDE_ORDER_CHECK_RESULT";
 export const UPDATE_TIMER = "UPDATE_TIMER";
 export const START_COUNTING_GAME_TIME = "START_COUNTING_GAME_TIME";
@@ -64,6 +65,13 @@ export function updateTimer() {
 export function clearMemoryGameBoardAndAddGameNameToFinished(name: string) {
     return {
         type: CLEAR_MEMORY_GAME_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
+        payload: name
+    }
+}
+
+export function clearDragAndDropBoardAndAddGameNameToFinished(name: string) {
+    return {
+        type: CLEAR_DRAG_AND_DROP_BOARD_AND_ADD_GAME_NAME_TO_FINISHED,
         payload: name
     }
 }

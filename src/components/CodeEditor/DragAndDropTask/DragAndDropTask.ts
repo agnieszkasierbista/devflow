@@ -4,6 +4,8 @@ import {Dispatch} from "redux";
 import {DragAndDropTaskDispatchProps, DragAndDropTaskStateProps} from "./DragAndDropTask.types";
 import {DragAndDropTask} from "./DragAndDropTask.layout";
 import {
+    clearDragAndDropBoardAndAddGameNameToFinished,
+    givePoints,
     hideOrderCheckResult,
     onDragStartFiles,
     onDropFiles,
@@ -38,6 +40,12 @@ export function mapDispatchToProps(dispatch: Dispatch): DragAndDropTaskDispatchP
         },
         dispatchHideOrderCheckResult: function () {
             dispatch(hideOrderCheckResult())
+        },
+        dispatchGivePoints: function () {
+            dispatch(givePoints())
+        },
+        dispatchClearDragAndDropBoardAndAddGameNameToFinished: function (name) {
+            dispatch(clearDragAndDropBoardAndAddGameNameToFinished(name))
         },
     }
 }
