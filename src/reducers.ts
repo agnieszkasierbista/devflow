@@ -208,7 +208,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
 
 export const preloadedGuestSlotState: GuestSlot = {
     randomColors: ["red", "blue", "purple", "green", "yellow", "orange", "pink"],
-    guests: ["Mike", "Ella", "Random Developer"],
+    guests: [],
     currentGuest: "",
     currentEvent: "",
     visits: {},
@@ -987,18 +987,20 @@ export const rootReducer = combineReducers({
                 },
                 [INITIALIZE_VISIT]: function (): GuestSlot {
 
-                    //TODO: zrobić, zeby lista guest sie generowała na akcji, bo teraz sie pobiera z preloaded state
+                    const guestList = Object.keys(getVisits(action.payload.playerName)).slice(0, 3)
 
                     return ({
                         ...state,
-                        visits: (state.guests
+                        guests: guestList,
+                        visits: (guestList
                             .map((guest: string) => ({[guest]: getVisits(action.payload.playerName)[guest]})))
                             .reduce(
                                 (acc, x) => {
                                     return {...acc, ...x}
                                 },
                                 {}
-                            )
+                            ),
+
                     })
                 },
             }
