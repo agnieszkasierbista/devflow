@@ -188,7 +188,7 @@ export const preloadedComputerScreenState: ComputerScreen = {
     },
     currentConversationHistory: [],
     conversationsHistory: {},
-    isDivClicked: [],
+    divsClickedState: [],
     columnLeft: [],
     columnRight: [],
     columnLeftClicked: [],
@@ -356,7 +356,7 @@ export const rootReducer = combineReducers({
                             shouldShowOrderCheckResult: false
                         },
                         //TODO: rename
-                        isDivClicked: state.isDivClicked?.map((item) => {
+                        divsClickedState: state.divsClickedState?.map((item) => {
                             const itemKey = Object.keys(item)[0]
                             return (
                                 {[itemKey]: false}
@@ -409,7 +409,7 @@ export const rootReducer = combineReducers({
                             ...state,
                             columnLeft: shuffleArrayItems(action.payload.map((item: string[]) => item[0])),
                             columnRight: shuffleArrayItems(action.payload.map((item: string[]) => item[1])),
-                            isDivClicked: state.currentFilePairMatching.itemsArray.flat().map(item => ({[item]: false}))
+                            divsClickedState: state.currentFilePairMatching.itemsArray.flat().map(item => ({[item]: false}))
 
                         }
                     )
@@ -424,7 +424,7 @@ export const rootReducer = combineReducers({
                                     [action.payload.val]: action.payload.color
                                 }
                             }),
-                            isDivClicked: state.isDivClicked.map((div) => {
+                            divsClickedState: state.divsClickedState.map((div) => {
                                 if (Reflect.has(div, action.payload.val)) {
                                     return {[action.payload.val]: true}
                                 } else {
@@ -432,7 +432,7 @@ export const rootReducer = combineReducers({
                                 }
                             }),
                             clickedDivCurrentStateLeft: (
-                                state.isDivClicked.find((div) => div === {[action.payload.val]: true})
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: true})
                                     ?
                                     CLICK_OFF_LEFT
                                     :
@@ -450,7 +450,7 @@ export const rootReducer = combineReducers({
                                 ...state.currentFilePairMatching,
                                 colors: {}
                             }),
-                            isDivClicked: state.isDivClicked.map((div) => {
+                            divsClickedState: state.divsClickedState.map((div) => {
                                 if (Reflect.has(div, action.payload.val)) {
                                     return {[action.payload.val]: false}
                                 } else {
@@ -458,7 +458,7 @@ export const rootReducer = combineReducers({
                                 }
                             }),
                             clickedDivCurrentStateLeft: (
-                                state.isDivClicked.find((div) => div === {[action.payload.val]: false})
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: false})
                                     ?
                                     CLICK_ON_LEFT
                                     :
@@ -480,7 +480,7 @@ export const rootReducer = combineReducers({
                             currentFilePairMatching: ({
                                 ...state.currentFilePairMatching,
                             }),
-                            isDivClicked: state.isDivClicked.map((div) => {
+                            divsClickedState: state.divsClickedState.map((div) => {
                                 if (Reflect.has(div, action.payload.val)) {
                                     return {[action.payload.val]: true}
                                 } else {
@@ -506,7 +506,7 @@ export const rootReducer = combineReducers({
                                     [action.payload.val]: action.payload.color
                                 }
                             }),
-                            isDivClicked: state.isDivClicked.map((div) => {
+                            divsClickedState: state.divsClickedState.map((div) => {
                                 if (Reflect.has(div, action.payload.val)) {
                                     return {[action.payload.val]: false}
                                 } else {

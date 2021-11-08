@@ -18,7 +18,6 @@ const checkOrder = (files: FileDragAndDrop,
     function finishTheGame() {
         return batch(() => {
             hideCheckResults()
-            //TODO: trzeba dodac gre do skonczonych i zakonczyc
             givePoints()
             clearBoardAndAddToFinished(gameName)
         })
@@ -97,4 +96,3 @@ export const DragAndDropTask: React.FC<DragAndDropTaskProps> = (props) => {
         </div>
     );
 };
-//TODO: a może lepiej zmienić na takie clear board jak w Memory game?

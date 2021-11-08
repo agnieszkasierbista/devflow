@@ -41,7 +41,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
             <StyledColumn>
                 {props.columnLeft.map((val, idx) => {
 
-                        const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+                        const handlerName = props.divsClickedState.find((div) => Object.keys(div)[0] === val)?.[val];
                         const divColor = props.randomColors[idx];
 
                         return (
@@ -78,7 +78,7 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                 {
                     props.columnRight.map((val, idx) => {
 
-                        const handlerName = props.isDivClicked.find((div) => Object.keys(div)[0] === val)?.[val];
+                        const handlerName = props.divsClickedState.find((div) => Object.keys(div)[0] === val)?.[val];
                         const divColor = Object.values(props.currentFilePairMatching.colors)[0];
 
                         const rightColumnIndex = props.columnRight.findIndex((item) => item === val)

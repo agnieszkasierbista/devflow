@@ -99,7 +99,7 @@ export interface ComputerScreen<Path = AllPaths> {
     currentEvent: string,
     currentConversationHistory: string[],
     conversationsHistory: Conversations,
-    isDivClicked: {}[],
+    divsClickedState: {}[],
     columnLeft: string[],
     columnRight: string[],
     columnLeftClicked: string[],
