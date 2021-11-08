@@ -1,5 +1,5 @@
 import React from "react"
-import { StyledTimer } from "./Timer.styled"
+import {StyledTimer} from "./Timer.styled"
 import {TimerProps} from "./Timert.types"
 
 export const Timer: React.FC<TimerProps> = function (props) {
@@ -10,10 +10,14 @@ export const Timer: React.FC<TimerProps> = function (props) {
     //     }, 500)
     // })
 
-//TODO: add consts with correct names for numbers values
-    const hours = Math.floor((props.timer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((props.timer % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((props.timer % (1000 * 60)) / 1000);
+    const second = 1000;
+    const minute = 1000 * 60;
+    const hour = 1000 * 60 * 60;
+    const day = 1000 * 60 * 60 * 24;
+
+    const hours = Math.floor((props.timer % day) / hour);
+    const minutes = Math.floor((props.timer % hour) / minute);
+    const seconds = Math.floor((props.timer % minute) / second);
 
     return (
         <StyledTimer>
