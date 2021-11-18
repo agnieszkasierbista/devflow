@@ -189,6 +189,8 @@ export const preloadedComputerScreenState: ComputerScreen = {
     currentConversationHistory: [],
     conversationsHistory: {},
     divsClickedState: [],
+    clickedDivCurrentStateRight: CLICK_OFF_RIGHT,
+    clickedDivCurrentStateLeft: CLICK_OFF_LEFT,
     columnLeft: [],
     columnRight: [],
     columnLeftClicked: [],
@@ -355,7 +357,6 @@ export const rootReducer = combineReducers({
                             ...state.currentFilePairMatching,
                             shouldShowOrderCheckResult: false
                         },
-                        //TODO: rename
                         divsClickedState: state.divsClickedState?.map((item) => {
                             const itemKey = Object.keys(item)[0]
                             return (
@@ -431,12 +432,23 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
+                            //TODO: upewnic sie ze to nigdzie nei jest potrzebne i usunac
+                            // wyglada na to, ze bylo to pomyslane jako znacznik do okreslania czy div po lewej jest klikniety, aby
+                            // uniemożliwic klikniecie diva po prawej - rozważyc zachowanie i faktyczne uzycie!!!
+
                             clickedDivCurrentStateLeft: (
                                 state.divsClickedState.find((div) => div === {[action.payload.val]: true})
                                     ?
                                     CLICK_OFF_LEFT
                                     :
                                     CLICK_ON_LEFT
+                            ),
+                            clickedDivCurrentStateRight: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: true})
+                                    ?
+                                    CLICK_ON_RIGHT
+                                    :
+                                    CLICK_OFF_RIGHT
                             ),
                             columnLeftClicked: state.columnLeftClicked.concat(action.payload.val)
                         }
@@ -457,12 +469,20 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
+                            //TODO: upewnic sie ze to nigdzie nei jest potrzebne i usunac
                             clickedDivCurrentStateLeft: (
                                 state.divsClickedState.find((div) => div === {[action.payload.val]: false})
                                     ?
                                     CLICK_ON_LEFT
                                     :
                                     CLICK_OFF_LEFT
+                            ),
+                            clickedDivCurrentStateRight: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: false})
+                                    ?
+                                    CLICK_OFF_RIGHT
+                                    :
+                                    CLICK_ON_RIGHT
                             ),
                             columnLeftClicked: R.without(action.payload.val, state.columnLeftClicked)
                         }
@@ -488,6 +508,21 @@ export const rootReducer = combineReducers({
                                 }
                             }),
                             columnRightClicked: state.columnRightClicked.concat(action.payload.val),
+                            //TODO: dopisać to co jest w lewym do prawego!!
+                            clickedDivCurrentStateRight: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: true})
+                                    ?
+                                    CLICK_OFF_RIGHT
+                                    :
+                                    CLICK_ON_RIGHT
+                            ),
+                            clickedDivCurrentStateLeft: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: true})
+                                    ?
+                                    CLICK_ON_LEFT
+                                    :
+                                    CLICK_OFF_LEFT
+                            ),
 
                         }
                     )
@@ -513,7 +548,21 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
-                            columnRightClicked: R.without(action.payload.val, state.columnRightClicked)
+                            columnRightClicked: R.without(action.payload.val, state.columnRightClicked),
+                            clickedDivCurrentStateRight: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: false})
+                                    ?
+                                    CLICK_ON_RIGHT
+                                    :
+                                    CLICK_OFF_RIGHT
+                            ),
+                            clickedDivCurrentStateLeft: (
+                                state.divsClickedState.find((div) => div === {[action.payload.val]: false})
+                                    ?
+                                    CLICK_OFF_LEFT
+                                    :
+                                    CLICK_ON_LEFT
+                            ),
                         }
                     )
                 },

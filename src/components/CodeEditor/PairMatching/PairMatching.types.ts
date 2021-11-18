@@ -1,4 +1,4 @@
-import {FileName, FilePairMatching} from "../../../model/state";
+import {FilePairMatching} from "../../../model/state";
 
 export interface PairMatchingProps extends PairMatchingStateProps,
     PairMatchingDispatchProps, PairMatchingOwnProps {
@@ -15,6 +15,8 @@ export interface PairMatchingStateProps {
     columnRightClicked: string[],
     currentDivColor: string[],
     pairMatchingStartTime: number,
+    clickedDivCurrentStateLeft: string,
+    clickedDivCurrentStateRight: string,
 
 }
 

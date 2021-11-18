@@ -3,6 +3,7 @@ import React from "react";
 import {StyledButton, StyledClickable, StyledColumn, StyledTask} from "./PairMatching.styled";
 import {OnClickPairMatchingHandlers} from "../../../model/state";
 import * as R from "ramda";
+import {CLICK_OFF_LEFT, CLICK_OFF_RIGHT} from "../../../actions";
 
 const checkOrder = (
     items: string[][],
@@ -53,7 +54,9 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                         ? {backgroundColor: divColor}
                                         : {backgroundColor: "white"}
                                 }
-                                onClick={() => {
+                                onClick={props.clickedDivCurrentStateLeft === CLICK_OFF_LEFT
+                                    ?
+                                    () => {
                                     const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
                                         true: props.dispatchClickOffLeft,
                                         false: props.dispatchClickOnLeft,
@@ -63,7 +66,9 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                     if (onClickPairMatchingHandlers[`${handlerName}`]) {
                                         onClickPairMatchingHandlers[`${handlerName}`](val, divColor)
                                     }
-                                }}
+                                }
+                                :
+                                    () => console.log("ble")}
                             >
                                 {val}
                             </StyledClickable>
@@ -102,18 +107,23 @@ export const PairMatching: React.FC<PairMatchingProps> = (props) => {
                                         :
                                         {backgroundColor: divColor}
                                 }
-                                onClick={() => {
+                                onClick={
+                                    props.clickedDivCurrentStateRight === CLICK_OFF_RIGHT
+                                        ?
+                                        () => {
 
-                                    const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
-                                        true: props.dispatchClickOffRight,
-                                        false: props.dispatchClickOnRight,
-                                    }
+                                            const onClickPairMatchingHandlers: OnClickPairMatchingHandlers = {
+                                                true: props.dispatchClickOffRight,
+                                                false: props.dispatchClickOnRight,
+                                            }
 
 
-                                    if (onClickPairMatchingHandlers[`${handlerName}`]) {
-                                        onClickPairMatchingHandlers[`${handlerName}`](val, divColor, rightColumnIndex)
-                                    }
-                                }}
+                                            if (onClickPairMatchingHandlers[`${handlerName}`]) {
+                                                onClickPairMatchingHandlers[`${handlerName}`](val, divColor, rightColumnIndex)
+                                            }
+                                        } :
+                                        () => console.log("da")
+                                }
                             >
                                 {val}
                             </StyledClickable>

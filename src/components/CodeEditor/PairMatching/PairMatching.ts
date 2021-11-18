@@ -25,6 +25,8 @@ export function mapStateToProps(state: AppState): PairMatchingStateProps {
         columnRightClicked: state.computerScreen.columnRightClicked,
         currentDivColor: state.computerScreen.currentDivColor,
         pairMatchingStartTime: state.computerScreen.pairMatchingStartTime,
+        clickedDivCurrentStateRight: state.computerScreen.clickedDivCurrentStateRight,
+        clickedDivCurrentStateLeft: state.computerScreen.clickedDivCurrentStateLeft,
     }
 }
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/DragAndDropTask/DragAndDropTask.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
@@ -107,8 +106,8 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Markdown&#10;TypeScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TypeScript&#10;Markdown" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -280,14 +279,10 @@
       <workItem from="1635514292751" duration="4624000" />
       <workItem from="1635945179237" duration="8864000" />
       <workItem from="1636014485413" duration="9191000" />
-      <workItem from="1636367704128" duration="2060000" />
-    </task>
-    <task id="LOCAL-00033" summary="Allow user to have two simultaneous conversations one in the communicator and one in guest slot view">
-      <created>1627466612888</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1627466612888</updated>
+      <workItem from="1636367704128" duration="3478000" />
+      <workItem from="1636966432553" duration="3925000" />
+      <workItem from="1637179732347" duration="763000" />
+      <workItem from="1637248356571" duration="2031000" />
     </task>
     <task id="LOCAL-00034" summary="Allow a user to close finished visit">
       <created>1627477041702</created>
@@ -625,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636369577329</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Refactor">
+      <created>1636370045125</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1636370045125</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -713,14 +715,14 @@
     <MESSAGE value="Measure game playing time with the Timer" />
     <MESSAGE value="Style time display in the Timer" />
     <MESSAGE value="Add one point when the pair matching game is won" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Refactor arrayDiff" />
     <MESSAGE value="Refactor and allow the user to receive a point when Memory Game is finished" />
     <MESSAGE value="When the DragAndDrop game is over clear drag and drop game board and add game name to finished games names" />
     <MESSAGE value="Render first tab when CodeEditor/WebBrowser is opened" />
     <MESSAGE value="Generate guests list on InitializeVisit action" />
     <MESSAGE value="Add consts for number values of a second, a minute, an hour and a day" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add consts for number values of a second, a minute, an hour and a day" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
