@@ -432,10 +432,6 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
-                            //TODO: upewnic sie ze to nigdzie nei jest potrzebne i usunac
-                            // wyglada na to, ze bylo to pomyslane jako znacznik do okreslania czy div po lewej jest klikniety, aby
-                            // uniemożliwic klikniecie diva po prawej - rozważyc zachowanie i faktyczne uzycie!!!
-
                             clickedDivCurrentStateLeft: (
                                 state.divsClickedState.find((div) => div === {[action.payload.val]: true})
                                     ?
@@ -469,7 +465,6 @@ export const rootReducer = combineReducers({
                                     return div
                                 }
                             }),
-                            //TODO: upewnic sie ze to nigdzie nei jest potrzebne i usunac
                             clickedDivCurrentStateLeft: (
                                 state.divsClickedState.find((div) => div === {[action.payload.val]: false})
                                     ?
@@ -508,7 +503,6 @@ export const rootReducer = combineReducers({
                                 }
                             }),
                             columnRightClicked: state.columnRightClicked.concat(action.payload.val),
-                            //TODO: dopisać to co jest w lewym do prawego!!
                             clickedDivCurrentStateRight: (
                                 state.divsClickedState.find((div) => div === {[action.payload.val]: true})
                                     ?

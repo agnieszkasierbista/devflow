@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CodeEditor/PairMatching/PairMatching.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
@@ -107,7 +103,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TypeScript&#10;Markdown" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../anki" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -282,14 +278,9 @@
       <workItem from="1636367704128" duration="3478000" />
       <workItem from="1636966432553" duration="3925000" />
       <workItem from="1637179732347" duration="763000" />
-      <workItem from="1637248356571" duration="2031000" />
-    </task>
-    <task id="LOCAL-00034" summary="Allow a user to close finished visit">
-      <created>1627477041702</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1627477041702</updated>
+      <workItem from="1637248356571" duration="2145000" />
+      <workItem from="1637253886107" duration="394000" />
+      <workItem from="1638892950387" duration="505000" />
     </task>
     <task id="LOCAL-00035" summary="Add background color to guests' buttons">
       <created>1627479035119</created>
@@ -627,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636370045125</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Prevent a user from activating more than one div at a time in PairMatching Game">
+      <created>1637250622408</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1637250622409</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -697,7 +695,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix the bug" />
     <MESSAGE value="Allow a user to play fully functional Memory Game with moves counter" />
     <MESSAGE value="Allow a user to restart Memory Game" />
     <MESSAGE value="Shuffle Memory Game items before each game" />
@@ -722,7 +719,8 @@
     <MESSAGE value="Generate guests list on InitializeVisit action" />
     <MESSAGE value="Add consts for number values of a second, a minute, an hour and a day" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Prevent a user from activating more than one div at a time in PairMatching Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prevent a user from activating more than one div at a time in PairMatching Game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
