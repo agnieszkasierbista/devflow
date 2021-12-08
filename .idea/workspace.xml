@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd174c8c-5dd2-4a10-8256-5e0f68971e34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComputerScreen/ComputerScreen.layout.tsx" afterDir="false" />
     </list>
     <list id="4c064103-327b-4691-a9b0-72a6b1e7eb66" name="Changes by mateu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -280,14 +280,8 @@
       <workItem from="1637179732347" duration="763000" />
       <workItem from="1637248356571" duration="2145000" />
       <workItem from="1637253886107" duration="394000" />
-      <workItem from="1638892950387" duration="505000" />
-    </task>
-    <task id="LOCAL-00035" summary="Add background color to guests' buttons">
-      <created>1627479035119</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1627479035119</updated>
+      <workItem from="1638892950387" duration="1929000" />
+      <workItem from="1638991365637" duration="2045000" />
     </task>
     <task id="LOCAL-00036" summary="Allow a user to perform a task of drag and drop items in the code editor">
       <created>1628083184349</created>
@@ -625,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637250622409</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Remove comments">
+      <created>1638893558087</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1638893558087</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -695,7 +696,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Allow a user to play fully functional Memory Game with moves counter" />
     <MESSAGE value="Allow a user to restart Memory Game" />
     <MESSAGE value="Shuffle Memory Game items before each game" />
     <MESSAGE value="Extend game file contents, that now store all game information (path and component included) and refactor app code accordingly." />
@@ -720,7 +720,8 @@
     <MESSAGE value="Add consts for number values of a second, a minute, an hour and a day" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Prevent a user from activating more than one div at a time in PairMatching Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prevent a user from activating more than one div at a time in PairMatching Game" />
+    <MESSAGE value="Remove comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

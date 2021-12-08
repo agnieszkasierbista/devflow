@@ -12,7 +12,7 @@ export const ComputerScreen: React.FC<ComputerScreenProps> = (props) => {
 
     React.useEffect(() => {
         props.dispatchSetComputerScreenInitialInfo()
-    })
+    }, [])
 
     return (
         <StyledComputerScreen>
